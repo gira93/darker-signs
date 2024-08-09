@@ -1,5 +1,6 @@
 import os
 from getpass import getuser
+from .mail import Mail
 
 AVAILABLE_COMMANDS = ["ls", "cd", "cat", "scan", "connect", "mail", "help", "exit"]
 
@@ -10,6 +11,7 @@ class Cli:
         self.real_path = root_path
         self.current_path = ""
         os.chdir(self.real_path)
+        self.mail = Mail(f"{self.root_path}/system/mail.json")
 
     def run(self):
         while True:
@@ -69,6 +71,15 @@ class Cli:
         with open(f"{self.real_path}/{file}", "r") as f:
             print(f.read())
         return True
+
+    def __scan(self, params):
+        pass
+
+    def __connect(self, params):
+        pass
+
+    def __mail(self, _):
+        self.mail.run()
 
     def __help(self, _):
         print("Available commands:")

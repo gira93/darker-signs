@@ -1,4 +1,14 @@
-{
-  "message": "And this is a JSON",
-  "meta": "With multiple keys"
-}
+[
+	{
+		"from": "zrio.org",
+		"subject": "This is a test",
+		"message": "This is a test email.\nIt can be multiline.\nLet me see if it works",
+		"read": true
+	},
+	{
+		"from": "security.com",
+		"subject": "Now open",
+		"message": "New website now open!",
+		"read": true
+	}
+]
