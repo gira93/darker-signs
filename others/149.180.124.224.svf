@@ -1,0 +1,6 @@
+name%server.com
+port%80#doublefile
+port%1#g7_login
+port%99#prime_finder
+path%12345
+portend

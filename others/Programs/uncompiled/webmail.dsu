@@ -1,0 +1,99 @@
+//Script on micmast.com 25
+//Let's go
+
+cancel true
+getcolor
+getbgcolor
+
+@menu
+*forecolor yellow
+*say 1 ##################
+*say 1 # Micmast WebServer      #
+*say 1 ##### version 1.0         #
+*say 1 #################
+goto commando
+
+@commando
+var keuze
+
+input keuze Typ 'help' for the help file
+lcase help
+if keuze = help
+*say 1 Micmast WebServer Help File
+*say 1 ---------------------------------
+*say 1 Version: get version
+*say 1 Login: Log into mail account
+*say 1 Exit: exit server
+*say 1 ---------------------------------
+goto commando
+endif
+if keuze = Version
+*say 1 Version 1.0
+*say 1 Based on Unix System
+goto commando
+endif
+if keuze = login
+goto mailboxs
+end if
+
+@mailboxs
+var usr
+var psw
+input usr Enter Username:
+if usr = root
+*say 1 Username Accepted
+input psw Enter Password:
+if psw = root
+*say 1 Password Accepted
+var mailnr
+*say 1 Welcome Micmast, you have 2 new mail(s)
+*say 1 --------------------------------------------------
+*say 1  1.    Confirmation Mail Required
+*say 1  2.    Confirmation received. Access Granted
+*say 1 --------------------------------------------------
+input mailnr Enter number of mail to read the mail (0 to quit)
+if mailnr = 1
+*say 1 Confirmation required to access the secret network.
+*say 1 Click on the link below!
+*say 1 specialstorage.com
+pause
+goto mailboxs
+end if
+if mailnr = 2
+*say 1 Account approved
+*say 1 Username: micmast
+*say 2 password: urgettingsomewhere
+pause
+goto mailboxs
+endif
+if mailnr=0
+endif
+
+@end
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor Orange
+*say 1 ByeBye
+*forecolor %getcolor%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

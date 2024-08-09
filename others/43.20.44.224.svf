@@ -1,0 +1,4 @@
+name%ipgames.com
+port%80#ipgames_http
+path%12345
+portend

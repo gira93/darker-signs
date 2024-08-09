@@ -1,0 +1,37 @@
+//SECURE DIGITAL SENDMAIL SERVER
+
+cancel true
+getcolor
+getbgcolor
+
+var$ theip
+var$ theport
+
+getmyip
+getmyhostname
+
+*forecolor green
+*Say 1 Security Mail Server
+*forecolor orange
+*Say 1 Warning - This is a private mail server.
+*Say 1 You will be automatically disconnected if you are not part of our network.
+
+*forecolor grey
+*say 10 Verifying your network information...
+*say 1 You have been identified...
+
+*forecolor red
+*say 1 ACCESS DENIED - Multiple unsuccessful attempts will be logged automatically.
+
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+*Say 1 Connection Terminated
+
+
+
+
+
+
+

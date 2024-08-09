@@ -1,0 +1,1165 @@
+cancel true
+getcolor
+getbgcolor
+var mminput
+var pinput
+var dosbw
+var uploaded
+!uploaded = false
+var hackdone
+
+@welcome
+*forecolor red
+*say 0 HackMe.com - That's right, HACKME
+@mm
+*skipline
+*forecolor orange
+*say 0 [ 1 ] How it works
+*say 0 [ 2 ] Start hacking
+*say 0 [ 3 ] Exit
+*forecolor white
+input mminput Pick a menu option
+
+if mminput = 1
+goto how
+elseif mminput = 2
+goto start
+elseif mminput = 3
+goto end
+else
+goto mm
+endif
+
+@how
+*skipline
+*forecolor red
+*say 0 How HackMe.com Works
+*skipline
+*forecolor orange
+*say 0 The aim of HackMe.com is to hack the website server. There are of course
+*say 0 some rules that need to be laid down first tho:
+*say 0 - You must respect the server and not damage it in anyway
+*say 0 - No DoS attacks are aloud to be luanched from the server
+*say 0 - No bounces and/or making a proxy out of the server
+*say 0 - We will co-operate fully with the law to bring you to justice if you break any law while on this server
+*pause
+goto mm
+
+@start
+*skipline
+*forecolor orange
+*say 0 You will now be put into a command prompt which you can start your hacking
+*say 0 challenge. For full command listing and overall help type help in the console.
+*skipline
+*say 0 Good Luck
+*skipline
+*pause
+goto wprompt
+
+@wprompt
+var user
+!user = level1
+var current
+!current = root
+
+@prompt
+*forecolor white
+input pinput %jjdlksjadh%
+
+if pinput = cwd
+goto cwd
+endif
+
+if user = admin
+goto acommands
+elseif user = level2
+goto l2commands
+endif
+
+@commands
+if pinput = help
+goto help
+elseif pinput = ls
+goto lsl1
+elseif pinput = cd ..
+goto cd..
+elseif pinput = cd..
+goto cd..
+elseif pinput = cd /
+goto cd_root
+elseif pinput = cd home
+goto cd_home
+elseif pinput = cd level1
+goto cd_level1
+elseif pinput = passwd
+goto passwd
+elseif pinput = version
+goto version
+elseif pinput = run
+goto run
+elseif pinput = cd ~
+goto cd_~
+elseif pinput = cat
+goto cat
+elseif pinput = exit
+goto end
+elseif pinput = users
+goto users
+elseif pinput = login
+goto login
+else
+goto error
+endif
+
+@acommands
+if pinput = help
+goto help
+elseif pinput = ls
+goto lsa
+elseif pinput = cd ..
+goto cd..
+elseif pinput = cd..
+goto cd..
+elseif pinput = cd /
+goto cd_root
+elseif pinput = cd home
+goto cd_home
+elseif pinput = cd level1
+goto cd_level1
+elseif pinput = passwd
+goto passwd
+elseif pinput = version
+goto version
+elseif pinput = login
+goto login
+elseif pinput = run
+goto run
+elseif pinput = cat
+goto cat
+elseif pinput = put
+goto put
+elseif pinput = get
+goto get
+elseif pinput = cd admin
+goto cd_admin
+elseif pinput = cd ~
+goto cd_~
+elseif pinput = cd level2
+goto cd_level2
+elseif pinput = evar
+goto evar
+elseif pinput = exit
+goto end
+elseif pinput = users
+goto users
+else
+goto error
+endif
+
+@l2commands
+if pinput = help
+goto help
+elseif pinput = ls
+goto lsl2
+elseif pinput = cd ..
+goto cd..
+elseif pinput = cd..
+goto cd..
+elseif pinput = cd /
+goto cd_root
+elseif pinput = login
+goto login
+elseif pinput = cd home
+goto cd_home
+elseif pinput = cd level1
+goto cd_level1
+elseif pinput = cd level2
+goto cd_level2
+elseif pinput = passwd
+goto passwd
+elseif pinput = version
+goto version
+elseif pinput = run
+goto run
+elseif pinput = cd ~
+goto cd_~
+elseif pinput = cat
+goto cat
+elseif pinput = exit
+goto end
+elseif pinput = users
+goto users
+elseif pinput = evar
+goto evar
+else
+goto error
+endif
+
+@users
+*skipline
+*forecolor white
+*say 0 Current user: %user%
+goto prompt
+
+@version
+*skipline
+*forecolor blue
+*say 0 Goldie OS v5.3
+*say 0 Build v5.2372531
+goto prompt
+
+@cwd
+if current = root
+*forecolor orange
+*say 0 Current Directory /
+elseif current = home
+*forecolor orange
+*say 0 Current Directory /home/
+elseif current = level1
+*forecolor orange
+*say 0 Current Directory /home/level1/
+elseif current = level2
+*forecolor orange
+*say 0 Current Directory /home/level2/
+elseif current = admin
+*forecolor orange
+*say 0 Current Directory /home/admin/
+endif
+goto prompt
+
+@lsl1
+if current = root
+*forecolor blue
+*say 0 [home]
+*forecolor white
+*say 0 NO FILES
+goto prompt
+elseif current = home
+*forecolor blue
+*say 0 [admin]    [level1]    [level2]
+*forecolor white
+*say 0 NO FILES
+goto prompt
+elseif current = level1
+*forecolor white
+*say 0 HELLO.EXE    TESTSCRIPT
+goto prompt
+else
+goto error
+endif
+
+@lsl2
+if current = root
+*forecolor blue
+*say 0 [home]
+*forecolor white
+*say 0 NO FILES
+goto prompt
+elseif current = home
+*forecolor blue
+*say 0 [admin]    [level1]    [level2]
+*forecolor white
+*say 0 NO FILES
+goto prompt
+elseif current = level1
+*forecolor white
+*say 0 HELLO.EXE    TESTSCRIPT
+goto prompt
+elseif current = level2
+*forecolor white
+*say 0 INIT.CONF    XFTP.EXE
+goto prompt
+else
+goto error
+endif
+
+@lsa
+if uploaded = true
+goto .
+endif
+if current = root
+*forecolor blue
+*say 0 [home]
+*forecolor white
+*say 0 NO FILES
+goto prompt
+elseif current = home
+*forecolor blue
+*say 0 [admin]    [level1]    [level2]
+*forecolor white
+*say 0 NO FILES
+goto prompt
+elseif current = level1
+*forecolor white
+*say 0 HELLO.EXE    TESTSCRIPT
+goto prompt
+elseif current = level2
+*forecolor white
+*say 0 INIT.CONF    XFTP.EXE
+goto prompt
+elseif current = admin
+*forecolor white
+*say 0 LINKS    PASSWDS.ENC
+goto prompt
+else
+goto error
+endif
+@.
+if current = root
+*forecolor blue
+*say 0 [home]
+*forecolor white
+*say 0 NO FILES
+goto prompt
+elseif current = home
+*forecolor blue
+*say 0 [admin]    [level1]    [level2]
+*forecolor white
+*say 0 NO FILES
+goto prompt
+elseif current = level1
+*forecolor white
+*say 0 HELLO.EXE    TESTSCRIPT
+goto prompt
+elseif current = level2
+*forecolor white
+*say 0 INIT.CONF    XFTP.EXE
+goto prompt
+elseif current = admin
+*forecolor white
+*say 0 LINKS    PASSWDS.ENC    REMOTEAPP
+goto prompt
+else
+goto error
+endif
+
+@cd..
+if current = root
+*forecolor orange
+*say 0 Current Directory /
+goto prompt
+elseif current = home
+!current = root
+*forecolor orange
+*say 0 Current Directory /
+goto prompt
+elseif current = level1
+!current = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto prompt
+elseif current = level2
+!current = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto prompt
+elseif current = admin
+!current = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto prompt
+else
+goto error
+endif
+
+@cd_root
+!current = root
+*forecolor orange
+*say 0 Current Directory /
+goto prompt
+endif
+
+@cd_home
+if current = root
+!current = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto prompt
+else
+goto error
+endif
+
+@cd_admin
+if user = admin
+goto acd_admin
+else
+goto permission
+endif
+@acd_admin
+if current = home
+!current = admin
+*forecolor orange
+*say 0 Current Directory /home/admin/
+goto prompt
+else
+goto error
+endif
+
+@cd_level1
+if current = home
+!current = level1
+*forecolor orange
+*say 0 Current Directory /home/level1/
+goto prompt
+else
+goto error
+endif
+
+@cd_level2
+if user = level2
+goto lcont
+elseif user = admin
+goto lcont
+else
+goto permission
+endif
+@lcont
+if current = home
+!current = level2
+*forecolor orange
+*say 0 Current Directory /home/level2/
+goto prompt
+else
+goto error
+endif
+
+@cd_~
+if user = level1
+!current = level1
+*forecolor orange
+*say 0 Current Directory /home/level1/
+goto prompt
+elseif user = level2
+!current = level2
+*forecolor orange
+*say 0 Current Directory /home/level2/
+goto prompt
+elseif user = admin
+!current = admin
+*forecolor orange
+*say 0 Current Directory /home/admin/
+goto prompt
+else
+goto error
+endif
+
+@passwd
+if user = level1
+*forecolor white
+*say 0 Password: level1
+goto prompt
+elseif user = level2
+*forecolor white
+*say 0 Password: ijusthackedyou
+goto pormpt
+elseif user = admin
+*forecolor white
+*say 0 Password: jubathehutisfat
+goto prompt
+else
+goto error
+endif
+
+@cat
+if user = level1
+goto cat1
+elseif user = level2
+goto cat2
+elseif user = admin
+goto cata
+else
+goto error
+endif
+@cat1
+if current = level1
+*forecolor white
+input pinput Enter the file you wish to view
+else
+*forecolor orange
+*say 0 System Command Error [no files to view]
+goto prompt
+endif
+@test1
+if pinput = testscript
+*forecolor blue
+*skipline
+*say 0  1 - *say 0 Hello World
+*skipline
+*pause
+goto prompt
+elseif pinput = hello.exe
+*forecolor blue
+*skipline
+*say 0 1 - *say 0 Welldone the password for level2 user is:
+*say 0 2 - *say 0 ijusthackedyou
+*skipline
+*pause
+goto prompt
+else
+*forecolor orange
+*say 0 File Error [can not find %pinput%]
+goto prompt
+endif
+@cat2
+if current = level1
+*forecolor white
+input pinput Enter the file you wish to view
+goto test1
+elseif current = level2
+*forecolor white
+input pinput Enter the file you wish to view
+else
+*forecolor orange
+*say 0 System Command Error [no files to view]
+goto prompt
+endif
+@test2
+if pinput = init.conf
+*forecolor blue
+*skipline
+*say 0 1 - debug false
+*skipline
+*pause
+goto prompt
+elseif pinput = xftp.exe
+*forecolor orange
+*say 0 Unable to Open File [file is an executable]
+goto prompt
+else
+*forecolor orange
+*say 0 File Error [can not find %pinput%]
+goto prompt
+endif
+@cata
+if current = level1
+*forecolor white
+input pinput Enter the file you wish to view
+goto test1
+elseif current = level2
+*forecolor white
+input pinput Enter the file you wish to view
+goto test2
+elseif current = admin
+*forecolor white
+input pinput Enter the file you wish to view
+goto testa
+else
+*forecolor orange
+*say 0 System Command Error [no files to view]
+goto prompt
+endif
+@testa
+if pinput = links
+*forecolor blue
+*skipline
+*say 0 1 - telnet.pokemonworld.com
+*say 0 2 - telnet.globalsport.com
+*say 0 3 - ftp.willowfootball.org
+*say 0 4 - media.net
+*say 0 5 - ftp.stlukes.christ.org
+*say 0 6 - ftp.blindballet.org
+*say 0 7 - telnet.happyhackers.net
+*say 0 8 - codered.com
+*skipline
+*pause
+goto prompt
+elseif pinput = passwds.enc
+*forecolor blue
+*skipline
+*say 0 1 - EHNSKKWI&&^"N3243DHHS@!
+*say 0 2 - HN7JDH'%FCD2623Z"$JJFLKJD
+*say 0 3 - JND&^&Tds87hARASjk23D)&^
+*skipline
+*pause
+goto prompt
+else
+*forecolor orange
+*say 0 File Error [can not find %pinput%]
+goto prompt
+endif
+
+@get
+if user = level1
+goto permission
+elseif user = level2
+goto permission
+endif
+if current = admin
+goto getcont
+else
+*forecolor orange
+*say 0 Invalid Folder
+goto prompt
+endif
+@getcont
+*forecolor white
+input pinput Enter the file you wish to download
+if pinput = links
+goto getlinks
+elseif pinput = passwds.enc
+goto getpasswd
+else
+*forecolor orange
+*say 0 File Error [can not find %pinput%]
+goto prompt
+endif
+@getlinks
+*forecolor blue
+*say 100 .......................................
+*write links telnet.pokemonworld.com
+*write links telnet.globalsport.com
+*write links ftp.willowfootball.org
+*write links media.net
+*write links ftp.stlukes.christ.org
+*write links ftp.blindballet.org
+*write links telnet.happyhackers.net
+*write links codered.com
+*say 0 File Downloaded [LINKS]
+*pause
+goto prompt
+@getpasswd
+*forecolor blue
+*say 100 ...........................................
+*write passwds.enc EHNSKKWI&&^"N3243DHHS@!
+*write passwds.enc HN7JDH'%FCD2623Z"$JJFLKJD
+*write passwds.enc JND&^&Tds87hARASjk23D)&^
+*say 0 File Downloaded [PASSWDS.ENC]
+*pause
+goto prompt
+
+@run
+if user = level2
+goto contrun
+elseif user = admin
+goto contruna
+else
+goto permission
+endif
+@contrun
+*skipline
+*forecolor white
+input pinput Enter the file you wish to run
+if pinput = xftp.exe
+goto xftp
+else
+*forecolor orange
+*say 0 File Error [can not find %pinput%]
+goto prompt
+endif
+@contruna
+*skipline
+*forecolor white
+input pinput Enter the file you wish to run
+if uploaded = true
+goto ..
+endif
+*forecolor orange
+*say 0 File Error [can not find %pinput%]
+goto prompt
+@..
+if pinput = remoteapp
+goto infect
+endif
+
+@infect
+*forecolor red
+if hackdone = 0
+!dosbw = dosbw + 1
+!hackdone = true
+endif
+*say 100 INFECTED
+goto end
+
+@evar
+if user = level1
+goto permission
+else
+*skipline
+*forecolor white
+*say 0 Environment Varibles:
+*say 0 PATH = / ;
+goto prompt
+
+@put
+if user = level1
+goto permission
+elseif user = level2
+goto permission
+endif
+if current = admin
+goto puta
+endif
+*forecolor orange
+*say 0 Invalid Folder
+goto prompt
+@puta
+*forecolor white
+input pinput Enter the file you wish to upload
+exists %pinput%
+if exists = false
+*forecolor orange
+*say 0 File Error [can not find %pinput%]
+goto prompt
+endif
+if pinput = remoteapp
+!uploaded = true
+*forecolor blue
+*say 100 .........................................................
+*say 0 File Uploaded
+goto prompt
+else
+*forecolor orange
+*say 0 File Error [can not find %pinput%]
+goto prompt
+endif
+
+@login
+*forecolor white
+input pinput Enter username
+if pinput = level2
+goto contlogin
+elseif pinput = level1
+goto contlogin
+elseif pinput = admin
+goto contlogin
+else
+*forecolor orange
+*say 0 Bad Username
+goto prompt
+endif
+@contlogin
+*forecolor white
+input pinput Enter password
+if pinput = level1
+!current = level1
+!user = level1
+*forecolor orange
+*say 0 Logged in as Level1
+goto prompt
+elseif pinput = ijusthackedyou
+!user = level2
+!current = level2
+*forecolor orange
+*say 0 Logged in as Level2
+goto prompt
+elseif pinput = jubathehutisfat
+!user = admin
+!current = admin
+*forecolor orange
+*say 0 Logged in as Admin
+goto prompt
+else
+*forecolor orange
+*say 0 Bad Password
+goto prompt
+endif
+
+@xftp
+var xftpcurrent
+var xftpuser
+!xftpuser = anonymous
+
+@welcome
+!xftpcurrent = root
+*forecolor purple
+*say 0 Welcome to XFTP v1.0
+*say 0 Check out our website at xftp.com for bug reports, documentation and general news
+var xftpinput
+
+@input
+*forecolor white
+input xftpinput %jdkjsadjhfasu%
+
+if xftpinput = exit
+goto xftpend
+endif
+
+if xftpinput = help
+goto xftphelp
+endif
+
+if %xftpinput% = users
+goto xftpusers
+endif
+
+if xftpinput = login
+goto xftplogin
+endif
+
+if xftpinput = version
+goto xftpversion
+endif
+
+if user = admin
+goto xftpcommands
+else
+goto permissionerror
+endif
+
+@xftpcommands
+if xftpinput = cd ..
+goto xftpcd..
+elseif xftpinput = cd..
+goto xftpcd..
+endif
+if xftpinput = ls
+goto xftpls
+endif
+if xftpinput = get
+goto xftpget
+endif
+if xftpinput = put
+goto xftpput
+endif
+if xftpinput = run
+goto xftprun
+endif
+if xftpinput = cd /
+goto xftpcd_root
+endif
+if xftpinput = cd home
+goto cd_home
+endif
+if xftpinput = logout
+goto xftplogout
+endif
+if xftpinput = cd admin
+goto xftpcd_admin
+else
+goto xftperror
+endif
+
+@xftpusers
+*forecolor white
+*say 0 Current user: %xftpuser%
+goto input
+
+@xftpcd..
+if xftpcurrent = root
+*forecolor orange
+*say 0 Current Directory /
+goto input
+endif
+if xftpcurrent = home
+!xftpcurrent = root
+*forecolor orange
+*say 0 Current Directory /
+goto input
+endif
+if xftpcurrent = admin
+!xftpcurrent = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto input
+endif
+if xftpcurrent = ann
+!xftpcurrent = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto input
+endif
+if xftpcurrent = joe
+!xftpcurrent = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto input
+endif
+if xftpcurrent = marie
+!xftpcurrent = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto input
+else
+goto xftperror
+endif
+
+@xftpversion
+*forecolor purple
+*say 0 XFTP Version 1.0
+*say 0 Build 1.8825
+goto input
+
+@xftpls
+if xftpcurrent = root
+*forecolor blue
+*say 0 [home]
+*forecolor white
+*say 0 NO FILES
+goto input
+endif
+if xftpcurrent = home
+*forecolor white
+*say 0 NO FILES
+goto input
+else
+goto xftperror
+endif
+
+@xftpcd_root
+!xftpcurrent = root
+*forecolor orange
+*say 0 Current Directory /
+goto input
+
+@xftpcd_home
+if xftpcurrent = root
+!xftpcurrent = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto input
+else
+goto xftperror
+endif
+
+@xftprun
+var runinput
+*forecolor white
+input runinput Enter file name
+*forecolor orange
+*say 0 File not found [%runinput%]
+free runinput
+goto input
+
+@xftpput
+var putinput
+*forecolor white
+input putinput Enter file name
+free putinput
+*forecolor blue
+*say 0 Uploading
+*say 500 .....................
+*wait 1000
+*forecolor orange
+*say 0 Fatal Protocal Error [remote connection lost]
+goto xftpend
+
+@xftpget
+var getinput
+input getinput Enter file name
+goto xftpstop
+endif
+
+@xftpstop
+*forecolor orange
+*say 0 File not found [%getinput%]
+free getinput
+goto input
+
+@xftplogout
+!xftpuser = anonymous
+*forecolor orange
+*say 0 User logged out
+goto input
+
+@xftplogin
+var logininput
+*forecolor white
+input logininput Enter user name
+*strlen logininput
+if strlen > 36
+free logininput
+!user = admin
+*forecolor red
+*say 0 Fatal program fault [XFTP.EXE]
+*say 0 Closing program and returning to command prompt
+free input
+free xftpuser
+free xftpinput
+goto prompt
+endif
+input logininput Enter Password
+*strlen logininput
+if strlen > 36
+!user = admin
+free logininput
+*forecolor red
+*say 0 Fatal program fault [XFTP.EXE]
+*say 0 Closing program and returning to command prompt
+free input
+free xftpuser
+free xftpinput
+goto prompt
+else
+*forecolor orange
+*say 0 User name/Password error
+free logininput
+goto input
+
+@xftphelp
+*forecolor blue
+*say 0 CD - usage:  cd <folder>
+*forecolor white
+*say 0 Changes the current directory. Use cd.. to go back one folder.
+*skipline
+*forecolor blue
+*say 0 EXIT - usage: exit
+*forecolor white
+*say 0 Discconects from XFTP
+*skipline
+*forecolor blue
+*say 0 GET - usage: get <filename>
+*forecolor white
+*say 0 Downloads <filename> to your current local directory
+*skipline
+*forecolor blue
+*say 0 HELP - usage: help
+*forecolor white
+*say 0 Displays this help file
+*skipline
+*forecolor blue
+*say 0 LOGIN - usage: login
+*forecolor white
+*say 0 Prompts user for a username and password.
+*say 0 If currect logs in as that user.
+*skipline
+*forecolor blue
+*say 0 LOGOUT - useage: logout
+*forecolor white
+*say 0 Logs out the current user and makes them anonymous user
+*skipline
+*forecolor blue
+*say 0 LS - usage: ls
+*forecolor white
+*say 0 Lists all files and folder in the current directory
+*skipline
+*forecolor blue
+*say 0 PUT - usage: put <filename>
+*forecolor white
+*say 0 Uploads <filname> to current remote directory
+*skipline
+*forecolor blue
+*say 0 RUN - usage: run <filename>
+*forecolor white
+*say 0 Executes <filename> remotely
+*skipline
+*forecolor blue
+*say 0 USERS - usage: users
+*forecolor white
+*say 0 Displays current user account being used
+*skipline
+*forecolor blue
+*say 0 VERSION - usage: version
+*forecolor white
+*say 0 Displays XFTP version
+*skipline
+*pause
+goto input
+
+@xftperror
+*forecolor orange
+*say 0 System Command Error [%xftpinput%]
+goto input
+
+@permissionerror
+*forecolor orange
+*say 0 Access Denied [no permission]
+goto input
+
+@xftpend
+free input
+free xftpuser
+free xftpinput
+goto prompt
+
+@permission
+*forecolor orange
+*say 0 Permission Error [access denied]
+goto prompt
+
+@error
+*forecolor orange
+*say 0 System Command Error [%pinput%]
+goto prompt
+
+@help
+*skipline
+*forecolor blue
+*say 0 CAT - usage: cat
+*forecolor white
+*say 0 Display the contains of a file
+*skipline
+*forecolor blue
+*say 0 CD - usage: cd <folder>
+*forecolor white
+*say 0 Change current directory to <folder>. Use cd.. to goto the folder below current.
+*say 0 Use cd ~ to goto current users home directory
+*skipline
+*forecolor blue
+*say 0 CWD - usage: cwd
+*forecolor white
+*say 0 Displays the current directory
+*skipline
+*forecolor blue
+*say 0 EVAR - usage: evar
+*forecolor white
+*say 0 Displays all environment varibles
+*skipline
+*forecolor blue
+*say 0 EXIT - usage: exit
+*forecolor white
+*say 0 Discconects from host
+*pause
+*skipline
+*forecolor blue
+*say 0 HELP - usage: help
+*forecolor white
+*say 0 Displays this help screen
+*skipline
+*forecolor blue
+*say 0 LOGIN - usage: login
+*forecolor white
+*say 0 Login as a different user
+*skipline
+*forecolor blue
+*say 0 LS - usage: ls
+*forecolor white
+*say 0 Lists all files and folders in current directory
+*skipline
+*forecolor blue
+*say 0 PASSWD - usage: passwd
+*forecolor white
+*say 0 Displays the current users password
+*skipline
+*forecolor blue
+*say 0 PUT - usage: put
+*forecolor white
+*say 0 Upload a file to the current directory
+*skipline
+*forecolor blue
+*say 0 RUN - usage: run
+*forecolor white
+*say 0 Run a file from the current directory
+*skipline
+*forecolor blue
+*say 0 USERS - usage: users
+*forecolor white
+*say 0 Displays the current user that you are loged in as
+*skipline
+*forecolor blue
+*say 0 VERSION - usage: version
+*forecolor white
+*say 0 Displays the current OS version
+*pause
+goto prompt
+
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free getbgcolor
+free getcolor
+free pinput
+free mminput
+free uploaded
+
+
+
+
+
+
+
+
+
+
+

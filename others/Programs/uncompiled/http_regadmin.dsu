@@ -1,0 +1,125 @@
+//regadmin.net
+
+cancel true
+getcolor
+getbgcolor
+
+var$ theip
+var$ theport
+
+getmyip
+getmyhostname
+@menu
+*forecolor green
+*Say 1 #     #    #   #  # ################### #  #   #    #     #
+*Say 1 REGDOMAINZ Domain Administration Server
+*Say 1 #     #    #   #  # ################### #  #   #    #     #
+
+
+*forecolor white
+var choice
+input choice Enter your username
+
+if %choice% = ndrgrnd
+goto fff
+else
+*fcolor orange
+*Say 0 That username [%choice%] was not found on our server
+pause
+goto end
+endif
+
+@fff
+
+input choice Enter your password
+
+if %choice% = burntcrisp
+goto ffftwo
+else
+*fcolor orange
+*Say 0 That Password [%choice%] is invalid
+pause
+goto end
+endif
+
+*fcolor orange
+*Say 0 ADMIN Logged In OK
+pause
+
+
+@ffftwo
+
+*fcolor blue
+*Say 0 0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0
+*fcolor orange
+skipline
+*Say 0     This server is currently undergoing maintenance.
+*Say 0     To make major changes to your domain(s), please ring
+*Say 0     us directly on (+613) 752 6019.
+skipline
+*fcolor white
+*Say 0     (1) View Account Domains
+*Say 0     (2) Disabled for Maintenance
+*Say 0     (3) Disabled for Maintenance
+*Say 0     (4) Log Out
+skipline
+*fcolor blue
+*Say 0 0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0X0
+
+input choice Enter Option Number [1 to 4]
+
+if choice=4
+goto end
+endif
+
+if choice=3
+*Say 0     This server is currently undergoing maintenance.
+*Say 0     To make major changes to your domain(s), please ring
+*Say 0     us directly on (+613) 752 6019.
+pause
+goto ffftwo
+endif
+
+if choice=2
+*Say 0     This server is currently undergoing maintenance.
+*Say 0     To make major changes to your domain(s), please ring
+*Say 0     us directly on (+613) 752 6019.
+pause
+goto ffftwo
+endif
+
+
+///////////////////////////////////////////
+if choice=1
+*fcolor blue
+skipline
+*Say 0 Account Domains
+*fcolor white
+*Say 0 Domain Name  |  IP Address
+*Say 0 oxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxox
+skipline
+*Say 0 internal-9.ndrgrnd.pipelink.gov:66.7.82.99
+*Say 0 base09.pipelink.gov:66.199.200.203
+skipline
+*Say 0 oxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxoxox
+pause
+goto ffftwo
+endif
+
+
+
+@endf
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+*Say 1 Connection Terminated
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,530 @@
+cancel true
+getcolor
+getbgcolor
+var current
+var user
+!user = anonymous
+var setting
+
+@welcome
+!current = root
+*forecolor purple
+*say 0 Welcome to XFTP v1.0
+*say 0 Check out our website at xftp.com for bug reports, documentation and general news
+var xftpinput
+
+@input
+*forecolor white
+input xftpinput %jdkjsadjhfasu%
+
+if xftpinput = exit
+goto end
+endif
+
+if xftpinput = help
+goto help
+endif
+
+if %xftpinput% = users
+goto users
+endif
+
+if xftpinput = login
+goto login
+endif
+
+if xftpinput = version
+goto version
+endif
+
+if user = admin
+goto commands
+else
+goto permissionerror
+endif
+
+@commands
+if xftpinput = cd ..
+goto cd..
+elseif xftpinput = cd..
+goto cd..
+endif
+if xftpinput = ls
+goto ls
+endif
+if xftpinput = get
+goto get
+endif
+if xftpinput = put
+goto put
+endif
+if xftpinput = run
+goto run
+endif
+if xftpinput = cd /
+goto cd_root
+endif
+if xftpinput = cd home
+goto cd_home
+endif
+if xftpinput = cd joe
+goto cd_joe
+endif
+if xftpinput = cd ann
+goto cd_ann
+endif
+if xftpinput = cd marie
+goto cd_marie
+endif
+if xftpinput = logout
+goto logout
+endif
+if xftpinput = cd admin
+goto cd_admin
+else
+goto error
+endif
+
+@users
+*forecolor white
+*say 0 Current user: %user%
+goto input
+
+@cd..
+if current = root
+*forecolor orange
+*say 0 Current Directory /
+goto input
+endif
+if current = home
+!current = root
+*forecolor orange
+*say 0 Current Directory /
+goto input
+endif
+if current = admin
+!current = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto input
+endif
+if current = ann
+!current = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto input
+endif
+if current = joe
+!current = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto input
+endif
+if current = marie
+!current = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto input
+else
+goto error
+endif
+
+@version
+*forecolor purple
+*say 0 XFTP Version 1.0
+*say 0 Build 1.8825
+goto input
+
+@ls
+if current = root
+*forecolor blue
+*say 0 [home]
+*forecolor white
+*say 0 NO FILES
+goto input
+endif
+if current = home
+*forecolor blue
+*say 0 [admin]    [ann]    [joe]    [marie]
+*forecolor white
+*say 0 NO FILES
+goto input
+endif
+if current = ann
+goto no_files
+endif
+if current = marie
+goto no_files
+endif
+if current = joe
+goto no_files
+endif
+if current = admin
+*forecolor white
+*say 0 CRYPTSETUP.EXE
+goto input
+else
+goto error
+endif
+
+@cd_root
+!current = root
+*forecolor orange
+*say 0 Current Directory /
+goto input
+
+@cd_home
+if current = root
+!current = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto input
+else
+goto error
+endif
+
+@cd_ann
+if current = home
+!current = ann
+*forecolor orange
+*say 0 Current Directory /home/ann/
+goto input
+else
+goto error
+endif
+
+@cd_joe
+if current = home
+!current = joe
+*forecolor orange
+*say 0 Current Directory /home/joe/
+goto input
+else
+goto error
+endif
+
+@cd_marie
+if current = home
+!current = marie
+*forecolor orange
+*say 0 Current Directory /home/marie/
+goto input
+else
+goto error
+endif
+
+@cd_admin
+if current = home
+!current = admin
+*forecolor orange
+*say Current Directory /home/admin/
+goto input
+else
+goto error
+endif
+
+@run
+var runinput
+*forecolor white
+input runinput Enter file name
+*forecolor orange
+*say 0 File not found [%runinput%]
+free runinput
+goto input
+
+@put
+var putinput
+*forecolor white
+input putinput Enter file name
+free putinput
+*forecolor blue
+*say 0 Uploading
+*say 500 .....................
+*wait 1000
+*forecolor orange
+*say 0 Fatal Protocal Error [remote connection lost]
+goto end
+
+@get
+var getinput
+input getinput Enter file name
+if current = admin
+goto continue
+else
+goto stop
+endif
+
+@stop
+*forecolor orange
+*say 0 File not found [%getinput%]
+free getinput
+goto input
+
+@continue
+if getinput = cryptsetup.exe
+free getinput
+goto download
+else
+free getinput
+goto stop
+
+@download
+*pipe delme
+*? cancel true
+*wait 100
+*? getcolor
+*wait 100
+*? getbgcolor
+*wait 100
+*? @welcome
+*wait 100
+*? *forecolor green
+*wait 100
+*? *say 0 Welcome to Crypt v1.2 Setup
+*wait 100
+*? *skipline
+*wait 100
+*? var yn
+*wait 100
+*? *forecolor white
+*wait 100
+*? *say 0 Setup will now install Crypt v1.2 to your hard drive
+*wait 100
+*? input yn Do you wish to continue Y/N
+*wait 100
+*? if yn = y
+*wait 100
+*? free yn
+*wait 100
+*? goto yes
+*wait 100
+*? elseif yn = n
+*wait 100
+*? free yn
+*wait 100
+*? goto no
+*wait 100
+*? else
+*wait 100
+*? goto no
+*wait 100
+*? endif
+*wait 100
+*? @yes
+*wait 100
+*? *forecolor white
+*wait 100
+*? *say 0 Installing
+*wait 100
+*? *say 500 >>>>>>
+*wait 100
+*? *wait 3000
+*wait 100
+*? *forecolor red
+*wait 100
+*? *say 0 Setup Failed
+*wait 100
+*? @stop
+*wait 100
+*? *color %getcolor%
+*wait 100
+*? *bgcolor %getbgcolor%
+*wait 100
+*pipe
+var 1
+var 2
+*rndint 2
+!1 = %rndint%
+*rndint 2
+!2 = %rndint%
+*rndint 2
+*compile delme %rndint%%2%%1%
+*rename delme.dss cryptsetup.exe
+*cldo delme
+*forecolor blue
+*say 0 Downloading
+*say 100 ............................................
+*wait 500
+*say 0 Done
+free rndint
+free 1
+free 2
+goto input
+
+@logout
+!user = anonymous
+*forecolor orange
+*say 0 User logged out
+goto input
+
+@login
+var logininput
+*forecolor white
+input logininput Enter user name
+*strlen logininput
+if strlen > 36
+free logininput
+goto prompt
+endif
+input logininput Enter Password
+*strlen logininput
+if strlen > 36
+free logininput
+goto prompt
+else
+*forecolor orange
+*say 0 User name/Password error
+free logininput
+goto input
+
+@help
+*forecolor green
+*say 0 Commands
+*skipline
+*forecolor blue
+*say 0 CD - usage:  cd <folder>
+*forecolor white
+*say 0 Changes the current directory. Use cd.. to go back one folder.
+*skipline
+*forecolor blue
+*say 0 EXIT - usage: exit
+*forecolor white
+*say 0 Discconects from XFTP
+*skipline
+*forecolor blue
+*say 0 GET - usage: get
+*forecolor white
+*say 0 Asks which file to download and then downloads that file to the current local directory
+*skipline
+*forecolor blue
+*say 0 HELP - usage: help
+*forecolor white
+*say 0 Displays this help file
+*skipline
+*forecolor blue
+*say 0 LOGIN - usage: login
+*forecolor white
+*say 0 Prompts user for a username and password.
+*say 0 If currect logs in as that user.
+*skipline
+*forecolor blue
+*say 0 LOGOUT - useage: logout
+*forecolor white
+*say 0 Logs out the current user and makes them anonymous user
+*skipline
+*forecolor blue
+*say 0 LS - usage: ls
+*forecolor white
+*say 0 Lists all files and folder in the current directory
+*skipline
+*forecolor blue
+*say 0 PUT - usage: put
+*forecolor white
+*say 0 Asks which to upload and then uploads that file to the current local directory
+*skipline
+*forecolor blue
+*say 0 RUN - usage: run
+*forecolor white
+*say 0 Asks which file to run remotely
+*skipline
+*forecolor blue
+*say 0 USERS - usage: users
+*forecolor white
+*say 0 Displays current user account being used
+*skipline
+*forecolor blue
+*say 0 VERSION - usage: version
+*forecolor white
+*say 0 Displays XFTP version
+*skipline
+*pause
+goto input
+
+@prompt
+*forecolor red
+*say 0 Fatal program fault [XFTP.EXE]
+*say 0 Closing program and returning to command prompt
+*forecolor white
+var promptinput
+@input2
+*forecolor white
+input promptinput %hhtioerf%
+
+@pcommands
+if promptinput = ls
+*forecolor white
+*say 0 INIT.CONF    XFTP.EXE
+goto input2
+endif
+if promptinput = edit init.conf
+goto editinit
+endif
+if promptinput = script init.conf
+goto editinit
+else
+endif
+if promptinput = run xftp.exe
+goto welcome
+else
+goto error2
+endif
+
+@editinit
+*forecolor blue
+*say 0 File Contents:
+*forecolor white
+*skipline
+*say 0 1 - debug false
+*skipline
+input promptinput Please enter the number of the line to edit
+if promptinput = 1
+goto edit1
+else
+goto input2
+endif
+
+@edit1
+input promptinput Enter the replacement text
+if promptinput = debug true
+!user = admin
+*say 0 File Updated
+goto input2
+else
+*say 0 File Update Failed
+goto input2
+endif
+
+@error
+*forecolor orange
+*say 0 System Command Error [%xftpinput%]
+goto input
+
+@error2
+*forecolor orange
+*say 0 System Command Error [%promptinput%]
+goto input2
+
+@no_files
+*forecolor white
+*say 0 NO FILES
+goto input
+
+@permissionerror
+*forecolor orange
+*say 0 Access Denied [no permission]
+goto input
+
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free xftpinput
+free user
+free getcolor
+free getbgcolor
+free setting
+
+
+
+

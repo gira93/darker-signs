@@ -1,0 +1,217 @@
+cancel true
+getcolor
+getbgcolor
+var mminput
+
+@welcome
+*forecolor green
+*say 0 |\-/|\-/||\-/|\-/||\-/|\-/||\-/|\-/||\-/|\-/||\-/|\-/||\-/|\-/||\-/|
+*say 0 |\-/|             CrackerTools.com                |\-/|
+*say 0 |\-/| The only place to get the latest and|\-/|
+*say 0 |\-/|             best cracker tools!               |\-/|
+*say 0 |\-/|\-/||\-/|\-/||\-/|\-/||\-/|\-/||\-/|\-/||\-/|\-/||\-/|\-/||\-/|
+@mm
+*skipline
+*forecolor purple
+*say 0 <<( 1 )>> Downloads
+*say 0 <<( 2 )>> Exploits
+*say 0 <<( 3 )>> Donate
+*say 0 <<( 4 )>> Links
+*say 0 <<( 5 )>> Exit
+*forecolor blue
+input mminput Enter 1 - 5
+
+if mminput = 1
+goto downloads
+elseif mminput = 2
+goto exploits
+elseif mminput = 3
+goto donate
+elseif mminput = 4
+goto links
+elseif mminput = 5
+goto end
+else
+goto mm
+endif
+
+@links
+*skipline
+*forecolor green
+*say 0 Recommended Links
+*skipline
+*forecolor purple
+*say 0 hackme.com - Hack the server :D
+*say 0 crashme.com - FUN FUN FUN
+*pause
+goto mminput
+
+@donate
+*forecolor purple
+*skipline
+*say 0 Please send an email to donate@crackertools.com for details on donating to
+*say 0 the CrackerTools.com project. Thank you
+*pause
+goto mm
+
+@exploits
+*forecolor purple
+*say 0 For the latest and greatest exploits check out Security.com
+*pause
+goto mm
+
+@downloads
+*forecolor green
+*skipline
+*say 0 CrackerTools.com's Downloads
+*skipline
+*forecolor purple
+*say 0 <<( 1 )>> BackDoor v2.0
+*say 0 <<( 2 )>> DoSer v3.1
+*say 0 <<( 3 )>> PasswdCracker Jack v1.0
+*say 0 <<( 4 )>> Encrypt/Decrypt beta v0.3
+*say 0 <<( 5 )>> Back to main menu
+*forecolor blue
+input mminput Enter 1 - 5
+
+if mminput = 1
+goto error_door
+elseif mminput = 2
+goto download
+elseif mminput = 3
+goto error_pass
+elseif mminput = 4
+goto error_crypt
+elseif mminput = 5
+goto end
+else
+goto downloads
+endif
+
+@error_door
+*forecolor green
+*skipline
+*say 0 BackDoor v2.0
+*skipline
+*forecolor purple
+*say 0 Mirror 1 <<( Down )>>
+*say 0 Mirror 2 <<( Down )>>
+*say 0 Mirror 3 <<( Down )>>
+*skipline
+*forecolor orange
+*say 0 All mirrors down
+*pause
+goto downloads
+
+@error_pass
+*forecolor green
+*skipline
+*say 0 PasswdCracker Jack v1.0
+*skipline
+*forecolor purple
+*say 0 Mirror 1 <<( Down )>>
+*say 0 Mirror 2 <<( Down )>>
+*say 0 Mirror 3 <<( Down )>>
+*skipline
+*forecolor orange
+*say 0 All mirrors down
+*pause
+goto downloads
+
+@error_crypt
+*forecolor green
+*skipline
+*say 0 Encrypt/Decrypt beta v0.3
+*skipline
+*forecolor purple
+*say 0 Mirror 1 <<( Down )>>
+*say 0 Mirror 2 <<( Down )>>
+*say 0 Mirror 3 <<( Down )>>
+*skipline
+*forecolor orange
+*say 0 All mirrors down
+*pause
+goto downloads
+
+@download
+*forecolor green
+*skipline
+*say 0 DoSer v3.1
+*skipline
+*forecolor purple
+*say 0 Mirror 1 <<( Down )>>
+*say 0 Mirror 2 <<( Down )>>
+*say 0 Mirror 3 <<( Active )>>
+*skipline
+*say 0 Redirecting you to the download server
+*skipline
+*forecolor white
+*say 100 ............................................
+*skipline
+*forecolor blue
+*say 0 Downloading [DoSer v3.1]
+*pipe remoteapp
+*wait 100
+*? cancel true
+*wait 100
+*? getcolor
+*wait 100
+*? *forecolor red
+*wait 100
+*? *say 500 INFECTED...
+*wait 100
+*? *color %getcolor%
+*wait 100
+*? free getcolor
+*pipe
+*wait 100
+*write readme1st Dont be an idiot and run remoteapp on your computer, if you open it expect your
+*write readme1st bandwidth to be leeched by someone else using the program.
+*write readme1st Dont say i didn't warn you
+*write readme1st -----------------------------------------
+*write readme1st To use DoSer visit doser.com this method will change in the near future
+*forecolor blue
+*prompt
+*say 100 .........................................................
+*say 0 Download Complete
+*pause
+goto mm
+
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free getcolor
+free bgcolor
+free mminput
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

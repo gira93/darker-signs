@@ -1,0 +1,9 @@
+name%zrio.org
+port%25#zrio_filetransfer
+port%45#xcapro
+path%12345
+portend
+trace1%17.191.200.201
+trace2%64.114.9.241
+trace3%66.199.200.203
+trace4%11.243.187.34

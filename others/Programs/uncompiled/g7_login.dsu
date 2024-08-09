@@ -1,0 +1,23 @@
+VAR uinputid
+VAR uinputpw
+
+GETCOLOR
+GETBGCOLOR
+
+BGCOLOR black
+
+SKIPLINE
+COLOR red
+SAY 10 You are connected to the G7 Private Database.
+SAY 10 If you do not belong here you are in violation of International Treaties and will be dealt with promptly.
+SKIPLINE
+COLOR white
+INPUT uinputid Enter Username:
+INPUT uinputpw Enter Password:
+COLOR red
+SAY 50 LOGIN/PASSWORD INCORRECT
+SAY 100 TERMINATING CONNECTION....................
+COLOR %getcolor%
+END
+
+

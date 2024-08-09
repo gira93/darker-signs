@@ -1,0 +1,36 @@
+///DECRYPTION
+
+cancel true
+getcolor
+getbgcolor
+
+
+@startt
+*forecolor red
+*Say 1 Access Denied.
+
+*forecolor white
+
+
+
+
+@end
+
+fcolor blue
+*Say 1 Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+@loop
+rndint 999999
+*forecolor %rndint%
+rndint 999999
+*bgcolor %rndint%
+*say 0 CrashMe.com
+goto loop
+
+
+
+
+
+
+
+
+

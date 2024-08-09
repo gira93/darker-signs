@@ -1,0 +1,429 @@
+var userinput
+var passwd
+getbgcolor
+getcolor
+bgcolor black
+color green
+chr 124
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%                                                                   The THC HQ                                                                                 %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Login for THC Challenge levels
+input userinput Username:
+input passwd Password:
+if userinput=level1
+goto level1check
+endif
+if userinput=level2
+goto level2check
+endif
+if userinput=level3
+goto level3check
+endif
+if userinput=noname
+*say 0 This account can log in on port 200
+pause
+goto end
+endif
+if userinput=jpain
+*say 0 Real accounts can log in on port 300
+pause
+goto end
+endif
+if userinput=beater
+*say 0 Real accounts can log in on port 300
+pause
+goto end
+endif
+if userinput=gage
+*say 0 Real accounts can log in on port 300
+pause
+goto end
+endif
+if userinput=hatred
+*say 0 Real accounts can log in on port 300
+pause
+goto end
+endif
+if userinput=dewey
+*say 0 Real accounts can log in on port 300
+pause
+goto end
+endif
+*say 100 Wrong!!!
+goto end
+
+
+@level1check
+if passwd=ultimate
+goto level1
+endif
+*say 100 Wrong!!!
+goto end
+@level2check
+if passwd=cookbook
+goto level2
+endif
+*say 100 Wrong!!!
+goto end
+@level3check
+if passwd=average
+goto level3
+endif
+*say 100 Wrong!!!
+goto end
+
+
+
+@level1
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level1         -         Location : main menu         -         THC Rule!                                                 %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 (w)hat am I doing here?
+*say 0 (l)evel up
+*say 0 (s)ource code
+*say 0 (e)xit
+getkey Choose
+if getkey=87
+goto introduction
+endif
+if getkey=69
+goto end
+endif
+if getkey=83
+goto lvl1source
+endif
+if getkey=76
+goto lvl1up
+endif
+
+goto level1
+
+@introduction
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level1         -         Location : introduction         -         THC Rule!                                                %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 THC is The H8 Club -  we are the best hacker ring on the web
+*say 0 we have the best contacts - we get the best missions
+*say 0 we earn our group the most money
+*say 0 To find this place, you have shown some skill
+*say 0 proove yourself, the level up program requires a password
+*say 0 the source code is the code for the password checking program
+*say 0 you should be able to crack it?
+*say 0 *
+*say 0 This place is our place
+*say 0 get through all the levels and theres a mine of information and stuff
+*say 0 you may get a few glimpses of what you get as you go on
+pause
+goto level1
+@lvl1source
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level1         -         Location : lvl1source         -         THC Rule!                                                  %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 var uinput
+*say 0 strline password.level1 1
+*say 0 input uinput Please enter your password
+*say 0 if uinput=strline
+*say 0 *say 0 account : level2
+*say 0 *say 0 password : !!!!!!!
+*say 0 pause
+*say 0 endif
+*say 0 free uinput
+pause
+goto level1
+@lvl1up
+*write temp43 simple
+strline temp43 1
+del temp43
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level1         -         Location : lvl1up         -         THC Rule!                                                         %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+var uinput
+input uinput Please enter your password
+if uinput=strline
+*say 0 account : level2
+*say 0 password : cookbook
+pause
+endif
+free uinput
+goto level1
+
+@level2
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level2         -         Location : main menu         -         THC Rule!                                                 %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 (m)essage boards
+*say 0 e(x)ploits
+*say 0 (v)irri
+*say 0 (l)evel up
+*say 0 (s)ource code
+*say 0 (e)xit
+getkey Choose
+if getkey=69
+goto end
+endif
+if getkey=83
+goto lvl2source
+endif
+if getkey=76
+goto lvl2up
+endif
+if getkey=77
+goto lvl2mb
+endif
+if getkey=88
+goto lvl2ex
+endif
+if getkey=86
+goto lvl2vi
+endif
+goto level2
+
+@lvl2source
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level2         -         Location : lvl2source         -         THC Rule!                                                  %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 var uinput
+*say 0 var thepass
+*say 0 !thepass=!!!!!!!
+*say 0 input uinput Please enter your password
+*say 0 if uinput=thepass
+*say 0 *say 0 account : level3
+*say 0 *say 0 password : !!!!!!!
+*say 0 pause
+*say 0 goto level2end
+*say 0 endif
+*say 0 *say 0 (percentage)uinput(percentage) is the incorrect password
+*say 0 @level2end
+*say 0 free uinput
+*say 0 free thepass
+pause
+goto level2
+@lvl2up
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level2         -         Location : lvl2up         -         THC Rule!                                                         %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+var uinput
+var thepass
+!thepass=garden
+input uinput Please enter your password
+if uinput=thepass
+*say 0 account : level3
+*say 0 password : average
+pause
+goto level2end
+endif
+*say 0 %uinput% is the incorrect password
+pause
+@level2end
+free uinput
+free thepass
+goto level2
+@lvl2mb
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level2         -         Location : Message Board Intro         -         THC Rule!                                 %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Our message boards are populated by the most knowledgeable hackers around
+*say 0 plenty of discussion with useful information
+*say 0 plenty of hints and shared findings
+*say 0 plenty of help when you need it
+*say 0    Another reason why THC are the best hacking ring
+pause
+goto level2
+@lvl2ex
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level2         -         Location : Exploits Intro         -         THC Rule!                                             %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 We have the newest exploits found
+*say 0 check our achives which date back for a very long time
+*say 0 contains many exploits far before they're released to the 'hacker community'
+*say 0 because we are the best
+pause
+goto level2
+@lvl2vi
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level2         -         Location : Virri Intro         -         THC Rule!                                                    %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 This section contains many virri, and antidotes created for them
+*say 0 often far before anyone else
+*say 0 why do we have these? 
+*say 0 because we wrote 75% of them
+pause
+goto level2
+
+@level3
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level3         -         Location : main menu         -         THC Rule!                                                 %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 e(x)ploits
+*say 0 (l)evel up
+*say 0 (s)ource code
+*say 0 (e)xit
+getkey Choose
+if getkey=69
+goto end
+endif
+if getkey=83
+goto lvl3source
+endif
+if getkey=76
+goto lvl3up
+endif
+if getkey=88
+goto lvl3ex
+endif
+goto level3
+@lvl3source
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level3         -         Location : lvl3source         -         THC Rule!                                                  %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 var uinput
+*say 0 var thepass
+*say 0 var percentage
+*say 0 !thepass=!!!!!!!
+*say 0 input uinput Please enter your password
+*say 0 !percentage=%
+*say 0 instr uinput percentage
+*say 0 if instr>0
+*say 0 *say 0 Bog off
+*say 0 pause
+*say 0 goto level3end
+*say 0 endif
+*say 0 if uinput=thepass
+*say 0 *say 0 account : noname
+*say 0 *say 0 password : !!!!!!!
+*say 0 pause
+*say 0 endif
+*say 0 @level3end
+*say 0 free percentage
+*say 0 free uinput
+*say 0 free thepass
+pause
+goto level3
+
+@lvl3up
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level3         -         Location : lvl3up         -         THC Rule!                                                         %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+var uinput
+var thepass
+var percentage
+!thepass=oohnasty
+input uinput Please enter your password
+!percentage=%
+instr uinput percentage
+if instr>0
+*say 0 Bog off
+pause
+goto level3end
+endif
+if uinput=thepass
+*say 0 account : noname
+*say 0 password : usermanual
+pause
+endif
+@level3end
+free percentage
+free uinput
+free thepass
+goto level3
+
+@lvl3ex
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level3         -         Location : Exploits Menu         -         THC Rule!                                            %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Viewing exploits from the last : 5 days
+*say 0        [If you have a proper account you will be able to change this, this is just a taste]
+*say 0 1) UHB Login script
+*say 0 b) Back to main menu
+getkey Choose
+if getkey=49
+goto uhb
+endif
+if getkey=66
+goto level3
+enidf
+goto lvl3ex
+
+@uhb
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: level3         -         Location : The UHB exploit         -         THC Rule!                                         %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 UHB Login script exploit - Found by Beater
+*say 0 UHB have a stupid system where even if you have the username and password
+*say 0 you still have to be on a list of authorised IP addresses
+*say 0 however, the programmers are also morons
+*say 0 One of the 'authorised' IPs is the actual IP of the machine itself
+*say 0   and there is a debug profile open which acts as a proxy
+*say 0 username: proxy password: proxy
+*say 0 and since it's a special program, you don't need to be on an authorised IP to use it
+*say 0                     By Beater
+*say 0 (b)ack to exploits menu                 - (s)ave file and go back to menu
+getkey Choose
+if getkey=66
+goto lvl3ex
+endif
+if getkey=83
+*say 0 Will save as UHB.exploit
+*write UHB.exploit From: thc-hq.com (24.53.123.5) Filename: UHB.exploit
+*write UHB.exploit UHB Login script exploit - Found by Beater
+*write UHB.exploit UHB have a stupid system where even if you have the username and password
+*write UHB.exploit you still have to be on a list of authorised IP addresses
+*write UHB.exploit however, the programmers are also morons
+*write UHB.exploit One of the 'authorised' IPs is the actual IP of the machine itself
+*write UHB.exploit   and there is a debug profile open which acts as a proxy
+*write UHB.exploit username: proxy password: proxy
+*write UHB.exploit and since it's a special program, you don't need to be on an authorised IP to use it
+*write UHB.exploit                     By Beater
+*say 0 Saved
+pause
+endif
+goto level3
+
+
+
+@end
+free userinput
+free passwd
+bgcolor %getbgcolor%
+color %getcolor%
+clear
+
+
+
+
+
+
+

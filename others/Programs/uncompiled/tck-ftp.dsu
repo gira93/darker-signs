@@ -1,0 +1,129 @@
+getbgcolor
+getcolor
+bgcolor blue
+color white
+clear
+*say 0 [[[[[[[[[[[[[[[[[[[[[[[[ Mickelshaft FileServe v.1.4 ]]]]]]]]]]]]]]]]]]]]]]]]
+*say 0 Welcome to the TCK public file server
+*say 0 You are on page 1 of 1
+*say 0 The following files are available
+*say 0 1) tck.login.src
+*say 0 2) empty
+*say 0 3) empty
+*say 0 4) empty
+*say 0 5) empty
+*say 0 6) empty
+*say 0 7) empty
+*say 0 8) empty
+*say 0 9) empty
+@comehither
+*say 0 Select a file to download
+*say 0 or use f to go forward a page, b to go back a page and x to logout
+getkey Enter a selection
+if getkey=88
+*say 0 Logging out
+wait 1000
+goto end
+endif
+if getkey=66
+*say 0 You are on the only page
+goto comehither
+endif
+if getkey=70
+*say 0 You are on the only page
+goto comehither
+endif
+if getkey=49
+*say 0 Downloading file : tck.login.src
+chr 188
+pipe tck.login.src
+*say 0 // **Tck.login.src - final version
+*say 0 // **Due to DScript constraints the symbol %chr% represents a percentage sign
+*say 0 @menu
+*say 0 clear
+*say 0 // **you can expand the menu with a greating or with extra options
+*say 0 *say 0 1) Login for beta testing
+*say 0 *say 0 2) Check for updates
+*say 0 *say 0 3) Leave
+*say 0 getkey Please make your selection
+*say 0 if getkey=49
+*say 0 var passwd
+*say 0 var inpt
+*say 0 var percentage
+*say 0 input inpt Please enter beta password
+*say 0 !percentage=%chr%
+*say 0 // **We have to go elsewhere as the are DScript bugs involving nested ifs
+*say 0 goto passwordcheck
+*say 0 endif
+*say 0 if getkey=50
+*say 0 // **Use the *say command to hardcode
+*say 0 // **The latest update in
+*say 0 pause
+*say 0 goto menu
+*say 0 endif
+*say 0 if getkey=51
+*say 0 *say 0 Logging out
+*say 0 goto end
+*say 0 endif
+*say 0 // **Hardcode the password into this section
+*say 0 @passwordcheck
+*say 0 instr inpt percentage
+*say 0 if instr>0
+*say 0 goto badpass
+*say 0 endif
+*say 0 !passwd=passwordhere
+*say 0 if inpt=passwd
+*say 0 // **Run whatever you want to go to here
+*say 0 endif
+*say 0 @badpass
+*say 0 *say 0 Incorrect password
+*say 0 free passwd
+*say 0 free inpt
+*say 0 free percentage
+*say 0 @end
+pipe
+*say 0 Download complete
+goto comehither
+if getkey=50
+*say 0 No such file
+goto comehither
+endif
+if getkey=51
+*say 0 No such file
+goto comehither
+endif
+if getkey=52
+*say 0 No such file
+goto comehither
+endif
+if getkey=53
+*say 0 No such file
+goto comehither
+endif
+if getkey=54
+*say 0 No such file
+goto comehither
+endif
+if getkey=55
+*say 0 No such file
+goto comehither
+endif
+if getkey=56
+*say 0 No such file
+goto comehither
+endif
+if getkey=57
+*say 0 No such file
+goto comehither
+endif
+*say 0 Invalid option
+goto comehither
+
+@end
+bgcolor %getbgcolor%
+color %getcolor%
+clear
+
+
+
+

@@ -1,0 +1,96 @@
+getcolor
+getbgcolor
+bgcolor blue
+color white
+@start
+clear
+*say 0 This site is very much work in progress, as is everything on this machine
+*say 0 ***********************************TCK Software******************************
+*say 0 Please select an option
+*say 0 1:Who are TCK Software
+*say 0 2:What is going on with the site
+*say 0 3:Current updates
+*say 0 4:Logout
+getkey Make your selection
+if getkey=49
+goto whotck
+endif
+if getkey=50
+goto goingon
+endif
+if getkey=51
+goto updates
+endif
+if getkey=52
+goto end
+endif
+
+@whotck
+clear
+*say 0 Who are TCK Software?
+*say 0 ***********************************TCK Software******************************
+*say 0 TCK Software are a small group of programmers who became fairly well know after their
+*say 0 release of TCKsecure, an extensive security program for protecting sites.
+*say 0 Various other pieces of software have been written by TCK but their most well known
+*say 0 is TCKsecure
+pause
+goto start
+
+@goingon
+clear
+*say 0 What is going on with the site
+*say 0 ***********************************TCK Software******************************
+*say 0 We are currently working on a new large project. Entitled simply TCK we hope
+*say 0 for it to be a versatile tool for companies to easily create sites for various
+*say 0 users. Features include an article search engine (which can be adapted for many
+*say 0 uses), a flexible file storage area and much more.
+*say 0 The uniqueness of this project is it is in part being used to help itself.
+*say 0 As new parts are added to the software they are posted online, when a section
+*say 0 is completely finished the sourcecode is posted. The software will eventually
+*say 0 make up the whole of TCK's site.
+*say 0 ***
+*say 0 Many other changes are taking place within the TCK company and so we have
+*say 0 decided to give the site over completely to the development of TCK. Those
+*say 0 who have come here for TCKsecure support will need to use the username and
+*say 0 password which they will have been sent to access TCK (the program is 
+*say 0 running on port 225).  TCK is now in a stage where it can be used to 
+*say 0 offer similar support as we offered users with the old software AND IT IS
+*say 0 ONLY 25% COMPLETE!
+*say 0 ***
+*say 0 TCK is destined to become a very important piece of software on the internet
+*say 0 landscape.
+pause
+goto start
+
+@updates
+clear Current Updates
+*say 0 ***********************************TCK Software******************************
+*say 0 5th of March 2012
+*say 0 Since the login screen is now finished the source code has been posted to
+*say 0 the public on the public fileserver (port 21). The source is fairly simply
+*say 0 but userfriendly as it allows for a menu of options to be presented at
+*say 0 login.   We are currently bug fixing the TCK file hosting program so that
+*say 0 it can be used to host these files
+*say 0 ***
+*say 0 3rd of March 2012
+*say 0 A beta version of the TCK search engine has been posted. This allows users
+*say 0 to search through TCKsecure articles detailing modifications and bugfixes
+*say 0 ***
+*say 0 1st of March 2012
+*say 0 Updated the TCK fileserver to fix a few bugs
+*say 0 ***
+*say 0 28th of February 2012
+*say 0 Added a beta version of the fileserver where you can also download the TCKsecure
+*say 0 source code
+*say 0 ***
+pause
+goto start
+
+@end
+color %getcolor%
+bgcolor %getbgcolor%
+clear
+
+
+
+

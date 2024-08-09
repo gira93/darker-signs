@@ -1,0 +1,49 @@
+say Null Connection
+var myv
+var vv
+@xxx
+input myv Enter Input (CTRL + X to Cancel)
+! vv = run filecopy.exe
+instr myv vv
+
+if instr > 0
+goto xxx2
+else
+say Thanks for nothing...
+goto xxx
+endif
+
+@xxx2
+! vv = 9m.enc
+instr myv vv
+
+if instr > 1
+*write 9m.enc ENCRYPTED
+*write 9m.enc SUDHMSIHDJAMKAKZYVMKAYVMZVAYAM
+*write 9m.enc JMAKKZUHZMMZULZMZHZHZLAUSASJIA
+*write 9m.enc AJAQHZHNJQAMKSAJHSKAJSKAKJSMAJKS
+*write 9m.enc SUDHMSIHDJAMKAKZYVMKAYVMZVAYAM
+*write 9m.enc JMAKKZUHZMMZULZMZHZHZLAUSASJIA
+*Say File [9m.enc] Downloaded to your root directory...
+*say 1 ../FILECOPY.EXE OUTPUT: Copied
+pause
+else
+*say 1 ../FILECOPY.EXE OUTPUT: File Not Found
+endif
+
+goto xxx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,57 @@
+getcolor
+getbgcolor
+
+*say 0 To enter this site you have to answer one question :
+*say 0 How does elite people spell : 
+var ans
+input ans "hacker" ?
+
+var tmp
+! tmp = h4ck3r
+instr ans tmp
+if instr=1
+goto menu
+endif
+*say 0 Wrong !
+goto end
+
+@menu
+clear
+color 39168
+*say 0 Welcome to backdoors.com
+*say 0 Here are some backdoors only for you
+*say 0 1. internetprovider.com  thx to : old staff member
+*say 0 0. Disconnect
+getkey
+if getkey=49
+goto viewbackdoor
+endif
+if getkey=48
+goto end
+endif
+goto menu
+
+@viewbackdoor
+clear
+color 39168 
+*say 0 Hello i've just been fired of internetprovider.com, but i just had the time
+*say 0 take note of some logins + password.
+*say 0 I hope some of them still work. Here is the list :
+*say 0 admin / toto
+*say 0 administrator / internet
+*say 0 ipadmin / provider
+*say 0 gota / 1979
+pause
+goto menu
+
+@end
+free ans
+free tmp
+color yellow
+*say 0 Disconnecting
+color %getcolor%
+bgcolor %getbgcolor%
+
+
+
+

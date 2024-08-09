@@ -1,0 +1,6 @@
+name%oldgames.com
+port%21#oldg_ftp
+port%22#oldg_admin
+port%80#oldg_http
+path%12345
+portend

@@ -1,0 +1,18 @@
+getcolor
+getbgcolor
+*forecolor grey
+var loopy
+@loop
+input loopy %jdksjf%
+*say 0 Null connection press Ctrl + X to disconnect
+goto loop
+
+
+
+
+
+
+
+
+
+

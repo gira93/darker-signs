@@ -1,0 +1,171 @@
+//SECURITY.com stuff
+
+cancel true
+getcolor
+getbgcolor
+
+var$ theip
+var$ theport
+
+getmyip
+getmyhostname
+@menu
+*forecolor green
+*Say 1 Security.com Public Services
+*forecolor white
+*Say 1 Navigation Menu
+*Say 1 You will be automatically disconnected if you are not part of our network.
+
+*forecolor grey
+*say 1 (1) View Recent Vulnerability List
+*say 1 (2) Search Exploit / Vulnerability Archives
+*say 1 (3) Submit Exploit / Vulnerability
+*say 1 (4) About SECURITY.com
+*say 1 (5) Disconnect
+var choice
+input choice Enter an option (1 to 5) from the menu above
+
+*forecolor white
+if choice=5
+goto end
+endif
+
+if choice = 2
+goto search
+endif
+
+if choice=3
+*say 1 We appreciate public members submission security related information
+*say 1 on all aspects of Internet servers and networking.
+skipline
+*say 1 To make a submission, please send it through email to submit@security.com
+pause
+goto menu
+endif
+
+if choice=4
+*say 1 SECURITY.com provides a public information base for matters relating to
+*say 1 Internet and Networking Security. We hope this will help system administrators
+*say 1 to keep their system secure from computer crackers.
+pause
+goto menu
+endif
+
+if choice=1
+*say 1 (1) FuzzyMail Exploit
+*say 1 (2) XNull Exploit
+*say 1 (3) XFTP
+*say 1 (4) JazzyWeb
+*say 1 (5) Back to Menu
+input choice Enter an option (1 to 5) from the menu above
+goto part2
+endif
+
+goto endf
+
+@part2
+if choice = 3
+goto xftp
+elseif choice = 4
+goto jazzy
+endif
+
+if choice=1
+*SAY Exploit Information: FuzzyMail 2.0
+*SAY Some FuzzyMail servers have the default admin password unchanged.
+*SAY The default username is ADMIN and default password is FUZZY
+*SAY Obviously it can be fixed by changing the password, if you have not
+*SAY already changed it.
+pause
+endif
+if choice=2
+@part2
+*SAY XNull Port 89 Exploit
+*SAY This has been tested and works on several machines running the XNULL service.
+*SAY By sending a malformed command, malicous users are able to copy files from the
+*SAY remote server to their own local computer, for example use the below command.
+skipline
+*SAY run filecopy.exe [FILENAME]
+*SAY Replace [FILENAME] with the name of any file.
+*SAY ADMINISTRATORS, this can easily be disabled by deselecting the 'allow run' option.
+*SAY A patch should also be released by the company soon.
+pause
+endif
+
+goto menu
+
+@search
+*forecolor white
+*say 0 Search the archives for older exploits
+*skipline
+*forecolor grey
+input choice Enter software name
+
+if choice = fuzzymail
+goto part1
+elseif choice = xnull
+goto part2
+elseif choice = xftp
+goto xftp
+elseif choice = gunner
+goto gunner
+elseif choice = jazzyweb
+goto jazzy
+else
+goto searcherror
+endif
+
+@searcherror
+*skipline
+*forecolor orange
+*say 0 Search Error [can not find %choice%]
+*skipline
+goto menu
+
+@xftp
+*forecolor white
+*say XFTP Buffer Overflow
+*say 0 There is a critial buffer overflow vulnerability in all v1.x versions.
+*say 0 The bof is found in the login module, when the bof is run the user is taken
+*say 0 to the command prompt with whatever user started the program privileges.
+*skipline
+*say 0 The buffer size is only 36 and anything above that will cause the buffer to overflow.
+*say 0 This can happen to with both the username and password.
+*say 0 This is a critical vulnerability that needs to be patched right away.
+*say 0 Fix: apply patch to fix
+*pause
+goto menu
+
+@gunner
+*forecolor white
+*say 0 Gunner Telnet - runmodule vulnerability
+*say 0 It is possible to run modules that a user has not got permission to.
+*say 0 The problem lies in the RUN command, if the user enters...
+*say 0 input> runmodule <module name>
+*say 0 That module will be run no matter what permissions the user has.
+*skipline
+*say 0 Example...
+*say 0 input> runmodule uploadandrun()
+*say 0 This would allow the user to upload a file and then run it automaticlly.
+*say 0 Fix: Apply patch immediately
+*pause
+goto menu
+
+@jazzy
+*forecolor white
+*say 0 JazzyWeb Header Redirection
+*say 0 It is possible to redirect a browser by entering
+*say 0 header::location::<server>
+*say 0 (Where <server> is the destination) as a menu option.
+*say 0 Fix: Apply patch NOW
+*pause
+goto menu
+
+@endf
+*forecolor orange
+*Say 1 Connection Terminated
+*color %getcolor%
+*bgcolor %getbgcolor%
+free choice
+
+

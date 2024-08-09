@@ -1,0 +1,4 @@
+name%regdomainz.net
+port%80#http_regdomainz
+path%1
+portend

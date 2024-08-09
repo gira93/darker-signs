@@ -1,0 +1,100 @@
+///ZRIO FILE TRANSFER
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+var xvar
+var filen
+@startt
+*forecolor green
+*Say 1 Connected to ZRIO File Transfer
+*forecolor white
+input xvar Would you like to upload a file to our server? (y/n)
+
+strmid xvar 1 1
+if %xvar% = y
+*SAY Enter Complete File Name as it exists
+input xvar on your computer (Eg: myfile.file)
+goto zxcc
+pause
+else
+*say No File(s) Uploaded
+endif
+goto end
+
+@zxcc
+exists %xvar%
+var zz
+! zz = exists
+if %exists% = True
+*SAY 60 Uploading ..................................
+*SAY 2 Upload Complete
+goto zzzz
+else
+*SAY Specified file was not found...
+*SAY Please check the file path and spelling, and try again.
+endif
+
+goto end
+
+@zzzz
+var ggg
+! ggg = akuhsmkahksahl
+filedata %xvar%
+*SAY We will check through the file and email you our response.
+instr filedata ggg
+
+if %xvar% = 8m.enc
+goto hhh
+else
+goto hhhtwo
+endif
+
+@hhh
+if instr = 0
+sm  zrio what? We got the file you sent us. One problem... it was the wrong file.:This is serious! Go to biolabs.com and get the 8m.enc file...:the upload it to our server at zrio.org ... There isn't much time.
+goto end
+else
+sm  zrio 8m.enc Thanks for the file, it's good to have you on our side.:Unfortunately, there's still a bit of a problem.:You see, the file you got for us is highly encrypted.:Are you able to decrypt it? :.:Perhaps you could try using the tools at decrypt.com...:When asked who to send it to, type in ZRIO.:.:Hope to hear from you again.
+goto end
+endif
+
+@hhhtwo
+if %xvar% = cryptsetup.exe
+sm zrio cryptsetup.exe Excellent work in getting the decryption software for us.:We have decrypted the hard drive.:There is one file we thought you should know about and have hosted it at ZRIO.org port 45.:Username zrio:Password geno38
+goto end
+endif
+
+if %xvar% = fireteambuild4.exe
+sm  zrio fireteambuild4.exe We really appreciate what you have done for us.:This firewall will protect us in the near future when it comes to hackers
+sm  zrio List We have gained new edvidence of the where about of a very important list of names.:We MUST get a copy of this list, we only know what the list is contained on eighier once of the following servers:.:camp.joana.whitehouse.gov:193.campus.boston.edu:or:ftp.fishy.org:.:We really need this list, work fast
+goto end
+endif
+
+if %xvar% = genoprt27.lst
+sm  zrio Congratulations You did it, you got the list for us and have helped the world.:We plan to globally publish everything you have sent.:It is everyone's right to know what goes on 'behind the scenes'.:Your help has been invaluable.:Without you we would have never been able to gain the information we have now.:Thank you, and good luck!
+goto end
+endif
+
+
+@error
+sm  zrio %xvar% This is not the file we wanted.:Please get serious there is not much time left
+
+@end
+fcolor blue
+*Say 1 Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+

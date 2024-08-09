@@ -1,0 +1,112 @@
+cancel true
+getcolor
+getbgcolor
+var connected
+var dosed
+!connected = false
+@welcome
+*forecolor green
+*say 0 Welcome to the client side application for DoSer v3.1
+var mminput
+@mm
+*skipline
+*forecolor blue
+*say 0 Main Menu
+*say 0 <-------------------------->
+*say 0 1 - Connect to servers
+*say 0 2 - Start DoS
+*say 0 3 - Exit
+input mminput <-------------------------->
+if mminput = 1
+goto connect
+elseif mminput = 2
+goto start
+elseif mminput = 3
+goto end
+else
+goto mm
+endif
+@connect
+*forecolor green
+*skipline
+*skipline
+*say 0 Getting server list
+*skipline
+*say 0 Recieving idents
+*skipline
+*say 0 Conecting to all infected servers
+*say 100 ..............................
+*say 0 Connected
+!connected = true
+*pause
+goto mm
+@start
+if connected = true
+goto cont
+else
+*forecolor orange
+*say 0 Not connected to servers
+goto mm
+endif
+@cont
+if dosbw = 9
+goto starter
+else
+*forecolor orange
+*say 0 Not enough bandwidth to effectively DoS any server
+*say 0 Infect afew more servers then try again
+goto mm
+endif
+@starter
+*skipline
+*forecolor white
+input mminput Please enter the server name
+if mminput = fbi.gov
+goto port
+else
+*forecolor orange
+*say 0 Can not find server [%mminput%]
+goto mm
+endif
+@port
+*forecolor white
+input mminput Please enter the server port
+if mminput = 25
+goto cont2
+else
+*forecolor orange
+*say 0 Can not connect [FBI.gov : %mminput%]
+goto mm
+endif
+@cont2
+!dosed = true
+*forecolor purple
+*skipline
+*say 0 Sending request to servers
+*wait 1000
+*skipline
+*say 0 Sending DoS commands
+*wait 1000
+*skipline
+*say 0 DoSing server
+*say 250 ....................................................
+*skipline
+*say 0 DoS successfull, FBI.gov:25 wont be taking any connections for awhile
+*pause
+goto mm
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free mminput
+free getcolor
+free getbgcolor
+free connected
+
+
+
+
+
+
+

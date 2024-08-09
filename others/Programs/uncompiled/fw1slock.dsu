@@ -1,0 +1,103 @@
+CONNECTEDIP
+GETCOLOR
+var number1
+var number2
+var number3
+var total
+if connectedip=46.23.37.2
+goto nextbit
+endif
+*color Red
+*say 0 You do not have permission to access this port
+goto end
+@nextbit
+*color orange
+*say 20 Safe Lock V1.0
+input number1 Please enter first code number
+input number2 Please enter second code number
+input number3 Please enter third code number
+if number1>10
+*say 20 First code number is invalid
+goto end
+endif
+if number2>10
+*say 20 Second code number is invalid
+goto end
+endif
+if number3>10
+*say 20 Third code number is invalid
+goto end
+endif
+!total=number1*number2*number3
+if total=189
+*say 20 Connecting to firewall2
+goto correctcode
+endif
+*say 20 Incorrect code
+goto end
+
+@correctcode
+input total Please enter which port to connect to or enter port 0 to disconnect
+if total=150
+goto slock2
+endif
+if total=0
+*say 20 Disconnecting....
+goto end
+endif
+*say 20 Port does not exist
+goto correctcode
+
+@slock2
+*say Connecting to port 150
+*color 000000
+*say BLAH
+*color orange
+*say Safe Lock V1.25
+input number1 Please enter first code number
+input number2 Please enter second code number
+input number3 Please enter third code number
+if number1>10
+*say 20 First code number is invalid
+goto end
+endif
+if number2>10
+*say 20 Second code number is invalid
+goto end
+endif
+if number3>10
+*say 20 Third code number is invalid
+goto end
+endif
+if number2=0
+goto matherror
+endif
+if number3=0
+goto matherror
+endif
+*say Incorrect code
+goto end
+
+@matherror
+*color red
+*say 0 Maths Error
+*say 0 Exiting......
+pause
+clear
+*color white
+*say 0 Login:
+*color 000000
+*say 0 BLAH
+*say 0 BLAH
+*color white
+*say 0 Congratulations agent, you level code is : frenchoxford2
+
+@end
+free number1
+free number2
+free number3
+*color %getcolor%
+
+
+
+

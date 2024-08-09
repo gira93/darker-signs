@@ -1,0 +1,84 @@
+CLS
+VAR counter1
+VAR counter2
+VAR counter3
+VAR divisors
+VAR value
+VAR number
+VAR period
+VAR fcall
+VAR prime
+VAR tmp
+! period = .
+
+INPUT number Enter the number you wish to go up to:
+GETTIME
+
+! divisors = 0
+! counter1 = 2
+! counter2 = 1
+! counter3 = 1
+
+@LOOP
+!prime=Searching
+PRINT Primes Found: %counter3%.   %prime%: %counter1% [>%counter2%<]
+IF counter1=number
+GOTO EOF
+ENDIF
+!value=counter1/counter2
+FREE instr
+INSTR value period
+IF instr=0
+! divisors=divisors+1
+ENDIF
+IF divisors>1
+GOTO PRIME
+ENDIF
+! tmp = counter1/2
+IF tmp<counter2
+GOTO PRIME
+ENDIF
+! counter2=counter2+1
+GOTO LOOP
+
+@PRIME
+//SAY 0 Divisors: %divisors%
+//SKIPLINE
+IF divisors = 0
+! prime = Found
+! counter3 = counter3 + 1
+PRINT %prime%: %counter1%
+//SAY 0 %counter1% is a prime with %divisors% Divisors.
+SKIPLINE
+ENDIF
+! divisors = 0
+! counter1 = counter1 + 1
+! counter2 = 2
+GOTO LOOP
+
+@INSTR_TEST
+FREE instr
+INSTR value period
+//SAY 0 Value: %value% Instr: %instr%
+IF instr = 0
+! divisors = divisors + 1
+GOTO PRIME
+ENDIF
+GOTO %fcall%
+
+@EOF
+VAR gt
+! gt = gettime
+GETTIME
+SAY 0 Started at: %gt%, Finished at %gettime%.
+FREE gettime
+FREE counter1
+FREE counter2
+FREE divisors
+FREE value
+FREE number
+FREE period
+FREE fcall
+FREE prime
+
+

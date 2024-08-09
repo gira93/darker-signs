@@ -1,0 +1,127 @@
+//don't look at this file!!!! that's cheating!!!!!!!!!!!!!!!! :P
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+
+*fcolor orange
+*Say Error: Corrupt Network Data
+*fcolor white
+*Say 1 ....................................
+*Say 1 ....................
+*Say 1 ....................................................
+*Say 1 ....................
+*Say 1 ....................
+*Say 1 ....................................................................
+*Say 1 ....................................................
+*Say 1 .....................................................................................
+*Say 1 .................................................................................
+*Say 1 .................................................
+*Say 1 .........................................................................................
+*Say 1 .....................................................................................
+*Say 1 .................................
+*Say 1 ............................................................................
+//
+*fcolor yellow
+*Say WSOMISLMSSHLISHSIHAMISSHSASA
+*fcolor orange
+*Say SDJSHLMDIAHIAHSGHASSSDUOSSDU
+*fcolor red
+*Say JSDHKSMHKWMHWHGJWGMJGJWHGNK
+*fcolor blue
+*Say JHWQGJKQFT________FFZBJSTNFHYJSFNJSTNSG
+*fcolor orange
+*Say AKYGKGNKSYGNDSYGNHJSGNHJGHGS
+*fcolor blue
+*Say JKNSSHAREDON66.1.24.JAISJHSNJHSJ
+*fcolor green
+*Say HJGSKJMGDGSKYGSJDGSJHGJHGJHSS
+*fcolor blue
+*Say JSHDKJSGDJSHGDJKSGJDGSJ__________________________HGKJSS
+*fcolor red
+*Say SJKD____HKSHDJHGNGVZVJVDGHSVHGSS
+*fcolor orange
+*Say SHDKSDHBJKHAGHNSHGAVNSGHAVJH
+*fcolor yellow
+*Say SLHKSDGJVFJHGVNDGVDNHJSGJHGH
+*fcolor white
+*Say QUGSIYUGNUYMGXKZNGZUYGNUYGZ
+//
+pause
+*Say 1 .................................................
+*Say 1 .........................................................................................
+*Say 1 .....................................................................................
+*Say 1 .................................
+*Say 1 ....................................
+*Say 1 ....................
+*Say 1 ....................................................
+*Say 1 ....................
+*Say 1 ....................
+*Say 1 ....................................................................
+*Say 1 ....................................................
+*Say 1 .....................................................................................
+*Say 1 .................................................................................
+//
+*fcolor yellow
+*Say ASKHAAJSAIMZONOZHOIZHUSWGAAH
+*fcolor orange
+*Say SJDSHGJUTANMGUAGNSFAFNSJDGJSJ
+*fcolor red
+*Say SHD_____KSDHBJKHAG_________________________________HNSHGAVNSGHAVJH
+*fcolor blue
+*Say SLHKSDGJVFJHGVNDGVDNHJSGJHGH
+*fcolor orange
+*Say QUGSIYUGNUYMGXKZNGZUYGNUYGZ
+*fcolor green
+*Say SJDSHGJUTANMGUAGNSFAFNSJDGJSJ
+*fcolor blue
+*Say SHDKSDHBJKHAG____HNSHGAVNSGHAVJH
+*fcolor red
+*Say SLHKSDGJVFJHGVNDGVDNHJSGJHGH
+*fcolor orange
+*Say QUGSIYUGNUYMGXKZNGZUYGNUYGZ
+*fcolor yellow
+*Say SJDSHGJUTAN________________MGUAGNSFAFNSJDGJSJ
+*fcolor white
+*Say SHDKSDHBJKHAGHNSHGAVNSGHAVJH
+*fcolor yellow
+*Say SLHK____SDGJVFJHGVNDGVDNHJSGJHGH
+*fcolor blue
+*Say QUGSIYUGNUYMGXKZNGZUYGNUYGZ
+*fcolor white
+//
+
+@end
+free passw
+fcolor blue
+*say Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

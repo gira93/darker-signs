@@ -1,0 +1,354 @@
+cancel true
+getcolor
+getbgcolor
+var dosbw
+var mminput
+var uploaded
+
+@welcome
+*forecolor red
+*say Welcome to CodeRed.com where the hosting is so cheap its at CodeRed alert
+@mm
+*skipline
+*forecolor green
+*say 0 -= 1 =- How Cheap?
+*say 0 -= 2 =- Sign up
+*say 0 -= 3 =- Exit
+input mminput 1 - 3
+
+if mminput = 1
+goto how
+elseif mminput = 2
+goto sign
+elseif mminput = 3
+goto end
+elseif mminput = header::location::crashme.com
+goto crash
+else
+goto mm
+endif
+
+@how
+*forecolor red
+*say 0 How cheap is hosting at CodeRed.com?
+*skipline
+*forecolor green
+*say 0 Rates are as fallows:
+*say 0 Monthly, £2.99, 500MB, 1GB bandwidth(each month)
+*say 0 Yearly, £9.99, 2GB, 5GB bandwidth(each month)
+*pause
+goto mm
+
+@sign
+*skipline
+*forecolor green
+*say 0 To sign up for hosting at CodeRed.com send an email to sales@codered.com and we'll send you the money details
+*pause
+goto mm
+
+@crash
+*skipline
+*forecolor orange
+*say 0 Redirecting
+*say 100 .....................
+*skipline
+*say 0 Connected
+*skipline
+*forecolor orange
+*say 0 System Command Error [syn/ack]
+*say 0 System Command Error [syn/ack]
+*say 0 System Command Error [syn/ack]
+*say 0 System Command Error [syn/ack]
+*say 0 System Command Error [syn/ack]
+*say 0 System Command Error [syn/ack]
+*skipline
+*say 0 Fatal Error in [JazzyWeb.exe]
+*say 0 Return to command prompt Y/N
+*getkey
+if getkey = 89
+free getkey
+goto wprompt
+else
+free getkey
+goto welcome
+endif
+
+@wprompt
+var pinput
+var current
+!current = root
+
+@prompt
+*forecolor white
+input pinput %jjdlksjadh%
+
+if pinput = cwd
+goto cwd
+endif
+
+@acommands
+if pinput = help
+goto help
+elseif pinput = ls
+goto lsa
+elseif pinput = cd ..
+goto cd..
+elseif pinput = cd..
+goto cd..
+elseif pinput = cd /
+goto cd_root
+elseif pinput = cd home
+goto cd_home
+elseif pinput = version
+goto version
+elseif pinput = login
+goto login
+elseif pinput = run
+goto run
+elseif pinput = put
+goto put
+elseif pinput = cd admin
+goto cd_admin
+elseif pinput = cd ~
+goto cd_~
+elseif pinput = exit
+goto end
+elseif pinput = users
+goto users
+else
+goto error
+endif
+
+@users
+*skipline
+*forecolor white
+*say 0 Current user: admin
+goto prompt
+
+@version
+*skipline
+*forecolor blue
+*say 0 Goldie OS v6.0
+*say 0 Build v5.763213
+goto prompt
+
+@cwd
+if current = root
+*forecolor orange
+*say 0 Current Directory /
+elseif current = home
+*forecolor orange
+*say 0 Current Directory /home/
+elseif current = admin
+*forecolor orange
+*say 0 Current Directory /home/admin/
+endif
+goto prompt
+
+@lsa
+if uploaded = true
+goto .
+endif
+if current = root
+*forecolor blue
+*say 0 [home]
+*forecolor white
+*say 0 NO FILES
+goto prompt
+elseif current = home
+*forecolor blue
+*say 0 [admin]
+*forecolor white
+*say 0 NO FILES
+goto prompt
+elseif current = admin
+*forecolor white
+*say 0 NO FILES
+goto prompt
+else
+goto error
+endif
+@.
+if current = root
+*forecolor blue
+*say 0 [home]
+*forecolor white
+*say 0 NO FILES
+goto prompt
+elseif current = home
+*forecolor blue
+*say 0 [admin]
+*forecolor white
+*say 0 NO FILES
+goto prompt
+elseif current = admin
+*forecolor white
+*say 0 REMOTEAPP
+goto prompt
+else
+goto error
+endif
+
+@cd..
+if current = root
+*forecolor orange
+*say 0 Current Directory /
+goto prompt
+elseif current = home
+!current = root
+*forecolor orange
+*say 0 Current Directory /
+goto prompt
+elseif current = admin
+!current = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto prompt
+else
+goto error
+endif
+
+@cd_root
+!current = root
+*forecolor orange
+*say 0 Current Directory /
+goto prompt
+endif
+
+@cd_home
+if current = root
+!current = home
+*forecolor orange
+*say 0 Current Directory /home/
+goto prompt
+else
+goto error
+endif
+
+@cd_admin
+if current = home
+!current = admin
+*forecolor orange
+*say 0 Current Directory /home/admin/
+goto prompt
+else
+goto error
+endif
+
+@cd_~
+!current = admin
+*forecolor orange
+*say 0 Current Directory /home/admin/
+goto prompt
+
+@run
+*skipline
+*forecolor white
+input pinput Enter the file you wish to run
+if uploaded = true
+goto ..
+endif
+*forecolor orange
+*say 0 File Error [can not find %pinput%]
+goto prompt
+@..
+if pinput = remoteapp
+*forecolor red
+!dosbw = dosbw + 1
+*say 100 INFECTED
+goto end
+endif
+
+@put
+*forecolor white
+input pinput Enter the file you wish to upload
+exists %pinput%
+if exists = false
+*forecolor orange
+*say 0 File Error [can not find %pinput%]
+endif
+if pinput = remoteapp
+!uploaded = true
+*forecolor blue
+*say 100 .........................................................
+*say 0 File Uploaded
+goto prompt
+else
+*forecolor orange
+*say 0 File Error [can not find %pinput%]
+endif
+
+@error
+*forecolor orange
+*say 0 System Command Error [%pinput%]
+goto prompt
+
+@help
+*skipline
+*forecolor blue
+*say 0 CD - usage: cd <folder>
+*forecolor white
+*say 0 Change current directory to <folder>. Use cd.. to goto the folder below current.
+*say 0 Use cd ~ to goto current users home directory
+*skipline
+*forecolor blue
+*say 0 CWD - usage: cwd
+*forecolor white
+*say 0 Displays the current directory
+*skipline
+*forecolor blue
+*say 0 EXIT - usage: exit
+*forecolor white
+*say 0 Discconects from host
+*skipline
+*forecolor blue
+*say 0 HELP - usage: help
+*forecolor white
+*say 0 Displays this help screen
+*skipline
+*forecolor blue
+*say 0 LS - usage: ls
+*forecolor white
+*say 0 Lists all files and folders in current directory
+*skipline
+*forecolor blue
+*say 0 PASSWD - usage: passwd
+*forecolor white
+*say 0 Displays the current users password
+*skipline
+*forecolor blue
+*say 0 PUT - usage: put
+*forecolor white
+*say 0 Upload a file to the current directory
+*skipline
+*forecolor blue
+*say 0 RUN - usage: run
+*forecolor white
+*say 0 Run a file from the current directory
+*skipline
+*forecolor blue
+*say 0 USERS - usage: users
+*forecolor white
+*say 0 Displays the current user that you are loged in as
+*skipline
+*forecolor blue
+*say 0 VERSION - usage: version
+*forecolor white
+*say 0 Displays the current OS version
+*pause
+goto prompt
+
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free getbgcolor
+free getcolor
+free pinput
+free mminput
+free uploaded
+
+
+
+

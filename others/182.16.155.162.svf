@@ -1,0 +1,5 @@
+name%internalservices.org
+port%80#internal_http
+port%109#internal_proxy
+path%123456
+portend

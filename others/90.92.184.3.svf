@@ -1,0 +1,4 @@
+name%regadmin.net
+port%80#http_regadmin
+path%1
+portend

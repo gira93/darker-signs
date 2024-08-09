@@ -1,0 +1,314 @@
+//Front end
+
+//graphical initialization
+getcolor
+getbgcolor
+var front
+var back
+var ret
+!front = 06220700
+//!front=579900
+!back=222222
+color %front%
+bgcolor %back%
+var menuinput
+cldo presults.txt
+
+//variable init
+
+
+@menu
+!ret=menu
+//Menu Draw
+clear
+color %front%
+*say Berkeley University of California, Physics Department
+*say Welcome to the NEWTON User Interface
+skipline
+color white
+*say       |--------------------------|
+color %front%
+*say       : (L)ogin Student
+*say       : (A)bout Newton
+*say       : (D)isconnect
+color white
+*say       |--------------------------|
+skipline
+//Menu Input
+input menuinput Select option from menu:
+lcase %menuinput%
+if lcase=d
+goto disconnect
+endif
+if lcase=l
+goto studentlogin
+endif
+if lcase=a
+goto about
+endif
+goto incorrectinput
+
+@about
+clear
+color white
+say About NEWTON
+say ---------------------------------------
+say NEWTON is the Physics department brand new Supercomputer. 
+say NEWTON uses a cluster of some 100 high-end processors, has
+say gigantic storage capabilities and very fast memory banks.
+say Most of Newton's technology is brand new and not yet commercially available, 
+say and thus Newton also serves as a brute testing platform. Students
+say of the Physics department can log in to NEWTON, and use their available
+say credits to use NEWTON's computing power for school tasks or big projects.
+say Students are granted a limited amount of credits by authorization
+say of staff members.
+getkey
+goto menu
+
+@studentlogin
+var login
+var pass
+color orange
+input login Login:
+input pass Password:
+
+color white
+
+lcase login
+if lcase=043946
+goto passcheck
+end if
+goto wrong
+
+@passcheck
+lcase pass
+if lcase=a3fl5
+goto newtonCheck
+endif
+goto wrong
+
+@newtonCheck
+if accstring=ENABLED
+goto newtonCheck2
+endif
+say Your account has been disabled.
+skipline
+getkey
+goto menu
+
+@newtonCheck2
+if department=physics
+goto newtonCheck3
+endif
+say You are not part of the Physics department.
+skipline
+getkey
+goto menu
+
+@newtonCheck3
+if cred>0
+goto newtonmain
+endif
+say You don't have any credits left.
+skipline
+getkey
+goto menu
+
+@newtonmain
+!ret=newtonmain
+clear
+color %front%
+*say Berkeley University of California, Physics Department
+*say Welcome to the NEWTON User Interface.
+skipline
+color white
+*say       |-----------------------------------------|
+color %front%
+*say       : (E)nter calculation mode
+*say       : (S)ave project result file
+*say       : (U)pdates and notices
+*say       : (B)ack to main menu
+color white
+*say       |-----------------------------------------|
+skipline
+//Menu Input
+var menuinput
+input menuinput Select option from menu:
+lcase menuinput
+if lcase=b
+goto menu
+endif
+if lcase=u
+goto updates
+endif
+if lcase=e
+goto enter
+endif
+if lcase=r
+goto newtonmain
+endif
+if lcase=s
+goto save
+endif
+goto incorrectinput
+
+@save
+clear
+color %front%
+*say Berkeley University of California, Physics Department
+*say Welcome to the NEWTON User Interface.
+skipline
+color white
+say File saved as presults.txt!
+skipline
+getkey
+goto newtonmain
+
+@updates
+clear
+color %front%
+*say Berkeley University of California, Physics Department
+*say Welcome to the NEWTON User Interface.
+skipline
+color white
+say RECENT UPDATES/NOTICES:
+skipline
+color white
+say To leave the calculation console enter a q
+skipline
+color orange
+say WARNING: while most mathematical codes are accepted, using 
+say the ( sign causes an error in NEWTON at the moment, and it 
+say will interpret the following information as a server command. 
+say Abusing this problem will result in immediate expulsion!
+say To solve this problem, use [ and ] for encapsulation
+skipline
+getkey
+goto newtonmain
+
+@enter
+free command
+!ret=newtonmain
+var paren
+!paren=(
+var menuinput
+var command
+
+var start
+var length
+
+clear
+color %front%
+*say Berkeley University of California, Physics Department
+*say Welcome to the NEWTON User Interface.
+skipline
+color white
+//Menu Input
+var menuinput
+say Credits remaining: %cred%
+input menuinput Enter calculation:
+strlen menuinput
+
+instr menuinput paren
+if instr>0
+! start=instr+1
+! length=strlen-instr
+strmid %menuinput% %start% %length%
+! command = %strmid%
+goto parse
+endif
+
+if menuinput=q
+goto newtonmain
+endif
+
+say Syntax error. Consult your NEWTON Manual for correct syntax.
+wait 2000
+free command
+goto enter
+
+@parse
+if command=ls
+goto ls
+endif
+
+if command=cat
+goto cat
+endif
+
+if command=commands
+goto help
+endif
+
+if command=help
+goto help
+endif
+
+write presults.txt [NEWTON]: Command unknown or access level insufficient.
+wait 2000
+goto enter
+
+
+@ls
+write presults.txt Current Folder:
+write presults.txt /admin
+write presults.txt Files in folder:
+write presults.txt passwds.dec
+getkey
+free command
+goto enter
+
+@help
+write presults.txt [NEWTON]: Available commands for your user level: HELP COMMANDS LS CAT
+getkey
+goto enter
+
+@cat
+write presults.txt [NEWTON]: Which file would you like to view?
+var inpt
+input inpt :
+lcase inpt
+if lcase=passwds.dec
+goto catpasswds
+endif
+write presults.txt [NEWTON]: File not found or access level insufficient.
+wait 2000
+goto enter
+
+@catpasswds
+write presults.txt root:al2m3n8P
+write presults.txt student:nm92r4bp
+write presults.txt staff:nx5j2643
+write presults.txt admin password is not stored here
+write presults.txt maintenance password is not stored here
+getkey
+goto enter
+
+@wrong
+color white
+say 10 Incorrect login or password! Please try again...
+wait 1000
+goto menu
+
+@incorrectinput
+color white
+say 20 Incorrect input!
+wait 500
+color %front%
+goto %ret%
+
+@disconnect
+color white
+skipline
+say 50 Connection Closed...
+wait 600
+goto end
+
+@end
+//graphical reset
+color white
+bgcolor black
+clear
+//variable freeing
+
+

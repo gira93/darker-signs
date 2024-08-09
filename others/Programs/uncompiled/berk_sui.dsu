@@ -1,0 +1,812 @@
+//Front end: port 81!!
+// port 80 public website unavailable
+
+//graphical initialization
+getcolor
+getbgcolor
+var front
+var back
+var maxcred
+!maxcred=100
+
+
+!front = 06220700
+//!front=579900
+!back=222222
+bgcolor %back%
+
+//variable init
+var login
+var pass
+
+varexists department
+if varexists=False
+var department
+!department=mathematics
+endif
+
+varexists enable
+if varexists=False
+var enable
+!enable=0
+endif
+
+varexists accstring
+if varexists=False
+var accstring
+!accstring=DISABLED
+endif
+
+varexists cred
+if varexists=False
+var cred
+!cred=0
+endif
+
+//Standard login screen
+@startup
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Students please log in with your supplied student ID's and passwords.
+say Staffmembers please log in with your e-mail address.
+skipline
+color orange
+say Staffmembers also please note new password regulations:
+say First part of your password must be 5 lowercase alphabetical.
+say Second part must be 6 numbers. 
+say Update your passwords as soon as possible!
+skipline
+color white
+input login Login:
+input pass Password:
+
+@logincheck
+lcase login
+if lcase=043946
+goto passcheckstud
+endif
+if lcase=jdavids@physics.berkeley.edu
+goto passcheckstaf
+endif
+
+goto wrong
+
+@passcheckstud
+lcase pass
+if lcase=a3fl5
+goto student
+endif
+goto wrong
+@passcheckstaf
+lcase pass
+if lcase=quark101556
+goto staff
+endif
+goto wrong
+
+@wrong
+color white
+say 10 Incorrect login or password! Please try again...
+skipline
+getkey
+goto startup
+
+@sAssign
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Student Menu:
+say ------------------------
+skipline
+say Assignments for the %department% Department:
+skipline
+if department=mathematics
+color %front%
+say - 1 - By Prof. Richards: Please note, all people currently late with their March task receive
+say --- an automatically lower grade!
+color white
+skipline
+getkey
+endif
+if department=physics
+say No assignments
+skipline
+getkey
+endif
+goto studentmain
+
+@sBoard
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Student Menu:
+say ------------------------
+skipline
+say Message board for the %department% Department:
+skipline
+if department=mathematics
+color %front%
+say No messages
+color white
+skipline
+getkey
+endif
+if department=physics
+say - 1 - Our new supercomputer is up and running!
+say ----- Connect to newton.physics.berkeley.edu !
+skipline
+getkey
+endif
+goto studentmain
+
+@sTest
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Student Menu:
+say ------------------------
+skipline
+color %front%
+say You are no longer a student here.
+color white
+skipline
+getkey
+goto studentmain
+
+@student
+color %front%
+say 20 Welcome back Nguyen.
+wait 500
+say 20 You are a student in the %department% Department.
+wait 1000
+goto studentmain
+
+@studentmain
+var studentmenu
+!ret = studentmain
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Student Menu:
+say ------------------------
+skipline
+color %front%
+say (A)ssignments (view)
+say (M)essageboard (view)
+say (T)est results (view)
+say (S)taff contact information (view)
+say (D)isconnect
+color white
+skipline
+input studentmenu Select option from menu:
+color %front%
+lcase studentmenu
+if lcase=a
+goto sAssign
+endif
+if lcase=m
+goto sBoard
+endif
+if lcase=t
+goto sTest
+endif
+if lcase=s
+goto staffpage
+endif
+if lcase=d
+goto disconnect
+endif
+goto incorrectinput
+
+@incorrectinput
+color white
+say 20 Incorrect input!
+wait 500
+color %front%
+goto %ret%
+
+@staff
+color %front%
+say 20 Welcome back John.
+wait 500
+say 20 You are a staffmember in the Physics Department.
+wait 1000
+goto staffmain
+
+@Sttest
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Staff Menu:
+say ------------------------
+skipline
+color %front%
+say Error in testresults.module. Please contact system administrator.
+skipline
+getkey
+goto staffmain
+
+@staffmain
+var staffmenu
+!ret = staffmain
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Staff Menu:
+say ------------------------
+skipline
+color %front%
+say St(u)dent Database (view/edit/add)
+say (A)ssignments (view/edit/add)
+say (M)essageboard (view/edit/add)
+say (T)est results (view/edit/add)
+say (S)taff contact information (view/edit/add)
+say (N)EWTON Credits Management
+say (D)isconnect
+color white
+skipline
+input staffmenu Select option from menu:
+color %front%
+lcase staffmenu
+if lcase=u
+goto database
+endif
+if lcase=a
+goto stAssign
+endif
+if lcase=m
+goto stBoard
+endif
+if lcase=t
+goto stTest
+endif
+if lcase=s
+goto staffpage2
+endif
+if lcase=d
+goto disconnect
+endif
+if lcase=n
+goto newton
+endif
+
+goto incorrectinput
+
+@stAssign
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Staff Menu:
+say ------------------------
+skipline
+say Assignments for the Physics Department:
+skipline
+color %front%
+say No assignments
+skipline
+color white
+say Assignment and messageboard modules are under maintenance. Editing/adding disabled.
+skipline
+getkey
+goto staffmain
+
+@stBoard
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Staff Menu:
+say ------------------------
+skipline
+say Message board for the Physics Department:
+skipline
+color %front%
+say - 1 - Our new supercomputer is up and running! Connect to newton.physics.berkeley.edu !
+skipline
+color white
+say Assignment and messageboard modules are under maintenance. Editing/adding disabled.
+skipline
+getkey
+goto staffmain
+
+@staffpage
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Name: Susan Metzinger
+color orange
+say ------------------------------------------------
+color white
+say Position: Head of Physics Department
+say E-mail address: smetzinger@physics.berkeley.edu
+say Personal webpage: none
+skipline
+say Name: Tim Waltman
+color orange
+say ------------------------------------------------
+color white
+say Position: Professor of Atomic, Molecular and Optical Physics
+say E-mail address: twaltman@physics.berkeley.edu
+say Personal webpage: none
+skipline
+say Name: Edward Thistle
+color orange
+say ------------------------------------------------
+color white
+say Position: Professor of Nonlinear Dynamics and Plasma Physics
+say E-mail address: ethistle@physics.berkeley.edu
+say Personal webpage: none
+skipline
+say Name: John Davids
+color orange
+say ------------------------------------------------
+color white
+say Position: Professor of Theoretical Physics
+say E-mail address: jdavids@physics.berkeley.edu
+say Personal webpage: jdavids.physics.berkeley.edu
+skipline
+say Name: Roberta Sparrow
+color orange
+say ------------------------------------------------
+color white
+say Position: Professor of Quantum Physics
+say E-mail address: rsparrow@physics.berkeley.edu
+say Personal webpage: none
+skipline
+getkey Press any key to contine...
+goto studentmain
+
+@staffpage2
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Name: Susan Metzinger
+color orange
+say ------------------------------------------------
+color white
+say Position: Head of Physics Department
+say E-mail address: smetzinger@physics.berkeley.edu
+say Personal webpage: none
+skipline
+say Name: Tim Waltman
+color orange
+say ------------------------------------------------
+color white
+say Position: Professor of Atomic, Molecular and Optical Physics
+say E-mail address: twaltman@physics.berkeley.edu
+say Personal webpage: none
+skipline
+say Name: Edward Thistle
+color orange
+say ------------------------------------------------
+color white
+say Position: Professor of Nonlinear Dynamics and Plasma Physics
+say E-mail address: ethistle@physics.berkeley.edu
+say Personal webpage: none
+skipline
+say Name: John Davids
+color orange
+say ------------------------------------------------
+color white
+say Position: Professor of Theoretical Physics
+say E-mail address: jdavids@physics.berkeley.edu
+say Personal webpage: jdavids.physics.berkeley.edu
+skipline
+say Name: Roberta Sparrow
+color orange
+say ------------------------------------------------
+color white
+say Position: Professor of Quantum Physics
+say E-mail address: rsparrow@physics.berkeley.edu
+say Personal webpage: none
+skipline
+getkey Press any key to contine...
+goto staffmain
+
+@database
+clear
+color %front%
+
+var idinput
+var naminput
+
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Student Database
+say -----------------------------
+skipline
+color orange
+input idinput Student ID number:
+input naminput Student Name:
+
+lcase idinput
+if lcase=043946
+goto dat2
+endif
+goto mismatch
+
+@mismatch
+color white
+say 10 Incorrent student ID or mismatching name...
+skipline
+getkey
+goto staffmain
+
+@dat2
+lcase naminput
+if lcase=nguyen haong
+goto dat3
+endif
+goto mismatch
+
+
+@dat3
+!ret=dat3
+var dat3inp
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Student Database
+say -----------------------------
+skipline
+say Student: Nguyen Haong (student id 043946)
+skipline
+color %front%
+say (E)dit Account Status
+say (C)hange Department
+say Edit (s)tudent information
+say (B)ack to staff menu
+color white
+skipline
+input dat3inp Select option from menu:
+lcase dat3inp
+if lcase=e
+goto editaccount
+end if
+if lcase=c
+goto editdepart
+end if
+if lcase=s
+goto editstud
+end if
+if lcase=b
+goto staffmain
+end if
+
+goto incorrectinput
+
+@editaccount
+!ret=dat3
+var tempinput
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Student Database
+say -----------------------------
+skipline
+say Student: Nguyen Haong (student id 043946)
+skipline
+color white
+say Account Status: %accstring%
+skipline
+color %front%
+say (E)nable/Disable account
+say (D)elete account
+say (B)ack to student account
+color white
+skipline
+input tempinput Select option from menu
+lcase tempinput
+if lcase=e
+goto checkenable
+end if
+if lcase=d
+goto deleteacc
+end if
+if lcase=b
+goto dat3
+end if
+
+goto incorrectinput
+
+@checkenable
+if enable=0
+goto enableit
+endif
+if enable=1
+goto disit
+endif
+@enableit
+!enable=1
+!accstring=ENABLED
+goto updated
+@disit
+!enable=0
+!accstring=DISABLED
+goto updated
+
+@updated
+color white
+say Account has been updated!
+skipline
+getkey
+goto editaccount
+
+@updated2
+color white
+say Account has been updated!
+skipline
+getkey
+goto editdepart
+
+@editdepart
+!ret=dat3
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Student Database
+say -----------------------------
+skipline
+say Student: Nguyen Haong (student id 043946)
+skipline
+color white
+if accstring=ENABLED
+goto editdepart2
+endif
+say This account has been disabled. First enable account in order to edit Department settings.
+skipline
+getkey
+goto dat3
+
+
+@editdepart2
+var tempinput
+say Current Department: %department%
+skipline
+color %front%
+say (C)hange Department
+say (B)ack to student account
+color white
+skipline
+input tempinput Select option from menu
+lcase tempinput
+if lcase=c
+goto changeit
+end if
+if lcase=b
+goto dat3
+end if
+
+goto incorrectinput
+
+@changeit
+var changeitin
+input changeitin Select Department (eg. Physics, Mathematics, History, ...) :
+!department=changeitin
+goto updated2
+
+@deleteacc
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Student Database
+say -----------------------------
+skipline
+say Student: Nguyen Haong (student id 043946)
+skipline
+color white
+say Error deleting account. Please contact system administrator.
+skipline
+getkey
+goto editaccount
+
+@editstud
+var tempinput
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say Student Database
+say -----------------------------
+skipline
+say Student: Nguyen Haong (student id 043946)
+skipline
+color white
+say This student is no longer studying at the University. His personal information has been deleted.
+skipline
+getkey
+goto dat3
+
+@newton
+var newtin
+var newtin2
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say NEWTON Credits Management
+skipline
+color orange
+input newtin Student ID number:
+input newtin2 Student Name:
+if newtin=043946
+goto newtcheck
+endif
+goto mismatch
+
+@newtcheck
+lcase newtin2
+if lcase=nguyen haong
+goto newtcheck2
+endif
+goto mismatch
+
+@newtcheck2
+lcase department
+if lcase=physics
+goto credmen
+endif
+color white
+say This student is not part of the Physics department
+skipline
+getkey
+goto staffmain
+
+@credmen
+!ret=staffmain
+var addinp
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say NEWTON Credits Management
+skipline
+say Student: Nguyen Haong (student id 043946)
+say Current Credits: %cred%
+skipline
+color %front%
+say (A)dd credits
+say (R)emove credits
+say (B)ack to staff menu
+color white
+skipline
+input addinp Select option from menu
+lcase addinp
+if lcase=a
+goto addmenu
+endif
+if lcase=r
+goto removemenu
+endif
+if lcase=b
+goto staffmain
+endif
+goto incorrectinput
+
+@addmenu
+var addinp
+var temp
+!temp=0
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say NEWTON Credits Management
+skipline
+say Student: Nguyen Haong (student id 043946)
+say Current Credits: %cred%
+skipline
+input addinp Add how many credits?
+!temp=cred+addinp
+if temp>maxcred
+say Cannot add %addinp% credits. Maximum credits is set at %maxcred%.
+skipline
+getkey
+goto credmen
+endif
+!cred=cred+addinp
+say You have added %addinp% credits!
+skipline
+getkey
+goto credmen
+
+@removemenu
+var reminp
+var temp
+!temp=0
+clear
+color %front%
+say Berkeley University of California
+say Welcome to the University's student/staff interface.
+skipline
+color white
+say NEWTON Credits Management
+skipline
+say Student: Nguyen Haong (student id 043946)
+say Current Credits: %cred%
+skipline
+input reminp Remove how many credits?
+!temp=cred-reminp
+if temp<0
+say Cannot remove %reminp% credits. User does not have enough credits.
+skipline
+getkey
+goto credmen
+endif
+!cred=cred-reminp
+say You have removed %reminp% credits!
+skipline
+getkey
+goto credmen
+
+@disconnect
+color white
+skipline
+say 50 Connection Closed...
+wait 600
+goto end
+
+@end
+//Visuals
+color white
+bgcolor black
+//Variables
+
+clear
+
+

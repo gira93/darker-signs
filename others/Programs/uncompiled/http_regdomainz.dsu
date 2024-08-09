@@ -1,0 +1,85 @@
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+var xvar
+var filen
+@startt
+*forecolor white
+*Say 1 REGDOMAINZ.net
+*Say 1 ----------- D o m a i n ---- R e  g i s t r y -----------
+*Say 1 REGDOMAINSREGDOMAINSREGDOMAINSREGDOMAINS
+*Say 1 REGDOMAINSREGDOMAINSREGDOMAINSREGDOMAINS
+*Say 1     1 -     Registrations
+*Say 1     2 -     Maintenance
+*Say 1     3 -     Network
+*Say 1     4 -     Server Exit
+*Say 1 REGDOMAINSREGDOMAINSREGDOMAINSREGDOMAINS
+*Say 1 REGDOMAINSREGDOMAINSREGDOMAINSREGDOMAINS
+input options Enter A Number from 1 to 5
+
+if options=4
+goto end
+endif
+
+if options=1
+*fcolor blue
+*Say 0 REGDOMAINZ Domain Registration
+*fcolor white
+skipline
+*Say 0 REGDOMAINZ currently only accepts domain registrations from Australia
+*Say 0 and the surrounding area including New Zealand, Antarctica, and Fiji.
+skipline
+*Say 0 We are offering domains for a limited time price, of just $12.95 a year.
+*Say 0 Please call (03) 9752 6019.
+pause
+goto startt
+endif
+
+if options=2
+*fcolor blue
+*Say 0 REGDOMAINZ Domain Maintenance
+*fcolor white
+skipline
+*Say 0 Domain owners, to administer your domain name,
+*Say 0 you must connect to REGADMIN.net
+pause
+goto startt
+endif
+
+if options=3
+*fcolor blue
+*Say 0 REGDOMAINZ Network
+*fcolor white
+skipline
+*Say 0 REGDOMAINZ owns a large IP which can be used for Internet Services
+*Say 0 Our local range includes 90.92.106.1 - 90.92.186.255
+pause
+goto startt
+endif
+
+
+*say 0 You entered an invalid option
+pause
+goto startt
+
+@end
+
+fcolor blue
+*Say 1 Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+
+

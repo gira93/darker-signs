@@ -1,0 +1,51 @@
+//Script on specialstorage.com 80
+//Let's go
+
+cancel true
+getcolor
+getbgcolor
+
+@menu
+var user
+var pass
+*say 1 Welcome log in first
+input user Enter username:
+if user = micmast
+*say 1 Username accepted
+input pass Enter password:
+if pass = urgettingsomewhere
+*say 1 Password accepted
+*say 1 This is your public server, upload & download from your private server!!!!
+*say 1 -------------------------------------------------
+end if
+end if
+
+@end
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor Orange
+*say 1 ByeBye
+*forecolor %getcolor%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

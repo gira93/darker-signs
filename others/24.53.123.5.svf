@@ -1,0 +1,6 @@
+name%thc-hq.com
+port%100#thc-hq
+port%200#thc-hq2
+port%300#thc-hq3
+path%12345
+portend

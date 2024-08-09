@@ -1,0 +1,6 @@
+name%tck.com
+port%21#tck-ftp
+port%80#tck-http
+port%225#tck-tck
+path%12345
+portend

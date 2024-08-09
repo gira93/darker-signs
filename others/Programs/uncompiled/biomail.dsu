@@ -1,0 +1,189 @@
+//don't look at this file!!!! that's cheating!!!!!!!!!!!!!!!! :P
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+var passw
+
+*forecolor green
+*Say 1 Connected to BIOLABS Mail
+*forecolor grey
+input options Enter Username
+say 100 Checking...
+input passw Enter Password for username: %options%
+say 100 Checking...
+
+if %options%= research
+else
+*fcolor red
+*Say Error... The mail account [%options%] was not found on this server
+goto end
+endif
+
+
+if %passw%= dolphin
+else
+*fcolor red
+*Say Error... The password %passw% is invalid
+goto end
+endif
+
+*Say 1 User Logged In [research]
+@menu
+*forecolor blue
+*Say Select Mail Task
+*forecolor grey
+*Say 1 (1) Read New Mail - get extra income conditions apply .aff
+*Say 1 (2) Read New Mail - Re: Dolphin Project Update
+*Say 1 (3) Read New Mail - AD: Are YOU Paying More than you should on Insurance?
+*Say 1 (4) Disconnect
+
+input options Enter A Number Based on your Preference (1-4)
+
+if options=4
+goto end
+endif
+
+if %options%=1
+*forecolor blue
+*Say get extra income conditions apply .aff
+*forecolor white
+*Say This is your chance to open a free online business.
+*Say Just answer a few over the phone questions and you
+*Say will be on your way to success.
+skipline
+*Say Ring (012) 727 7293 when asked say you were
+*Say referred by mrspammer.
+pause
+goto menu2
+endif
+
+if options=2
+*forecolor blue
+*Say Re: Dolphin Project Update
+*forecolor white
+*Say Hi guys... oh my... you have to see this. It's incredible!
+*Say We have found the correct link frequency for
+*Say communication with the dolphins! It's way above the
+*Say range we expected.
+skipline
+*Say This is so exciting for me... it really is an amazing
+*Say breakthrough. I am currently in Arizona attending
+*Say a meeting with some other researches. Wait until
+*Say I get back and I will tell you more.
+skipline
+*say Frequency: 28.78 GHZ
+*say I have found it works best with the bio tuner on a
+*say rotating modulation. Don't ask me why yet, but I'm 
+*say sure we can figure it out when we get back.
+skipline
+*say And Dr. Wright... the information you have been
+*say waiting for. Remember to keep it private.
+*say LATITUDE ENC(S29MS8MS)
+*say LONGITUDE ENC(AJ2M2S08S)
+skipline
+*Say Talk to you all again soon,
+*Say Adam Carter
+pause
+goto menu2
+endif
+
+if options=3
+*forecolor blue
+*Say AD: Are YOU Paying More than you should on Insurance?
+*forecolor white
+*Say AXAS Insurance Global
+*Say Quality personal insurance for you
+*Say and your family. Find out how just ring
+*Say (012) 725 2983.
+pause
+goto menu2
+endif
+
+if options=4
+goto end
+endif
+
+@menu2
+*forecolor blue
+*Say Select Mail Task
+*forecolor grey
+var optionst
+*Say 1 (1) Forward this Email to someone or somewhere
+*Say 1 (2) Back to the main mail menu
+*Say 1 (3) Disconnect from the server
+input optionst Enter A Number Based on your Preference (1-3)
+
+if optionst=3
+goto end
+endif
+
+if optionst=2
+goto menu
+endif
+
+if optionst=1
+var sentone
+input sentone (Email will be forwarded where specified, type 0 to cancel)
+goto bend
+endif
+
+goto end
+@bend
+
+//////////////////////////////////////////////////////////////////
+if sentone = 0
+goto menu
+endif
+if sentone = zrio
+goto rrr
+endif
+if sentone = zrio.org
+goto rrr
+endif
+*say 1 Email Rejected by Remote Server...
+goto menu
+@rrr
+*say 1 ZRIO Accepted the Email...
+
+if options = 2
+wrmwrmwrmwrm zrio Re:Email We got the email you forwarded to us about the dolphin communication frequency.:They are further along then we feared:.:In that email was a encrypted location, luckily for us it was easily decrypted.:.:We have the IP address of a computer close to this location, so close, it:might even be at the potential base itself.:.:66.1.22.2... keep searching.
+showimagenowplz zerothree.bmp
+endif
+
+if options = 3
+wrmwrmwrmwrm zrio Re:Email We got the email you sent us, but what good is it to us?:Some spam email about insurance?:Really, we don't want insurance right now.:Come on... you can do better.:Go back and see what you can get for us.
+endif
+
+if options = 1
+wrmwrmwrmwrm zrio Re:Email We got the email you sent us, but what good is it to us?:Some spam email about income?:We have enough income already...:Come on... you can do better.:Go back and see what you can get for us.
+endif
+
+
+goto menu
+
+//////////////////////////////////////////////////////////////////
+
+@end
+free passw
+fcolor blue
+*say Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+
+
+
+
+

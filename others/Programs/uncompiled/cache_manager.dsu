@@ -1,0 +1,61 @@
+//INTERNAL HTTP
+//this script runs as the basic information / website for the in-game internalservices.org
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+
+*forecolor green
+*Say 1 Connected on Port 80 to Internal Services
+*forecolor grey
+*Say 1 To register an account, contact root@internalservices.org.
+*Say 1 If you do not have an account, please log out on.
+pause
+
+
+var$ user
+var$ pass
+
+@getauth
+auto off
+*forecolor grey
+input user Enter Account Username
+input pass Enter Account Password
+
+if user=sdigital
+else
+*forecolor orange
+*say Access Denied - Invalid Username
+pause
+goto end
+goto getauth
+endif
+
+if pass=digital
+else
+*forecolor orange
+*say Access Denied - Invalid Password
+pause
+goto end
+goto getauth
+endif
+
+*say [New Account]
+*say Your Account is Unverified. Before you can make full use of this
+*say account, you must verify it contacting us on (012) 762 7078.
+*say As you can understand, we must take every precaution to protect
+*say this account, and your privacy.
+pause
+
+@end
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+*Say 1 Connection Terminated
+
+
+
+

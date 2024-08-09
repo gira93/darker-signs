@@ -1,0 +1,12 @@
+name%bbs.security.com
+path%12345
+port%80#bbs_sec_http
+portend
+trace1%17.191.200.201
+trace2%64.114.9.241
+trace3%137.92.160.210
+trace4%124.226.171.147
+trace5%43.20.44.224
+trace6%88.10.185.45
+trace7%182.16.155.162
+trace8%11.243.187.34

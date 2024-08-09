@@ -1,0 +1,4 @@
+name%xftp.com
+port%80#xftp80
+path%12345
+portend

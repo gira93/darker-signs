@@ -1,0 +1,4 @@
+name%targetmailer.com
+port%25#sendmail_22
+path%1234
+portend

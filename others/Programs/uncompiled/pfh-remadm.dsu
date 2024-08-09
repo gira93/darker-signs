@@ -1,0 +1,114 @@
+getcolor
+var$ protocol
+input protocol Requesting protocol setup..
+if protocol=DS:med:8rn
+goto works
+endif
+
+@loopme
+rndint 127
+!rndint=%rndint%+1
+chr %rndint%
+*say %chr%
+goto loopme
+
+@works
+color red
+*say 0 Establishing connection.....
+*wait 1000
+*say 0 Connection established....
+*wait 1000
+*say 0 Loading menu
+*wait 1000
+@menu
+clear
+color white
+*say Welcome. How may I help you?
+*say 1) Transfer to root account
+*say 2) Password recovery
+*say 3) Transfer system to admin (safe) mode
+*say 4) Logout
+getkey Please make your selection
+if getkey=49
+input protocol Please enter transfer code
+color red
+*say Invalid Code
+goto endme
+endif
+if getkey=50
+goto recover
+endif
+if getkey=51
+input protocol Please enter shutdown code
+color red
+*say Invalid Code
+goto endme
+endif
+if getkey=52
+*say 0 Logging out...
+*say 0 Have a nice day!
+goto endme
+endif
+goto menu
+
+@recover
+clear
+*say Password recovery for which account?
+*say 1) Main account : admin
+*say 2) FileSharing account : admin
+*say 3) Transfer Code
+*say 4) Shutdown Code
+*say 5) Return to main menu
+getkey Please make your selection
+if getkey=49
+*say 0 Recovery Question: What is the name of your pet?
+input protocol Please enter answer
+color red
+*say 0 Invalid answer
+goto endme
+endif
+if getkey=51
+*say 0 Recovery Question: What is the name of the street where you were born?
+input protocol Please enter answer
+color red
+*say 0 Invalid answer
+goto endme
+endif
+if getkey=52
+*say 0 Recovery Question: What is your grandmother's name?
+input protocol Please enter answer
+color red
+*say 0 Invalid answer
+goto endme
+endif
+if getkey=53
+goto menu
+endif
+if getkey=50
+goto share
+endif
+goto recover
+
+@share
+*say 0 Recovery Question: What is your mother's maiden name?
+input protocol Please enter answer
+lcase %protocol%
+if protocol=hurley
+*say 0 Correct Answer
+*say 0 Password is : aspidistra
+pause
+goto menu
+endif
+color red
+*say 0 Invalid answer
+goto endme
+endif
+
+@endme
+color %getcolor%
+free protocol
+
+
+
+
+

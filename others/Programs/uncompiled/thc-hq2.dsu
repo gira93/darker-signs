@@ -1,0 +1,377 @@
+var userinput
+var passwd
+getbgcolor
+getcolor
+bgcolor black
+color green
+chr 124
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%                                                                   The THC HQ                                                                                 %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Login for noname acct.
+input userinput Username:
+input passwd Password:
+if userinput=noname
+goto nonamecheck
+endif
+if userinput=jpain
+*say 0 Real accounts can log in on port 300
+pause
+goto end
+endif
+if userinput=beater
+*say 0 Real accounts can log in on port 300
+pause
+goto end
+endif
+if userinput=gage
+*say 0 Real accounts can log in on port 300
+pause
+goto end
+endif
+if userinput=hatred
+*say 0 Real accounts can log in on port 300
+pause
+goto end
+endif
+if userinput=dewey
+*say 0 Real accounts can log in on port 300
+pause
+goto end
+endif
+*say 100 Wrong!!!
+goto end
+@nonamecheck
+if passwd=usermanual
+goto noname
+endif
+*say 100 Wrong!!!
+goto end
+
+
+@noname
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : main menu         -         THC Rule!                                              %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 (w)hat am I doing here?
+*say 0 (a)pply for a position in THC
+*say 0 (m)essage boards
+*say 0 (j)pain's special challenge
+*say 0 (e)xit
+getkey Choose
+if getkey=87
+goto introduction
+endif
+if getkey=65
+goto apply
+endif
+if getkey=69
+goto end
+endif
+if getkey=74
+goto jpainchal
+endif
+if getkey=77
+goto mboard
+endif
+goto noname
+
+@introduction
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : introduction         -         THC Rule!                                             %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 you've beaten the challenges
+*say 0 now you have the noname accounts
+*say 0 you've proved that you might fit in THC
+*say 0 why not apply for a position?
+*say 0 and there are a few more tastes of what THC can offer, to keep you occupied
+pause
+goto noname
+
+
+@apply
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : Apply to be in THC         -         THC Rule!                                  %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+input userinput Nick Name :
+input userinput E-Mail Address :
+input userinput Please list what you can offer us :
+input userinput List evidence for what you can offer us :
+*say 0 Thank you - you may hear from us sometime
+pause
+goto noname
+
+@mboard
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : Message Board         -         THC Rule!                                      %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 When you become a member you will have a special message board ID and password
+*say 0    why not use the user and password guest to have a look round general chat
+input userinput Message Board Username:
+input passwd Message Board Passwd:
+if userinput=guest
+goto guestcheck
+endif
+*say 100 Wrong!!!
+goto noname
+@guestcheck
+if passwd=guest
+goto genchat
+endif
+*say 100 Wrong!!!
+goto noname
+
+@genchat
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : General Discussion         -         THC Rule!                                %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 User : guest - You may only read the messages in this section
+*say 0 (1) Title : Music - Started by : dewey
+*say 0 (2) Title : wtf - Started by : jpain
+*say 0 (3) Title : modding - Started by : dewey
+*say 0 (4) Title : outpost 0E0A ideas - Started by : gage
+*say 0 (5) Title : Palmer FileHosting hacked - Started by : beater
+*say 0 (x) Logout
+getkey Choose
+if getkey=88
+goto noname
+endif
+if getkey=49
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : Music (gendisc)        -         THC Rule!                                        %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Thread : Music
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 1/3/12 - User : dewey
+*say 0 What music are you guys into?
+*say 0 I enjoy mostly pop, bubblegum floor are great!
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 1/3/12 - User : gage
+*say 0 nu-hip-hop for me
+*say 0 all though I don't mind some of the older (20th century) rap
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 2/3/12 - User : jpain
+*say 0 What is it with you and moronic questions?
+*say 0 this isn't some stupid chat message board
+*say 0 this is the THC
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 2/3/12 - User : gage
+*say 0 ignore jpain, he's an idiot
+*say 0 he thinks he's some useful memember of the group yet all he provides is the 
+*say 0 computer and net liscence to host this site
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 2/3/12 - User : jpain
+*say 0 screw you!
+*say 0 You think you're so great
+*say 0 half this stuff is modded by me
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 3/3/12 - User : gage
+*say 0 shut up
+*say 0 you're only in this group because the proper members are too paranoid
+*say 0 to use their own computers
+*say 0  ____________________________________________________________________________________
+pause
+goto genchat
+endif
+if getkey=50
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : wtf (gendisc)        -         THC Rule!                                             %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Thread : wtf
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 27/2/12 - User : jpain
+*say 0 Why the fugg is my account downgraded
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 27/2/12 - User : hatred
+*say 0 You aren't the only one who can mod this thing
+*say 0 I borrowed some code from the noname/challenge levels
+*say 0 Once you sort your account I'll up the grading
+*say 0 you're too much of a security risk for a full account
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 28/2/12 - User : gage
+*say 0 Like a Mario Brother I 0wned you
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 28/2/12 - User : jpain
+*say 0 what?????
+*say 0 what am I supposed to fix
+*say 0  ____________________________________________________________________________________
+pause
+goto genchat
+endif
+if getkey=51
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : modding (gendisc)        -         THC Rule!                                   %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Thread : modding
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 26/2/12 - User : dewey
+*say 0 Hi everyone, I'm new
+*say 0 I was just wondering? You guys wrote this bbs
+*say 0 can you mod it? I was hoping to use the software myslef
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 27/2/12 - User : jpain
+*say 0 yes you can mod it. all though it does take some skill
+*say 0 I added a cool new mod yesterday, because I have physical access to this computer
+*say 0 I don't need a password
+*say 0 all I do is enter my username and the program recognises where I'm coming from
+*say 0 and bingo!
+*say 0  ____________________________________________________________________________________
+pause
+goto genchat
+endif
+if getkey=52
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : Outpost 0E0A ideas (gendisc)        -         THC Rule!                  %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Thread : Outpost 0E0A ideas
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 25/2/12 - User : gage
+*say 0 how about a proper thread for this stuff
+*say 0 I'm working on a little virus which should ensure pain and suffering for them
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 25/2/12 - User : beater
+*say 0 has anyone tried to hack their main servers
+*say 0 delete their lists of users
+*say 0 or even better, report them all
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 25/2/12 - User : gage
+*say 0 their main servers are very well protected
+*say 0 however I've found some sub servers to release my virus
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 26/2/12 - User : gage
+*say 0 virus released!!!
+*say 0 You can find all the info in the virus section
+*say 0  ____________________________________________________________________________________
+pause
+goto genchat
+endif
+if getkey=53
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : Palmer Filehosting Hacked (gendisc)        -         THC Rule!      %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Thread : Palmer Filehosting Hacked
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 23/2/12 - User : beater
+*say 0 !!!!!!!!!!!!
+*say 0 they've reported that they were broken into, hopefully it was some corporate
+*say 0 mission for a hacker ring. several companies store important data there
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 23/2/12 - User : jpain
+*say 0 is this important? 
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 23/2/12 - User : gage
+*say 0 yes.
+*say 0 we have accounts on those servers, containing some interesting projects
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 24/2/12 - User : beater
+*say 0 it's in the news now (10:30pm)
+*say 0 goto channel 643
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 25/2/12 - User : hatred
+*say 0 It's worse than we thought. I found how they got in and checked logs, our accounts were
+*say 0 the ones accessed. Following back IP addresses I traced it to Outpost 0E0A, a hacker
+*say 0 ring.
+*say 0 I say, they've bitten off more than they can chew
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 25/2/12 - User : jpain
+*say 0 how are we going to get them back? I vote we report all their users to the police
+*say 0  ____________________________________________________________________________________
+*say 0 Date : 25/2/12 - User : gage
+*say 0 and how do you suggest that? have you tried to hack their main servers?
+*say 0 anyway. I've made a proper thread for all this
+*say 0  ____________________________________________________________________________________
+pause
+goto genchat
+endif
+goto genchat
+
+@jpainchal
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : jpain's challenge for you        -         THC Rule!                         %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 hey noname
+*say 0 try my extra challenge. if you pass it you will receive a code word
+*say 0 include that with your application and you may receive a higher chance of membership
+*say 0 (s)ource code to challenge
+*say 0 (c)hallenge
+*say 0 (b)ack
+getkey Choose
+if getkey=66
+goto noname
+endif
+if getkey=83
+goto nonamesrc
+endif
+if getkey=67
+goto jpchal
+endif
+goto jpainchal
+
+@nonamesrc
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : jpain's challenge source         -         THC Rule!                        %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 var writeme
+*say 0 input writeme Write what to temp file?
+*say 0 write temp.file %writeme%
+*say 0 if writeme=!!!!!!!!!
+*say 0 *say 0 !!!!!!!!
+*say 0 pause
+*say 0 endif
+*say 0 free writeme
+pause
+goto jpainchal
+
+@jpchal
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: noname         -         Location : jpain's challenge for you        -         THC Rule!                         %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+var writeme
+input writeme Write what to temp file?
+write temp.file %writeme%
+if writeme=!!!!!!!!!
+*say 0 !!!!!!!!
+pause
+endif
+free writeme
+pause
+goto jpainchal
+
+@end
+free userinput
+free passwd
+bgcolor %getbgcolor%
+color %getcolor%
+clear
+
+
+
+

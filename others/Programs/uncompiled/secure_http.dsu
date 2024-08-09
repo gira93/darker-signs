@@ -1,0 +1,102 @@
+//SECURE HTTP
+//this script runs as the basic information / website for the in-game secure digital company
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+
+*forecolor green
+*Say 1 Connected on Port 80 to Secure Digital HTTP Server
+*forecolor grey
+*Say 1 Welcome to Secure Digital Internet Services. We provide
+*Say 1 unlimited internet access to the local community, as well
+*Say 1 as providing hardware support for organisations and education.
+skipline
+*Say 1 To learn more about our company, please have a look at
+*Say 1 what we have to offer.
+
+@menu
+*forecolor blue
+*Say 1 SECURE DIGITAL :: INTERNET SERVICES
+*forecolor grey
+*Say 1 (1) Education
+*Say 1 (2) Internet Services
+*Say 1 (3) Anonymous Communications
+*Say 1 (4) Disconnect
+*say 1 (5) Administrative Services
+
+input options Enter A Number Based on your Preference (1-5)
+
+if options=1
+*forecolor white
+*Say 1 [Education]
+*Say 1 For over 10 years now, Secure Digital have provided high
+*Say 1 quality computer hardware and software to schools and other
+*Say 1 community organisations at a low price.
+skipline
+*Say 1 If you have a non profit organisation, and would like to
+*Say 1 see if you are elegible to get technology at the low price,
+*Say 1 we will soon be accepting applications online. Please
+*Say 1 check back at our website at a later date.
+skipline
+goto menu
+endif
+
+if options=2
+*forecolor white
+*Say 1 [Internet Services]
+*Say 1 Secure Digital provides Dialup Internet access to the local
+*Say 1 area for only $10.00 each month. This includes 1GB of bandwidth
+*Say 1 and 8 hours connection sessions. This means you can stay online
+*Say 1 for up to 8 hours before we disconnect you. Reconnections will
+*Say 1 take 20 minutes.
+skipline
+*Say 1 If you are interested in joining our Dialup Internet program, please
+*Say 1 contact us during business hours, on 0912 175 1712
+goto menu
+endif
+
+if options=3
+*forecolor white
+*Say 1 [Anonymous Communications]
+*Say 1 Secure Digital believes in the rights of privacy. This means that
+*Say 1 we believe that what you do on the Internet is your business, and
+*Say 1 yours only. We support this by providing public proxy servers to
+*Say 1 the community.
+skipline
+*Say 1 You do not have to be a member to use one of our proxy servers.
+*Say 1 They are free for anyone to use.
+goto menu
+endif
+
+
+if options=5
+*forecolor white
+*Say SYSTEM ERROR - COMMAND NOT RECOGNIZED
+*Say )S(KDU)S*(DK()S*DUK()*SUD(*SULD*(SD
+*Say ^*(NATS*(ND&SM(DS*(DGS*OHD)KE*()R<K
+*Say (S*YK)D(S*UKD(*SUL)D)SLUKLSK)SS
+*Say SDUSI)_DSW)PASS-DIGITAL SDHMS()&DH)S(U
+*Say ()S&KD(SULU*()L089UISLD*()SU<)_DSU(
+*Say AS*^O@(M*SDHO(D&H<S)(DHS(*DJ<(*S
+*Say STN*(S^DG&*SG^KD*SYK)&*(YKSD()&US&*
+*Say SDS(YD()SDSY)M(D&)SM<USER-SECURE SD*(PS
+*say SDUIOHSMOD*H&SUILJNMSKL
+*Say )S(*US()USJLDUIS(*DU<S*(<JD
+*Say Unknown Data Transfer Error...
+goto end
+skipline
+goto menu
+endif
+
+
+@end
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+*Say 1 Connection Terminated
+
+

@@ -1,0 +1,234 @@
+@init
+var user
+var pass
+var filename
+getcolor
+getbgcolor
+
+@start
+color 39168
+*say 0 Welcome to oldgames Backup server (IPFTP v6.14c)
+*say 0 This server requires a valid user name and password
+input user Username
+input pass Password
+if %user% = save
+goto start2
+endif
+goto wrongup
+@start2
+if %pass% = 617
+goto menu
+endif
+goto wrongup
+
+@wrongup
+*say 0 Wrong username/password
+goto end
+
+@menu
+clear
+color 39168
+*say 0 Commands available to you :
+*say 0 1. View files
+*say 0 2. Restore file
+*say 0 3. Other tools
+*say 0 0. Disconnect
+getkey
+if getkey=49
+goto viewfiles
+endif
+if getkey=50
+goto restorefile
+endif
+if getkey=51
+goto othertools
+endif
+if getkey=48
+goto end
+endif
+goto menu
+
+@viewfiles
+clear
+color 39168
+*say 0 Listing files
+if restored=1
+goto viewrestored
+endif
+*say 0 1. )=ç%&/*Gds
+*say 0 2. %çh"*gs+/(
+*say 0 3. %çhs"&6((*
+if otlrestored=1
+goto menu_back
+endif
+*say 0 4. otl.scr
+@menu_back
+color yellow
+*say 0 Returning to main menu
+pause
+goto menu
+
+@viewrestored
+*say 0 1. game543.bin
+*say 0 2. game868686.bin
+*say 0 3. unknown.ukn
+goto menu_back
+
+@restorefile
+color 39168
+*say 0 Please select the file you want to restore
+getkey
+if restored=1
+goto restorefile_restored
+endif
+if oltrestored=1
+goto restorefile_next2
+endif
+if getkey=52
+goto restoreotl
+endif
+@restorefile_next2
+color red
+*say 0 Error while trying to restore the file.
+color 39168
+goto menu_back
+
+@restoreotl
+var otlrestored
+! otlrestored = 1
+*say 0 Restoring file "otl.scr"
+*say 50 ........
+*say 0 File "otl.scr" sucessfully restored
+goto menu_back
+
+@restorefile_restored
+if getkey=51
+input filename In order to restore this file you need to specify the correct filename.
+if %filename% = L00017242.log
+*say 0 Restoring file "L00017242.log"
+*say 50 .................................
+*say 0 File "L00017242.log" succesfully restored.
+goto dllog
+endif
+color red
+*say 0 Error while trying to restore the file.
+goto menu_back
+
+@othertools
+if otlrestored=1
+goto othertools_menu
+endif
+color red
+*say 0 Error found in "otl.scr", unable to make the listing.
+goto menu_back
+
+@othertools_menu
+clear
+color 39168
+*say 0 1. Check HD for corruption
+if %checkdone%=1
+*say 0 2. Download corrupted data
+endif
+*say 0 0. Main menu
+getkey
+if getkey=49
+goto checkhd
+endif
+if checkdone=1
+goto othertools_menu_next
+endif
+goto othertools_menu_next2
+@othertools_menu_next
+if getkey=50
+goto dlcorrdata
+endif
+@othertools_menu_next2
+if getkey=48
+goto menu
+endif
+goto othertools_menu
+
+@checkhd
+clear
+color blue
+*say 0 The check of the hard disk will now begin.
+*say 0 This operation can take several minutes to complete. Please wait...
+*say 2 ...........................................................................................  25%
+*say 2 ...........................................................................................  50%
+if %checkdone%=1
+*say 2 ...........................................................................................  75%
+*say 2 ........................................................................................... 100%
+goto checkhd_finish
+endif
+*say 2 ........................................................................... 70 %
+*say 10 ................. 75 %
+color blue
+*say 0 Corrupted data has been found, the program will now try to restore the data
+color blue
+*say 50 .................. 80 %
+*say 100 .................. 85 %
+*say 2 .................... 90 %
+*say 2 ........................................................ 100%
+*say 0 1 file(s) successfully restored.
+var restored
+! restored = 1
+@checkhd_finish
+var checkdone
+! checkdone = 1
+*say 0 Some data could not have been restored. You can download it through the menu.
+*say 0 The checking is now complete.
+pause
+goto othertools
+
+@dllog
+*say 0 Downloading file "L00017242.log"
+*say 100 Downloading .....................................
+pipe L00017242.log
+*say 0 Starting log file...
+*say 0 User 1 connected from user5115-dialup.internetprovider.com
+*say 0 User 2 connected from user1252-dsl.broadband.com
+*say 0 User 2 downloads game 9890
+*say 0 User 2 disconnected
+*say 0 User 1 downloads game 868686
+*say 0 User 1 banned for 1 hour, trying to access unauthorized area.
+*say 0 User 3 connected from user6134-dialup.internetprovider.com
+*say 0 User 3 banned for 1 hour, trying to access unauthorized area.
+*say 0 L00017242.log Log file closed.
+pipe
+*say 0 Download complete
+pause
+goto othertools
+
+@dlcorrdata
+*say 0 Downloading file "data.corrupted"
+*say 100 Downloading .....................................
+pipe data.corrupted
+*say 0 Xá"†’3`¢ôAÇÈGOÂÄ¥ŠÎœUT©Ù¦P¿$ÿB
+*say 0 ÃJ3Tcvô`æé5o
+*say 0 \5”‚ âCKˆœ’=¸8sK'
+*say 0 ›WÌ¼¹úæÊ”.Sßtb
+*say 0 ]å¤r*&E¥=Uü’HPkÜ¤c¶0SKÌq
+*say 0 g file created ...
+*say 0 User 1 connected from user5614-dialup.interneOÂÄ¥ŠÎœU
+*say 0 User 1 ÞÖkëÖo÷Ú^òÚÞÖkëÖ o÷Ú^òÚ=Uü’HPkÜ¤c
+*say 0 User 1 žxòçted file L0ÅûÚáŒ42.log
+*say 0 Usÿ!!ü9ióttcy; áÊv ŒE!žä>L
+*say 0 Warning : This action may corrupt your data !
+*say 0 Error caused in log system rA5Ax¸Ì’{m’rA5Ax¸Ì’{m
+pipe
+*say 0 Donwload complete
+pause
+goto othertools
+
+@end
+color yellow
+*say 0 Disconnecting
+color %getcolor%
+bgcolor %getbgcolor%
+Free user
+Free pass
+Free filename
+
+
+
+

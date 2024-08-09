@@ -1,0 +1,278 @@
+getbgcolor
+getcolor
+color red
+bgcolor white
+@opening
+color blue
+clear
+*say 0 ###########################################
+*say 0 # Welcome to Palmer file hosting          #
+*say 0 ########################################### 
+color red
+*say 0 1) What we can offer
+*say 0 2) About the company
+*say 0 3) Logout
+getkey Select your option
+if getkey=49
+goto product
+endif
+if getkey=50
+goto company
+endif
+if getkey=51
+goto end
+endif
+goto opening
+
+@product
+clear
+color blue
+*say 0 ###### What we can offer you ######   
+color black
+*say 0 Palmer File Hosting offer cheap, reliable File Hosting using software of a high quality.
+*say 0 Out software is self written and of a high quality. We use top level machines to ensure
+*say 0 the best possible service. Our company is built on family values and thus we offer
+*say 0 you a service with the best software and hardware, has affordable prices and is with a
+*say 0 company you won't be ashamed to use.
+color red
+*say 0 1) What you get in your account
+*say 0 2) Prices
+*say 0 3) More about the hardware
+*say 0 4) More about our file hosting programs
+*say 0 5) Back to main menu
+getkey Select your option
+if getkey=49
+goto account
+endif
+if getkey=50
+goto prices
+endif
+if getkey=51
+goto hardware
+endif
+if getkey=52
+goto os
+endif
+if getkey=53
+goto opening
+endif
+goto product
+
+@account
+clear
+color blue
+*say 0 ###### What you get in your account ######
+color black
+*say 0 You have two username and password combinations in your account.
+*say 0 The first is called your main account and is for a service on port 23, this offers:
+*say 0 you can login to a filemanager program from which you can upload and download files. This program
+*say 0 also offers the ability to change properties on a file, assign password protection and hide files.
+*say 0 From here you can also encrypt files using our own custom written encryption. Account maintenance
+*say 0 such as changing your password can be done here. 
+*say 0 This account also acts as an email address and using our simple email program you can move attatchments
+*say 0 to your file hosting area.
+*say 0  ---
+*say 0 Your second is called your filesharing account and is for a service on port 625, this offers:
+*say 0 This service is simply for filedownloading. Using your second username and password combination you
+*say 0 can quickly retrieve files for when you don't want to use the main program. Since this program
+*say 0 is only for downloading you can give this password to others so they can download shared files.
+*say 0  ---
+*say 0 You will also have access to 24 hour tech support so that should you have any problem at any time we
+*say 0 will be able to solve it for you
+color red
+*say 0 Press any key to go back
+pause
+goto product
+
+@prices
+clear
+color blue
+*say 0 ###### Account prices ######
+color black
+*say 0 For 25 credits a month you can get a standard account. This allows for 2Gb of space.
+*say 0 For 15 credits a month you can get a light account. This allows for 1Gb of space.
+*say 0 For 35 credits a month you can get a delux account. This allows for 5Gb of space.
+*say 0 With a delux account you can also buy extra space at the rate of 10 credits per Gb.
+color red
+*say 0 To order an account please phone us on area code 86FF2 number 789AA43FB76
+*say 0 Press any key to go back
+pause
+goto product
+
+@os
+clear
+color blue
+*say 0 ###### Our file hosting software ######
+color black
+*say 0 Our file hosting software is custom written and tailor made for easy use, reliability,
+*say 0 security and flexiblity. The software can be bought for 100 credits and includes the
+*say 0 source code should you wish to customise it (note, we cannot be held responcible for
+*say 0 the program post customisation). 
+*say 0 You can find out more about the software, and use it in the public section of the
+*say 0 downloading program on port 625. There you can download various documents about how
+*say 0 the program works and what it can offer you.
+color red
+*say 0 Press any key to go back
+pause
+goto product
+
+@hardware
+clear
+*say 0 ###### More about the hardware ######
+color black
+*say 0 Our file hosting network is made up of one computer which you connect to. This computer
+*say 0 then links to the other computers on the network (where everyone's data is stored) without
+*say 0 you noticing. The network is a superfast Sisquo TripleGold and is made up of Hutchinson A12
+*say 0 computers.
+color red
+*say 0 1) More on Sisquo TripleGold networks
+*say 0 2) More on Hutchinson A12 computers
+*say 0 3) Go back
+getkey Select your option
+if getkey=49
+goto sisquo
+endif
+if getkey=50
+goto hutchinson
+endif
+if getkey=51
+goto product
+endif
+goto hardware
+
+@sisquo
+clear
+color blue
+*say 0 ###### More on Sisquo TripleGold networks ######
+color black
+*say 0 The Sisquo TripleGold network is a state of the art network package using technologies
+*say 0 at the pinacle of networking. This radio based network offers speeds of 170 gbps which
+*say 0 is far higher than all other radio based network. It also offers a brand new security
+*say 0 system called RedBack which integrates itself within normal packets thus avoiding the
+*say 0 need for the infamously buggy "packet security". Thus you have a network that offers
+*say 0 all the advantages of a radio based network except without the typical low speeds
+*say 0 and a network that won't crash every hour.
+color red
+*say 0 Press a key to go back
+pause
+goto hardware
+
+@hutchinson
+clear
+color blue
+*say ###### More on Hutchinson A12 computers ######
+color black
+*say 0 The Hutchinson A12 computers are some of the most powerful computers available to non
+*say 0 military organisations. Bosting the unique A12 processor (offering 6Ghz equivalent)
+*say 0 a 6Gb of RAM they will be able to quickly encrypt, read, manipulate even the largest
+*say 0 files.  Each one also offers a Tb of harddisk space with the opportunities to 
+*say 0 expand that exponentially.
+color red
+*say 0 Press a key to go back
+pause
+goto hardware
+
+@company
+clear
+color blue
+*say ###### About the company ######
+color black
+*say 0 Palmer filesharing is a company based around family values and thus we feel it important
+*say 0 that you know all about the company.
+color red
+*say 0 1) Company History
+*say 0 2) Staff
+*say 0 3) Go back
+getkey Select your option
+if getkey=49
+goto history
+endif
+if getkey=50
+goto staff
+endif
+if getkey=51
+goto opening
+endif
+goto company
+
+@history
+clear
+color blue
+*say ###### Company History ######
+color black
+*say 0 Established in 2009 following Laura Palmer finishing college and putting forward a proposal
+*say 0 for a company to her parents Palmer file hosting has expanded hugely over the past 3 years.
+*say 0 Initially the company was simply Laura doing the tech work, her father Leland as accountant
+*say 0 and her mother Sarah as joint CEO and publicist. Using a customised version of the 
+*say 0 standard filehosting software the company was almost immediately recognised for quality
+*say 0 of service and reliability.
+*say 0 The company has grown and grown but the family values remained the same aside from when Leland
+*say 0 was imprisoned for 37 cases of armed robbery that company has done well. Laura is infact the 
+*say 0 only Palmer still in the company as her mother chose to return to her maiden name following
+*say 0 the divorce.
+*say 0 In 2011 work was finished on a homemade filehosting program written by Laura. Once released
+*say 0 it caught on and the money made from selling the software allowed the company to expand even
+*say 0 further. The initial program was very basic which made it popular as it provided for every
+*say 0 need without being complex. We are currently using a new version of the software which
+*say 0 has only just been released however looks set to be better than the previous version in almost
+*say 0 every way.
+color red
+*say Press a key to go back
+pause
+goto company
+
+@staff
+clear
+color blue
+*say ###### Staff Contact Details ######
+color black
+*say 0 Name: Laura Palmer
+*say 0 Position: Head technition and joint CEO
+*say 0 E-mail: lp@palmer.hosting.net
+*say 0  ---
+*say 0 Name: Sarah Hurley
+*say 0 Position: Joint CEO and head of Publicity
+*say 0 E-mail: sh@palmer.hosting.net
+*say 0  ---
+*say 0 Name: Bob Lydecker
+*say 0 Position: Head of Technical support
+*say 0 E-mail: bobl@palmer.hosting.net
+*say 0  ---
+*say 0 Name: Waldo Laouisou
+*say 0 Position: Technical support
+*say 0 E-mail: waldon@palmer.hosting.net
+*say 0  ---
+*say 0 Name: Wael Fadda
+*say 0 Position: System administrator
+*say 0 E-mail: fadda@palmer.hosting.net
+*say 0  ---
+*say 0 Name: John Dahmer
+*say 0 Position: Accountant
+*say 0 E-mail: jdahmer@palmer.hosting.net
+*say 0  ---
+*say 0 Name: Chris Daniels
+*say 0 Position: Technition
+*say 0 E-mail: daniels@palmer.hosting.net
+*say 0  ---
+color red
+*say Press a key to go back
+pause
+goto company
+
+
+@end
+color red
+bgcolor %getbgcolor%
+color %getcolor%
+clear
+
+
+
+
+
+
+
+
+
+
+

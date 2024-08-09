@@ -1,0 +1,52 @@
+say Null Connection
+var myv
+var vv
+@xxx
+input myv Enter Input (CTRL + X to Cancel)
+! vv = run filecopy.exe
+instr myv vv
+
+if instr > 0
+goto xxx2
+else
+say Thanks for nothing...
+goto xxx
+endif
+
+@xxx2
+! vv = network.info
+instr myv vv
+
+if instr > 1
+*write network.info NETWORKING INFORMATION FOR BIOLABS
+*write network.info BIOLABS.COM
+*write network.info BIOLABS.NET
+*write network.info BIOLABS.ORG
+*write network.info RESEARCH.BIOLABS.NET
+*write network.info (end of file)
+*Say File [network.info] Downloaded to your root directory...
+*say 1 ../FILECOPY.EXE OUTPUT: Copied
+pause
+else
+*say 1 ../FILECOPY.EXE OUTPUT: File Not Found
+endif
+
+goto xxx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

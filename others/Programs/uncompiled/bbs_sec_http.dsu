@@ -1,0 +1,236 @@
+getcolor
+getbgcolor
+
+@menu
+clear
+color 39168
+*say 0 Welcome to bbs.security.com
+*say 0 Here are the current active threads :
+*say 0 1. Help  by noob
+*say 0 2. oldgames.com 21  by noob
+if visited=1
+*say 0 3. IPFTP  by l33t h4ck3r
+endif
+*say 0 0. Disconnect
+getkey
+if getkey=49
+goto help_noob
+endif
+if getkey=50
+goto scr
+endif
+if visited=1
+goto menu_next
+endif
+goto menu_next2
+@menu_next
+if getkey=51
+goto IPFTP
+endif
+@menu_next2
+if getkey=48
+goto end
+endif
+goto menu
+
+@help_noob
+clear
+color blue
+*say 0 Hello, i'm trying to hack a website but i can't hack the username password.
+*say 0 What should i do ?
+skipline
+*say 0 Noob
+skipline
+color 39168
+*say 0 Replys :
+*say 0 1. Re: Help  by h4ck3r
+*say 0 9. Go up
+*say 0 0. Go to main menu
+getkey
+if getkey=49
+goto help_noob_re
+endif
+if getkey=57
+goto menu
+endif
+if getkey=48
+goto menu
+endif
+goto help_noob
+
+@help_noob_re
+clear 
+color blue
+*say 0 damm noob, can't you give us some more info ?
+*say 0 do you even know what software is being used, give us the version too
+*say 0 if you give us more info then we should may be able to help you...
+skipline
+*say 0 h4ck3r
+skipline
+color 39168
+*say 0 Replys :
+*say 0 1. Re: Re: Help  by noob
+*say 0 9. Go up
+*say 0 0. Go to main menu
+getkey
+if getkey=49
+goto help_noob_rere
+endif
+if getkey=57
+goto help_noob
+endif
+if getkey=48
+goto menu
+endif
+goto help_noob_re
+
+@help_noob_rere
+clear
+color blue
+*say 0 Ok i managed to get some more info
+*say 0 Soft : AP
+*say 0 Ver  : v1.0b
+*say 0 I searched the web, but found nothing about this software...
+skipline
+*say 0 Noob
+skipline
+color 39168
+*say 0 Replys :
+*say 0 1. Re: Re: Re: Help  by h4ch3r
+*say 0 9. Go up
+*say 0 0. Go to main menu
+getkey
+if getkey=49
+goto help_noob_rerere
+endif
+if getkey=57
+goto help_noob_re
+endif
+if getkey=48
+goto menu
+endif
+goto help_noob_rere
+
+@help_noob_rerere
+clear
+color blue
+*say 0 ....
+*say 0 AP stands for Admin Panel, the distributor says it's 
+*say 0 a very secured Admin Panel... But as usual there are some holes.
+*say 0 In v1.0 the username was vulnerable to a buffer over run attack
+*say 0 The buffer had a length of 10.
+*say 0 I don't have any info if it has been corrected in v1.0b, so you
+*say 0 should try this method, maybe the hole is still there.
+*say 0 Use the hole to run this : 'goto menu'
+skipline
+*say 0 h4ck3r
+skipline
+color 39168
+*say 0 Replys :
+*say 0 no replys
+*say 0 9. Go up
+*say 0 0. Go to main menu
+getkey
+if getkey=57
+goto help_noob_rere
+endif
+if getkey=48
+goto menu
+endif
+goto help_noob_rerere
+
+@scr
+clear
+color blue
+*say 0 can someone help me accessing oldgames.com 21 ?
+skipline
+*say 0 Noob
+skipline
+color 39168
+*say 0 Replys :
+*say 0 1. Re: Help  by l33t h4ck3r
+*say 0 9. Go up
+*say 0 0. Go to main menu
+getkey
+if getkey=49
+goto scr_leet
+endif
+if getkey=57
+goto menu
+endif
+if getkey=48
+goto menu
+endif
+goto scr
+
+@scr_leet
+clear
+color blue
+*say 0 You are lucky, i hacked it once ago, i've attached the script.
+skipline
+*say 0 l33t h4ch3r
+skipline
+color 39168
+*say 0 Replys :
+*say 0 no replies
+*say 0 1. Download attached file
+*say 0 9. Go up
+*say 0 0. Go to main menu
+getkey
+if getkey=49
+goto scr_dl
+endif
+if getkey=57
+goto scr
+endif
+if getkey=48
+goto menu
+endif
+goto scr_leet
+
+@scr_dl
+color orange
+*say 0 Downloading file "oldgftplogin"
+*say 50 ..............................
+color red
+*say 0 Warning : Some data may be sorrupted
+color orange
+*say 0 Download complete
+pipe /tmp
+decrypt /system/mission/findgame/script1 /oldgftplogin
+pipe
+pause
+goto scr_leet
+
+@IPFTP
+clear
+color blue
+*say 0 IPFTP :
+*say 0 in this software the passwords are mady only be numbers.
+*say 0 so if you know the length of the password you can easily 
+*say 0 make a brute force to crack the pass.
+skipline
+*say 0 l33t h4ck3r
+skipline
+color 39168
+*say 0 Replys :
+*say 0 no replys
+*say 0 0. Go to main menu
+getkey
+if getkey=48
+goto menu
+endif
+goto IPFTP
+
+@end
+color yellow
+*say 0 Disconnecting
+color %getcolor%
+bgcolor %getbgcolor%
+
+
+
+
+
+
+

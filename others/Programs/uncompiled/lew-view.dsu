@@ -1,0 +1,43 @@
+getcolor
+clear
+color white
+*say 0 Hello! And welcome to the Lower Ebworth Tourist Site
+*say 0 We hope you enjoy your stay in Lower Ebworth and we
+color green
+*say 0 H4V3 B33n 0Wn3d
+*say 0 (by The H8 Club)
+*say 0 Our message for you is this :
+VAREXISTS lewline1
+if varexists=false
+var lewline1
+!lewline1=We rule!
+endif
+varexists lewline2
+if varexists=false
+var lewline2
+!lewline2=Outpost oo ee oo aah?
+endif
+varexists lewline3
+if varexists=false
+var lewline3
+!lewline3=who hee who ha?
+endif
+varexists lewline4
+if varexists=false
+var lewline4
+!lewline4=Love Hatred, Gage, Beater, Jpain and Dewey
+endif
+
+*say 0 %lewline1%
+*say 0 %lewline2%
+*say 0 %lewline3%
+*say 0 %lewline4%
+pause
+color %getcolor%
+clear
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+//INTERNAL PROXY
+//connect to a target through a proxy, and your IP
+//address will not be logged on the server this file is running on.
+
+cancel true
+getcolor
+getbgcolor
+
+var$ theip
+var$ theport
+
+*forecolor green
+*Say 1 <wingate proxy>
+*forecolor grey
+
+input theip Enter Destination Address (Hostname or IP Address)
+input theport Enter Destination Port
+
+pingport %theip% %theport%
+
+if pingport=false
+*say 1 Port %theport% is not available on %theip%
+goto end
+else
+*say 10 Scanning %theip%...
+*say Port %theport% is open on [%theip%]
+*say Linking connection...
+endconnect %theip% %theport%
+endif
+
+@end
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+*Say 1 Connection Terminated
+
+
+

@@ -1,0 +1,4 @@
+name%crashme.com
+port%80#crash80
+path%12345
+portend

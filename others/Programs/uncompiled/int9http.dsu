@@ -1,0 +1,44 @@
+///DECRYPTION
+
+cancel true
+getcolor
+getbgcolor
+
+var mycoolvar
+
+if mycoolvar = 6
+goto startt
+else
+myusername
+wrmwrmwrmwrm FIND.com Newsletter Hi %myusername%,:.:We have finished upgrading out database and our website:is now back up and running.:.:.:Thank you,:Barry Simons:FIND.com President
+pause
+showimagenowplz zerofour.bmp
+! mycoolvar = 6
+endif
+
+@startt
+*forecolor red
+*Say 1 Access Denied.
+
+*forecolor white
+
+
+
+
+@end
+
+fcolor blue
+*Say 1 Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+

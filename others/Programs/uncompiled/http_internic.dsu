@@ -1,0 +1,95 @@
+///DECRYPTION
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+var xvar
+var filen
+@startt
+*forecolor grey
+*Say 1 '_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'
+*forecolor white
+skipline
+*Say 1 .  -  -  -   i n t e r n i c   -  -  -   s e r v i c e s   -  -  -  .
+*forecolor grey
+*Say 1 ._._._._._._._._._._._._._._._._._._._._._._._._._._.
+*forecolor blue
+skipline
+*Say 1 1) Recent Registrations
+*Say 1 2) Exit
+*forecolor white
+input xvar Please Enter 1 or 2
+
+if xvar=1
+*forecolor white
+*forecolor grey
+*Say 1 '_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'
+skipline
+*Say 1 .  -  -  -   r e c e n t   -  -  -   d o m a i n s   -  -  -  .
+*Say 1 ._._._._._._._._._._._._._._._._._._._._._._._._._._.
+skipline
+fcolor grey
+*say 20 webcache02.securedigital.com
+fcolor white
+*say 20 micmast.com
+*say 20 newpute.com
+*say 20 depressed.net  (Registered with private company REGDOMAINZ)
+*say 20 securedigital.com
+*say 20 internal-9.ndrgrnd.pipelink.gov  (Registered with private company REGDOMAINZ)
+*say 20 targetmailer.com  (Registered with private company REGDOMAINZ)
+*say 20 darksigns.com
+*say 20 jobs.securedigital.com
+pause
+goto startt
+endif
+
+if xvar=2
+goto end
+endif
+
+*say 1 Invalid Option [%xvar%]
+goto startt
+
+
+@end
+
+*SAY You are now logged out of the Internic server
+fcolor blue
+*Say 1 Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

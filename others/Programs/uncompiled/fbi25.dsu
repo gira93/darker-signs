@@ -1,0 +1,43 @@
+cancel true
+getcolor
+getbgcolor
+
+if dosed = true
+*forecolor red
+*say 0 Connection terminated
+*say 0 Error: remote host unable to load mail script
+*say 0 Please email the admin with the above error message
+SM zrio Waiting We are glad to hear that your email trouble is over.:We are currently waiting for another agent to finish a mission:before we can give you anymore information:Expect to hear from us soon
+free dosed
+free dosbw
+goto end
+else
+*forecolor blue
+*say 0 This is a goverment server, any attempt to gain illegal access to this machine
+*say 0 will be servilely punished
+*skipline
+*forecolor grey
+var put
+input put Username
+*skipline
+input put Password
+*skipline
+*forecolor Orange
+*say 0 Username/Password Error [bad username/passwd]
+goto end
+
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free getcolor
+free getbgcolor
+free put
+
+
+
+
+
+
+

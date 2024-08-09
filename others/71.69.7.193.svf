@@ -1,0 +1,5 @@
+name%www.berkeley.edu
+port%80#berk_public
+port%81#berk_sui
+path%12345
+portend

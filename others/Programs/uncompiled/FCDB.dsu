@@ -1,0 +1,291 @@
+cancel true
+getcolor
+getbgcolor
+var current
+var user
+!user = none
+
+@welcome
+!current = root
+*forecolor grey
+*say 0 ©FirstClass Software® 1989-2003 FCDB.com
+@input
+*forecolor white
+var dbinput
+input dbinput %hello%
+
+if %dbinput% = exit
+goto end
+endif
+
+if %dbinput% = su fcdb
+goto su
+elseif dbinput = su admin
+*forecolor orange
+*skipline
+*say 0 System Permission Error [not authorized]
+goto input
+endif
+
+if %user% = fcdb
+goto commands
+else
+*forecolor orange
+*say 0 System Permission Error [not authorized]
+goto input
+endif
+@commands
+if %dbinput% = ls
+goto ls
+endif
+if %dbinput% = cd home
+goto cd_home
+endif
+if %dbinput% = cd fcdb
+goto cd_fcdb
+endif
+if %dbinput% = cd users
+goto cd_users
+endif
+if %dbinput% = run editdb.exe
+goto editdb
+else
+goto error
+endif
+@cd_home
+!current = home
+*forecolor orange
+*say 0 Current Directory: /home/
+goto input
+@cd_fcdb
+if %current% = home
+!current = fcdb
+*forecolor orange
+*say 0 Current Directory: /home/fcdb/
+goto input
+else
+goto error
+endif
+@cd_users
+if %current% = home
+*forecolor orange
+*say 0 System Permission Error [not authorized]
+goto input
+else
+goto error
+endif
+@su
+!user = fcdb
+*forecolor orange
+*say 0 User changed [fcdb]
+goto input
+endif
+@ls
+if %current% = root
+*forecolor blue
+*say 0 [home]
+*forecolor white
+*say 0 NO FILES
+goto input
+elseif %current% = home
+*forecolor blue
+*say 0 [fcdb]    [users]
+*forecolor white
+*say 0 NO FILES
+goto input
+elseif %current% = fcdb
+*forecolor white
+*say 0  EDITDB.EXE   LOGIC.SYS    READDB.EXE    OPTIONS.INI
+goto input
+else
+goto error
+endif
+endif
+
+@editdb
+if %current% = fcdb
+goto edit
+else
+goto error
+endif
+
+@edit
+*skipline
+*forecolor blue
+*say 0 ----------------------------------------
+*say 0 -      FirstClass DataBase v3.4
+*say 0 -            Build v3.21573
+@editmenu
+*forecolor blue
+*say 0 ----------------------------------------
+*say 0 - 1 ) Track Package
+*say 0 - 2 ) Change Package Details
+*say 0 - 3 ) Logoff
+*say 0 ----------------------------------------
+var fcdbchoice
+*forecolor white
+input fcdbchoice Please make your selection ( 1 - 3 )
+
+if fcdbchoice = 1
+goto track
+endif
+
+if fcdbchoice = 2
+goto detail
+endif
+
+if fcdbchoice = 3
+goto end
+else
+*skipline
+goto editmenu
+endif
+
+@track
+*forecolor blue
+*skipline
+*say 0 Tracker Package v2.7
+*skipline
+*forecolor white
+var packagenum
+*forecolor white
+input packagenum Please enter the package number
+if packagenum = 883597
+*forecolor green
+*skipline
+*say 0 Package in warehouse awaiting pickup
+*pause
+goto editmenu
+else
+*forecolor orange
+*skipline
+*say 0 Package not found
+*skipline
+goto editmenu
+endif
+
+@detail
+*forecolor blue
+*skipline
+*say 0 Detail Changer v1.3
+*skipline
+*forecolor white
+var packagenum
+input packagenum Please enter the package number
+if packagenum = 883597
+goto details
+else
+*forecolor orange
+*skipline
+*say 0 Package not found
+*skipline
+goto editmenu
+endif
+else
+
+@details
+var dest, type
+!dest = Classified
+!type = Urgent
+@detailss
+*skipline
+*forecolor blue
+*say 0 1 ) Change Destination [%dest%]
+*say 0 2 ) Change Postage Type [%type%]
+*say 0 3 ) Exit
+var detailinput
+*forecolor white
+input detailinput Please make your selection ( 1 - 3 )
+
+if detailinput = 1
+goto dest
+endif
+
+if detailinput = 2
+goto type
+endif
+
+if detailinput = 3
+goto editmenu
+else
+goto  detailss
+
+@type
+*skipline
+*forecolor blue
+*say 0 1 - Second Class
+*say 0 2 - First Class
+*say 0 3 - Urgent
+*forecolor white
+input type Please select the type of delivery
+
+if type = 1
+!type = Second Class
+*forecolor grey
+*say 0 Postage Type Updated
+goto detailss
+elseif type = 2
+!type = First Class
+*forecolor grey
+*say 0 Postage Type Updated
+goto detailss
+elseif type=3
+!type = Urgent
+*forecolor grey
+*say 0 Postage Type Updated
+goto detailss
+else
+goto type
+endif
+
+@dest
+*skipline
+*forecolor white
+input dest Please enter the new destination
+
+if dest = 26 Masen Av New York USA
+SM zrio Encrypted Excellant work on completing your last mission:We recieved the package with no problems:There was some very interesting documents that we needed:But more importantly there was an encrypted hard drive, we need some software to decrypt it though:We have put up a list of possible IP address at ZRIO.org port 45:Username. ZRIO:Passwd. geno91
+*forecolor grey
+*skipline
+*say 0 Destination Updated
+*pause
+goto detailss
+else
+*forecolor grey
+*skipline
+*say 0 Destination Updated
+*pause
+goto detailss
+endif
+
+@error
+*forecolor orange
+*say 0 System Command Error [%dbinput%]
+goto input
+
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free getcolor
+free getbgcolor
+free mpchoice
+free dest
+free type
+free user
+free current
+free dbinput
+free detailinput
+free fcdbchoice
+free packagenum
+
+
+
+
+
+
+
+
+
+

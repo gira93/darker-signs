@@ -1,0 +1,16 @@
+var crap
+*say 0 Please enter username and password
+input crap Username :
+input crap Password :
+*say 0 Invalid Password
+free crap
+
+
+
+
+
+
+
+
+
+

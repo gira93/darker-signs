@@ -1,0 +1,144 @@
+cancel true
+getcolor
+getbgcolor
+var mminput
+var dosbw
+var uploaded
+!uploaded = false
+var blinddone
+
+@welcome
+*forecolor white
+*say 0 Hello and welcome to BlindBallet.org's FTP server
+*say 0 This server is private, so if your not ment to be here, Please leave now.
+@mm
+*forecolor white
+input mminput %hjhfkhskd%
+
+if mminput = help
+goto help
+elseif mminput = put
+goto put
+elseif mminput = run
+goto run
+elseif mminput = ls
+goto ls
+elseif mminput = exit
+goto end
+elseif mminput = version
+goto version
+else
+*forecolor orange
+*say 0 System Command Error [%mminput%]
+goto mm
+endif
+
+@version
+*forecolor white
+*say 0 Version: FTPD v2.4
+*say 0 Build: 8.9826b
+goto mm
+
+@put
+input mminput Enter the file you wish to upload
+exists %mminput%
+if exists = false
+*forecolor orange
+*say 0 File Error [can not find %mminput%]
+goto mm
+endif
+if mminput = remoteapp
+*forecolor white
+*say 100 ...........................................
+!uploaded = true
+*say 0 File Uploaded
+goto mm
+else
+*forecolor orange
+*say 0 File Error [can not find %mminput%]
+goto mm
+endif
+
+@ls
+if uploaded = true
+*forecolor white
+*say 0 REMOTEAPP
+goto mm
+else
+*forecolor white
+*say 0 NO FILES
+goto mm
+endif
+
+@run
+input mminput Enter the file you wish to run
+if upload = false
+*forecolor orange
+*say 0 File Error [can not find %mminput%]
+goto mm
+endif
+if mminput = remoteapp
+goto infect
+else
+*forecolor orange
+*say 0 File Error [can not find %mminput%]
+goto mm
+endif
+
+@infect
+*forecolor red
+if blinddone = 0
+!dosbw = dosbw + 1
+!blinddone = true
+endif
+*say 100 INFECTED
+goto end
+
+@help
+*skipline
+*forecolor blue
+*say 0 EXIT - usage: exit
+*forecolor white
+*say 0 Disconnects you from the remote host
+*skipline
+*forecolor blue
+*say 0 HELP - usage: help
+*forecolor white
+*say 0 Displays this help screen
+*skipline
+*forecolor blue
+*say 0 LS - usage: ls
+*forecolor white
+*say 0 Lists all files and folders in current directory
+*skipline
+*forecolor blue
+*say 0 PUT - usage: put
+*forecolor white
+*say 0 Upload a file to the current directory
+*skipline
+*forecolor blue
+*say 0 RUN - usage: run
+*forecolor white
+*say 0 Runs a remote file
+*skipline
+*forecolor blue
+*say 0 VERSION - usage: version
+*forecolor white
+*say 0 Displays the OS version and build
+*pause
+goto mm
+
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free getcolor
+free getbgcolor
+free mminput
+free uploaded
+
+
+
+
+

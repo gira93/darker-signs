@@ -1,0 +1,259 @@
+var userinput
+var passwd
+getbgcolor
+getcolor
+bgcolor black
+color green
+chr 124
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%                                                                   The THC HQ                                                                                 %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Login for real accounts
+input userinput Username:
+if userinput=jpain
+connectedip
+if connectedip=24.53.123.5
+goto jpain
+endif
+color green
+*say 100 Invalid location
+goto end
+endif
+input passwd Password:
+*say 100 Wrong!!!
+goto end
+
+@jpain
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: jpain         -         Location : main menu         -         THC Rule!                                                   %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 e(x)ploits
+*say 0 (v)irri
+*say 0 (p)rojects
+*say 0 (m)essage boards
+*say 0 (a)vailable missions
+*say 0 (e)xit
+getkey Choose
+if getkey=69
+goto end
+endif
+if getkey=77
+goto mboard
+endif
+if getkey=88
+goto nonameex
+endif
+if getkey=80
+goto projects
+endif
+if getkey=65
+goto avail
+endif
+if getkey=86
+goto virri
+endif
+goto jpain
+
+@projects
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: jpain         -         Location : current projects         -         THC Rule!                                            %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Project : Outpost 0E0A
+*say 0 we have found out that this ring have been monitoring us. this is not good
+*say 0 the project is in early stages but we will destroy them
+*say 0 currently, gage has released a virus, see the virus section
+*say 0  ____________________________________________________________________________________
+*say 0 Project : BOB
+*say 0 following certain hacks which he has done, the police are very interested in this loran
+*say 0 we are going to catch him in exchange for the release of certain THC members
+*say 0 more information is stored on the lower ebworth server
+*say 0  ____________________________________________________________________________________
+pause
+goto jpain
+
+@mboard
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: jpain          -         Location : Message Board         -         THC Rule!                                          %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 no guest access for you jpain, too insecure
+input userinput Message Board Username:
+input passwd Message Board Passwd:
+*say 100 Wrong!!! 
+goto jpain
+
+
+@avail
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: jpain         -         Location : available missions         -         THC Rule!                                      %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 There are currently no available missions
+pause
+goto jpain
+
+@virri
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: jpain         -         Location : Virri         -         THC Rule!                                                               %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Viewing virri from the last : 7 days
+*say 0       [If you have a proper account you will be able to change this, this is just a taste]
+*say 0 Outpost 0E0A Virri - Download (1) the virus, (2) the antidote
+*say 0 (b)ack
+getkey Choose
+if getkey=66
+goto jpain
+endif
+if getkey=49
+*say 0 Downloading Virus to outpost.virus
+write outpost.virus Zipped using easyzip
+write outpost.virus asd87q09w84q09weqmweiqwepoqweiq09weim09qwime-09mqwe907qw9087e908qw7e98q7w98e7
+write outpost.virus aqoisdasd7an908s7d987as98d7asijdoajslkdjalksdj;a;sd'aksdkaskda;lskd;laks;ldkk
+write outpost.virus qopw4893480923u4i23jlk4jlk3jlkwje;rjwelkrjwelkrjwlkejrlkwjelrkjwelkrjwelkrjlw
+write outpost.virus oias7udofjna[fjogjfdlgkd;fkgd;f'gdfgp[iodpof[igpodifgpoidpofigpodifgpoidfggdf
+write outpost.virus 0980a9s8d09asdkjasdlkna;slkdjalksdjlaksjdlasdlmas.,dma.s,d,masdlkajsdk;jasdkl
+write outpost.virus pasoid[aspodias[pdiapos[id[paoisdp[oigpfjgdfjlgkdjflkgjdf;lkgjdflk;jgdfkgjdfj
+*say 0 Downloaded
+pause
+goto virri
+endif
+if getkey=50
+*say 0 Downloading Antidote to outpost.antidote
+write outpost.antidote Congratulations Agent!
+write outpost.antidote seeing as you don't have eazyzip, we'll take over from here
+write outpost.antidote You're user up code is 316geographic
+*say 0 Downloaded
+pause
+endif
+goto virri
+
+
+
+@nonameex
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: jpain         -         Location : Exploits Menu         -         THC Rule!                                              %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Viewing exploits from the last : 7 days
+*say 0        [If you have a proper account you will be able to change this, this is just a taste]
+*say 0 1) UHB Login script
+*say 0 2) Various DScript variable bugs
+*say 0 b) Back to main menu
+getkey Choose
+if getkey=49
+goto uhb
+endif
+if getkey=50
+goto varbug
+endif
+if getkey=66
+goto jpain
+endif
+goto nonameex
+
+@uhb
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: jpain           -         Location : The UHB exploit         -         THC Rule!                                         %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 UHB Login script exploit - Found by Beater
+*say 0 UHB have a stupid system where even if you have the username and password
+*say 0 you still have to be on a list of authorised IP addresses
+*say 0 however, the programmers are also morons
+*say 0 One of the 'authorised' IPs is the actual IP of the machine itself
+*say 0   and there is a debug profile open which acts as a proxy
+*say 0 username: proxy password: proxy
+*say 0 and since it's a special program, you don't need to be on an authorised IP to use it
+*say 0                     By Beater
+*say 0 (b)ack to exploits menu                 - (s)ave file and go back to menu
+getkey Choose
+if getkey=66
+goto noname
+endif
+if getkey=83
+*say 0 Will save as UHB.exploit
+*write UHB.exploit From: thc-hq.com (24.53.123.5) Filename: UHB.exploit
+*write UHB.exploit UHB Login script exploit - Found by Beater
+*write UHB.exploit UHB have a stupid system where even if you have the username and password
+*write UHB.exploit you still have to be on a list of authorised IP addresses
+*write UHB.exploit however, the programmers are also morons
+*write UHB.exploit One of the 'authorised' IPs is the actual IP of the machine itself
+*write UHB.exploit   and there is a debug profile open which acts as a proxy
+*write UHB.exploit username: proxy password: proxy
+*write UHB.exploit and since it's a special program, you don't need to be on an authorised IP to use it
+*write UHB.exploit                     By Beater
+*say 0 Saved
+pause
+endif
+goto nonameex
+
+@varbug
+clear
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%          User: jpain           -         Location : Various Dscript variable bugs         -         THC Rule!                   %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 Various DScript variable bugs - By Hatred
+*say 0 These bugs have been made into a challenge for possible THC members, so don't distro it
+*say 0 everyone knows about non free'ed variables and how you can access them after the program ends
+*say 0 however, you can also access what variable functions returned last in the same way
+*say 0 plus variable functions aren't free'ed - even better
+*say 0 However, should you want to read the contents of a variable you can always cancel the script
+*say 0 before it's free'ed and read it, use CTRL+X 
+*say 0 finally, strings are treated funny in DScript. I'm not sure about everything you can do, but entering
+*say 0 a variable name between the two percentages will turn it into it's contents
+*say 0 so if you can display some user input, you can view any variable
+*say 0 if you can edit the contents of a variable and you
+*say 0 make input = (percentage)passwd(percentage) [proper percentages of course]
+*say 0 and input will equal whatever passwd does at the time
+*say 0              By Hatred
+*say 0 (b)ack to exploits menu                 - (s)ave file and go back to menu
+getkey Choose
+if getkey=66
+goto nonameex
+endif
+if getkey=83
+*say 0 Will save as dscript.variable
+write dscript.variable From: thc-hq.com (24.53.123.5) Filename: dscript.variable
+write dscript.variable Various DScript variable bugs - By Hatred
+write dscript.variable These bugs have been made into a challenge for possible THC members, so don't distro it
+write dscript.variable everyone knows about non free'ed variables and how you can access them after the program ends
+write dscript.variable however, you can also access what variable functions returned last in the same way
+write dscript.variable plus variable functions aren't free'ed - even better
+write dscript.variable However, should you want to read the contents of a variable you can always cancel the script
+write dscript.variable before it's free'ed and read it, use CTRL+X 
+write dscript.variable finally, strings are treated funny in DScript. I'm not sure about everything you can do, but entering
+write dscript.variable a variable name between the two percentages will turn it into it's contents
+write dscript.variable if you can edit the contents of a variable and you
+write dscript.variable make input = (percentage)passwd(percentage) [proper percentages of course]
+write dscript.variable and input will equal whatever passwd does at the time
+write dscript.variable              By Hatred
+*say 0 Saved.
+pause
+endif
+goto nonameex
+
+@end
+free userinput
+free passwd
+bgcolor %getbgcolor%
+color %getcolor%
+clear
+
+
+
+
+
+

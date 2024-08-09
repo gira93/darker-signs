@@ -1,0 +1,25 @@
+//CACHE MANAGER
+//currently useless
+
+cancel true
+getcolor
+getbgcolor
+
+var$ theip
+var$ theport
+
+*forecolor green
+*Say 1 Cache Manager
+*forecolor grey
+*Say 1 Unrecognized Communications Protocol
+
+
+
+
+@end
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+*Say 1 Connection Terminated
+*forecolor %getcolor%

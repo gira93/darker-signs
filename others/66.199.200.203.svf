@@ -1,0 +1,5 @@
+name%base09.pipelink.gov
+port%78#remote_res-29
+port%80#http_09pipelink
+path%1
+portend

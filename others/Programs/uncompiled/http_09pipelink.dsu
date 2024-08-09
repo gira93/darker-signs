@@ -1,0 +1,100 @@
+
+if %keycodef% = 441
+goto ffff
+else
+*fcolor orange
+goto end
+endif
+
+@ffff
+*fcolor orange
+*SAY 0 User Logged into NDRGRND Private Database
+*fcolor white
+*Say 0 -- 1 -- History Files
+*Say 0 -- 2 -- History Files
+*Say 0 -- 3 -- Network Sharing
+*Say 0 -- 4 -- Disconnect from Server
+
+var optionst
+input optionst Please Enter 1 to 4
+
+if optionst = 4
+goto end
+endif
+
+if optionst = 1
+*Say 0 Just before the end of the WWII, two German provision U-boats, U-530 and U-977,
+*Say 0 were launched from a port on the Baltic Sea. Reportedly they took with them members
+*Say 0 of the antigravity-disk research and development teams [ULTRA], and the LAST of the
+*Say 0 most vital disc components [much of this technology and hardware had been transported
+*Say 0 to the base during the course of the war].
+skipline
+*Say 0 This included the notes and drawings for the latest saucer or aerial disk designs,
+*Say 0 and designs for the gigantic underground complexes and living accommodations based on
+*Say 0 the remarkable underground factories of Nordhausen in the Harz Mountains.
+pause
+*Say 0 The two U-boats duly reached the new land of Neu-Schwabenland where they unloaded
+*Say 0 everything. When they arrived in Argentina several months later, their crews were captured.
+*Say 0 It seems as if they were either counting on the formerly German-friendly Argentineans to
+*Say 0 allow them access, or it could have been that they intentionally allowed themselves to be
+*Say 0 discovered for misinformation purposes, i.e. -- "yes... we are the last two renegade German
+*Say 0 subs. We've been trying to hold out but...oops, you caught us... the war's finally over!" 
+pause
+goto ffff
+endif
+
+if optionst = 2
+*Say 0 The Antarcticans were desperate following the war, and knew that a confrontation was imminent.
+*Say 0 Much effort was put into developing secret weapons projects to defend their new underground
+*Say 0 Empire, which no doubt was constructed with the 'help' of a large number of expendable
+*Say 0 slave laborers transported from the concentration camps of Europe.
+skipline
+*Say 0 The major base-city of Antarctica became known as the NEW BERLIN,
+*Say 0 or by the code-named "Base-211". 
+pause
+*Say 0 The crews of these U-Boats were of course interrogated by U.S. Intelligence agents who
+*Say 0 had suspected the existence of the Antarctic base. Whatever the Nazi soldiers tried to tell
+*Say 0 them, apparently the Americans were not convinced... especially considering the subsequent
+*Say 0 and ill-fated U.S. Navy backed military actions against the Nazi's "Last Battalion" in
+*Say 0 Antarctica in later years under Admiral Richard E. Byrd, who arrived at Antarctica with
+*Say 0 an entire military armada and provisions to last 6 month. However the the entire
+*Say 0 expedition lasted only 8 weeks, with only approximately three weeks of actual
+*Say 0 full-scale Antarctic operations.
+pause
+goto ffff
+endif
+
+
+
+
+
+if optionst = 3
+goto fffr
+endif
+
+*Say 0 Invalid Option (%optionst%)
+goto ffff
+@fffr
+
+input optionst Enter name of a registered organization to share access with...
+if optionst = zrio
+goto ffft
+endif
+if optionst = zrio.org
+goto ffft
+endif
+*Say 0 That organization is not registered...
+goto ffff
+@ffft
+
+*Say 0 File Accepted by ZRIO
+sm zrio pipelink The Shadow Goverment have been using the miliary Post Office to send packages and documents for years.:There is an important package still waiting to be delivered, we need this package.:.:Redirect this package to the following address:26 Masen Av New York USA:.:The package number is 883597 and the website for the Post Office is postoffice.mil
+pause
+
+
+goto ffff
+@end
+*Say Your connection has been closed by the remote server.
+
+
+

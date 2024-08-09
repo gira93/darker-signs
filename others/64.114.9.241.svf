@@ -1,0 +1,6 @@
+name%webcache02.securedigital.com
+port%25#sendmail_22
+port%80#secure_http
+port%505#cache_manager
+path%12
+portend

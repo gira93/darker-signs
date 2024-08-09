@@ -1,0 +1,50 @@
+getcolor
+getbgcolor
+
+@menu
+clear
+color 39168
+*say 0 Welcome to internetprovider.com
+*say 0 1. About the company
+*say 0 2. Request a free access
+*say 0 0. Disconnect
+getkey
+if getkey=49
+goto company
+endif
+if getkey=50
+color red
+*say 0 Sorry, this option is acutally disabled.
+pause
+goto menu
+endif
+if getkey=48
+goto end
+endif
+goto menu
+
+@company
+clear
+color 39168
+*say 0 Our company has been created at the beginning of the "old" internet,
+*say 0 our goal is to provide access to the internet to everyone.
+*say 0 We survived the numerous changes in internet because our company is 
+*say 0 based on strong basis. 
+*say 0 We take care of our clients and they know we are here at any time.
+*say 0 Our staff is highly qualified, we recruit them in the higher 
+*say 0 universities around the world.
+*say 0 The security of our network is guaranteed by old hackers, we hire the
+*say 0 best hackers to make our network the most secure of the world.
+*say 0 We think hackers are the more suitable people for this task.
+pause
+goto menu
+
+@end
+color yellow
+*say 0 Disconnecting
+color %getcolor%
+bgcolor %getbgcolor%
+
+
+
+

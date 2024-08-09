@@ -1,0 +1,67 @@
+//Script on special 81
+//Let's go
+
+cancel true
+getcolor
+getbgcolor
+
+@menu
+var user
+var pass
+var keuze
+*forecolor yellow
+*say 1 Ftp-client
+*say 1 ---------------
+input user Enter Username:
+if user = micmast
+*say 1 Username accepted
+input pass Enter Password:
+if pass = urgettingsomewhere
+*say 1 Password accepted
+*say 1 commands: copy, upload, exit
+input keuze What to do?
+if keuze = copy
+*write cookie.doc Well done, you have completed this level
+*write cookie.doc after you decrypt this =]
+*write cookie.doc qydy czomskvcobfob.myw
+goto menu
+end if
+if keuze = upload
+*say 1 Upload-sectino is down
+pause
+goto menu
+endif
+
+@end
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor Orange
+*say 1 ByeBye
+*forecolor %getcolor%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

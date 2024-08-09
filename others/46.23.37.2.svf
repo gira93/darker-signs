@@ -1,0 +1,6 @@
+name%corpfw1.org
+port%15#fw1proxy
+port%75#fw1debug
+port%125#fw1slock
+path%1
+portend

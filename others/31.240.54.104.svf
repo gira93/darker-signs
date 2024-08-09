@@ -1,0 +1,6 @@
+name%internetprovider.com
+port%22#netprov_admin
+port%2541#user_netprov_p2p
+port%80#netprov_http
+path%12345
+portend

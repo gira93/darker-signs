@@ -1,0 +1,63 @@
+getcolor
+getbgcolor
+
+color 39168
+*say 0 To enter this site port you need a password
+var ans
+var ret
+input ans Password
+
+var tmp
+! tmp = fretpor
+instr ans tmp
+if instr=1
+goto menu
+endif
+goto wrong
+
+clear
+color 39168
+*say 0 Loading shell
+*say 50 .................
+@menu
+clear
+color 39168
+*say 0 Welcome you are in the public section.
+*say 0 Here are the files you can download :
+*say 0 1. game868686.bin
+*say 0 0. Disconnect
+getkey
+if getkey=49
+goto dlfile
+endif
+if getkey=48
+goto end
+endif
+goto menu
+
+@dlfile
+*say 0 Downloading file "game868686.bin".
+*say 10 ..........................................................
+*say 0 Download complete
+pipe /game868686.bin
+sayfile 0 /system/mission/findgame/script2
+pipe
+pause
+goto menu
+
+@wrong
+color red
+*say Wrong password
+goto end
+
+@end
+free ans
+free tmp
+color yellow
+*say 0 Disconnecting
+color %getcolor%
+bgcolor %getbgcolor%
+
+
+
+

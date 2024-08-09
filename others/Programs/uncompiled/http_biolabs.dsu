@@ -1,0 +1,134 @@
+//SECURE HTTP
+//this script runs as the dark signs help server at darksigns.com
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+var xvar
+var filen
+@startt
+*forecolor green
+*Say 1 Connected on Port 80 to BIOLABS
+*Say 1 Public Information Interface
+*forecolor white
+*Say 1 Biolabs biotechnology research, centered on dolphin intelligence.
+*fcolor grey
+*say 1 1 - Our Research
+*say 1 2 - Dolphin Encounters
+*say 1 3 - File Database
+*say 1 4 - Network
+*say 1 5 - Disconnect
+
+input xvar Please select an option from the menu above (1 - 4).
+
+if %xvar% = 1
+*forecolor blue
+*Say Research
+*forecolor white
+*Say Biolabs focuses most of its efforts on dolphin communication.
+*Say We see dolphins in the ocean and can distinguish many of the
+*Say individual dolphins by their unique characteristics.
+skipline
+*Say In our continuing research, we believe we are very close to
+*Say a breakthrough in this new communication science.
+pause
+goto startt
+endif
+
+if %xvar% = 2
+*forecolor blue
+*Say Dolphin Encounters
+*forecolor white
+*Say The best way to have a dolphin encounter is to spend a week
+*Say with us on a group retreat beside the sea. Here you get to really
+*Say learn the ways and guidelines for communicating with dolphins,
+*Say you get to create a pod like community with the other retreaters
+*Say and live right beside the sea on a marine reserve where they
+*Say often come to rest and play.
+skipline
+*Say The growth in the dolphin communication experience is very powerful.
+pause
+goto startt
+endif
+
+if %xvar% = 3
+*forecolor blue
+*Say File Database
+*forecolor white
+*Say PUBLIC FILES:
+*Say (none listed)
+*Say PRIVATE FILES:
+*Say File 1 - 8m.enc
+input filen Enter A File Number To Download (put 0 to cancel)
+goto zxcc
+endif
+
+if %xvar% = 4
+*forecolor blue
+*Say Network
+*forecolor white
+*Say Restricted to system administrators and biolabs employees only.
+pause
+goto startt
+endif
+
+if %xvar% = 5
+*forecolor orange
+*say 1 You have been disconnected
+*forecolor %getcolor%
+end
+else
+*forecolor orange
+*say 1 Invalid Option
+*forecolor %getcolor%
+goto startt
+end
+endif
+
+goto end
+
+@zxcc
+if %filen%=1
+*write 8m.enc ENCRYPTED
+*write 8m.enc SDKJBSKJDBSKJBHDKJSBHKJDBSKJBDS 
+*write 8m.enc AKUHSMKAHKSAHLKHSMKDHSKJHDKSHJ 
+*write 8m.enc SSUDHISUHDIUSYGIDUYSGDMJASLKM
+*write 8m.enc SIDHMSLKDHKJLXJZLKXHMLZKXJHLKZJH 
+*write 8m.enc SDJKHSLMDHALIUHSLAUHSLAOHSOIHM 
+*write 8m.enc AKUHSMKAHKSAHLKHSMKDHSKJHDKSHJ 
+*write 8m.enc SSUDHISUHDIUSYGIDUYSGDMJASLKM
+*write 8m.enc SIDHMSLKDHKJLXJZLKXHMLZKXJHLKZJH 
+*write 8m.enc SDJKHSLMDHALIUHSLAUHSLAOHSOIHM  
+*Say File [8m.enc] Downloaded to your root directory...
+pause
+goto startt
+else
+goto startt
+endif
+
+@end
+fcolor blue
+*Say 1 Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

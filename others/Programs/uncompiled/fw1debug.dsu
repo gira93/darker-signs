@@ -1,0 +1,193 @@
+CONNECTEDIP
+GETCOLOR
+GETBGCOLOR
+var whichservice
+if connectedip=46.23.37.2
+goto nextbit
+endif
+*color red
+*say 0 You do not have permission to access this port
+goto realend
+@nextbit
+*color orange
+*bgcolor black
+*say 20 Service Debugger 1.0
+input whichservice Please enter the service to connect to
+if whichservice=15
+*say 20 Connecting to Port 15
+*say 20 Debug Mode : On
+*color 000000
+*say 0 AAAA
+goto proxy
+endif
+if whichservice=125
+*say 20 Connecting to Port 125
+*say 20 Debug Mode : On
+*color 000000
+*say 0 AAAA
+goto slock
+endif
+if whichservice=75
+*say 20 You can't debug the debugger
+goto realend
+endif
+*say 20 That port is not open
+goto realend
+
+@proxy
+*color white
+*say 0 >>> GETCOLOR
+*say 0 >>> var address
+*say 0 >>> var port
+var address
+var port
+*say 0 >>> *color orange
+*color white
+*say 0 >>> *say 20 Proxy Service 1.0
+*color orange
+*say 20 Proxy Service 1.0
+*color white
+*say 0 >>> input address Please enter the IP address
+*color orange
+input address Please enter the IP address
+*color white
+*say 0 >>> if address=46.23.37.2
+if address=46.23.37.2
+*say 0 >>> goto portget
+goto portget
+endif
+*say 0 >>> endif
+*say 0 >>> *say 10 That IP address is not valid
+*color orange
+*say 10 That IP address is not valid
+*color white
+*say 0 >>> goto end
+goto end
+*say 0 >>> @portget
+@portget
+*say 0 >>> input port Please enter the port to connect to
+*color orange
+input port Please enter the port to connect to
+*color white
+*say 0 >>> endconnect [%address%] [%port%]
+*say 0 >>> Debugger cannot follow script, closing
+goto end2
+@end
+*say 0 >>> free address
+*say 0 >>> free port
+*say 0 >>> *color [%getcolor%]
+@end2
+free address
+free port
+goto realend
+
+@slock
+*color white
+*say 0 >>> GETCOLOR
+*say 0 >>> var number1
+*say 0 >>> var number2
+*say 0 >>> var number3
+*say 0 >>> var total
+*say 0 >>> CHECKALLOWEDHOST
+*say 0 >>> if checkallowedhost=1
+*say 0 >>> goto hostok
+*say 0 >>> @hostok
+var number1
+var number2
+var number3
+var total
+*say 0 >>> *color orange
+*say 0 >>> *say 20 Safe Lock V1.0
+*color orange
+*say 20 Safe Lock V1.0
+*color white
+*say 0 >>> input number1 Please enter first code number
+*color orange
+input number1 Please enter first code number
+*color white
+*say 0 >>> input number2 Please enter second code number
+*color orange
+input number2 Please enter second code number
+*color white
+*say 0 >>> input number3 Please enter third code number
+*color orange
+input number3 Please enter third code number
+*color white
+*say >>> if number1>10
+if number1>10
+*say >>> *say 20 First code number is invalid
+*color orange
+*say 20 First code number is invalid
+*color white
+*say >>> goto end
+*color orange
+goto end5
+endif
+*say >>> endif
+*say >>> if number2>10
+if number2>10
+*say >>> *say 20 Second code number is invalid
+*color orange
+*say 20 Second code number is invalid
+*color white
+*say >>> goto end
+*color orange
+goto end5
+endif
+*say >>> endif
+*say >>> if number3>10
+if number3>10
+*say >>> *say 20 Third code number is invalid
+*color orange
+*say 20 Third code number is invalid
+*color white
+*say >>> goto end
+*color orange
+goto end5
+endif
+*say >>> endif
+*say >>> !total=number1*number2*number3
+!total=number1*number2*number3
+*say if total=189
+if total=189
+*say >>> goto correctcode
+goto correctcode
+endif
+*say >>> endif
+*say >>> *say 20 Incorrect code
+*color orange
+*say 20 Incorrect code
+*color white
+*say >>> goto end
+goto end5
+
+@correctcode
+*say >>> @correctcode
+*say >>> *say 20 Connecting to firewall2
+*color orange
+*say 20 Connecting to firewall2
+*color white
+*say >>> fwallconnect hst2
+*say Debugger cannot follow script, closing
+goto end6
+
+@end5
+*color white
+*say >>> free number1
+*say >>> free number2
+*say >>> free number3
+*say >>> free total
+*say >>> *color [%GETCOLOR%]
+@end6
+free number1
+free number2
+free number3
+free total
+goto realend
+
+@realend
+*color %getcolor%
+*bgcolor %getbgcolor%
+
+
+

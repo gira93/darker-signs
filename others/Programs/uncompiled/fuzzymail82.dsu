@@ -1,0 +1,131 @@
+//fuzzymail82
+
+cancel true
+getcolor
+getbgcolor
+
+var$ theip
+var$ theport
+
+getmyip
+getmyhostname
+@menu
+*forecolor green
+*Say 1 Connected to FUZZY-Mail
+*forecolor white
+var choice
+input choice Enter your username
+
+if %choice% = admin
+goto fff
+else
+*fcolor orange
+*Say 0 User [%choice%] not found
+*Say 0 Exiting...
+pause
+goto end
+endif
+
+@fff
+
+input choice Enter your password
+
+if %choice% = fuzzy
+goto ffftwo
+else
+*fcolor orange
+*Say 0 Invalid Password [%choice%] for specified username
+*Say 0 Exiting...
+pause
+goto end
+endif
+
+*fcolor orange
+*Say 0 ADMIN Logged In OK
+pause
+
+
+@ffftwo
+
+*fcolor blue
+*Say 0 =/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\=
+*fcolor white
+skipline
+*Say 0 - - - - Welcome Admin, you have 1 new message! - - - -
+skipline
+*Say 0                     (1) Read New Messages
+*Say 0                     (2) View Old Messages
+*Say 0                     (3) Log Out
+skipline
+*fcolor blue
+*Say 0 =\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/=
+
+input choice Enter Option Number [1 to 3]
+
+if choice=3
+goto end
+endif
+///////////////////////////////////////////
+if choice=1
+*fcolor white
+skipline
+*Say 0 FROM: Adam Palmer
+*Say 0 Subject: Recent Proposal
+*Say 0 Hello,
+skipline
+*Say 0 I have decided not to go ahead with the
+*Say 0 other domain business. For now I don't
+*Say 0 need it, however I will keep it in mind, maybe
+*Say 0 at a later date perhaps. Please let me
+*Say 0 know if you have any concerns regarding
+*Say 0 this.
+skipline
+*Say 0 Regards,
+*Say 0 Adam
+pause
+goto ffftwo
+endif
+///////////////////////////////////////////
+if choice=2
+*fcolor white
+skipline
+*Say 0 FROM: Adam Palmer
+*Say 0 Subject: Re: Proposal
+*Say 0 Hello,
+skipline
+*Say 0 I will make the necessary preperations.
+skipline
+*Say 0 Regards,
+*Say 0 Adam
+pause
+skipline
+*Say 0 FROM: RegDomains Admin
+*Say 0 Subject: Filenames
+*Say 0 Hello co admin!
+skipline
+*Say 0 Regarding your recent support question,
+*Say 0 yes, it is possible. To modify passwords simply
+*Say 0 open the dompass.txt file, and make changes
+*Say 0 as needed.
+skipline
+*Say 0 Regards,
+*Say 0 Scott Riley
+pause
+goto ffftwo
+endif
+
+
+
+@endf
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+*Say 1 Connection Terminated
+
+
+
+
+
+
+

@@ -1,0 +1,181 @@
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+var xvar
+var filen
+@startt
+*forecolor white
+*Say 1 FIND.com
+*Say 1 Internet Resources
+*Say 1 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*Say 1     1 -     Jobs on FIND.com
+*Say 1     2 -     Writing a Review
+*Say 1     3 -     Domains and Registration
+*Say 1     4 -     Latest News
+*Say 1     5 -     Online Services
+*Say 1     6 -     Server Exit
+*Say 1 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+input options Enter A Number from 1 to 6
+
+if options=6
+goto end
+endif
+
+if options=1
+*fcolor blue
+*Say 0 FIND.com - Jobs
+*fcolor white
+*Say 0 Using the Internet to find a new job has come a long way from the
+*Say 0 early sprinkling of email lists and Usenet groups that advertised opening
+*Say 0 to the once-geeky Internet community of the 1980's. Today, web-based
+*Say 0 career sources offer job databases where you can find new jobs and
+*Say 0 apply directly online. Its not just for geeks anymore, either.
+skipline
+*Say 0 Every employer, from fast-food franchises to government
+*Say 0 agencies and multinational corporations advertise online. 
+*Say 0 FIND.com will have more infomation on jobs soon.
+pause
+goto startt
+endif
+
+if options=2
+*fcolor blue
+*Say 0 FIND.com - Writing
+*fcolor white
+skipline
+*Say 0 In the introduction, you should...
+skipline
+*Say 0 Define or identify the general topic, issue, or area of concern,
+*Say 0 thus providing an appropriate context for reviewing the literature. 
+skipline
+*Say 0 Point out overall trends in what has been published about the topic;
+*Say 0 or conflicts in theory, methodology, evidence, and conclusions; or
+*Say 0 gaps in research and scholarship; or a single problem or new
+*Say 0 perspective of immediate interest. 
+skipline
+*Say 0 Establish the writer's reason (point of view) for reviewing the
+*Say 0 literature; explain the criteria to be used in analyzing and comparing
+*Say 0 literature and the organization of the review (sequence); and, when
+*Say 0 necessary, state why certain literature is or is not included (scope). 
+pause
+skipline
+*Say 0 Writing the body In the body, you should...
+skipline
+*Say 0 Group research studies and other types of literature
+*Say 0 (reviews, theoretical articles, case studies, etc.) according to common
+*Say 0 denominators such as qualitative versus quantitative approaches,
+*Say 0 conclusions of authors, specific purpose or objective, chronology, etc. 
+skipline
+*Say 0 Summarize individual studies or articles with as much or as little
+*Say 0 detail as each merits according to its comparative importance in the
+*Say 0 literature, remembering that space (length) denotes significance. 
+skipline
+*Say 0 Provide the reader with strong "umbrella" sentences at beginnings of
+*Say 0 paragraphs, "signposts" throughout, and brief "so what" summary
+*Say 0 sentences at intermediate points in the review to aid in understanding
+*Say 0 comparisons and analyses. 
+pause
+ skipline
+*Say 0 Writing the conclusion In the conclusion, you should...
+skipline
+*Say 0 Summarize major contributions of significant studies and articles
+*Say 0 to the body of knowledge under review, maintaining the focus
+*Say 0 established in the introduction. 
+skipline
+*Say 0 Evaluate the current "state of the art" for the body of knowledge reviewed,
+*Say 0 pointing out major methodological flaws or gaps in research, inconsistencies
+*Say 0 in theory and findings, and areas or issues pertinent to future study. 
+skipline
+*Say 0 Conclude by providing some insight into the relationship between the
+*Say 0 central topic of the literature review and a larger area of study such
+*Say 0 as a discipline, a scientific endeavor, or a profession.
+pause
+goto startt
+endif
+
+if options=3
+*fcolor blue
+*Say 0 FIND.com - Domains and Registration
+*fcolor white
+skipline
+*Say 0 What is the domain name system?
+skipline
+*Say 0 The Domain Name System (DNS) helps users to find their way
+*Say 0 around the Internet. Every computer on the Internet has a unique
+*Say 0 address - just like a telephone number - which is a rather complicated
+*Say 0 string of numbers. It is called its "IP address" (IP stands for "Internet Protocol").
+skipline
+*Say 0 IP Addresses are hard to remember. The DNS makes using the Internet
+*Say 0 easier by allowing a familiar string of letters (the "domain name") to be
+*Say 0 used instead of the arcane IP address. So instead of typing 207.151.159.3,
+*Say 0 you can type internic.net. It is a "mnemonic" device that makes
+*Say 0 addresses easier to remember.
+pause
+goto startt
+endif
+
+if options=4
+*fcolor blue
+*Say 0 FIND.com - Latest News
+*fcolor white
+skipline
+*Say 0 Big Bubbles in Bermuda Triangle
+skipline
+*Say 0 some scientists think giant gas bubbles in the Bermuda Triangle could
+*Say 0 be what is sucking ships down into the deep. Hollywood special effects artist Phil Beck,
+*Say 0 of Awesome FX, has recreated the phenomenon in order to test this theory. 
+pause
+skipline
+*Say 0 Terminal Zero Releases Dark Signs
+skipline
+*Say 0 An Australian based software development company Terminal Zero has recently
+*say 0 released its groundbreaking new hacking and cracking game - Dark Signs.
+pause
+skipline
+*Say 0 The fish are really big!
+skipline
+*Say 0 Scientists researching deep in the pacific have found the largest sea creatures
+*Say 0 known to exist! They know believe that the deeper they go, the larger the life
+*Say 0 they will find.
+pause
+goto startt
+endif
+
+if options=5
+*fcolor blue
+*Say 0 FIND.com - Online Services
+*fcolor white
+*Say 0 FIND.com offers services including web hosting, database management,
+*Say 0 internet access, and much more.
+skipline
+*Say 0 FIND.com can also provide online services including security for online businesses, as
+*Say 0 well as provide information and system upgrades, for example the recent bug in
+*Say 0 a version of remote resource servers that allows the user open http access
+*Say 0 if the key code is RRS441 and for more information regarding our services, please
+*Say 0 contact us by phone +613 7528288 (Business Hours Only) 
+pause
+goto startt
+endif
+
+*say 0 You entered an invalid option
+pause
+goto startt
+
+@end
+
+fcolor blue
+*Say 1 Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+

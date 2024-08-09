@@ -1,0 +1,4 @@
+name%postoffice.mil
+port%80#post80
+path%12345
+portend

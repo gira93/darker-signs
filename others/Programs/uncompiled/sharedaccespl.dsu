@@ -1,0 +1,87 @@
+//don't look at this file!!!! that's cheating!!!!!!!!!!!!!!!! :P
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+var filen
+@startt
+
+*Say 1 ....................
+*Say 1 This is a private server
+*Say 1 Error accessing auth file
+*forecolor blue
+*Say File Database
+*forecolor white
+*Say PRIVATE FILES:
+*Say File 1 - 8m.enc
+*Say File 2 - 9m.enc
+*Say File 3 - 10m.enc
+input filen Enter A File Number To Download (anything else to exit)
+
+
+if %filen%=1
+*write 8m.enc ENCRYPTED
+*write 8m.enc SDKJBSKJDBSKJBHDKJSBHKJDBSKJBDS 
+*write 8m.enc AKUHSMKAHKSAHLKHSMKDHSKJHDKSHJ 
+*write 8m.enc SSUDHISUHDIUSYGIDUYSGDMJASLKM
+*write 8m.enc SIDHMSLKDHKJLXJZLKXHMLZKXJHLKZJH 
+*write 8m.enc SDJKHSLMDHALIUHSLAUHSLAOHSOIHM 
+*write 8m.enc AKUHSMKAHKSAHLKHSMKDHSKJHDKSHJ 
+*write 8m.enc SSUDHISUHDIUSYGIDUYSGDMJASLKM
+*write 8m.enc SIDHMSLKDHKJLXJZLKXHMLZKXJHLKZJH 
+*write 8m.enc SDJKHSLMDHALIUHSLAUHSLAOHSOIHM  
+*Say File [8m.enc] Downloaded to your root directory...
+pause
+goto startt
+endif
+
+if %filen%=2
+*write 9m.enc ENCRYPTED
+*write 9m.enc SUDHMSIHDJAMKAKZYVMKAYVMZVAYAM
+*write 9m.enc JMAKKZUHZMMZULZMZHZHZLAUSASJIA
+*write 9m.enc AJAQHZHNJQAMKSAJHSKAJSKAKJSMAJKS
+*write 9m.enc SUDHMSIHDJAMKAKZYVMKAYVMZVAYAM
+*write 9m.enc JMAKKZUHZMMZULZMZHZHZLAUSASJIA
+*Say File [9m.enc] Downloaded to your root directory...
+pause
+goto startt
+endif
+
+if %filen%=3
+*write 10m.enc ENCRYPTED
+*write 10m.enc SJHDKMSGKAGMSKVGASMAGVNSFVZJK
+*write 10m.enc AHKMWJVNGMZJGVNXNGHZVNXGZXZXZ
+*write 10m.enc QSUHQKHSHUKHUMHIHSUZMIKIZHIUSD
+*write 10m.enc JASHMLKAXGHJZGVNXZHNFXHZGXNFHN
+*write 10m.enc ASJBKAHMSGZHJJHGNXZFGHSFNGHFGH
+*write 10m.enc IJQOISJWOIJSSHALKISLIAJIUHAUISHMA
+*write 10m.enc SJDHKMZXKHJZJXXNHZGXZHXGZXGZXZ
+*write 10m.enc SDHJKMSYWGUYWGEUYGWUGUYQUYGQ
+*Say File [10m.enc] Downloaded to your root directory...
+pause
+goto startt
+endif
+
+
+
+@end
+free passw
+fcolor blue
+*say Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+
+
+

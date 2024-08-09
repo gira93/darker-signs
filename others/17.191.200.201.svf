@@ -1,0 +1,4 @@
+name%proxy.securedigital.com
+port%109#wingate_proxy
+path%1
+portend

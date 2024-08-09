@@ -1,0 +1,4 @@
+name%go.philly.mil
+port%25#xftp25
+path%12345
+portend

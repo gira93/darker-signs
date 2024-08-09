@@ -1,0 +1,4 @@
+name%ftp.blindballet.org
+port%21#blind21
+path%12345
+portend

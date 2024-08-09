@@ -1,0 +1,215 @@
+cancel true
+getcolor
+getbgcolor
+var mmchoice
+
+@welcome
+*forecolor purple
+*say 0 Thank you for visting XFTP's official website
+@mm
+*skipline
+*forecolor white
+*say 0 ( 1 ) What is XFTP
+*say 0 ( 2 ) Documentation
+*say 0 ( 3 ) Bugs
+*say 0 ( 4 ) Donations
+*say 0 ( 5 ) Contact us
+*say 0 ( 6 ) Dissconect
+input mmchoice Please select a number ( 1 - 6 )
+
+if mmchoice = 1
+goto about
+endif
+if mmchoice = 2
+goto docs
+endif
+if mmchoice = 3
+goto bugs
+endif
+if mmchoice = 4
+goto donations
+endif
+if mmchoice = 5
+goto contact
+endif
+if mmchoice = 6
+goto end
+else
+goto mm
+endif
+
+@about
+*skipline
+*forecolor green
+*say 0 What is XFTP?
+*skipline
+*forecolor white
+*say 0 XFTP is an open source FTP server service. It is free for all to download
+*say 0 and edit in anyway they see fit. Features in XFTP include multiple user
+*say 0 accounts, permissions, auto-update and more.
+*pause
+goto mm
+
+@docs
+*forecolor green
+*say 0 Documentation
+*skipline
+*forecolor white
+*say 0 ( 1 ) Overview
+*say 0 ( 2 ) Commands
+*say 0 ( 3 ) Back to main menu
+input mmchoice Please select a number ( 1 - 3 )
+
+if mmchoice = 1
+*forecolor green
+*say 0 XFTP Overview
+*skipline
+*forecolor white
+*say 0 XFTP is an user driven FTP server, meaning you will have to have a user
+*say 0 account to use the services XFTP offers. User permissions tell the server
+*say 0 what a user can and can not do. The Admin user is the highest account
+*say 0 on the server, it can do what it wants, when it wants. Protect the admin
+*say 0 account with a strong password. By default a user will be logged in as
+*say 0 the anonymous user when first connected, but this can be changed by
+*say 0 adding the line, "login_anonymous false" (no quotes) to the init.conf file.
+*pause
+goto docs
+endif
+if mmchoice = 2
+*forecolor green
+*say 0 Commands
+*skipline
+*forecolor blue
+*say 0 CD - usage:  cd <folder>
+*forecolor white
+*say 0 Changes the current directory. Use cd.. to go back one folder.
+*skipline
+*forecolor blue
+*say 0 EXIT - usage: exit
+*forecolor white
+*say 0 Discconects from XFTP
+*skipline
+*forecolor blue
+*say 0 GET - usage: get
+*forecolor white
+*say 0 Asks which file to download and then downloads that file to the current local directory
+*skipline
+*forecolor blue
+*say 0 HELP - usage: help
+*forecolor white
+*say 0 Displays this help file
+*skipline
+*forecolor blue
+*say 0 LOGIN - usage: login
+*forecolor white
+*say 0 Prompts user for a username and password.
+*say 0 If currect logs in as that user.
+*skipline
+*forecolor blue
+*say 0 LOGOUT - useage: logout
+*forecolor white
+*say 0 Logs out the current user and makes them anonymous user
+*skipline
+*forecolor blue
+*say 0 LS - usage: ls
+*forecolor white
+*say 0 Lists all files and folder in the current directory
+*skipline
+*forecolor blue
+*say 0 PUT - usage: put
+*forecolor white
+*say 0 Asks which to upload and then uploads that file to the current local directory
+*skipline
+*forecolor blue
+*say 0 RUN - usage: run
+*forecolor white
+*say 0 Asks which file to run remotely
+*skipline
+*forecolor blue
+*say 0 USERS - usage: users
+*forecolor white
+*say 0 Displays current user account being used
+*skipline
+*forecolor blue
+*say 0 VERSION - usage: version
+*forecolor white
+*say 0 Displays XFTP version
+*skipline
+*pause
+goto docs
+endif
+if mmchoice = 3
+goto mm
+else
+goto docs
+endif
+
+@bugs
+*forecolor green
+*say 0 Bug Reports
+*forecolor white
+*say 0 -------------------------------------------------------
+*say 0 Buffer Over Flow in Login Command
+*say 0 -------------------------------------------------------
+*say 0 Affected versions: 1.x
+*say 0 Priority: Extreme
+*say 0 -------------------------------------------------------
+*say 0 There is a buffer over flow in the login command for XFTP v1.x command
+*say 0 that could give command prompt access as user xftp. xftp user only has
+*say 0 read write access to the xftp root directory.
+*say 0 If a string more then 36 characters long is entered as the username OR
+*say 0 password XFTP will crash and throw you into the command prompt.
+*say 0 -------------------------------------------------------
+*say 0 Fix: Apply patch to server
+*say 0 -------------------------------------------------------
+*pause
+*say 0 -------------------------------------------------------
+*say 0 Default Admin Access Using debug Mode
+*say 0 -------------------------------------------------------
+*say 0 Affected versions: 1.x
+*say 0 Priority: Urgent
+*say 0 -------------------------------------------------------
+*say 0 If an attacker gained access to the init.conf file they could gain admin rights
+*say 0 in XFTP. By editing the init.conf file an attacker could run XFTP in debug which
+*say 0 gives you admin rights on connect. The default for debug mode is off.
+*say 0 -------------------------------------------------------
+*say 0 Fix: Apply patch to server
+*say 0 -------------------------------------------------------
+*pause
+goto mm
+
+@donations
+*forecolor green
+*say 0 Donations
+*forecolor white
+*skipline
+*say 0 Thank you for your interest in supporting the XFTP project. Please send an
+*say 0 email to donations@xftp.com for info about donating to the project.
+*pause
+goto mm
+
+@contact
+*forecolor green
+*say 0 Contact us
+*skipline
+*forecolor white
+*say 0 For any additional information please send emails to info@xftp.com
+*pause
+goto mm
+
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free getcolor
+free getbgcolor
+free mmchoice
+
+
+
+
+
+
+
+

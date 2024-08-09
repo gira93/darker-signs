@@ -1,0 +1,47 @@
+cancel false
+
+getcolor
+getbgcolor
+color 39168
+
+IF visited = 1
+GOTO down
+END IF
+
+@init
+var visited
+! visited = 1
+
+@start
+clear
+color 39168
+*say 0 Welcome to oldgames.com
+*say 0 Here you can find the good old games
+*say 0 Now listing the menu :
+*say 0 1. List of games
+*say 0 2. Downloads
+*say 0 3. &˜x,&˜x,
+color red
+*say 0 error 
+*say 0 intrusion detected ...
+*say 0 Connection lost
+wrmwrmwrmwrm jobs.securedigital.com Job There is a problem. :A hired hacker stole the game we asked you to download. :Look in the logs if there is some trace of the hacker. :Find him, and bring the game back to us.
+
+wrmwrmwrmwrm jsmith@newpute.com Help Can you please help me gaining access to backdoors.com ?. :I need access to it so i can have the su3 password of newpute.com bbs. :The admin is on holiday and i cannot verify my account, so i want the password of su3 to activate my account myself. :Can you please help me ?
+color yellow
+*say 0 You've got mail !
+GOTO end
+
+@down
+color 39168
+*say 0 Sorry, due to maintenance this server is not available
+*say 0 Come back later
+GOTO end
+
+@end
+color %getcolor%
+bgcolor %getbgcolor%
+
+
+
+

@@ -1,0 +1,32 @@
+clear
+bgcolor black
+color white
+say Hello fellow academics. This is my first attempt at a homepage!
+say I'll put something decent here soon but for now he's some personal information:
+skipline
+color white
+say Name:
+color blue
+say John Davids
+color white
+say Birthdate:
+color blue
+say 10/15/56
+color white
+say Profession:
+color blue
+say Professor at UCB
+color white
+say Pets:
+color blue
+say Quark, my labrador. He's my biggest treasure in life!
+say Here's a picture of him and my wife: quark.jpg
+color white
+say Hobbies:
+color blue
+say Fishing, reading, dining
+color white
+skipline
+say That's it for now, I'm still learning this HTLMN thing.
+
+

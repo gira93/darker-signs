@@ -1,0 +1,144 @@
+//Script v2 MicMast.com 80
+//Let's go
+
+cancel true
+getcolor
+getbgcolor
+
+@menu
+var keuze
+*forecolor yellow
+*say 1 Connect to micmast.com
+*say 1 ------------------------------------
+*say 1 -  1.   Index.html              
+*say 1 -  2.   tuts.html                  
+*say 1 -  3.   test.php                  
+*say 1 -  4.   funny.html              
+*say 1 -  5.   disconnect           
+*say 1 ------------------------------------
+input keuze Where do you want to go today?
+
+if keuze = 1
+*say 1 micmast.com/index.html
+*say 1 ------------------------------------
+*say 1 Welcome to my personal homepage
+*say 1 This site contains some test scripts, some link to my favo tuts and a funny section
+*say 1 The funny section you will enjoy!
+*say 1 ---------------------------------------------
+pause
+goto menu
+end if
+
+if keuze = 2
+*say 1 MicMast.com/tuts.html
+*say 1 ---------------------------------
+*say 1 Tut-page: My favo tut pages
+*say 1 http://neworder.box.sk
+*say 1 http://www.cyberarmy.com
+*say 1 http://www.trincoll.edu/depts/cpsc/cryptography/caeser.html
+*say 1 http://www.businessweek.com/1997/06/b351314.htm
+*say 1 http://___._________.__ (censored =] )
+pause
+goto menu
+end if
+
+if keuze = 3
+var time
+var date
+var$ deel1
+var$ deel2
+var$ deel3
+var$ deel4
+var$ deel5
+var$ deel6
+! deel1= AoQDxDH~SPwSNmLL)LMrDM}FMBBEQlLPxHGwPDpAO{KHjFR}
+! deel2= QOÉTR7OC)JKWQHxJIÄHP)BF}FDqAIrRP|KH)CRrOF|DI)ANwBPnJKÅ
+! deel3= KQ}BHCGO)QAVNBÇQDÅSCzHLkLPtQDmHBsELQOHBrTBÇGFnDE
+! deel4= )RPtJIkHGxSO)ORzJPxTImMCmJF|TKÄDNzIK)IJlSJÄEDtLLkCEmMGx
+! deel5= OIkAA7TS)ERaHSÇRBpLE)GAvGLÇQCÅGKÅHPxQFvNDmSF)EBmLHÇS
+! deel6= E)NQvNErFClFRvGKjPF|FG}SP}GMxNN7PMvGFÇHJÄN
+*say 1 MicMast.com/test.php
+*say 1 --------------------------------
+*say 1 My php coding testsite
+gettime
+*say 1 That is supposed to be the local time %gettime% =]
+*say 1 -
+getdate
+*say 1 The date is %getdate% I'm getting good!
+*say 1 -
+*say 1 Now this is kinky look at this!
+*say 1 Delete All the Hard Returns, otherwhise you will get errors!
+*say 1 %deel1%
+*say 1 %deel2%
+*say 1 %deel3%
+*say 1 %deel4%
+*say 1 %deel5%
+*say 1 %deel6%
+*say 1 Cool! it worked!!! My first encrypted words!!
+*say 1 -
+pause
+goto menu
+end if
+if keuze = 4
+*say 1 MicMast.com/funny.html
+*say 1 -----------------------------------
+*say 1    \~~~~/
+*say 1     |       |
+*say 1     [-OO-]
+*say 1     |  ()  |
+*say 1     |       |
+*say 1     `-----'
+*say 1  hehe dilbert
+*say 1      ,----.
+*say 1    CO-|| Y
+*say 1    O   || |
+*say 1     |   D J
+*say 1    // /"""'
+*say 1   `'`'
+*say 1  What a nice dog!
+pause
+goto menu
+end if
+
+@end
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor Orange
+*say 1 ByeBye
+*forecolor %getcolor%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

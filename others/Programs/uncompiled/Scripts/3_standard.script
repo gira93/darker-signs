@@ -1,0 +1,223 @@
+//limited shell access can be exploited to get higher access
+//type 001
+//by Terminal 	terminal@darksigns.com
+
+var$ scommand
+var xlevl
+
+//stop cancelling of the script
+cancel true
+! xlevl = 0
+
+color green
+say Level 3 Access Granted
+color grey
+@getinput
+
+input scommand Waiting for command
+
+//check what the command is.
+//does the user want to exit? make sure they are able to...
+
+strmid scommand 1 3
+
+IF XLEVL = 11
+var xvf
+! xvf  = strmid
+GOTO SECOND
+ENDIF
+
+if scommand=logout
+goto close
+
+elseif scommand=exit
+goto close
+
+elseif scommand=dir -a
+color blue
+say [.access]
+color grey
+say README
+goto getinput
+
+elseif scommand=cd .access
+fcolor orange
+say Current Directory [.access]
+! xlevl = 11
+fcolor grey
+goto getinput
+
+elseif strmid=cd
+strmid scommand 4 999
+fcolor orange
+say Directory Not Found - %strmid%
+fcolor grey
+goto getinput
+
+elseif scommand=show - a
+color blue
+say [.access]
+color grey
+say README
+goto getinput
+
+elseif scommand=show -a
+color blue
+say [.access]
+color grey
+say README
+goto getinput
+
+elseif scommand=show
+say README
+goto getinput
+
+elseif scommand=quit
+goto close
+
+elseif scommand=help
+fcolor blue
+say Level 3 Remote Access
+say Type LIST to view available commands
+fcolor grey
+goto getinput
+
+elseif scommand=readme
+say CD [directory] - Change to a directory
+say HELP - Display Status
+say LIST - Show Available Commands
+say LOGOUT - Log Out of the System
+say SHOW - Show Files (Optional -a)
+goto getinput
+
+elseif scommand=list
+fcolor blue
+say CD, HELP, LIST, LOGOUT, README, SHOW
+fcolor grey
+goto getinput
+
+endif
+
+fcolor orange
+say That command is not supported [%scommand%]
+fcolor grey
+goto getinput
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+@SECOND
+strmid scommand 1 4
+
+if scommand=logout
+goto close
+
+elseif scommand=exit
+goto close
+
+elseif xvf=cd
+strmid scommand 4 999
+fcolor orange
+say Directory Not Found - %strmid%
+fcolor grey
+goto getinput
+
+elseif scommand=show - a
+color grey
+say ADMIN.ACCOUNTS
+goto getinput
+
+elseif scommand=show -a
+color grey
+say ADMIN.ACCOUNTS
+goto getinput
+
+elseif scommand=show
+say No Files
+goto getinput
+
+elseif scommand=quit
+goto close
+
+elseif scommand=help
+fcolor blue
+say Level 3 Remote Access
+say Type LIST to view available commands
+fcolor grey
+goto getinput
+
+elseif scommand=view admin.accounts
+fcolor white
+say //adminstration accounts password file
+say //these users will get read access to the
+say //system each time they log in.
+say term:[ip hidden]
+say mrwhippy:[ip hidden]
+say urbanius:[ip hidden]
+fcolor grey
+goto getinput
+
+elseif strmid=view
+fcolor orange
+say File Not Found
+fcolor grey
+goto getinput
+
+elseif scommand=readme
+say ADDUSER - Add your username to admin accounts
+say CD [directory] - Change to a directory
+say HELP - Display Status
+say LIST - Show Available Commands
+say LOGOUT - Log out of the System
+say SHOW - Show Files (Optional -a)
+say VIEW [file] - Display the Contents of a File
+goto getinput
+
+elseif scommand=adduser
+say This will add your logged in username [terminal] to the
+say admin.accounts file. Next time you login, you will have
+say full directory read access.
+pause
+setaccesslevel 2
+color orange
+say You will now be signed out.
+say Log back in when you are ready.
+goto close
+
+
+elseif scommand=list
+fcolor blue
+say ADDLINE, CD, HELP, LIST, LOGOUT, README, SHOW, VIEW
+fcolor grey
+goto getinput
+
+
+ENDIF
+
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+
+fcolor orange
+say That command is not supported [%scommand%]
+fcolor grey
+goto getinput
+
+
+@close
+fcolor blue
+remoteip
+gethostnamefromip %remoteip%
+say Connection Closed from %gethostnamefromip% [%remoteip%]
+
+
+
+
+

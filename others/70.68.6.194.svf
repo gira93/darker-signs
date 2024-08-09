@@ -1,0 +1,4 @@
+name%logs.nypd.gov
+port%80#logs_http
+path%12345
+portend

@@ -1,0 +1,85 @@
+getcolor
+getbgcolor
+
+*say 0 To enter this site you need a username and correct password
+var ans1
+var ans2
+input ans1 Username
+input ans2 Password
+
+var tmp
+! tmp = gota
+instr ans1 tmp
+if instr=1
+goto next
+endif
+goto wrong
+@next
+! tmp = 1979
+instr ans2 tmp
+free tmp
+if instr=1
+goto menu
+endif
+goto wrong
+
+@menu
+clear
+color 39168
+*say 0 Welcome to Admin Area of internetprovider.com
+*say 0 Menu :
+*say 0 1. View logs
+*say 0 2. Find a user
+*say 0 0. Disconnect
+getkey
+if getkey=49
+color red
+*say Error : You don't have acces to this command.
+pause
+goto menu
+endif
+if getkey=50
+goto finduser
+endif
+if getkey=48
+goto end
+endif
+goto menu
+
+@finduser
+*say 0 To find a user, just type his username
+*say 0 Ex: user94-dialup.internetprovider.com
+*say 0 Ex: Hostname : user94
+input ans1 Hostname :
+var tmp
+! tmp = user5115
+instr ans1 tmp
+free tmp
+if instr=1
+color green
+*say 0 This user is still connected. Use port 2541 to connect to him.
+*say 0 The connection password is : fretpor
+pause
+goto menu
+endif
+color red
+*say 0 User not connected.
+pause
+goto menu
+
+@wrong
+color red
+*say Wrong username / password
+goto end
+
+@end
+free ans1
+free ans2
+color yellow
+*say 0 Disconnecting
+color %getcolor%
+bgcolor %getbgcolor%
+
+
+
+

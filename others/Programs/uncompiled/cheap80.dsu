@@ -1,0 +1,17 @@
+cancel true
+getcolor
+getbgcolor
+*forecolor red
+*say 0 Website under construction
+*say 0 Come back soon
+*color %getcolor%
+*bgcolor %getbgcolor%
+free getcolor
+free bgcolor
+
+
+
+
+
+
+

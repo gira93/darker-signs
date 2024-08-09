@@ -1,0 +1,284 @@
+cancel true
+getcolor
+getbgcolor
+var mminput
+
+@welcome
+*forecolor green
+*say 0 FBI Public Relations Access Website
+@mm
+*skipline
+*forecolor blue
+*say 0 1 >> FBI 10 Most Wanted
+*say 0 2 >> Your Local FBI Office
+*say 0 3 >> Exit
+input mminput Make your menu selection < 1 - 3 >
+
+if mminput = 1
+goto wanted
+endif
+if mminput = 2
+goto local
+endif
+if mminput = 3
+goto end
+else
+goto mm
+endif
+
+@wanted
+*skipline
+*forecolor green
+*say 0 --- FBI 10 Most Wanted ---
+*skipline
+*forecolor blue
+*say 0 - 1 - Osma Ben Ledin
+*say 0 - 2 - Robert Nilgate
+*say 0 - 3 - Joe Filler
+*say 0 - 4 - Marco Heli
+*say 0 - 5 - Yesu Junkie
+*say 0 - 6 - James Fisher
+*say 0 - 7 - Eric Webb
+*say 0 - 8 - Richard Lokie
+*say 0 - 9 - Michael Brown
+*say 0 - 10 - Stewart Blake
+*say 0 - 11 - Back to main menu
+input mminput Make your menu selection < 1 - 10 >
+
+if mminput = 1
+goto osma
+elseif mminput = 2
+goto robert
+elseif mminput = 3
+goto joe
+elseif mminput = 4
+goto marco
+elseif mminput = 5
+goto yesu
+elseif mminput = 6
+goto james
+elseif mminput = 7
+goto eric
+elseif mminput = 8
+goto richard
+elseif mminput = 9
+goto michael
+elseif mminput = 10
+goto stewart
+elseif mminput = 11
+goto mm
+else
+goto wanted
+endif
+
+@osma
+*skipline
+*forecolor white
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Osma Ben Ledin
+*forecolor white 
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Wanted on account of:
+*say 0 - MURDER OF U.S. NATIONALS OUTSIDE THE UNITED STATES
+*say 0 - CONSPIRACY TO MURDER U.S. NATIONALS OUTSIDE THE UNITED STATES
+*say 0 - ATTACK ON A FEDERAL FACILITY RESULTING IN DEATH
+*forecolor red
+*say 0 CONSIDERED ARMED AND EXTREMELY DANGEROUS
+*pause
+goto wanted
+
+@robert
+*skipline
+*forecolor white
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Robert Nilgate
+*forecolor white 
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Wanted on account of:
+*say 0 - UNLAWFUL FLIGHT TO AVOID PROSECUTION
+*say 0 - ARSON OF AN OCCUPIED STRUCTURE
+*say 0 - FIRST DEGREE MURDER
+*forecolor red
+*say 0 CONSIDERED ARMED AND EXTREMELY DANGEROUS
+*pause
+goto wanted
+
+@joe
+*skipline
+*forecolor white
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Joe Filler
+*forecolor white 
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Wanted on account of:
+*say 0 - UNLAWFUL FLIGHT TO AVOID PROSECUTION
+*say 0 - BANK ROBBERY
+*say 0 - THEFT FROM INTERSTATE SHIPMENT
+*forecolor red
+*say 0 CONSIDERED ARMED AND EXTREMELY DANGEROUS
+*pause
+goto wanted
+
+@marco
+*skipline
+*forecolor white
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Marco Heli
+*forecolor white 
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Wanted on account of:
+*say 0 - UNLAWFUL FLIGHT TO AVOID PROSECUTION
+*say 0 - DRUG TRAFFICKING
+*say 0 - CONSPIRACY TO DRUG TRAFFICKING
+*say 0 - MURDER(FIVE COUNTS)
+*say 0 - KIDNAPPING TO HOLD FOR RANSOME
+*forecolor red
+*say 0 CONSIDERED ARMED AND EXTREMELY DANGEROUS
+*pause
+goto wanted
+
+@yesu
+*skipline
+*forecolor white
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Yesu Junkie
+*forecolor white 
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Wanted on account of:
+*say 0 - UNLAWFUL FLIGHT TO AVOID PROSECUTION
+*say 0 - MURDER
+*say 0 - ATTEMPTED BURGLARY
+*forecolor red
+*say 0 CONSIDERED ARMED AND EXTREMELY DANGEROUS
+*pause
+goto wanted
+
+@james
+*skipline
+*forecolor white
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 James Fisher
+*forecolor white 
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Wanted on account of:
+*say 0 - UNLAWFUL FLIGHT TO AVOID PROSECUTION
+*say 0 - RACKETEERING INFLUENCED AND CORRUPT ORGANIZATIONS (RICO)
+*say 0 - CONSPIRACY TO COMMIT MURDER
+*say 0 - MONEY LAUNDERING
+*say 0 - NARCOTICS DISTRIBUTION
+*say 0 - CONSPIRACY TO COMMIT EXTORTION
+*say 0 - EXTORTION
+*forecolor red
+*say 0 CONSIDERED ARMED AND EXTREMELY DANGEROUS
+*pause
+goto wanted
+
+@eric
+*skipline
+*forecolor white
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Eric Webb
+*forecolor white 
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Wanted on account of:
+*say 0 - UNLAWFUL FLIGHT TO AVOID PROSECUTION
+*say 0 - EXPLOSIVE  ATTACK ON A GOVERMENT BUILDING RESULTING IN DEATH
+*forecolor red
+*say 0 CONSIDERED ARMED AND EXTREMELY DANGEROUS
+*pause
+goto wanted
+
+@richard
+*skipline
+*forecolor white
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Richard Lokie
+*forecolor white 
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Wanted on account of:
+*say 0 - UNLAWFUL FLIGHT TO AVOID PROSECUTION
+*say 0 - MURDER(TWO COUNTS)
+*say 0 - AGGRAVATED STALKING RESULTING IN DEATH
+*forecolor red
+*say 0 CONSIDERED ARMED AND EXTREMELY DANGEROUS
+*pause
+goto wanted
+
+@michael
+*skipline
+*forecolor white
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Michael Brown
+*forecolor white 
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Wanted on account of:
+*say 0 - UNLAWFUL FLIGHT TO AVOID PROSECUTION
+*say 0 - DRUG CONSPIRACY
+*say 0 - CARRYING A WEAPON IN RELATION TO A DRUG-TRAFFICKING CRIME
+*say 0 - MURDER IN RELATION TO A DRUG-TRAFFICKING CRIME
+*say 0 - ATTEMPTED MURDER OF A WITNESS
+*forecolor red
+*say 0 CONSIDERED ARMED AND EXTREMELY DANGEROUS
+*pause
+goto wanted
+
+@stewart
+*skipline
+*forecolor white
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Stewart Blake
+*forecolor white 
+*say 0 --------------------------------------------------------------------------------
+*forecolor blue
+*say 0 Wanted on account of:
+*say 0 - UNLAWFUL FLIGHT TO AVOID PROSECUTION
+*say 0 - SEXUAL EXPLOITATION OF CHILDREN
+*say 0 - POSSESSION OF CHILD PORNOGRAPHY (THREE COUNTS)
+*say 0 - LEWD ACTS UPON A CHILD (FOUR COUNTS)
+*forecolor red
+*say 0 CONSIDERED ARMED AND EXTREMELY DANGEROUS
+*pause
+goto wanted
+
+@local
+*skipline
+*forecolor blue
+*say 0 To find your local FBI office or U.S. Embassy OR Consulate please use your
+*say 0 normal phonebook or business directories.
+*pause
+goto mm
+
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free mminput
+free getcolor
+free getbgcolor
+
+
+
+
+
+
+

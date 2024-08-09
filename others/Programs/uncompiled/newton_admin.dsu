@@ -1,0 +1,733 @@
+// X
+clear
+color green
+bgcolor white
+color black
+free i
+var i
+! i=0
+free rndint
+var loggedin
+!loggedin=0
+
+varexists deletedlines
+if %varexists%=False
+var deletedlines
+!deletedlines=0
+endif
+
+varexists autocorrect
+if %varexists%=False
+var autocorrect
+!autocorrect=0
+endif
+
+varexists changes
+if %varexists%=False
+var changes
+!changes=0
+endif
+
+varexists rev1
+if %varexists%=False
+var rev1
+!rev1=0
+end if
+
+varexists rev2
+if %varexists%=False
+var rev2
+!rev2=0
+end if
+
+varexists uploaded
+if %varexists%=False
+var uploaded
+!uploaded=0
+end if
+
+varexists autoline
+if %varexists%=False
+var autoline
+!autoline=0
+end if
+
+var mydir
+! mydir = \
+
+var inpt
+say 20 NEWTON Physics Supercomputer
+say 20 Model x25n5
+say 20 Located at: Berkeley University of California
+say 200 ...
+say 100 .......
+say 200 ..
+say 20 Warning! An administrator is present 24/7 to monitor the system.
+say 20 Any suspicious behaviour will result in a disconnect.
+say 200 ....
+say 20 Accessing Administration Module
+wait 1000
+skipline
+goto main
+
+@main
+free login
+free pass
+clear
+say NEWTON Physics Supercomputer
+say Model x25n5
+say Located at: Berkeley University of California
+skipline
+
+input inpt [NEWTON]:
+lcase inpt
+if lcase=login 0
+goto checkbackdoor
+endif
+if lcase=login
+goto login
+endif
+say [NEWTON]: Not Logged In
+wait 1000
+goto main
+
+@login
+var login
+var pass
+input login Login:
+input pass Pass:
+lcase login
+if lcase=root
+goto rootlogin
+endif
+if lcase=student
+goto userint
+endif
+if lcase=staff
+goto userint
+endif
+goto incorrect
+
+@incorrect
+say [NEWTON]: Incorrect user/password
+wait 1000
+goto main
+
+@rootlogin
+if pass=al2m3n8P
+!loggedin=1
+goto rootStart
+end if
+goto incorrect
+
+@userint
+say [NEWTON]: This account can only be accessed from the NEWTON User Interface
+wait 2000
+goto main
+
+@rootStart
+clear
+say NEWTON Physics Supercomputer
+say Model x25n5
+say Located at: Berkeley University of California
+skipline
+goto root
+
+@root
+var inpt
+skipline
+input inpt [NEWTON.root]:
+
+lcase inpt
+if lcase=disconnect
+goto end
+endif
+if lcase=quit
+goto end
+endif
+if lcase=exit
+goto end
+endif
+
+!i=i+1
+goto runI
+goto rootContinue
+
+@runI
+varexists rndint
+if %varexists%=False
+goto runI2
+endif
+goto checkI
+
+@runI2
+rndint 20
+if rndint < 10
+goto runI2
+endif
+goto checkI
+
+@checkI
+if i>rndint
+goto boot
+endif
+goto rootContinue
+
+@boot
+clear
+color green
+bgcolor black
+color white
+say YOU HAVE BEEN BOOTED FROM THE SYSTEM BY AN ADMINISTRATOR!!!!!
+free x
+var x
+! x = 0
+@loophere
+getbgcolor
+
+! x=x+1
+
+wait 500
+
+if x=7
+wait 500
+goto end
+endif
+
+if getbgcolor = 1582069
+bgcolor black
+goto loophere
+endif
+
+if getbgcolor = 0
+goto loop2
+endif
+
+@loop2
+bgcolor red
+goto loophere
+endif
+
+@rootContinue
+if lcase=help
+goto help
+endif
+
+if lcase=commands
+goto help
+endif
+
+if lcase=cd
+goto changedir
+endif
+
+if lcase=ls
+goto ls
+endif
+
+if lcase=put
+goto put
+endif
+
+if lcase=cat
+goto cat
+endif
+
+if lcase=edit
+goto edit
+endif
+
+say [NEWTON.root]: Command unknown or access level insufficient.
+goto root
+
+@checkbackdoor
+var yourock
+!yourock=0
+
+if deletedlines=2
+!yourock=yourock+1
+endif
+
+if uploaded=1
+!yourock=yourock+1
+endif
+
+if autocorrect=1
+!yourock=yourock+1
+endif
+
+if yourock=3
+clear
+color blue
+bgcolor black
+say CONGRATULATIONS! You have succesfully completed my first mission!
+say Please mail comments to polka@pandora.be
+skipline
+getkey
+free deletedlines
+free uploaded
+free autocorrect
+free rev1
+free rev2
+free autoline
+free changes
+goto end
+endif
+
+if loggedin=1
+say [NEWTON.root]: Command unknown or access level insufficient.
+goto root
+endif
+
+if loggedin=0
+say [NEWTON]: Not logged in.
+wait 1000
+goto main
+endif
+
+@help
+say Available commands for your user level: CAT COMMANDS EDIT HELP LS PUT CD
+goto root
+
+@cat
+var inpt
+input inpt [NEWTON.root]: Which file would you like to see?
+lcase inpt
+if lcase=boot.ini
+goto viewbootini
+endif
+if lcase=autoexec
+goto viewautoexec
+endif
+if lcase=change.log
+goto viewchangelog
+endif
+
+say [NEWTON.root]: File not present or access level insufficient.
+goto root
+
+@viewbootini
+if mydir=\
+say // This boot up file is revised frequently
+say // NOTE: The autoexec option seems superfluous for our system but removing the line creates complications
+say // NEWTON boot.ini
+skipline
+say run autoexec
+say run newton.os
+say run newton.program
+skipline
+say // EOF
+goto root
+end if
+say [NEWTON.root]: File not present or access level insufficient.
+goto root
+
+@viewautoexec
+if mydir=\
+goto viewauto2
+endif
+@viewauto2
+if autoline=0
+say // Autoexec file
+say // Code will be executed upon boot
+say // syntax:
+say // run:path\file.extension
+say // eg:
+say // run:tools\htmlstats\htmlstats.tool
+skipline
+say // EOF
+goto root
+endif
+say // Autoexec file
+say // Code will be executed upon boot
+say // syntax:
+say // run:path\file.extension
+say // eg:
+say // run:tools\htmlstats\htmlstats.tool
+skipline
+say %autoline%
+skipline
+say // EOF
+goto root
+
+say [NEWTON.root]: File not present or access level insufficient.
+goto root
+
+@viewchangelog
+if mydir=\
+goto viewchangelog2
+endif
+say [NEWTON].root: File not present or access level insufficient.
+goto root
+
+@viewchangelog2
+say // The ten most recent changes to the system
+say c1- User 'root' updated boot.ini
+say c2- User 'maintenace' updated newton.os
+say c3- User 'root' updated boot.ini
+say c4- User 'maintenance' updated newton.program
+say c5- User 'maintenance' deleted temp.os
+if changes=3
+!changes=2
+endif
+if changes=1
+say c6- %rev1%
+endif
+if changes=2
+say c6- %rev1%
+say c7- %rev2%
+endif
+goto root
+
+@put
+var inpt
+if mydir=images
+goto upload
+endif
+say [NEWTON.root]: Folder is write protected.
+goto root
+
+@upload
+input inpt [NEWTON.root]: Which file would you like to upload?
+lcase inpt
+if lcase=bdnwtn.exe
+goto upload2
+endif
+say [NEWTON.root]: File rejected.
+goto root
+
+
+@upload2
+if uploaded=0
+goto upload3
+endif
+say [NEWTON.root]: File already exists. Overwrite access denied.
+goto root
+
+@upload3
+exists bdnwtn.exe
+if %exists%=True
+color blue
+say 20 Uploading
+say 100 [..............................................]
+color black
+say [NEWTON.root]: Upload complete.
+!uploaded=1
+goto missioncomplete2
+endif
+say [NEWTON.root]: File not found.
+goto root
+
+@missioncomplete1
+if rev1=0
+! rev1=User 'root'(duplicate user) updated autoexec
+!changes=changes+1
+goto root
+endif
+if rev2=0
+! rev2=User 'root'(duplicate user) updated autoexec
+!changes=changes+1
+goto root
+endif
+
+@missioncomplete2
+if rev1=0
+! rev1=User 'root'(duplicate user) uploaded bdnwtn.exe
+!changes=changes+1
+goto root
+endif
+if rev2=0
+! rev2=User 'root'(duplicate user) uploaded bdnwtn.exe
+!changes=changes+1
+goto root
+endif
+
+@edit
+var inpt
+input inpt [NEWTON.root]: Which file would you like to edit?
+lcase inpt
+if lcase=autoexec
+goto editauto
+endif
+if lcase=change.log
+goto editchange
+endif
+
+say [NEWTON.root]: File not present or write protected.
+goto root
+
+@editchange
+if mydir=\
+goto editchange2
+endif
+say [NEWTON.root]: File not present.
+goto root
+
+@editchange2
+var inpt
+input inpt Which line would you like to edit?
+if changes=1
+goto editrev1
+endif
+if changes=2
+goto editrev2
+endif
+say [NEWTON.root]: No such line or access denied.
+goto root
+
+@editrev1
+var whatdo
+input whatdo What do you want to do with the line? (D)elete or (E)dit
+lcase whatdo
+if whatdo = d 
+goto editrev1b
+end if
+say [NEWTON.root]: Edit function disabled on this account.
+goto root
+
+@editrev1b
+if inpt=6
+!rev1=0
+!changes=changes-1
+!deletedlines=deletedlines+1
+endif
+say [NEWTON.root]: Line deleted.
+goto root
+
+@editrev2
+var whatdo
+input whatdo What do you want to do with the line? (D)elete or (E)dit
+lcase whatdo
+if whatdo = d 
+goto editrev2b
+end if
+say [NEWTON.root]: Edit function disabled on this account.
+goto root
+
+@editrev2b
+
+if inpt=6
+!rev1=rev2
+!changes=changes-1
+!deletedlines=deletedlines+1
+say [NEWTON.root]: Line deleted.
+goto root
+endif
+
+if inpt=7
+!rev2=0
+!changes=changes-1
+!deletedlines=deletedlines+1
+say [NEWTON.root]: Line deleted.
+goto root
+endif
+
+say [NEWTON.root]: No such line or access denied.
+goto root
+
+@editauto
+if mydir=\
+goto editauto2
+endif
+say [NEWTON.root]: File not present.
+goto root
+
+@editauto2
+if autocorrect=0
+goto editauto2b
+endif
+say [NEWTON.root]: Maximum changes to file reached.
+goto root
+
+@editauto2b
+var inpt
+input inpt Which line would you like to edit?
+if inpt=1
+goto editauto3
+endif
+say [NEWTON.root]: No such line or access denied.
+goto root
+
+@editauto3
+
+var inpt
+input inpt Enter new line:
+! autoline=inpt
+say [NEWTON.root]: Line edited.
+goto checkauto
+endif
+
+@checkauto
+if autoline=run:tools\htmlstats\images\bdnwtn.exe
+!autocorrect=1
+goto missioncomplete1
+endif
+goto root
+
+@ls
+if mydir=tools
+say Current Folder:
+color blue
+say tools
+skipline
+color black
+say Files in folder:
+color blue
+say htmlstats.tool
+say viruschecker.tool
+say notepad++.tool
+color black
+say Subdirectories:
+color blue
+say [htmlstats]
+color black
+goto root
+endif
+
+if mydir=htmlstats
+say Current Folder:
+color blue
+say tools\htmlstats
+skipline
+color black
+say Files in folder:
+color blue
+say stats.htm
+say stats.cgi
+color black
+skipline
+say Subdirectories:
+color blue
+say [images]
+color black
+goto root
+endif
+
+if mydir=images
+goto lsimages
+endif
+
+if mydir=\
+color black
+say Current Folder:
+color blue
+say \
+skipline
+color black
+say Files in folder:
+color blue
+say boot.ini
+say newton.program
+say newton.os
+say autoexec
+say change.log
+skipline
+color black
+say Subdirectories:
+color blue
+say [admin]
+say [resultfiles]
+say [tools]
+color black
+goto root
+endif
+
+@lsimages
+say Current Folder:
+color blue
+say tools\htmlstats\images
+skipline
+color black
+say Files in folder:
+color blue
+say logo.gif
+say berkeley.jpg
+say redbar.gif
+say bluebar.gif
+if uploaded=1
+say bdnwtn.exe
+endif
+color black
+skipline
+say Subdirectories:
+color blue
+say None
+color black
+goto root
+
+@changedir
+var inpt
+input inpt What directory do you want to change to?
+lcase inpt
+
+if lcase=..
+goto backdir
+endif
+
+if lcase=\
+!mydir=\
+goto folderchanged
+endif
+
+if lcase=tools
+!mydir=tools
+goto folderchanged
+endif
+
+if lcase=htmlstats
+goto cdhtml
+endif
+
+if lcase=images
+goto cdimages
+endif
+
+goto foldernotpresent
+
+@backdir
+if mydir=tools
+!mydir=\
+goto folderchanged
+endif
+if mydir=htmlstats
+!mydir=tools
+goto folderchanged
+endif
+if mydir=images
+!mydir=htmlstats
+goto folderchanged
+endif
+
+say [NEWTON.root]: Already at lowest folder.
+goto root
+
+@cdhtml
+if mydir=tools
+!mydir=htmlstats
+goto folderchanged
+endif
+goto foldernotpresent
+
+
+@cdimages
+if mydir=htmlstats
+!mydir=images
+goto folderchanged
+endif
+goto foldernotpresent
+
+@foldernotpresent
+say [NEWTON.root]: Folder not present or access level insufficient.
+goto root
+
+@folderchanged
+say [NEWTON.root]: Folder changed.
+goto root
+
+@end
+color green
+bgcolor black
+color white
+clear
+
+

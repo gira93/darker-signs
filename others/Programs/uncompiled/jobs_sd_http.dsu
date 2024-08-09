@@ -1,0 +1,56 @@
+@init
+getcolor
+getbgcolor
+goto start
+
+@start
+clear
+color 39168
+*say 0 Welcome to jobs.securedigital.com
+*say 0 Here you can find some "special" jobs.
+*say 0 The menu :
+*say 0 1. See job offers
+*say 0 0. Disconnect
+getkey
+if getkey=48
+goto end
+endif
+if getkey=49
+goto menu
+endif
+goto start
+
+@menu
+clear
+color 39168
+*say 0 Actual jobs :
+*say 0 1. Find a game
+*say 0 0. Main menu
+getkey
+if getkey=48
+goto start
+endif
+if getkey=49
+goto job
+endif
+goto menu
+
+@job
+*say 0 A mail has been sent with the details of the job
+wrmwrmwrmwrm jobs.securedigitedigital.com Job Your job is to find a game. :The game is stored at oldgames.com. :We don't have any information about the security level. :There is a rumor saying someone else wants the game too. :But this rumor has not been confirmed, so you should not have any problems. :Game Doom8 file game868686.bin :Upload the file to ipgames.com
+wrmwrmwrmwrm security.com BBS Great news: Security.com launched some days ago his BBS ! : Yes you're right, this is a wonderfull thing. : Don't hesitate to come and see how security holes are found in real time !:Visit us @ bbs.security.com
+color yellow
+*say 0 Disconnecting
+*say 0 You've got mail !
+goto end2
+
+@end
+color yellow
+*say 0 Disconnecting
+@end2
+color %getcolor%
+bgcolor %getbgcolor%
+
+
+
+

@@ -1,0 +1,103 @@
+//REMOTE ADMINISTRATION 
+
+cancel true 
+getcolor 
+getbgcolor 
+
+var theoption 
+var$ checkthings 
+*forecolor green 
+*say A REALLY DEPRESSED SERVER 
+*say Remote Administration System 
+*forecolor grey 
+*say A depressed server - A Username And Password is Required to Access this Server. 
+*say IF YOU DONT HAVE A USERNAME OR PASSWORD, USE 'ADMIN' FOR BOTH.
+
+myaccount 
+
+input checkthings Please Enter Your Username to Continue... 
+
+if admin=checkthings 
+goto ok 
+else 
+*say Bad Username 
+goto end 
+endif 
+
+@ok 
+*say ...User Verified. 
+
+input checkthings Please Enter Your Password 
+
+if checkthings = admin 
+goto ok2 
+endif 
+*say Bad Password 
+goto end 
+@ok2 
+*say ...Password Accepted 
+
+*say "The requested document is totally fake.", 
+*say "No /404 here.', 
+*say "Even tried multi.", 
+*say "Nothing helped.", 
+*say "I'm really depressed about this.", 
+*say "You see, I'm just a web server...", 
+*say "-- here I am, brain the size of the universe,", 
+*say "trying to serve you a simple web page,", 
+*say "and then it doesn't even exist!", 
+*say "Where does that leave me?!", 
+*say "I mean, I don't even know you.", 
+*say "How should I know what you wanted from me?", 
+*say "You honestly think I can *guess*", 
+*say 1" what someone I don't even *know*", 
+*say "wants to find here?", 
+pause
+*say "*sigh*", 
+*say "Man, I'm so depressed I could just cry.", 
+*say "And then where would we be, I ask you?", 
+*say "It's not pretty when a web server cries.", 
+*say "And where do you get off telling me what to show anyway?", 
+*say "Just because I'm a web server,", 
+*say "and possibly a manic depressive one at that?", 
+*say "Why does that give you the right to tell me what to do?", 
+*say "Huh?", 
+*say "I'm so depressed...", 
+*say "I think I'll crawl off into the trash can and decompose.", 
+*say "I mean, I'm gonna be obsolete in what, two weeks anyway?", 
+*say "What kind of a life is that?", 
+*say "Two effing weeks,", 
+*say "and then I'll be replaced by a .01 release,", 
+*say "that thinks it's God's gift to web servers,", 
+*say "just because it doesn't have some tiddly little", 
+*say "security hole with its HTTP POST implementation,", 
+*say "or something.", 
+pause
+*say "I'm really sorry to burden you with all this,", 
+*say "I mean, it's not your job to listen to my problems,", 
+*say "and I guess it is my job to go and fetch web pages for you.", 
+*say "But I couldn't get this one.", 
+*say "I'm so sorry.", 
+*say "Believe me!", 
+*say "Maybe I could interest you in another page?", 
+*say "There are a lot out there that are pretty neat, they say,", 
+*say "although none of them were put on *my* server, of course.", 
+*say "Figures, huh?", 
+*say "Everything here is just mind-numbingly stupid.", 
+*say "That makes me depressed too, since I have to serve them,", 
+*say "all day and all night long.", 
+*say "Two weeks of information overload,", 
+*say "and then *pffftt*, consigned to the trash.", 
+*say "What kind of a life is that?", 
+*say "Now, please let me sulk alone.", 
+*say "I'm so depressed." 
+skipline  
+*say Im off to get a virus. 
+
+@end 
+*color %getcolor% 
+*bgcolor %getbgcolor% 
+getcolor 
+*forecolor orange 
+*say Connection Terminated 
+*forecolor %getcolor% 

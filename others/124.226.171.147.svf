@@ -1,0 +1,11 @@
+name%biolabs.net
+port%80#biolabsnethttp
+port%89#xnullb
+port%712#biomail
+path%1234
+portend
+trace1%17.191.200.201
+
+trace2%88.10.185.45
+
+trace3%121.133.61.245

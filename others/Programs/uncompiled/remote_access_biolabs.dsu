@@ -1,0 +1,61 @@
+//REMOTE ADMINISTRATION
+
+cancel true
+getcolor
+getbgcolor
+
+var theoption
+var$ checkthings
+*forecolor green
+*Say 1 Welcome to Biolabs
+*Say 1 Remote Administration System
+*Say 1 This is a private system. Unauthorized access will be denied.
+*forecolor grey
+*Say 1 A Username And Password is Required to Access this Server
+
+getmymoney
+myaccount
+myusername
+mypassword
+
+input checkthings Please Enter Your Username to Continue...
+
+if  checkthings=david
+goto ok
+else
+*say 1 Bad Username
+goto end
+endif
+
+@ok
+*say 1 ...User Verified.
+
+input checkthings Please Enter Your Password
+
+if checkthings=iamgod
+goto ok2
+endif
+*say 1 Bad Password
+goto end
+@ok2
+*say 1 ...Password Accepted
+
+*color blue
+*say ...Dark Signs...
+*say This is a test server where Terminal can test exploits, logs, and
+*say different levels of access. You are about to be put into the lowest
+*say access level. From there, try to work your way up.
+
+pause
+*color %getcolor%
+*bgcolor %getbgcolor%
+remoteip
+setaccesslevel %remoteip% 3 3_standard
+
+
+
+
+
+
+
+

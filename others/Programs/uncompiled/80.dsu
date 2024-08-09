@@ -1,0 +1,28 @@
+//Script on specialserver 80
+//let's go
+
+cancel true
+getcolor
+getbgcolor
+
+@menu
+*forecolor yellow
+*say 1 You are a getting to know some things here. Stay tuned for more levels
+*say 1             -MicMast-
+
+
+@end
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor Orange
+*say 1 ByeBye
+*forecolor %getcolor%
+
+
+
+
+
+
+
+

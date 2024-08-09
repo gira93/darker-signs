@@ -1,0 +1,44 @@
+cancel true
+*getcolor
+*getbgcolor
+var prxinput
+input prxinput %hello%
+if prxinput = getdb()
+*forecolor white
+*say 0 Server: db.postoffice.mil
+*say 0 Service: FCDB(FirstClass DataBase)
+*skipline
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free getbgcolor
+free getcolor
+free prxinput
+endif
+if prxinput = getdb( )
+*forecolor white
+*say 0 Server: db.postoffice.mil
+*say 0 Service: FCDB(FirstClass DataBase)
+*skipline
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free getbgcolor
+free getcolor
+free prxinput
+else
+*skipline
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free getbgcolor
+free getcolor
+free prxinput
+endif
+
+
+
+

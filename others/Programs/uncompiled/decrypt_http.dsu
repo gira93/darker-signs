@@ -1,0 +1,138 @@
+///DECRYPTION
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+var xvar
+var filen
+@startt
+*forecolor green
+*Say 1 Public File Decryption Server
+*forecolor blue
+*Say 1 1) Decrypt a File
+*Say 1 2) Exit
+*forecolor white
+input xvar Please Enter 1 or 2
+
+if xvar=1
+else
+*say No File(s) Decrypted
+goto end
+endif
+
+
+*SAY Enter Complete File Name as it exists
+input xvar on your computer (Eg: myfile.file)
+goto zxcc
+pause
+
+
+@zxcc
+exists %xvar%
+var zz
+! zz = exists
+if %exists% = True
+*SAY 10 Decryption in Progress
+*SAY 100 ....................................................................
+*SAY 2 Operation Complete
+@choseorg
+pause
+*SAY 2 OUTPUT
+*SAY 2 Please specify to what organization or server should this decryption be sent?
+var sentone
+input sentone (Decrypted file will be sent where specified, type 0 to cancel)
+goto zzzz
+else
+*SAY Specified file was not found...
+*SAY Please check the file path and spelling, and try again.
+endif
+
+goto end
+
+@zzzz
+if sentone = 0
+goto end
+endif
+if sentone = zrio
+goto rrr
+endif
+if sentone = zrio.org
+goto rrr
+endif
+*say 1 File Rejected by Remote Server...
+goto choseorg
+@rrr
+*say 1 ZRIO Accepted...
+var ggg
+var ggg2
+! ggg = akuhsmkahksahl
+! ggg2 = JAQHZHNJQAMKSAJHSKAJSKAKJSMA
+filedata %xvar%
+instr filedata ggg
+if instr = 0
+goto dsf
+else
+wrmwrmwrmwrm Security.com MailingListNews Hello Subscribers!:There has been a new bug found in a rare version of the FuzzyMail Server.:Check our website for more information:.:Regards,:David Ashburn:SECURITY.com
+wrmwrmwrmwrm zrio decryption You did it! We recieved the decryption of the file successfully.:Thank you for your continued efforts.:...we hope you don't mind doing a bit more work for us.:.:now, there is another file we need. 8m.enc was only half of it.:We need another file, it is called 9m.enc,:from biolabs.com, we need it decrypted as well.:.:Good Luck.
+endif
+
+goto end
+@dsf
+
+! ggg2 = JAQHZHNJQAMKSAJHSKAJSKAKJSMA
+filedata %xvar%
+instr filedata ggg2
+if instr = 0
+goto dsftwo
+else
+showimagenowplz zerotwo.bmp
+pause
+wrmwrmwrmwrm zrio Good... I see that have developed a good working relationship.:This is the way it should always be.:See what else you can find around biolabs...:Perhaps try biolabs.org, or similar servers.:There must be something...
+endif
+
+goto end
+@dsftwo
+
+! ggg2 = JDHKMZXKHJZJXXNHZGXZHXGZXGZX
+filedata %xvar%
+instr filedata ggg2
+if instr = 0
+wrmwrmwrmwrm zrio no! We got a decrypted file that you sent us,:but it wasn't what we are looking for:Keep searching...
+else
+pause
+myusername
+wrmwrmwrmwrm zrio 10m.enc We got the 10m.enc file. It is useless to us.:Check for other servers.:.:.:There may be something important in this IP range:66.7.1.1 to 66.7.115.255:.:Dig deep, %myusername%, we are counting on you!
+endif
+
+@end
+
+*SAY Thank you for using DECRYPT.com!
+fcolor blue
+*Say 1 Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

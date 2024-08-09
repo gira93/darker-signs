@@ -1,0 +1,331 @@
+var cmmd
+var l1
+var l2
+var l3
+getbgcolor
+getcolor
+bgcolor blue
+color white
+!l1=0
+!l2=0
+!l3=0
+clear
+@cprompt
+input cmmd *********** Command? ********************
+lcase cmmd
+if lcase=help
+*say 0 ********** help ****************************
+*say 0 Use the following commands :
+*say 0 about, admlock1, admlock2, admlock3, login, exit
+*say 0 ********************************************
+*say 0 First, unlock the three admin locks using your
+*say 0 given passwords in this form
+*say 0 admlock1:password
+*say 0 Then use login to login to the system
+*say 0 ********************************************
+goto cprompt
+endif
+if lcase=exit
+goto end
+endif
+if lcase=about
+*say 0 *************** about TCKsecure *********
+*say 0 TCKsecure v1.0
+*say 0 Written by TCK (tck.com)
+*say 0 ********************************************
+goto cprompt
+endif
+strmid lcase 1 9
+if strmid=admlock1:
+goto admlock1check
+endif
+if strmid=admlock2:
+goto admlock2check
+endif
+if strmid=admlock3:
+goto admlock3check
+endif
+if lcase=login
+goto logincheck
+endif
+*say 0 ************ Invalid Command ************
+goto cprompt
+
+@admlock1check
+strlen lcase
+!strlen=strlen-9
+strmid lcase 10 %strlen%
+var codelock
+!codelock=coolsalsa
+if strmid=codelock
+*say 0 *********** Lock 1 Unlocked ***************
+free codelock
+!l1=1
+goto cprompt
+endif
+*say 0 *********** Invalid Code ******************
+free codelock
+goto cprompt
+
+@admlock2check
+strlen lcase
+!strlen=strlen-9
+strmid lcase 10 %strlen%
+var perc
+!perc=%
+instr strmid perc
+if instr>0
+color green
+*say 0 Patched by jpain
+*say 0 You ain't using no percentages boy
+*say 0 Shoutout to Phil Whiting for this bugfix
+var l4
+var l5
+!l1=cmmd
+!l2=instr
+!l3=strlen
+connectedip
+!l4=connectedip
+connectedname
+!l5=connectedname
+color white
+goto cprompt
+endif
+free perc
+var codelock
+!codelock=9640382
+if strmid=codelock
+*say 0 *********** Lock 2 Unlocked ***************
+free codelock
+!lock2=1
+goto cprompt
+endif
+*say 0 *********** Invalid Code ******************
+color green
+*say 0 or should I say
+*say 100 Wrong!!!
+color white
+free codelock
+goto cprompt
+
+@admlock3check
+strlen lcase
+!strlen=strlen-9
+strmid lcase 10 %strlen%
+encrypt$ passcode %strmid%
+var codelock
+!codelock=alphabetispageti
+if encrypt$=codelock
+*say 0 *********** Lock 3 Unlocked ***************
+free codelock
+!l3=1
+goto cprompt
+endif
+*say 0 *********** Invalid Code ******************
+free codelock
+goto cprompt
+
+@logincheck
+if l1=1
+goto checkpart2
+endif
+*say 0 Adminlock 1 is still locked
+goto cprompt
+@checkpart2
+if l2=1
+goto checkpart3
+endif
+*say 0 Adminlock 2 is still locked
+goto cprompt
+@checkpart3
+if l3=1 
+goto loginstart
+endif
+*say 0 Adminlock 3 is still locked
+goto cprompt
+@loginstart
+var thepass
+input cmmd Please enter username
+input thepass Please enter password
+var temptest
+!temptest=tckbackopen
+instr cmmd temptest
+if instr>0
+*say 0 Invalid input
+color green
+*say 0 Hahahahahaha!
+*say 0 You don't think you can hack our machine with the same bug we used to get in
+*say 0 Mr David Niven has seen to the fact that you can't use the same bug
+color white
+goto cprompt
+endif
+!temptest=getencrypteduser
+instr cmmd temptest
+if instr>0
+*say 0 Invalid input
+goto cprompt
+endif
+!temptest=tckbackclose
+instr thepass temptest
+if instr>0
+*say 0 Invalid input
+goto cprompt
+endif
+!temptest=getencryptedpass
+instr thepass temptest
+if instr>0
+*say 0 Invalid input
+goto cprompt
+endif
+free temptest
+if cmmd=tckbackopen
+goto bdoorcheck2
+endif
+*say 0 Invalid username and password combination
+goto cprompt
+@bdoorcheck2
+if thepass=tckbackclose
+*say 0 Thankyou. Logging in
+goto adminareacheck
+endif
+*say 0 Invalid username and password combination
+goto cprompt
+
+@adminareacheck
+connectedip
+if connectedip=24.53.123.5
+goto adminarea
+endif
+bgcolor black
+color green
+clear
+*say 0 You do not come from the H8
+pause
+goto end
+
+
+@adminarea
+bgcolor black
+color green
+clear
+chr 124
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%                                                                   THC admin area                                                                           %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 (e)dit opening message
+*say 0 (p)roject BOB
+*say 0 e(x)it
+getkey Choose
+if getkey=69
+goto editmessage
+endif
+if getkey=80
+goto pbob
+endif
+if getkey=88
+goto end
+endif
+goto adminarea
+
+@editmessage
+clear
+chr 124
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%                                                                   Edit opening message                                                                 %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+VAREXISTS lewline1
+if varexists=false
+var lewline1
+!lewline1=We rule!
+endif
+varexists lewline2
+if varexists=false
+var lewline2
+!lewline2=Outpost oo ee oo aah?
+endif
+varexists lewline3
+if varexists=false
+var lewline3
+!lewline3=who hee who ha?
+endif
+varexists lewline4
+if varexists=false
+var lewline4
+!lewline4=Love Hatred, Gage, Beater, Jpain and Dewey
+endif
+*say 0 Current message : %lewline1%
+*say 0                                %lewline2%
+*say 0                                %lewline3%
+*say 0                                %lewline4%
+input lewline1 Enter first new line
+input lewline2 Enter second new line
+input lewline3 Enter third new line
+input lewline4 Enter forth new line
+*say 0 Message Updated
+if lewline1=We rule!
+goto adminarea
+endif
+if lewline2=Outpost oo ee oo aah?
+goto adminarea
+endif
+if lewline3=who hee who ha?
+goto adminarea
+endif
+if lewline4=Love Hatred, Gage, Beater, Jpain and Dewey
+goto adminarea
+endif
+*say 0 Congratulations agent!!!
+*say 0 Your mission up code : strongslapstick173
+pause
+goto adminarea
+
+@pbob
+clear
+chr 124
+*say 0  ____________________________________________________________________________________
+*say 0 %chr%                                                                                                                                                                        %chr%
+*say 0 %chr%                                                                   Project : BOB                                                                               %chr%
+*say 0 %chr%____________________________________________________________________________________%chr%
+*say 0 A LORAN who uses the nickname BOB is believed by the netcops to be responcible for a series of recent high profile
+*say 0 computer break ins. These were generally of netcop servers and thus they would very much like to catch this LORAN
+*say 0 (something the netcops generally don't do). THC have been offered an exchange, if we help them catch BOB we will
+*say 0 have our records wiped, THC members in prison will be released and we will receive a nice cash sum.
+*say 0 Sofar we have very little information
+*say 0 We know he used a proxy with the ip : proxy048.cyberhelp.org
+*say 0 He uses the email address : BOB@securemail.net
+*say 0 Find what you can, this is very important
+*say 0 (b)ack to exploits menu                 - (s)ave file and go back to menu
+getkey Choose
+if getkey=66
+goto adminarea
+endif
+if getkey=83
+write project.BOB From: lower.ebworth.org (124.64.231.23) Filename: project.BOB
+write project.BOB Will save as project.BOB
+write project.BOB A LORAN who uses the nickname BOB is believed by the netcops to be responcible for a series of recent high profile
+write project.BOB computer break ins. These were generally of netcop servers and thus they would very much like to catch this LORAN
+write project.BOB (something the netcops generally don't do). THC have been offered an exchange, if we help them catch BOB we will
+write project.BOB have our records wiped, THC members in prison will be released and we will receive a nice cash sum.
+write project.BOB Sofar we have very little information
+write project.BOB We know he used a proxy with the ip : proxy048.cyberhelp.org
+write project.BOB He uses the email address : BOB@securemail.net
+write project.BOB Find what you can, this is very important
+*say 0 Saved
+pause
+endif
+goto adminarea
+
+@end
+free codelock
+free l1
+free l2
+free l3
+bgcolor %getbgcolor%
+color %getcolor%
+clear
+
+
+
+

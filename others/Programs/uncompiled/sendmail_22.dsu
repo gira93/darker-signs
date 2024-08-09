@@ -1,0 +1,151 @@
+//SECURE DIGITAL SENDMAIL SERVER
+
+cancel true
+getcolor
+getbgcolor
+
+var$ theip
+var$ theport
+
+getmyip
+getmyhostname
+
+*forecolor green
+*Say 1 Secure Digital Mail Server
+*forecolor orange
+*Say 1 Warning - This is a private mail server. You will be automatically disconnected
+*Say 1 if you are not part of our network.
+connectedip
+connectedname
+*forecolor grey
+*say 10 Verifying your network information...
+*say 1 You have been identified...
+
+//check if the connection is coming from a securedigital.com computer
+var$ sdstring
+! sdstring=xy.securedigital.com
+instr connectedname sdstring
+
+
+
+if instr=0
+*forecolor orange
+*say 1 Hostname - %connectedname%
+*say 1 IP Address - %connectedip%
+*forecolor red
+*say 1 ACCESS DENIED - Multiple unsuccessful attempts will be logged automatically.
+goto end
+endif
+
+*forecolor green
+*say 1 Hostname - %connectedname%
+*say 1 IP Address - %connectedip%
+*say 10 USER VERIFIED...
+*say 10 Welcome back to the network.
+
+var$ mailuser
+var$ mailpass
+
+@getauth
+auto off
+*forecolor grey
+input mailuser Enter Mailbox Username
+input mailpass Enter Mailbox Password
+
+if mailuser=secure
+else
+*forecolor orange
+*say Access Denied - Invalid Username
+pause
+goto end
+goto getauth
+endif
+
+if mailpass=digital
+else
+*forecolor orange
+*say Access Denied - Invalid Password
+pause
+goto end
+goto getauth
+endif
+
+*forecolor green
+*say User and Password ok...
+pause
+
+@start
+*forecolor blue
+*say         ##########################################
+*say        ###########################################
+*say       ##                                                                      ##  SECURE ##
+*say      ##      > SECURE DIGITAL MAIL SERVICE <         ## DIGITAL ##
+*say     ##                                                                         ###########
+*say     ##############################################
+*say     ##############################################
+//skipline
+*forecolor purple 
+*say     ##                                                                                               ##
+*say     ##                        You have 2 New Messages                             ##
+*say     ##                                                                                               ##
+*say     ##                        (1) Read Message #1                                     ##
+*say     ##                        (2) Read Message #2                                     ##
+*say     ##                        (3) Logout                                                      ##
+*say     ##                                                                                               ##
+//skipline
+*forecolor blue
+*say     ##############################################
+*say     ##############################################
+*forecolor grey
+
+var option
+input option Enter Option (1-3)
+
+if option=1
+*forecolor white
+*say MAIL FROM - techsupport@securedigital.com
+*say SUBJECT - Query #128328 Re: Proxy Security
+*say .
+*say Thankyou for your recent email regarding security
+*say of the secure digital proxy server. We can assure you
+*say that in the *highly unlikely* event that anyone out
+*say there will think of using it to access our internal
+*say networks, we will be constantly monitoring to avoid any
+*say possible issues, and inform yourself the moment anything
+*say occurrs.
+*say .
+skipline
+*say FROM - Secure Digital Tech Support Team
+pause
+*forecolor grey
+goto start
+endif
+
+
+if option=2
+*forecolor white
+*say MAIL FROM -accounts@internalservices.org
+*say SUBJECT - Your Account Is Now Active
+*say .
+*say Your account with us is now ready for you to use.
+*say Use the following details to log in. Please contact us
+*say immediately if you need anything.
+skipline
+*say Username - sdigital
+*say Password - digital
+*say .
+skipline
+*say FROM - Secure Digital Tech Support Team
+pause
+*forecolor grey
+goto start
+endif
+
+
+@end
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+*Say 1 Connection Terminated
+*forecolor %getcolor%

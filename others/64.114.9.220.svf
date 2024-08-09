@@ -1,0 +1,6 @@
+name%securedigital.com
+port%25#sendmail_22
+port%80#secure_http
+portend
+trace1%17.191.200.201
+trace2%64.114.9.241

@@ -1,0 +1,72 @@
+var keycodef
+var inptf
+
+
+
+@fff
+*fcolor blue
+*Say 0 Remote Resource Server
+*fcolor white
+input inptf Waiting for Command
+
+if %inptf% = help
+*fcolor blue
+*Say 0 Commands
+*fcolor white
+*say 0 help, keycode, mod, reset
+endif
+
+if %inptf% = mod
+goto ffftwo
+endif
+
+if %inptf% = reset
+*fcolor blue
+*say 1 Keycode Value...
+! keycodef = 331
+*fcolor white
+*say 50 Reset!
+endif
+
+if %inptf% = keycode
+*fcolor blue
+*Say 0 Keycode Value
+*fcolor white
+*say 0 %keycodef%
+endif
+
+goto fff
+
+
+@ffftwo
+//mod
+*fcolor white
+input inptf Waiting for new code...
+
+strmid inptf 1 3
+
+if strmid = rrs
+goto fffthree
+else
+*Say 0 Invalid Resource Code
+endif
+
+pause
+goto fff
+
+@fffthree
+strmid inptf 4 3
+ucase strmid
+
+*Say 0 Resource Code OK
+! keycodef = strmid
+*Say 0 New Code Set: %strmid%
+
+
+pause
+goto fff
+
+
+
+
+

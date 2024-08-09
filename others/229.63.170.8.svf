@@ -1,0 +1,4 @@
+name%internic.net
+port%80#http_internic
+path%12345
+portend

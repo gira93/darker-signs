@@ -1,0 +1,6 @@
+name%internal-9.ndrgrnd.pipelink.gov
+port%80#int9http
+port%81#int9secure
+port%82#int9priv
+path%1
+portend

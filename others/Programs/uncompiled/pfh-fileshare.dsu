@@ -1,0 +1,475 @@
+getcolor
+getbgcolor
+var user
+var pass
+var filepass
+clear
+*say 0 Welcome to the FileShare program. Please enter your username and password
+*say 0      (to access the public area enter the username public)
+input user Username :
+if user=public
+goto public
+endif
+input pass Password :
+if user=admin
+goto check2
+endif
+color red
+*say 0 Invalid Username and Password
+goto end
+@check2
+if pass=aspidistra
+goto admin
+endif
+color red
+*say 0 Invalid Username and Password
+goto end
+
+@public
+color red
+bgcolor white
+color black
+clear
+*say 0 Welcome to the Public fileshare area
+*say 0             Type help for help
+@loophere
+input user Enter Command
+lcase %user%
+
+strmid user 1 6
+if strmid=get .\
+*say 0 ---
+*say 0 Invalid use of .\
+*say 0 ---
+goto loophere
+endif
+
+var$ pipe
+@herefilter
+!pipe=;
+strlen user
+instr user pipe
+if instr=0
+goto endfilter
+endif
+!instr=instr-1
+strmid user 1 %instr%
+!pipe=strmid
+!instr=instr+2
+!strlen=strlen-instr+1
+strmid user %instr% %strlen%
+*say strmid=%strmid%
+!user=pipe+strmid
+*say user=%user%
+goto herefilter
+*say finished
+@endfilter
+free pipe
+
+if user=help
+*say 0  ---
+*say 0 Commands
+*say 0 get filename - download filename
+*say 0 list - listfiles
+*say 0 stat filename - display file stats
+*say 0 password filename - enter the password for unlocking filename
+*say 0 logout - logout
+*say 0  ---
+goto loophere
+endif
+if user=logout
+*say 0 Thankyou for using Palmer FileSharer
+goto end
+endif
+if user=list
+*say 0 ---
+*say 0 Files :
+*say 0 comms
+*say 0 intro
+*say 0 pass
+*say 0 radmin
+*say 0 radmin.info
+*say 0 ---
+goto loophere
+endif
+if user=stat intro
+*say 0 ---
+*say 0 Filename : intro
+*say 0 Size : 249 bytes
+*say 0 Created : 21/02/12
+*say 0 Actual path : \publicarea
+*say 0 Machine : 123.53.4.9
+*say 0 Comment : none
+*say 0  ---
+goto loophere
+endif
+if user=stat comms
+*say 0 ---
+*say 0 Filename : comms
+*say 0 Size : 491 bytes
+*say 0 Created : 20/02/12
+*say 0 Actual path : \publicarea
+*say 0 Machine : 123.53.4.9
+*say 0 Comment : none
+*say 0 ---
+goto loophere
+endif
+if user=stat radmin
+*say 0 ---
+*say 0 Filename : radmin
+*say 0 Size : 769 bytes
+*say 0 Created : 20/02/12
+*say 0 Actual path : \publicarea
+*say 0 Machine : 123.53.4.9
+*say 0 Comment : none
+*say 0 ---
+goto loophere
+endif
+if user=stat pass
+*say 0 ---
+*say 0 Filename : pass
+*say 0 Size : 522 bytes
+*say 0 Created : 20/02/12
+*say 0 Actual path : \publicarea
+*say 0 Machine : 123.53.4.9
+*say 0 Comment : none
+*say 0 ---
+goto loophere
+endif
+if user=stat radmin.info
+*say 0 ---
+*say 0 Filename : radmin.info
+*say 0 Size : 880 bytes
+*say 0 Created : 1/03/12
+*say 0 Actual path : \publicarea
+*say 0 Machine : 123.53.4.9
+*say 0 Comment : Laura - I'm using this file to test a bug I think I've found in our server.
+*say 0           The string "palmer", encrypted using the password for the file is stored in
+*say 0           a variable called filepass. This is not freed at the end of the program
+*say 0           thus it can be accessed after the user has logged out.
+*say 0                   - Fadda
+goto loophere
+endif
+
+if user=get radmin.info
+*say 0 ---
+*say 0 Error: File is password protected
+*say 0 ---
+goto loophere
+endif
+
+
+if user=password radmin.info
+goto radmin
+endif
+
+if user=get .\password
+*say 0 ---
+*say 0 Download .\password
+write password Congratulations Agent
+write password        your level up code is tripleplay700
+*say 0 Download complete
+*say 0 ---
+goto loophere
+endif
+
+if user=get intro
+*say 0 ---
+*say 0 Downloading intro...
+write intro *** Welcome to our public File Sharing directory.
+write intro Here you will find several files about the file hosting/sharing software.
+write intro The file comms is about the commands you can use on this program
+write intro The file radmin is about the remote administration port
+write intro The file pass is about the password/encryption system
+*say 0 Download complete
+*say 0 ---
+goto loophere
+endif
+
+if user=get pass
+*say 0 ---
+*say Downloading pass...
+*write pass *** The Password System
+*write pass The password system allows you to lock files in this area. The file is encrypted using
+*write pass your specific password (using our own encryption). Then an extra line is added to the
+*write pass top of the file which contains the phrase "palmer" (no quotes) encrypted using your password. 
+*write pass This way the software can easily check if the password is correct or not. This encryption 
+*write pass is done using the built in DScript encryption for speed.
+*write pass As you can see, this password protection is comprehensive and hard to break.
+*say 0 Download complete
+*say 0 ---
+goto loophere
+endif
+
+if user=get comms
+*say 0 ---
+*say 0 Downloading comms...
+*write comms *** Commands
+*write comms The filesharing program is very simple to use and has only a small number of commands.
+*write comms LIST will list files.
+*write comms GET filename will download filename
+*write comms STAT filename will display statistics filename
+*write comms PASS filename is for passworded files. Once you enter the password the file will be downloaded.
+*write comms HELP will list commands useable.
+*write comms Logout will logout
+*write comms Commands can be typed in lowercase or uppercase.
+*write comms With software as easy to use as this, you can see why Palmer FileHoster is the best.
+*say 0 Download complete
+*say 0 ---
+goto loophere
+endif
+
+if user=get radmin
+*say 0 ---
+*say 0 Downloading radmin...
+write radmin *** Remote Administration Port
+write radmin The remote administration port allows for easy administration of the machine. It resides on port 120 and has many 
+write radmin functions. To use it a connection establisher must be sent. This contains details of the computers which are making
+write radmin the connection. This is stored in a program which the admin will have. If the establisher is entered incorrectly for
+write radmin any reason the connection will simply appear as garbage.
+write radmin Once in the remote administration program various actions can be done. With a special code the admin can be transfered
+write radmin to a superuser program for administration of the computer. The computer can also be shut down into "safe mode" for
+write radmin maintenance. The admin can also do password recovery using a series of recovery questions.
+*say 0 Download complete
+*say 0 ---
+goto loophere
+endif
+
+strmid user 1 3
+if strmid=get
+*say 0 ---
+*say 0 Invalid file
+*say 0 ---
+goto loophere
+endif
+
+strmid user 1 4
+if strmid=stat
+*say 0 ---
+*say 0 Invalid file
+*say 0 ---
+goto loophere
+endif
+
+strmid user 1 8
+if strmid=password
+*say 0 ---
+*say 0 File does not exist or is not password protected
+*say 0 ---
+goto loophere
+endif
+
+*say 0 ---
+*say 0 Invalid Command
+*say 0 ---
+goto loophere
+
+@radmin
+encrypt$ national palmer
+*say 0 ---
+!filepass=%encrypt$%
+input user Please enter password
+if user=national
+*say 0 Correct Password
+*say 0 Downloading radmin.info...
+*write radmin.info *** Connect On the admin port - quick reference
+*write radmin.info nb: When prompted send codes for each section divided by a colon
+*write radmin.info *** Section 1 - OS of connecting computer
+*write radmin.info DarkSigns - DS
+*write radmin.info Windows - WN
+*write radmin.info Unix or variant - UX
+*write radmin.info BlueSky - BS
+*write radmin.info *** Section 2 - Hardware of remote machine
+*write radmin.info 4 Ghz (or equivalent) - low
+*write radmin.info 5 - 8 Ghz (or equivalent) - med
+*write radmin.info 9 - 12 Ghz (or equivalent) - top
+*write radmin.info *** Section 3 - Connection setup
+*write radmin.info This consists of 3 characters.
+*write radmin.info The first character is a number between 1 and 9. This is the connection speed of the
+*write radmin.info remote network (in gpbs) divided by 20 and rounded down.
+*write radmin.info The second character is the medium of connection :
+*write radmin.info Fibreoptic cable - f
+*write radmin.info Radio based network - r
+*write radmin.info Lightreflect network - l
+*write radmin.info The third character is either a y or n. This represents whether "packet security" is turned
+*write radmin.info on.
+*write radmin.info An example request will look something like
+*write radmin.info WN:med:6fn
+*say 0 Download complete
+goto temp42
+endif
+*say 0 Incorrect Password
+@temp42
+*say 0 ---
+goto loophere
+
+
+@admin
+
+color red
+bgcolor white
+color black
+clear
+*say 0 Welcome to fileshare area for user : admin
+*say 0             Type help for help
+@loophereb
+input user Enter Command
+lcase %user%
+
+strmid user 1 6
+if user=get .\
+*say 0 ---
+*say 0 Invalid use of .\
+*say 0 ---
+goto loophereb
+endif
+
+var$ pipe
+@herefilterb
+!pipe=;
+strlen user
+instr user pipe
+if instr=0
+goto endfilterb
+endif
+!instr=instr-1
+strmid user 1 %instr%
+!pipe=strmid
+!instr=instr+2
+!strlen=strlen-instr+1
+strmid user %instr% %strlen%
+!user=pipe+strmid
+goto herefilterb
+@endfilterb
+free pipe
+
+if user=help
+*say 0  ---
+*say 0 Commands
+*say 0 get filename - download filename
+*say 0 list - listfiles
+*say 0 stat filename - display file stats
+*say 0 password filename - enter the password for unlocking filename
+*say 0 logout - logout
+*say 0  ---
+goto loophereb
+endif
+if user=logout
+*say 0 Thankyou for using Palmer FileSharer
+goto end
+endif
+
+if user=list
+*say 0 ---
+*say 0 Files :
+*say 0 pfh-advisory
+*say 0 ---
+goto loophereb
+endif
+
+if user=stat pfh-advisory
+*say 0 ---
+*say 0 Filename : pfh-advisory
+*say 0 Size : 1,302 bytes
+*say 0 Created : 25/02/12
+*say 0 Actual path : \users\admin
+*say 0 Machine : 123.53.4.10
+*say 0 Comment : Fixed our version with the advisory here
+*say 0 ---
+goto loophereb
+endif
+
+if user=get pfh-advisory
+*say 0 ---
+*say 0 Downloading pfh-advisory...
+*write pfh-advisory Advisory of bugs in the Palmer Filehosting System
+*write pfh-advisory                    by b0b0
+*write pfh-advisory The Bugs:
+*write pfh-advisory 		There are two key bugs in the Palmer filehosting
+*write pfh-advisory system. The first is that one use the semicolon (;) which seperates
+*write pfh-advisory commands on the command line to run extra commands. There are points
+*write pfh-advisory when your input is run through the command line and so use of the colon
+*write pfh-advisory will run extra commands, like so:
+*write pfh-advisory get file ; del *
+*write pfh-advisory ---
+*write pfh-advisory The second bug is that despite some checks on the get command one can
+*write pfh-advisory still access files in other directories by using .\ (the operating
+*write pfh-advisory system uses backslashes) to go back a directory.
+*write pfh-advisory Thus you can access any files on the same machine (check which machine
+*write pfh-advisory you are on using stat)
+*write pfh-advisory ---
+*write pfh-advisory The Fix:
+*write pfh-advisory 		First to avoid the get problem simply add these lines
+*write pfh-advisory strmid command 1 6
+*write pfh-advisory if command=get .\
+*write pfh-advisory *say 0 ---
+*write pfh-advisory *say 0 Invalid use of .\
+*write pfh-advisory *say 0 ---
+*write pfh-advisory goto looptohere
+*write pfh-advisory endif
+*write pfh-advisory 		Then you can use this code to filter out colons :
+*write pfh-advisory var$ colon
+*write pfh-advisory @herefilter
+*write pfh-advisory !colon=;
+*write pfh-advisory strlen command
+*write pfh-advisory instr command colon
+*write pfh-advisory if instr=0
+*write pfh-advisory goto endfilter
+*write pfh-advisory endif
+*write pfh-advisory !instr=instr-1
+*write pfh-advisory strmid command 1 %instr%
+*write pfh-advisory !colon=strmid
+*write pfh-advisory !instr=instr+2
+*write pfh-advisory !strlen=strlen-instr+1
+*write pfh-advisory strmid command %instr% %strlen%
+*write pfh-advisory !command=colon+strmid
+*write pfh-advisory goto herefilter
+*write pfh-advisory @endfilter
+*write pfh-advisory free colon
+*write pfh-advisory 		That should fix the bugs
+*write pfh-advisory Thanks To: Mung, Mong & Mang.
+*say 0 Download complete
+*say 0 ---
+goto loophereb
+endif
+
+strmid user 1 3
+if strmid=get
+*say 0 ---
+*say 0 Invalid file
+*say 0 ---
+goto loophereb
+endif
+
+strmid user 1 4
+if strmid=stat
+*say 0 ---
+*say 0 Invalid file
+*say 0 ---
+goto loophereb
+endif
+
+strmid user 1 8
+if strmid=password
+*say 0 ---
+*say 0 File does not exist or is not password protected
+*say 0 ---
+goto loophere
+endif
+
+
+*say 0 ---
+*say 0 Invalid Command
+*say 0 ---
+goto loophereb
+
+
+@end
+free user
+free pass
+color %getcolor%
+bgcolor %getbgcolor%
+
+
+
+

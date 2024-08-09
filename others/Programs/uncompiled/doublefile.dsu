@@ -1,0 +1,14 @@
+WRITE file2 IF temp < 10
+WRITE file2 SAY 0 Less than 10.
+WRITE file2 ENDIF
+
+VAR temp
+INPUT temp Number ?
+SAY 0 Going to file2...
+RUN file2
+SAY 0 Back from file2...
+
+DEL file2
+FREE temp
+
+

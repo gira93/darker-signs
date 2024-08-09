@@ -1,0 +1,103 @@
+cancel true
+getcolor
+getbgcolor
+
+var options
+
+*forecolor green
+*Say 1 Connected on Port 80 to Biolabs Private Research Server
+*forecolor blue
+
+input options Password required for biolabs research username: research
+
+if options=dolphin
+fcolor green
+say 1 OK Username: research
+say 1 OK Password: %options%
+say 20 Access Granted
+fcolor white
+say 60 Please wait...........
+goto menu
+else
+*fcolor green
+say 1 OK Username: research
+*fcolor red
+say 1 ERR Password: %options%
+say 1 Access Denied
+goto end
+endif
+
+
+@menu
+*fcolor green
+*Say 1 Connected on Port 80 to Biolabs Private Research Server
+*forecolor grey
+*Say 1 (1) View shared file: dolphin_partial_019.dat
+*Say 1 (2) View shared file: dolphin_partial_020.dat
+*Say 1 (3) Disconnect
+
+input options Enter A Number Based on your Preference (1-3)
+
+if options=1
+*forecolor blue
+*Say View shared file: dolphin_partial_019.dat
+*forecolor white
+*Say Bottle-nosed dolphins dominate many marine acts because of their
+*Say intelligence and researchers believe much of the dolphin's brain is
+*Say used for communication or "echolocation". 
+skipline
+*Say While it is not known if dolphins have a formal language, they do
+*Say communicate with a signature whistle to identify themselves.
+skipline
+*Say Unlike humans, dolphins lack vocal cords, but they do use a
+*Say complicated system of whistles, squeaks, moans, trills and
+*Say clicks produced by sphincter muscles within the blow hole.
+pause
+goto menu
+endif
+
+
+if options=2
+*forecolor blue
+*Say View shared file: dolphin_partial_020.dat
+*forecolor white
+*Say Using echolocation, or sonar, dolphins send out frequencies
+*Say by clicking. The clicking sounds bounce off objects and the
+*Say returning sound waves are picked up by the dolphin's
+*Say bulbous forehead and lower jaw and interpreted as to
+*Say distance, size and shape of object.
+pause
+*Say This sound system is particularly useful at night or in murky
+*Say waters such as the Delaware Bay as it allows the dolphin to
+*Say navigate even if visibility is poor.
+skipline
+*Say Dolphins have produced sound frequencies from 0.25 to 200 kHz,
+*Say using the higher frequencies for echolocation and the lower frequencies
+*Say for communication and orientation.
+pause
+goto menu
+endif
+
+
+
+
+@end
+fcolor blue
+*say 1 Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,176 @@
+cancel true
+getcolor
+getbgcolor
+
+@welcome
+*forecolor green
+*say 0 Welcome to FirstClass DataBase website
+*say 0 ©FirstClass Software® 1989-2003 FCDB.com
+@mm
+*skipline
+*forecolor white
+*say 0 < 1 > About us
+*say 0 < 2 > Get FCDB
+*say 0 < 3 > FCDB documentation
+*say 0 < 4 > Contact us
+*say 0 < 5 > Exit
+var mminput
+input mminput Please select a menu option ( 1 - 5 )
+
+if mminput = 1
+goto about
+elseif mminput=2
+goto get
+elseif mminput=3
+goto docs
+elseif mminput=4
+goto contact
+elseif mminput=5
+goto end
+else
+goto mm
+endif
+
+@about
+*skipline
+*forecolor blue
+*say 0 What is FCDB?
+*forecolor white
+*skipline
+*say 0 FirstClass DataBase is not your ordinary database. FCDB is a smart database
+*say 0 with many features that include, remote script execution, auto fix, command
+*say 0 prompt usage and many many more. FCDB is ideal for small and large
+*say 0 businesses alike, even the average user can benefit from FCDB.
+*say 0 FCDB is your all-round database, accept nothing else.
+*pause
+goto mm
+
+@get
+*skipline
+*forecolor blue
+*say 0 How to purchase FCDB
+*skipline
+*forecolor white
+*say 0 You can purchase FCDB by emailing sales@fcdb.com all information
+*say 0 will be emailed back to you asap.
+*skipline
+*pause
+goto mm
+
+@docs
+*forecolor blue
+*skipline
+*say 0 FCDB Documentation
+@docs2
+*skipline
+*forecolor white
+*say 0 < 1 > Commands
+*say 0 < 2 > Known Bugs and Problems
+*say 0 < 3 > Report Bug
+*say 0 < 4 > Back to main menu
+var docinput
+input docinput Please selection a menu option ( 1 - 4 )
+
+if docinput = 1
+goto commands
+elseif docinput = 2
+goto kbug
+elseif docinput = 3
+goto rbug
+elseif docinput = 4
+goto mm
+else
+goto docs2
+endif
+
+@commands
+*skipline
+*forecolor blue
+*say 0 FCDB Commands
+*say 0 These commands are to be used in the FCDB console
+*skipline
+*forecolor white
+*say 0 CD - usage: cd <folder>
+*say 0 Changes current directory to the folder specified
+*skipline
+*say 0 EXIT - usage: exit
+*say 0 Exits the FCDB console
+*skipline
+*say 0 LS - usage: ls
+*say 0 Lists the files and folders in current directory
+*skipline
+*say 0 RUN - usage: run <filename>
+*say 0 Runs the file specified
+*skipline
+*say 0 SU - usage: su <user>
+*say 0 Changes to user specified
+*pause
+goto docs2
+
+@kbug
+*skipline
+*forecolor blue
+*say 0 FCDB Known Bugs and Problems
+*skipline
+*forecolor white
+*say 0 Posted by BugTracker2000
+*say 0 --------------------------------------------------------
+*say 0 If the sysadmin is stupid and does not take access to command SU out
+*say 0 a user maybe able to exploit this to gain higher premissions.
+*say 0 Fix: Deny access for any user to use this command.
+*say 0 --------------------------------------------------------
+*pause
+*say 0 Posted by BillyBase
+*say 0 --------------------------------------------------------
+*say 0 There is a buffer overflow in the exc( ) module, if a string of more then
+*say 0 255 chars the user will be thrown into the console as admin user.
+*say 0 Fix: Edit options.ini to deny access to the exc( ) module until patch
+*say 0 is released.
+*say 0 --------------------------------------------------------
+*pause
+goto docs2
+
+@rbug
+*skipline
+*forecolor blue
+*say 0 Report FCDB Bug
+*skipline
+*forecolor white
+*say 0 Please email all bug reports to bugs@fcdb.com
+*pause
+goto docs2
+
+@contact
+*skipline
+*forecolor blue
+*say 0 Contact FCDB Team
+*skipline
+*forecolor white
+*say 0 If you wish to contact the FCDB team then please send emails to info@fcdb.com
+*pause
+goto mm
+
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free mminput
+free getcolor
+free getbgcolor
+free docinput
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

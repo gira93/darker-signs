@@ -1,0 +1,175 @@
+cancel false
+
+@init
+var buf
+! buf = goto menu
+var user
+getcolor
+getbgcolor
+color 39168
+
+@start
+*say 0 Welcome to oldgames.com's admin panel (AP 1.0b)
+*say 0 You need a correct user and password to continue :
+input user Username
+input pwd Password
+Free pwd
+instr user buf
+if instr > 10
+goto menu
+endif
+*say 10 wrong username/password
+goto end
+
+@menu
+clear
+color 39168
+*say 0 Welcome +%ç&/( here are the admin commands
+*say 0 1. View logs
+*say 0 2. Edit configuration
+*say 0 3. View Backup configuration
+*say 0 0. Disconnect
+getkey
+if getkey=49
+goto viewlogs
+endif
+if getkey=50
+goto error
+endif
+if getkey=51
+goto viewbackupconf
+endif
+if getkey=48
+goto end
+endif
+goto menu
+
+@viewlogs
+clear
+color 39168
+*say 0 Here are the currents logs :
+*say 0 1. L00017239.log
+*say 0 2. L00017240.log
+*say 0 3. L00017241.log
+*say 0 4. L00017243.log
+*say 0 5. L00017244.log
+*say 0 0. Main menu
+getkey
+if getkey=49
+goto viewlogs1
+endif
+if getkey=50
+goto viewlogs2
+endif
+if getkey=51
+goto viewlogs3
+endif
+if getkey=52
+goto viewlogs4
+endif
+if getkey=53
+goto viewlogs5
+endif
+if getkey=48
+goto menu
+endif
+goto viewlogs
+
+@viewlogs1
+clear
+*say 0 Reading file ...
+color blue
+*say 0 L00017239.log
+*say 0 Starting log...
+*say 0 User 1 connected from user152-dialup.internetprovider.com
+*say 0 User 2 connected from user17-dsl.broadband.com
+*say 0 User 3 connected from user9903-dialup.internetprovider.com
+*say 0 User 2 disconnected 
+*say 0 User 1 downloads game 15234
+*say 0 User 3 downloads game 54314
+*say 0 User 3 downloads game 9535
+*say 0 User 4 connected from proxy.com
+*say 0 User 4 banned for 1 hour, trying to access unauthorized area.
+*say 0 User 1 disconnected
+*say 0 User 3 disconnected
+*say 0 Log file closed.
+pause
+goto viewlogs
+
+@viewlogs2
+clear
+*say 0 Reading file ...
+color blue
+*say 0 L00017240.log
+*say 0 Starting log...
+*say 0 User 1 connected from user6542-dialup.internetprovider.com
+*say 0 User 1 downloads game 345
+*say 0 User 1 disconnected
+*say 0 Log file closed.
+pause
+goto viewlogs
+
+@viewlogs3
+clear
+*say 0 Reading file ...
+color blue
+*say 0 L00017241.log
+*say 0 Starting log...
+*say 0 Log file closed.
+pause
+goto viewlogs
+
+@viewlogs4
+clear
+*say 0 Reading file ...
+color blue
+*say 0 L00017243.log
+color red
+*say 0 Error : file is empty
+pause
+goto viewlogs
+
+@viewlogs5
+clear
+*say 0 Reading file ...
+color blue
+*say 0 L00017244.log
+*say 0 Starting log...
+*say 0 User 1 connected from user532-dsl.broadband.com
+*say 0 User 1 downloads game 1943
+*say 0 User 2 connected from %getmyhostname%
+*say 0 WARNING : intrusion detected
+*say 0 System error : shutting down http service
+pause
+goto viewlogs
+
+@viewbackupconf
+clear
+*say 0 Backup configuration
+*say 0 Backup : on
+*say 0 Backup files : *.scr *.log *.conf *.bin
+*say 0 Storage space : oldgames.com 21
+*say 0 username : save
+*say 0 password : ***
+color yellow
+*say 0 Returning to menu
+pause
+goto menu
+
+@error
+color red
+*say 0 An error has occured while trying to edit the configuration.
+pause
+goto menu
+
+@end
+color yellow
+*say 0 Disconnecting
+Free user
+Free buf
+color %getcolor%
+bgcolor %getbgcolor%
+
+
+
+

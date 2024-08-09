@@ -1,0 +1,5 @@
+name%targetmailer.com
+port%25#securecommail
+port%80#securecomhttp
+path%1234
+portend

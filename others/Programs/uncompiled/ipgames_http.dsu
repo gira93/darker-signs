@@ -1,0 +1,134 @@
+
+var ret
+var prsleep
+getcolor
+getbgcolor
+
+color 39168
+bgcolor black
+*say 0 Welcome, we were waiting for you...
+*say 0 Looking for file
+! prsleep = 10
+! ret = here
+goto progress
+
+@here
+exists game868686.bin
+if exists=false
+*say 0 You don't have the file, what are you doing here ??
+goto end
+endif
+*say 0 File found
+*say 0 Starting the verification of file
+!prsleep = 100
+!ret = here2
+goto progress
+@here2
+var str
+var pass
+strline game868686.bin 13
+! pass = strline
+strline game868686.bin 4
+! str = strline
+strline game868686.bin 5
+encrypt$ pass str
+instr strline encrypt$
+if instr=1
+goto next
+endif
+*say It seems you want to cheat us... This file is not the one we want.
+goto end
+
+@next
+*say File ok.
+*say Uploading file 
+!prsleep = 50
+!ret = here3
+goto progress
+@here3
+*say 0 Upload complete
+*say 100 Thank you for your work.
+*say 500 A mail will be sent to you
+color orange
+*say 50 warning : unauthorized execution of a program
+*say 20 warning : system is becoming very unstable
+*say 50 warning : disconnecting the web clients
+color red
+*say 50 error : unable to disconnect the clients
+color orange
+*say 50 warning : possible contamination by a virus
+*say 50 warning : launching virus scanner and virus counter measures
+color red
+*say 50 error : unable to launch virus scanner and virus counter measures
+color orange
+*say 50 warning : possible contamination of the network
+*say 50 warning : system is going to reboot
+color red
+*say 50 error : unable to reboot
+color orange
+*say 50 warning : going to safe mode, killing all extra processes
+color red
+*say 50 error : system is unable to kill the processes
+color orange
+*say 50 warning : shutting down the system before hardware is compromised
+color red
+*say 50 error : user root doesn't have acces to this command
+color orange
+*say 50 warning : user root deleted
+*say 50 ................................................................
+color blue
+*say 0 Connection lost...
+wrmwrmwrmwrm ipgames.com WTF What have you done ? All our systems are crashing in cascade,:we don't know how to stop this virus. You'll hear from us !
+wrmwrmwrmwrm . THX Mouhahaha I've used you like a living trojan.:How ? Easy, don't you find it was abit too easy to hack me and :take the file ...?:You wan't to know what you've done ?:You just killed their servers hardware. How ? Easy... :Haven't you ever heard of a virus called :Destruction ?:The virus was in the file...:Thank you again. Regards THC
+color yellow 
+*say 0 You've got mail !
+goto end2
+
+@progress
+var tmp
+var max
+var c2
+var y
+! tmp = .
+! y = 0
+! max = 101
+! c2 = %
+! sl = %ext3%
+@loophere
+if y = max
+goto endloop
+endif
+! tmp = tmp+.
+echo %tmp% %y% %c2%
+! y = y +1
+sleep %prsleep%
+goto loophere
+
+@endloop
+free tmp
+free max
+free c2
+free y
+if ret=here
+goto here
+endif
+if ret=here2
+goto here2
+endif
+if ret=here3
+goto here3
+endif
+
+
+@end
+color yellow
+*say 0 Disconnecting
+@end2
+free prsleep
+free ret
+color %getcolor%
+bgcolor %getbgcolor%
+
+
+
+

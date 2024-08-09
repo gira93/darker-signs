@@ -1,0 +1,48 @@
+//don't look at this file!!!! that's cheating!!!!!!!!!!!!!!!! :P
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+
+
+*Say 1 ....................
+*Say 1 This is a private server
+
+//
+*fcolor white
+//
+
+@end
+free passw
+fcolor blue
+*say Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

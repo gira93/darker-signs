@@ -1,0 +1,4 @@
+name%specialserver.com
+port%80#80
+path%12345
+portend

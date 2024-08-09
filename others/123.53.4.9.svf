@@ -1,0 +1,7 @@
+name%palmer.filehosting.net
+port%23#pfh-login
+port%80#pfh-http
+port%120#pfh-remadm
+port%625#pfh-fileshare
+path%1
+portend

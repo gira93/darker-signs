@@ -1,0 +1,4 @@
+name%jobs.securedigital.com
+port%80#jobs_sd_http
+path%12345
+portend

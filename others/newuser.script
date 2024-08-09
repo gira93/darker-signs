@@ -1,0 +1,21 @@
+showimagenowplz zeroone.jpg
+myusername
+mypassword
+*say DARK SIGNS - A NEW REALITY
+skipline
+fcolor blue
+*say 1 Welcome to Dark Signs.
+ucase %myusername%
+*say 1 Username: %ucase%
+ucase %mypassword%
+*say 1 Password: %ucase% [this will not be shown on screen again]
+skipline
+*say 1 Are you ready to begin?
+*say 1 Don't forget to check your email...
+skipline
+*say 1 Type MAIL to check your email
+*say 1 Type HELP for a list of commands
+fcolor grey
+skipline
+pause
+restart

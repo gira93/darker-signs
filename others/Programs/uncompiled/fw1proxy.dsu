@@ -1,0 +1,20 @@
+GETCOLOR
+var address
+var port
+*color orange
+*say 20 Proxy Service 1.0
+input address Please enter the IP address
+if address=46.23.37.2
+goto portget
+endif
+*say 10 That IP address is not valid
+goto end
+@portget
+input port Please enter the port to connect to
+endconnect %address% %port%
+@end
+free address
+free port
+
+
+

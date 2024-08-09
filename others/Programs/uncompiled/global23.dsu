@@ -1,0 +1,154 @@
+cancel true
+getcolor
+getbgcolor
+var mminput
+var uploaded
+!uploaded = false
+var dosbw
+var globaldone
+
+@welcome
+*forecolor green
+*say 0 Welcome to the GlobalSport.com's telnet server
+@mm
+*forecolor white
+input mminput %jkfjskjhd%
+
+if mminput = help
+goto help
+elseif mminput = run
+goto run
+elseif mminput = exit
+goto end
+elseif mminput = version
+goto version
+elseif mminput = ls
+goto ls
+else
+goto error
+endif
+
+@error
+*skipline
+*forecolor orange
+*say 0 System Command Error [%mminput%]
+goto mm
+
+@version
+*forecolor white
+*say 0 OS: Gunner v4.5
+*say 0 Build: v4.24926432a
+goto mm
+
+@help
+*skipline
+*forecolor green
+*say 0 EXIT - usage: exit
+*forecolor white
+*say 0 Disconnects you from remote host
+*skipline
+*forecolor green
+*say 0 HELP - usage: help
+*forecolor white
+*say 0 Displays this help screen
+*skipline
+*forecolor green
+*say 0 LS - usage: ls
+*forecolor white
+*say 0 Lists all files and folders in the current directory
+*skipline
+*forecolor green
+*say 0 RUN - usage: run
+*forecolor white
+*say 0 Runs a remote file
+*skipline
+*forecolor green
+*say 0 VERSION - usage: version
+*forecolor white
+*say 0 Displays OS version and build
+*skipline
+*pause
+goto mm
+
+@run
+*forecolor white
+input mminput Enter the file you wish to run
+if mminput = runmodule uploadandrun()
+goto upload
+elseif mminput = remoteapp
+goto remoteapp
+else
+*forecolor orange
+*say 0 File Error [can not find %mminput%]
+goto mm
+endif
+
+@remoteapp
+if uploaded = false
+*forecolor orange
+*say 0 File Error [can not find %mminput%]
+goto mm
+endif
+goto infect
+
+@infect
+*forecolor red
+if globaldone = 0
+!dosbw = dosbw + 1
+!globaldone = true
+endif
+*say 100 INFECTED
+goto end
+
+@upload
+*forecolor white
+input mminput Enter file to upload
+*exists %mminput%
+if exists = false
+*forecolor orange
+*say 0 File Error [can not find %mminput%]
+free exists
+goto mm
+endif
+free exists
+if mminput = remoteapp
+*forecolor blue
+!uploaded = true
+*say 100 ..............................................
+*say File uploaded
+goto mm
+else
+*forecolor orange
+*say 0 File Error [can not find %mminput%]
+goto mm
+endif
+
+@ls
+if uploaded = true
+*forecolor white
+*say 0 REMOTEAPP
+goto mm
+else
+*forecolor white
+*say 0 NO FILES
+goto mm
+endif
+
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free getcolor
+free getbgcolor
+free uploaded
+free mminput
+
+
+
+
+
+
+
+
+

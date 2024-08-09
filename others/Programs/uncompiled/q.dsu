@@ -1,0 +1,663 @@
+
+//----------------------------------------------------------------------------------------------------
+//||||||||||||||||||||||||||||||||||||||||||||||-Quaero-||||||||||||||||||||||||||||||||||||||||||||||
+//----------------------------------------------------------------------------------------------------
+@QuaAIS
+getcolor
+getbgcolor
+Var QuaMainMenuChooses
+var QuaIp
+var QuaIp1
+var QuaMainMenuChooses
+var QuaIp2
+var QuaIp3
+var QuaIp4
+var QuaIp5
+var QuaIp6
+var QuaValue
+var QuaValueHigh
+var QuaValueLow
+var QuaIp7
+var QuaIp8
+var QuaIpStartOld1
+var QuaIpStartOld2
+var QuaIpStartOld3
+var QuaIpStartOld4
+var QuaPort1
+var QuaPort2
+var QuaPort3
+var QuaPort4
+var QuaPort5
+var QuaPort6
+var QuaPort7
+var QuaPort8
+var QuaPort9
+var QuaPort10
+var QuaSetHowManyPorts
+var QuaSetPort
+var QuaSetPortNum
+var QuaSetPortEnd
+var QuaPortStop
+var QuaStrline
+var QuaPingName
+var QuaSetPortNum
+Var$ QuaIpScanHelp
+Var$ QuaPingName
+Var$ QuaIpCorrect
+Var$ QuaAIPHelpAnswer
+Var$ QuaScanChecker
+Var$ QuaTraceChecker
+Var$ QuaPortScanner
+var$ QuaPortConfirmatione
+Var$ QuaHosIp
+Var$ QuaIpHos
+Var$ QuaDisplay
+Var$ QuaAnswere1
+
+! QuaIp1 = 0
+! QuaIp2 = 0
+! QuaIp3 = 0
+! QuaIp4 = 0
+! QuaIp5 = 0
+! QuaIp6 = 0
+! QuaIp7 = 0
+! QuaIp8 = 0
+
+@QuaStartMenu
+
+color green
+bgcolor black
+skipline
+*say #     #########       ###                 ###           ###          ##########  #########          ########
+*say #   ###########    ###                 ###         #####        ##########  ##########     ########## 
+*say # ###               ###  ###                 ###        ######       ###                  ###          ###  ###            ###
+*say # ###               ###  ###                 ###       ###   ###     ###                  ###          ###  ###            ###
+*say # ###               ###  ###                 ###      ###     ###    #######         ###          ###  ###            ###
+*say # ###               ###  ###                 ###     ###       ###   #######         ##########   ###            ###
+*say # ###               ###  ###                 ###    ##########  ###                  #########     ###            ###
+*say # ###      ###  ###  ###                 ###   ########### ###                  ######            ###            ###
+*say # ###       ### ###  ###                 ###   ###           ### ###                  ### ###           ###            ###
+*say #  ############   #############   ###           ###  ##########  ###  ###            ##########
+*say #   ##########        ###########      ###           ###  ##########  ###   ###             ########
+*say #                     ### 
+*say #                      ###  
+color blue
+*say 20 This is an Advanced Scanner written by Urbanius for SCAN.com
+color green 
+*say 15 V 1.0.
+color grey
+*say -1- <-->Scan<-->
+*say -2- <-->Display results<-->
+*say -3- <-->Settings<-->
+*say -4- <-->View Current settings<-->
+*say -5- <-->Convert from Hostname to IP<-->
+*say -6- <-->Convert from IP to Hostname<-->
+*say -7- <-->About Quaero<-->
+*say -8- <-->Quit<-->
+input QuaMainMenuChooses ?
+if QuaMainMenuChooses = 1
+goto QuaIpScanInputs
+elseif QuaMainMenuChooses = 2
+goto QuaResults
+elseif QuaMainMenuChooses = 3
+goto QuaAIPSettings
+elseif QuaMainMenuChooses = 4
+goto QuaAIPViewSettings
+elseif QuaMainMenuChooses = 5
+goto QuaHosIp
+elseif QuaMainMenuChooses = 6
+goto QuaIpHos
+elseif QuaMainMenuChooses = 7
+goto QuaAbout
+elseif QuaMainMenuChooses = 8
+goto TheEnd
+elseif QuaMainMenuChooses = Abort
+goto TheEnd
+else 
+*say You must enter 1, 2, 3, 4, 5, 6, 7 or type Abort to quit.
+goto QuaStartMenu
+endif
+color grey
+
+@QuaIpScanInputs
+*say 5 If you, at any time, wish to abort the script, just type "Abort" in one of the inputs.
+input QuaPingName Enter the name of the file you want to save the results in. It will be saved in "Your name".
+if QuaPingName = Abort
+goto QuaStartMenu
+endif
+input QuaIp1 The first IP part.
+if QuaIp1 = Abort
+goto QuaStartMenu
+endif
+input QuaIp2 The second IP part.
+if QuaIp2 = Abort
+goto QuaStartMenu
+endif
+input QuaIp3 The third IP part.
+if QuaIp3 = Abort
+goto QuaStartMenu
+endif
+input QuaIp4 The fourth IP part.
+if QuaIp4 = Abort
+goto QuaStartMenu
+endif
+input QuaIp5 The first IP part.
+if QuaIp5 = Abort
+goto QuaStartMenu
+endif
+input QuaIp6 The second IP part.
+if QuaIp6 = Abort
+goto QuaStartMenu
+endif
+input QuaIp7 The third IP part.
+if QuaIp7 = Abort
+goto QuaStartMenu
+endif
+input QuaIp8 The fourth IP part.
+if QuaIp8 = Abort
+goto QuaStartMenu
+endif
+cls
+color blue
+*say 5 You have chosen to scan through the IPs from 
+color green
+*say 5 %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4% to %QuaIp5%.%QuaIp6%.%QuaIp7%.%QuaIp8%
+color blue
+*say 5 and the file you have chosen to save the outputs in, is %QuaPingName%
+color grey
+
+@QuaCorrectIp
+input QuaIpCorrect Is this IP and filename Correct?  (Y/N)
+
+! QuaIpStartOld1 = QuaIp1
+! QuaIpStartOld2 = QuaIp2
+! QuaIpStartOld3 = QuaIp3
+! QuaIpStartOld4 = QuaIp4
+
+@QuaAnswerYN1
+if QuaIpCorrect = Y
+Write %QuaPingName% This file was generated by Quaero.
+goto QuaToHigh
+elseif QuaIpCorrect = N
+goto QuaIpScanInputs
+elseif QuaIpCorrect = Abort 
+goto QuaStartMenu
+else 
+*say 5 You must enter Y or N
+goto QuaCorrectIp
+endif
+
+! QuaValueHigh = 1
+@QuaToHigh
+if QuaIp%QuaValueHigh% > 255
+cls
+*say 5 You entered an IP to high!
+pause
+cls
+*say 5 The highest possible IP in a range is 255.
+pause
+goto QuaIpScanInputs
+endif
+if QuaValueHigh = 8
+goto QuaToLow
+else
+! QuaValueHigh = QuaValueHigh + 1
+goto QuaToHigh
+endif
+
+@QuaToLow
+if QuaIp1 < 1
+goto QuaIpToLow
+endif
+if QuaIp5 < 1
+goto QuaIpToLow
+endif
+
+! QuaValueLow = 2
+@QuaToLow1
+if QuaValueLow = 5
+! QuaValueLow = 6
+endif
+if QuaIp%QuaValueLow% < 0
+goto QuaIpToLow
+endif
+if QuaValueHigh = 8
+goto start
+else
+! QuaValue = QuaValue + 1
+goto QuaToLow1
+endif
+goto start
+
+@QuaIpToLow
+cls
+*say 5 You've entered an IP that's too low!
+pause
+cls
+*say 5 The lowest possible IP is 1/0(1.0.0.0).
+pause
+goto QuaIpScanInputs
+
+@Start
+qping %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4%
+if qping = True
+*say Found a valid server %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4%
+goto QuaSettingsCheck1
+endif
+
+@QuaCheck1
+if QuaIp1 = QuaIp5
+goto QuaCheck2
+else 
+goto QuaScan1
+endif
+@QuaCheck2
+if QuaIp2 = QuaIp6
+goto QuaCheck3
+else 
+goto QuaScan1
+endif
+@QuaCheck3
+if QuaIp3 = QuaIp7
+goto QuaCheck4
+else 
+goto QuaScan1
+endif
+@QuaCheck4
+if QuaIp4 = QuaIp8
+goto QuaDisplayIpScan
+else 
+goto QuaScan1
+endif
+@QuaScan1
+if QuaIp4 = 255
+! QuaIp3 = QuaIp3 + 1
+! QuaIp4 = -1
+endif
+if QuaIp3 = 256
+! QuaIp2 = QuaIp2 + 1
+! QuaIp3 = 0
+endif
+if QuaIp2 = 256
+! QuaIp1 = QuaIp1 + 1
+! QuaIp2 = 0
+endif
+if QuaIp1 = 256
+! QuaIp1 = 1
+goto QuaScan1
+endif
+! QuaIp4 = QuaIp4 + 1
+cls
+*say Scanning server %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4%
+qping %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4%
+if qping = True 
+*say Found a valid server. %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4%
+goto QuaSettingsCheck1
+else 
+goto QuaCheck1
+endif
+
+@QuaSettingsCheck1
+exists QuaeroSettings
+if exists = False
+*say 10 The first time you use Quaero you must define your settings.
+*say 10 Press a button to do so.
+pause
+goto QuaAIPSettings
+endif
+@QuaSettingsCheck2
+STRLINE QuaeroSettings 1
+if STRLINE = True
+*say Preparing to Scan %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4%
+scan %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4% %QuaPingName%
+endif
+@QuaSettingsCheck3
+STRLINE QuaeroSettings 2
+if STRLINE = True
+*say Preparing to trace %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4%
+Trace %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4% %QuaPingName%
+endif
+@QuaSettingsCheck4
+STRLINE QuaeroSettings 3
+if Strline = False
+goto QuaCheck1
+endif
+! QuaPortStop = STRLINE + 3
+! QuaStrline = 3
+*say Preparing to do (a) port scan(s) on %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4%
+Write %QuaPingName% Port scans
+Strline QuaeroSettings 3
+! QuaPortStop = STRLINE + 3
+! QuaStrline = 3
+@QuaPortScanner
+! QuaStrline = QuaStrline + 1
+STRLINE QuaeroSettings %QuaStrline%
+pingport %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4% %STRLINE%
+if pingport = true
+Write %QuaPingName% The port %STRLINE% on %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4% is OPEN
+else 
+Write %QuaPingName% The port %STRLINE% on %QuaIp1%.%QuaIp2%.%QuaIp3%.%QuaIp4% is CLOSED
+endif
+if QuaStrline = QuaPortStop
+*say Port Scan complete
+goto QuaCheck1
+else 
+goto QuaPortScanner
+endif
+
+@QuaDisplayIpScan
+cls
+Write %QuaPingName% This was a scan through IP range %QuaIpStartOld1%.%QuaIpStartOld2%.%QuaIpStartOld3%.%QuaIpStartOld4% to %QuaIp5%.%QuaIp6%.%QuaIp7%.%QuaIp8%
+color blue
+*say 8 The scan is complete. You scanned successfully through:
+color green
+*say 8 %QuaIpStartOld1%.%QuaIpStartOld2%.%QuaIpStartOld3%.%QuaIpStartOld4% to %QuaIp5%.%QuaIp6%.%QuaIp7%.%QuaIp8%
+color blue
+*say 5 The results have been saved in a file called %QuaPingName%
+*say 5 Quaero will now bring you back to the main menu.
+pause
+goto QuaStartMenu
+color grey 
+
+@QuaResults
+input QuaDisplay Enter the name of the file you want to view 
+isfile %QuaDisplay%
+if isfile = true
+view %QuaDisplay%
+pause
+goto QuaStartMenu
+elseif QuaDisplay = Abort
+goto QuaStartMenu 
+else  
+*say The file doesn't exist.
+endif
+@QuaAnswerYN2
+input QuaAnswere1 Do you want to try again? (Y/N)
+if QuaAnswere1 = Y
+goto QuaResults
+elseif QuaAnswere1 = N
+goto QuaStartMenu
+elseif QuaAnswere1 = Abort
+goto QuaStartMenu
+else 
+*say You must enter Y or N.
+goto QuaAnswerYN2
+endif
+
+@QuaHosIp
+cls
+input QuaHosIp Please input the Hostname you want to convert to an Ip.
+if QuaHosIp = Abort
+goto QuaStartMenu
+endif
+GetIpFromHostname %QuaHosIp%
+*say the Ip of  %QuaHosIp% is %GetIpFromHostname%
+*say 5 You will now return to the main menu.
+pause
+cls
+goto QuaStartMenu
+
+@QuaIpHos 
+cls
+input QuaIpHos Please input the Ip you want to convert to a Hostname.
+if QuaIpHos = Abort
+goto QuaStartMenu
+endif
+GetHostnameFromIp %QuaIpHos%
+*say the Hostname of  %QuaIpHos% is %GetHostnameFromIp%
+*say 5 You will now return to the main menu.
+pause
+cls
+goto QuaStartMenu
+
+@QuaAIPSettings
+cls
+*say 5 This is the settings area. Here you can define what you want the script to do when it 
+*say 5 finds a valid server.
+*say 5 Preparing to configure Quaero.
+
+@QuaFileChecker
+exists QuaeroSettings
+if exists = true
+del QuaeroSettings
+endif
+
+@QuaAIPSettingInputs1
+input QuaScanChecker Do you want to automatically port scan the servers you find? (Y/N)
+if QuaScanChecker = Y
+write QuaeroSettings True
+goto QuaAIPSettingInputs2
+elseif QuaScanChecker = N
+write QuaeroSettings False 
+goto QuaAIPSettingInputs2
+elseif QuaScanChecker = Abort
+*say 5 You must run the settings configuration again before Quaero will work properly.
+pause
+goto QuaStartMenu
+else 
+*say 10 You must enter Y or N.
+pause
+goto QuaAIPSettingInputs1
+endif
+
+@QuaAIPSettingInputs2
+input QuaTraceChecker Do you want to automatically run a trace on the servers you find? (Y/N) 
+if QuaTraceChecker = Y
+write QuaeroSettings True 
+goto QuaAIPSettingInputs3
+elseif QuaTraceChecker = N
+write QuaeroSettings False 
+goto QuaAIPSettingInputs3
+elseif QuaTraceChecker = Abort
+*say 5 You must run the settings configuration again before Quaero will work properly.
+pause
+goto QuaStartMenu
+else 
+*say 10 You must enter Y or N
+pause
+goto QuaAIPSettingInputs2
+endif
+
+@QuaAIPSettingInputs3
+input QuaPortScanner Do you want to do a port scan on the server, by specific ports? (Y/N)
+if QuaPortScanner = Y
+goto QuaCheckvalue
+elseif QuaPortScanner = N
+write QuaeroSettings False
+goto QuaEndSettings
+elseif QuaPortscanner = Abort
+*say 5 You must run the settings configuration again before Quaero will work properly.
+pause
+goto QuaStartMenu
+else 
+*say 10 You must enter Y or N
+pause
+goto QuaAIPSettingInputs3
+endif
+
+@QuaCheckvalue
+STRLINE QuaeroSettings 1
+if STRLINE = True
+*say 5 You already have chosen to do a scan on the server. This means that it would scan all the ports and see if any are open.
+else 
+goto QuaPortsToScan
+endif
+input QuaPortConfirmatione Do you still want to specify ports? (Y/N)
+if QuaPortConfirmatione = Y
+goto QuaPortsToScan
+elseif QuaPortConfirmatione = N
+write Quaerosettings False
+goto QuaEndSettings
+elseif QuaPortConfirmatione = Abort
+*say 5 You must run the settings configuration again before Quaero will work properly.
+pause
+goto QuaStartMenu
+else 
+*say 5 You must enter Y or N
+goto QuaCheckvalue
+endif
+
+@QuaPortsToScan
+! QuaSetHowManyPorts = 0
+*say 5 Here you will be able to define ports to scan.
+input QuaSetHowManyPorts How many ports do you want to define to scan?
+if QuaSetHowManyPorts = Abort
+*say 5 You must run the settings configuration again before Quaero will work properly.
+pause
+goto QuaStartMenu
+else
+write QuaeroSettings %QuaSetHowManyPorts%
+endif
+if QuaSetHowManyPorts < 1
+*say It must be at least 1
+goto QuaPortsToScan
+endif
+
+! QuaSetPort = 0
+! QuaSetPortNum = 1
+! QuaSetPortEnd = QuaSetHowManyPorts + 1
+
+@QuaAdder
+if QuaSetPortNum = QuaSetPortEnd
+goto QuaEndSettings
+endif
+
+@QuaPortInput
+input QuaSetPort Which port do you wish to scan(max 2000)? Num %QuaSetPortNum% of %QuaSetHowManyPorts%
+if QuaSetPort = Abort
+*say 5 You must run the settings configuration again before Quaero will work properly.
+pause
+goto QuaStartMenu
+elseif QuaSetPort > 2000
+*say The highest port possible port is 2000.
+pause 
+goto QuaPortInput
+endif
+write QuaeroSettings %QuaSetPort%
+! QuaSetPortNum = QuaSetPortNum + 1
+goto QuaAdder
+
+@QuaEndSettings
+*say 5 The settings have been updated.
+pause
+cls
+goto QuaStartMenu
+
+@QuaAIPViewSettings
+STRLINE QuaeroSettings 1
+if STRLINE = True
+*say 5 The option to scan each valid server is set to ON.
+else 
+*say 5 The option to scan each valid server is set to OFF. 
+endif
+STRLINE QuaeroSettings 2
+if STRLINE = True
+*say 5 The option to run a trace on each valid server is set to ON.
+else 
+*say 5 The option to run a trace on each valid server is set to OFF. 
+endif
+STRLINE QuaeroSettings 3
+if STRLINE = False
+*say 5 The option to run a specific port scan on each valid server is set to OFF.
+goto QuaSettingsendDisplay
+else 
+*say 5 The option to do a port scan, by specific port, on each valid server is set to ON.
+*say 5 You've defined %Strline% different ports.
+endif
+
+@QuaPortSettingsDisplay
+Strline QuaeroSettings 3
+! QuaPortStop = STRLINE + 3
+! QuaSetHowManyPorts = STRLINE
+! QuaStrline = 3
+! QuaSetPortNum = 0
+@QuaPortSettingsDisplay2
+! QuaSetPortNum = QuaSetPortNum + 1
+! QuaStrline = QuaStrline + 1
+STRLINE QuaeroSettings %QuaStrline%
+*say The port Num %QuaSetPortNum% of %QuaSetHowManyPorts% is %STRLINE%
+if QuaStrline = QuaPortStop
+goto QuaSettingsendDisplay
+else 
+goto QuaPortSettingsDisplay2
+endif
+
+@QuaSettingsendDisplay
+*say 5 You will now be brought back to the main menu
+pause
+goto QuaStartMenu
+
+@QuaAbout
+*say 5 Why the name Quaero? What's that supposed to mean?
+*say 5 Well, I chose Quaero, simply because the meaning of
+*say 5 the word, is so covering for this script.
+*say 5 Quaero is Latin and means:”To seek, to search for, to get, to obtain".
+*say 5 Now wasn't that covering?
+*say 5 Creator Urbanius.
+*say 5 Thanks to TwoBeers for helping me, beta test it a little.
+pause
+goto QuaStartMenu
+
+@TheEnd
+Free QuaMainMenuChooses
+Free QuaIp
+Free QuaIp1
+Free QuaMainMenuChooses
+Free QuaIp2
+Free QuaIp3
+Free QuaIp4
+Free QuaIp5
+Free QuaIp6
+Free QuaValue
+Free QuaValueHigh
+Free QuaValueLow
+Free QuaIp7
+Free QuaIp8
+Free QuaIpStartOld1
+Free QuaIpStartOld2
+Free QuaIpStartOld3
+Free QuaIpStartOld4
+Free QuaPort1
+Free QuaPort2
+Free QuaPort3
+Free QuaPort4
+Free QuaPort5
+Free QuaPort6
+Free QuaPort7
+Free QuaPort8
+Free QuaPort9
+Free QuaPort10
+Free QuaSetHowManyPorts
+Free QuaSetPort
+Free QuaSetPortNum
+Free QuaSetPortEnd
+Free QuaPortStop
+Free QuaStrline
+Free QuaPingName
+Free QuaSetPortNum
+Free  QuaIpScanHelp
+Free  QuaPingName
+Free  QuaIpCorrect
+Free  QuaAIPHelpAnswer
+Free  QuaScanChecker
+Free  QuaTraceChecker
+Free  QuaPortScanner
+Free  QuaPortConfirmatione
+Free  QuaHosIp
+Free  QuaIpHos
+Free  QuaDisplay
+Free  QuaAnswere1
+*say 10 The program will now shut down.
+color blue
+*say 10 Quaero is a product made by Urbanius
+pause
+color %getcolor%
+bgcolor %getbgcolor%
+
+
+
+
+
+
+
+

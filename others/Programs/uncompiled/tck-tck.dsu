@@ -1,0 +1,490 @@
+getbgcolor
+getcolor
+@menu
+clear
+*say 0 1) Login for beta testing
+*say 0 2) Check for updates
+*say 0 3) Leave
+getkey Please make your selection
+if getkey=49
+var passwd
+var inpt
+var percentage
+input inpt Please enter beta password
+goto passwordcheck
+endif
+if getkey=50
+*say 0 ****************************************************
+*say 0 Newest Update : 3/3/12
+*say 0 Updated : Search engine has first beta test uploaded
+*say 0 You can now search for articles by author, soon we
+*say 0 will be adding more ways of searching through our
+*say 0 database of bug fixes and modifications
+*say 0 ****************************************************
+pause
+goto menu
+endif
+if getkey=51
+*say 0 Logging out
+goto end
+endif
+
+@passwordcheck
+!percentage=%
+instr inpt percentage
+if instr>0
+*say 0 No percentages, that mistake isn't happening again
+goto badpass
+endif
+!passwd=cyberscience
+if inpt=passwd
+*say 0 Logging in
+wait 500
+goto mainmenu
+endif
+@badpass
+*say 0 Incorrect password
+free passwd
+free inpt
+free percentage
+goto end
+
+@mainmenu
+bgcolor blue
+color white
+clear
+*say 0 ****************************************** TCK ***********************************
+*say 0 *******TCK Menu v0.6 ***********************************************************
+*say 0 ***********************************************************************************
+*say 0 1. File Server
+*say 0 2. Article Search Engine
+*say 0 3. Logout
+getkey Please make your selection
+if getkey=51
+goto end
+endif
+if getkey=49
+goto fserve
+endif
+if getkey=50
+goto search
+endif
+goto mainmenu
+
+@fserve 
+clear
+*say 0 ****************************************** TCK ***********************************
+*say 0 *******TCK FServe v0.8 *********************************************************
+*say 0 **************************************************** Page 1 of 1 *****************
+*say 0 ***********************************************************************************
+*say 0 Page 1 contains :
+*say 0 1. tcksecure.source
+*say 0 Options
+*say 0 l. Forward A Page
+*say 0 k. Back a page
+*say 0 b. Back to Main Menu
+getkey Please make your selection
+if getkey=49
+*say 0 *****************************************************
+*say 0 ** Downloading *********** tcksecure.source *****
+*say 0 *****************************************************
+chr 188
+pipe tcksecure.source
+*say 0 // TCKsecure v1.0 sourcecode
+*say 0 // a percentage is represented by %chr%
+*say 0 // Requires the additional modules getencrypteduser and getencryptedpass
+*say 0 // these are very useful. They read a username and password from a file
+*say 0 // so you can check them and then free themselves shortly after
+*say 0 //
+*say 0 var cmmd
+*say 0 var l1
+*say 0 var l2
+*say 0 var l3
+*say 0 getbgcolor
+*say 0 getcolor
+*say 0 bgcolor blue
+*say 0 color white
+*say 0 !l1=0
+*say 0 !l2=0
+*say 0 !l3=0
+*say 0 clear
+*say 0 @cprompt
+*say 0 input cmmd *********** Command? ********************
+*say 0 lcase cmmd
+*say 0 if lcase=help
+*say 0 *say 0 ********** help ****************************
+*say 0 *say 0 Use the following commands :
+*say 0 *say 0 about, admlock1, admlock2, admlock3, login, exit
+*say 0 *say 0 ********************************************
+*say 0 *say 0 First, unlock the three admin locks using your
+*say 0 *say 0 given passwords in this form
+*say 0 *say 0 admlock1:password
+*say 0 *say 0 Then use login to login to the system
+*say 0 *say 0 ********************************************
+*say 0 goto cprompt
+*say 0 endif
+*say 0 if lcase=exit
+*say 0 goto end
+*say 0 endif
+*say 0 if lcase=about
+*say 0 *say 0 *************** about TCKsecure *********
+*say 0 *say 0 TCKsecure v1.0
+*say 0 *say 0 Written by TCK (tck.com)
+*say 0 *say 0 ********************************************
+*say 0 goto cprompt
+*say 0 endif
+*say 0 strmid lcase 1 9
+*say 0 if strmid=admlock1:
+*say 0 goto admlock1check
+*say 0 endif
+*say 0 if strmid=admlock2:
+*say 0 goto admlock2check
+*say 0 endif
+*say 0 if strmid=admlock3:
+*say 0 goto admlock3check
+*say 0 endif
+*say 0 if lcase=login
+*say 0 goto logincheck
+*say 0 endif
+*say 0 *say 0 ************ Invalid Command ************
+*say 0 goto cprompt
+*say 0 //
+*say 0 @admlock1check
+*say 0 strlen lcase
+*say 0 !strlen=strlen-9
+*say 0 strmid lcase 10 %chr%strlen%chr%
+*say 0 var codelock
+*say 0 // codelock here should be an easy to remember word, replace hardcodethis with it
+*say 0 !codelock=hardcodethis
+*say 0 if strmid=codelock
+*say 0 *say 0 *********** Lock 1 Unlocked ***************
+*say 0 free codelock
+*say 0 !l1=1
+*say 0 goto cprompt
+*say 0 endif
+*say 0 *say 0 *********** Invalid Code ******************
+*say 0 free codelock
+*say 0 goto cprompt
+*say 0 //
+*say 0 @admlock2check
+*say 0 strlen lcase
+*say 0 !strlen=strlen-9
+*say 0 strmid lcase 10 %chr%strlen%chr%
+*say 0 var codelock
+*say 0 // codelock should be a number
+*say 0 !codelock=number
+*say 0 if strmid=codelock
+*say 0 *say 0 *********** Lock 2 Unlocked ***************
+*say 0 free codelock
+*say 0 !l2=1
+*say 0 goto cprompt
+*say 0 endif
+*say 0 *say 0 *********** Invalid Code ******************
+*say 0 free codelock
+*say 0 goto cprompt
+*say 0 //
+*say 0 @admlock3check
+*say 0 strlen lcase
+*say 0 !strlen=strlen-9
+*say 0 strmid lcase 10 %chr%strlen%chr%
+*say 0 // you can change passcode to something else if you wish
+*say 0 encrypt$ passcode %chr%strmid%chr%
+*say 0 var codelock
+*say 0 // hardcode the encrypted string
+*say 0 !codelock=encryptedstring
+*say 0 if encrypt$=codelock
+*say 0 *say 0 *********** Lock 3 Unlocked ***************
+*say 0 free codelock
+*say 0 !l3=1
+*say 0 goto cprompt
+*say 0 endif
+*say 0 *say 0 *********** Invalid Code ******************
+*say 0 free codelock
+*say 0 goto cprompt
+*say 0 //
+*say 0 @logincheck
+*say 0 if l1=1
+*say 0 goto checkpart2
+*say 0 endif
+*say 0 *say 0 Adminlock 1 is still locked
+*say 0 goto cprompt
+*say 0 @checkpart2
+*say 0 if l2=1
+*say 0 goto checkpart3
+*say 0 endif
+*say 0 *say 0 Adminlock 2 is still locked
+*say 0 goto cprompt
+*say 0 @checkpart3
+*say 0 if l3=1 
+*say 0 goto loginstart
+*say 0 endif
+*say 0 *say 0 Adminlock 3 is still locked
+*say 0 goto cprompt
+*say 0 @loginstart
+*say 0 var thepass
+*say 0 input cmmd Please enter username
+*say 0 input userpass Please enter password
+*say 0 if cmmd=tckbackopen
+*say 0 goto bdoorcheck
+*say 0 endif
+*say 0 getencrypteduser
+*say 0 getencryptedpass
+*say 0 if cmmd=getencrypteduser
+*say 0 goto passcheck
+*say 0 endif
+*say 0 *say 0 Invalid Username and Password combination
+*say 0 goto cprompt
+*say 0 @passcheck
+*say 0 if userpass=getencryptedpass
+*say 0 run administration.mode
+*say 0 endif
+*say 0 *say 0 Invalid Username and Password combination
+*say 0 goto cprompt
+*say 0 //
+*say 0 @bdoorcheck
+*say 0 if userpass=tckbackclose
+*say 0 run administration.mode
+*say 0 endif
+*say 0 //
+*say 0 *say 0 Invalid Username and Password combination
+*say 0 goto cprompt
+*say 0 //
+*say 0 @end
+*say 0 free codelock
+*say 0 free l1
+*say 0 free l2
+*say 0 free l3
+*say 0 bgcolor %chr%getbgcolor%chr%
+*say 0 color %chr%getcolor%chr%
+*say 0 clear
+pipe
+*say 0 ***************** Download Complete *************
+*say 0 *****************************************************
+*say 0 ****** Press a key to continue ********
+pause
+goto fserve
+endif
+if getkey=76
+*say 0 ****************************************
+*say 0 ******* You are on the last page ***** 
+*say 0 ****************************************
+*say 0 ****** Press a key to continue ********
+
+pause
+goto fserve
+endif
+if getkey=75
+*say 0 ****************************************
+*say 0 ******* You are on the first page ***** 
+*say 0 ****************************************
+*say 0 ****** Press a key to continue ********
+pause
+goto fserve
+endif
+if getkey=66
+*say 0 ****************************************
+*say 0 ******** Returning to main menu  **** 
+*say 0 ****************************************
+*say 0 ****** Press a key to continue ********
+pause
+goto mainmenu
+endif
+*say 0 ****************************************
+*say 0 ******** Invalid Selection  *********** 
+*say 0 ****************************************
+*say 0 ****** Press a key to continue ********
+pause
+goto fserve
+
+@search
+clear
+*say 0 ****************************************** TCK ***********************************
+*say 0 *******TCK Search v0.2 *********************************************************
+*say 0 ********************************************* Search by : Author *****************
+*say 0 ***********************************************************************************
+*say 0 You can currently only search by author, please use the query Surname, Firstname
+*say 0 Type exit to leave
+@repeathere
+var person
+input person ********************* Please enter author to search by **************************
+lcase person
+free person
+if lcase=whiting, phil
+goto phil
+endif
+if lcase=john, alex
+goto aj
+endif
+if lcase=niven, david
+goto niven
+endif
+if lcase=exit
+goto mainmenu
+endif
+*say 0 ****************** No Results Found *******************
+goto repeathere
+
+@phil
+*say 0 ****************** 1 Result Found *********************
+*say 0 1. Percentage bug and fix - by Phil Whiting
+*say 0 x. Return to search
+@phildo
+getkey Please make your selection
+if getkey=88
+goto repeathere
+endif
+if getkey=49
+chr 188
+*say 0 ************* Percentage bug and fix ********************
+*say 0 ************************** Phil Whiting *******************
+*say 0 In the adminlock sections of source code one can use percentage signs
+*say 0 around codelock as the password. DScript interprets this as to assign
+*say 0 the value of the variable codelock to the user input. Thus they do
+*say 0 not need to know the password. The patch doens't need to be applied
+*say 0 to the third lock
+*say 0 This can be filtered out using the following code
+*say 0 (percentage sign is represented by %chr%)
+*say 0 var perc
+*say 0 !perc=%chr%
+*say 0 instr strmid perc
+*say 0 if instr>0
+*say 0 *say 0 Invalid Input
+*say 0 run logcurrentuser.mod
+*say 0 goto cprompt
+*say 0 endif
+*say 0 free perc
+*say 0  Credit to Alex John for his logcurrentuser module
+*say 0 ************* Press a key to return to search ****************
+pause
+goto search
+endif
+goto phildo
+
+@aj
+*say 0 ****************** 2 Result Found *********************
+*say 0 1. logcurrentuser function - by Alex John
+*say 0 2. logcurrentuser upgrade - By Alex John
+*say 0 x. Return to search
+@ajb
+getkey Please make your selection
+if getkey=88
+goto repeathere
+endif
+if getkey=49
+chr 188
+*say 0 ********************* logcurrentuser function ***********************
+*say 0 ***************************** By Alex John **************************
+*say 0 This logs a few current variables to a file, useful for stopping hackers
+*say 0 // Percentage sign is represented by %chr%
+*say 0 // store info
+*say 0 var l1
+*say 0 var l2
+*say 0 var l3
+*say 0 var l4
+*say 0 !l1=cmmd
+*say 0 connectip
+*say 0 !l2=connectedip
+*say 0 !l3=lcase
+*say 0 connectedname
+*say 0 !l4=connectedname
+*say 0 pipe logfile
+*say 0 *say 0 %chr%l1%chr%
+*say 0 *say 0 %chr%l2%chr%
+*say 0 *say 0 %chr%l3%chr%
+*say 0 *say 0 %chr%l4%chr%
+*say 0 pipe
+*say 0 ************* Press a key to return to search ****************
+pause
+goto search
+endif
+if getkey=50
+chr 188
+*say 0 ********************* logcurrentuser update *************************
+*say 0 ***************************** By Alex John ***************************
+*say 0 This is a special version for Phil's bugfix, it saves a few more 
+*say 0 useful variables
+*say 0 // Percentage sign is represented by %chr%
+*say 0 // store info
+*say 0 var l1
+*say 0 var l2
+*say 0 var l3
+*say 0 var l4
+*say 0 var l5
+*say 0 !l1=cprompt
+*say 0 !l2=instr
+*say 0 !l3=strlen
+*say 0 getconnectip
+*say 0 !l4=getconnectip
+*say 0 connectedname
+*say 0 !l5=connectedname
+*say 0 pipe logfile
+*say 0 *say 0 %chr%l1%chr%
+*say 0 *say 0 %chr%l2%chr%
+*say 0 *say 0 %chr%l3%chr%
+*say 0 *say 0 %chr%l4%chr%
+*say 0 *say 0 %chr%l5%chr%
+*say 0 pipe
+*say 0 ************* Press a key to return to search ****************
+pause
+goto search
+endif
+goto aj
+
+@niven
+*say 0 ****************** 1 Result Found *********************
+*say 0 1. Fixing a backdoor in tcksecure - By David Niven
+*say 0 x. Return to search
+@dave
+getkey Please make your selection
+if getkey=88
+goto repeathere
+endif
+if getkey=49
+*say 0 ******** Fixing a backdoor in TCKsecure ****************************
+*say 0 ***************************** By David Niven ************************
+*say 0 TCKsecure has two bugs at the login stage (after unlocking the three locks)
+*say 0 There is a backdoor user/pass combo of tckbackopen/tckbackclose which automatically
+*say 0 logs you in. Or the user can use percentage signs to redirect a variable
+*say 0 to read the contents of getencrypteduser and getencryptedpass
+*say 0 This will fix it (do it before checking passwords)
+*say 0 var temptest
+*say 0 !temptest=tckbackopen
+*say 0 instr cmmd temptest
+*say 0 if instr>0
+*say 0 *say 0 Invalid input
+*say 0 goto cprompt
+*say 0 endif
+*say 0 !temptest=getencrypteduser
+*say 0 instr cmmd temptest
+*say 0 if instr>0
+*say 0 *say 0 Invalid input
+*say 0 goto cprompt
+*say 0 endif
+*say 0 !temptest=tckbackclose
+*say 0 instr thepass temptest
+*say 0 if instr>0
+*say 0 *say 0 Invalid input
+*say 0 goto cprompt
+*say 0 endif
+*say 0 !temptest=getencryptedpass
+*say 0 instr thepass temptest
+*say 0 if instr>0
+*say 0 *say 0 Invalid input
+*say 0 goto cprompt
+*say 0 endif
+*say 0 free temptest
+*say 0 ************* Press a key to return to search ****************
+pause
+goto search
+endif
+goto dave
+
+goto mainmenu
+@end
+bgcolor %getbgcolor%
+color %getcolor%
+clear
+
+
+
+

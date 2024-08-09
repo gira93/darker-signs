@@ -1,0 +1,4 @@
+name%dns.yippieisp.net
+port%53#dns53
+path%12345
+portend

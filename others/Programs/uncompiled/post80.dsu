@@ -1,0 +1,116 @@
+cancel true
+getcolor
+getbgcolor
+
+@menu
+*forecolor green
+*say 0 Welcome to the Military PostOffice Website
+*forecolor white
+*skipline
+*say 0 1 - About us
+*say 0 2 - Employment
+*say 0 3 - Check package status
+*say 0 4 - Email admin
+*say 0 5 - Exit
+var mpchoice
+input mpchoice Please make your choice ( 1 - 5 )
+
+if mpchoice=1
+*skipline
+*forecolor blue
+*say 0 What we do:
+*forecolor white
+*skipline
+*say 0 The Military PostOffice is just like your ordinary postoffice with the
+*say 0 major difference being that we deliver postage to US armed forces
+*say 0 all around the world.
+*skipline
+*forecolor blue
+*skipline
+*say 0 How important is the Military PostOffice?
+*forecolor white
+*skipline
+*say 0 The Military PostOffice is very important to the workings of the US
+*say 0 forces. With out us no-one would get any mail, the men on the battle
+*say 0 field would not be able to communicate with their families back home.
+*say 0 We also do much more then deliver mail, we also control the traffic
+*say 0 of our electronic mail(eMail).
+*skipline
+*pause
+goto menu
+endif
+
+if mpchoice=2
+*skipline
+*forecolor white
+*say 0 If you wish to find out about current job offers for the Military PostOffice
+*say 0 then email jobs@postoffice.mil with your details and we will get back to
+*say 0 you ASAP.
+*skipline
+*pause
+goto menu
+endif
+
+if mpchoice=3
+*skipline
+*forecolor red
+*say 0 Critical HTTP error: Encryption error 677
+*say 0 Transfered from: prx.postoffice.mil
+*say 0 Module: getdb( )
+gettime
+getdate
+*say 0 Date and Time: %gettime% - %getdate%
+*skipline
+*say 0 Please email admin with errors above
+*skipline
+*forecolor white
+*pause
+goto menu
+endif
+
+if mpchoice=4
+*skipline
+*forecolor white
+*say 0 Email bug/error reports to admin@postoffice.mil
+*say 0 Please quote all error information
+*skipline
+*pause
+goto menu
+endif
+
+if mpchoice=5
+goto end
+endif
+
+@end
+*forecolor orange
+*say 0 Connection closed by remote host
+*color %getcolor%
+*bgcolor %getbgcolor%
+free mpchoice
+free getcolor
+free getbgcolor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

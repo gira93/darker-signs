@@ -1,0 +1,9 @@
+name%omnisoft.com
+port%1#omnisoft_bships
+port%2#omnisoft_dark
+port%3#omnisoft_hacker
+port%4#omnisoft_crypt
+port%5#omnisoft_tic
+port%80#omnisoft_http
+path%12345
+portend

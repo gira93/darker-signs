@@ -1,0 +1,41 @@
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+var xvar
+var filen
+@startt
+*forecolor white
+*Say 1 Index File Not Found
+*Say 1 ------------------------
+*Say 1 FILENAME | SIZE
+*Say 1 [.]
+*Say 1 [..]
+*Say 1 NETWORK.INFO | 1 KB
+
+@end
+
+fcolor blue
+*Say 1 Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

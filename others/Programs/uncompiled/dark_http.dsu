@@ -1,0 +1,88 @@
+//SECURE HTTP
+//this script runs as the dark signs help server at darksigns.com
+
+cancel true
+getcolor
+getbgcolor
+
+var options
+
+*forecolor green
+*Say 1 Connected on Port 80 to DARK SIGNS
+*forecolor grey
+*Say 1 Welcome to the official DARK SIGNS help server.
+@menu
+*forecolor blue
+*Say ////   ////   ////   DARK SIGNS   \\\\   \\\\   \\\\
+*forecolor grey
+*Say 1 (1) About
+*Say 1 (2) Email
+*Say 1 (3) Tutorial
+*Say 1 (4) More Resources
+*Say 1 (5) Disconnect
+
+input options Enter A Number Based on your Preference (1-5)
+
+if options=1
+*forecolor blue
+*Say [About]
+*forecolor white
+*Say This server exists to provide basic information and pointers
+*Say to anyone searching for help, or who is new to the game Dark Signs.
+pause
+goto menu
+endif
+
+
+if options=2
+*forecolor blue
+*Say [Email]
+*forecolor white
+*Say You can check your email by typing in MAIL at the standard
+*Say console interface. From there you will be able to view your emails,
+*Say delete and rename them, and also send them to other people.
+pause
+goto menu
+endif
+
+
+if options=3
+*forecolor blue
+*Say [Tutorial]
+*forecolor white
+*Say You can access the Dark Signs tutorial from the main menu.
+*Say To get back to the main menu from the console, type EXIT.
+pause
+goto menu
+endif
+
+
+if options=4
+*forecolor blue
+*Say [More Resources]
+*forecolor white
+*Say For more help on Dark Signs, please close Dark Signs now, and visit
+*Say the very real website using your Internet browser.
+*forecolor blue
+*Say http://www.darksigns.com
+*forecolor white
+*Say We also highly recommend visiting the forums if you need help with
+*Say anything. We are just waiting to help you.
+*forecolor blue
+*Say http://www.darksigns.com/forums/
+*forecolor white
+pause
+goto menu
+endif
+
+
+@end
+fcolor blue
+Connection Closed
+*color %getcolor%
+*bgcolor %getbgcolor%
+getcolor
+*forecolor orange
+
+
+

@@ -1,0 +1,58 @@
+//REMOTE ADMINISTRATION
+
+cancel true
+getcolor
+getbgcolor
+
+var theoption
+var$ checkthings
+*forecolor green
+*Say 1 DARK SIGNS - TEST SERVER
+*Say 1 Remote Administration System
+*Say 1 Owned by the 'ADMIN', 'TERMINAL'. :)
+*forecolor grey
+*Say 1 Dark Signs - A Username And Password is Required to Access this Server
+
+getmymoney
+myaccount
+myusername
+mypassword
+
+input checkthings Please Enter Your Username to Continue...
+
+if  terminal=checkthings
+goto ok
+else
+*say 1 Bad Username
+goto end
+endif
+
+@ok
+*say 1 ...User Verified.
+
+input checkthings Please Enter Your Password
+
+if checkthings = admin
+goto ok2
+endif
+*say 1 Bad Password
+goto end
+@ok2
+*say 1 ...Password Accepted
+
+*color blue
+*say ...Dark Signs...
+*say This is a test server where Terminal can test exploits, logs, and
+*say different levels of access. You are about to be put into the lowest
+*say access level. From there, try to work your way up.
+
+pause
+*color %getcolor%
+*bgcolor %getbgcolor%
+remoteip
+giveremoteconnection %remoteip% 3 3_standard
+
+
+
+
+

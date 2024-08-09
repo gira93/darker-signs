@@ -1,0 +1,474 @@
+var$ user
+var$ option
+var$ pass
+GETCOLOR
+GETBGCOLOR
+*color red
+*bgcolor black
+*say 0 Welcome to New 'Pute Co. Technical BBS
+*say 0 This system is for employees of New 'Pute Co. only
+*color 000000
+*say 0 blah
+*color white
+*say 0 Please enter your username and password
+*say                                     ---    
+input user Enter Your UserName
+input pass Enter Your Password
+if user=guest
+goto guestlogin
+endif
+if user=jsmith
+goto jsmithlogin
+endif
+if user=dclark
+*say 0 Invalid Password
+goto end
+endif
+if user=su3
+*say 0 Invalid Password
+goto end
+endif
+if user=bhorne
+*say 0 Invalid Password
+goto end
+endif
+if user=su1
+goto su1login
+endif
+if user=su2
+goto su2login
+endif
+*say 0 Invalid Username
+goto end
+@guestlogin
+if pass=guest
+goto guestmenu
+endif
+@jsmithlogin
+if pass=changeme
+goto jsmithmenu
+endif
+@su1login
+if pass=reporter
+goto su1menu
+endif
+@su2login
+if pass=digital
+goto su2menu
+endif
+*say 0 Invalid Password
+goto end
+@guestmenu
+clear
+*color red
+*say 0 Welcome to the Guest Profile
+*color 000000
+*say 0 blah
+*color white
+*say 0 1) BBS Introduction
+*say 0 2) Technical Support Forum
+*say 0 3) Logout
+input option Give The Number of your Option
+if option =1
+goto intro
+endif
+if option=2
+goto techsupport
+endif
+goto @end
+@intro
+if option=1
+clear
+*say 0 -- Welcome to the New Pute BBS system --
+*color 000000
+*say 0 blah
+*color white
+*say 0 This system will be used by employees for contacting each other and
+*say 0 discussing anything of importance. At the moment the system is in early
+*say 0 stages, however we hope to add more soon. You can use the SMS system
+*say 0 to message other users and we have opened a technical support board
+*say 0 for asking questions about using the system. Soon we hope to add more
+*say 0 boards and other features.
+*say 0 There are only a few users at the moment so you cannot message anyone
+*say 0 who works here and be sure they will receive the message.
+*say 0 The system administrator uses the username bhorne if you need to contact him
+pause
+if user=guest
+goto guestmenu
+endif
+if user=jsmith
+goto jsmithmenu
+endif
+if user=su1
+goto su1menu
+endif
+@techsupport
+clear
+*color red
+*say 0 Technical Support Message Board
+*color 000000
+*say 0 blahblah
+*color white
+*say 0 1) Disk Space
+*say 0 2) Problem With user verification
+*say 0 3) THC
+if user=jsmith
+*say 0 p) Post
+endif
+input option Select your option or type 0 to return to menu
+if option=p
+*color green
+*say 0 THC gag u!
+*say 0 reTARds!
+pause
+goto techsupport
+endif
+if option =1
+clear
+*color red
+*say 0 Message : Disk Space
+*say 0 Posted By : bhorne
+*color 000000
+*say 0 blahblah
+*color white
+*say 0 Disk space is limited at the moment, so a script has been set up
+*say 0 so that messages other than from top superuser will be deleted
+*say 0 when an account receives them. I will post an announcement when
+*say 0 things are working better
+pause
+goto techsupport
+endif
+if option=2
+clear
+*color red
+*say 0 Message : Problem with user verification
+*say 0 Posted By : jsmith
+*color 000000
+*say 0 blahblah
+*color white
+*say 0 I hope this is the correct place to post, as we can't send
+*say 0 SMS messages at the moment. My user verification code is not
+*say 0 correct and so I can't verify my account. Can someone sort
+*say 0 this out please?
+pause
+goto techsupport
+endif
+if option=3
+clear
+*color red
+*say 0 Message : THC
+*say 0 Posted By : U R HaX0R3d
+*color 000000
+*say 0 blahblah
+*color green
+*say 0 The H8 Club 0WN your SYSTEM
+*say 0 u wANT it bAcK?
+pause
+goto techsupport
+endif
+if user=guest
+goto guestmenu
+endif
+if user=jsmith
+goto jsmithmenu
+endif
+if user=su1
+goto su1menu
+endif
+@jsmithmenu
+clear
+*color red
+*say 0 Welcome John Smith.
+*color 000000
+*say 0 blah
+*color white
+*say 0 1) BBS Introduction
+*say 0 2) Announcements
+*say 0 3) Technical Support Forum
+*say 0 4) User Verification
+*say 0 5) Send an SMS
+*say 0 6) Logout
+input option Give The Number of your Option
+if option=1
+goto intro
+endif
+if option=3
+goto techsupport
+endif
+if option=2
+goto announcements
+endif
+if option=4
+*color red
+*say 0 Verify Your Account
+*color 000000
+*say 0 blah
+*color white
+*say 0 Please verify your account which will unlock several features in your account
+*say 0 Please enter the following verification code :
+*color orange
+*say 0 Error 453 : Fault in script userverify.scr
+*color white
+input option Please enter the verification code
+input pass Please enter your new password
+*say 0 Incorrect Verification Code
+pause
+goto jsmithmenu
+endif
+if option=5
+goto sms
+endif
+goto end
+
+@announcements
+clear
+*color red
+*say 0 Board Announcments
+*color 000000
+*say 0 blah
+*color white
+*say 0 Announcement from bhorne - 23rd March 2012
+*say 0 I will be going away for 2 weeks, when I return more
+*say 0 changes will be made to the board. I have sent details
+*say 0 to dclark so that he can take over any system administration
+*say 0 duties. If you have any queries please SMS him.
+*color 000000
+*say 0 blah
+*color green
+*say 0 Annoucement from THC
+*say 0 U r all ReTARds!
+*say 0 We 0WN u!
+pause
+if user=jsmith
+goto jsmithmenu
+endif
+if user=su1
+goto su1menu
+endif
+
+@sms
+clear
+*color red
+*say 0 Send an SMS
+*color 000000
+*say 0 blah
+*color white
+input option Please enter the user you are sending the message to
+if option=headers
+input option Please enter your message in headers form
+goto headercheck
+endif
+input option Please enter the message you want to send
+@headercheck
+if option=bhorne:su1:user up
+*say 0 Changing User to Super User 1
+!user=su1
+pause
+goto su1menu
+endif
+*say 0 Message Sent
+pause
+if user=jsmith
+goto jsmithmenu
+endif
+if user=su1
+goto su1menu
+endif
+
+@su1menu
+clear
+*color red
+*say 0 Welcome Super User 1.
+*color 000000
+*say 0 blah
+*color white
+*say 0 1) BBS Introduction
+*say 0 2) Announcements
+*say 0 3) Technical Support Forum
+*say 0 4) Check Logs
+*say 0 5) Send an SMS
+*say 0 6) Logout
+input option Give The Number of your Option
+if option=1
+goto intro
+endif
+if option=2
+goto announcements
+endif
+if option=3
+goto techsupport
+endif
+if option=5
+goto sms
+endif
+if option=4
+goto checklogs
+endif
+goto end
+
+@checklogs
+clear
+*color red
+*say 0 Log checker
+*color 000000
+*say 0 blah
+*color white
+*say 0 1) SMS Logs
+*say 0 2) Message Board Logs
+*say 0 3) Login Logs
+input option Enter log number or press anything to leave
+if option=3
+*color green
+*say 0 Nothing 2 C HeRe!
+pause
+goto checklogs
+endif
+if option=2
+goto messlogs
+endif
+if option=1
+goto smslogs
+endif
+goto su1menu
+
+@messlogs
+clear
+*color red
+*say 0 Message Board Log checker
+*color 000000
+*say 0 blah
+*color white
+*say 0 1) Technical support
+input option Enter the message board logs to view or press anything to leave
+if option=1
+*color 000000
+*say 0 blah
+*color white
+*say 0 Message Board logs for : Technical support
+*say 0 21/3/12 - bhorne - Disk Space
+*say 0 24/3/12 - jsmith - Problems with user verification
+*say 0 26/3/12 - su2 - THC
+pause
+endif
+goto checklogs
+
+@smslogs
+clear
+*color red
+*say 0 SMS Log checker
+*color 000000
+*say 0 blah
+*color white
+input option Please enter the username of the SMS account to view
+if option=bhorne
+*say That user has no SMS messages
+pause
+goto checklogs
+endif
+if option=jsmith
+*say That user has no SMS messages
+pause
+goto checklogs
+endif
+if option=guest
+*say That user has no SMS messages
+pause
+goto checklogs
+endif
+if option=su1
+*say That user has no SMS messages
+pause
+goto checklogs
+endif
+if option=su2
+*say That user has no SMS messages
+pause
+goto checklogs
+endif
+if option=su3
+*say That user has no SMS messages
+pause
+goto checklogs
+endif
+if option=dclark
+*say That user has 3 messages
+*say 23/3/12 - bhorne:dclark:Super User 1 Password is reporter
+*say 23/3/12 - bhorne:dclark:Super User 2 Password is digital
+*say 23/3/12 - bhorne:dclark:You shouldn't need su3 password, phone me if you have problems
+pause
+goto checklogs
+endif
+*say 0 No such username
+pause
+goto checklogs
+
+@su2menu
+clear
+*color green
+*say 10 ======================================[THC]====================================
+*say 10 ==================================[The H8 Club]==================================
+*color 000000
+*say 0 blah
+*color green
+*say 10 We 0WN u all!
+*say 10 ReTARds thE lOT of YOu!
+*color 000000
+*say 0 blah
+*color green
+*say 10 Tell u What
+*say 10 I'll give you access to SU3
+*say 10 If you can answer my questions 3
+*color white
+*say 10 (who needs proper rhymes when I've 0WNED YOUR BOX)
+*color green
+*say 10 Answer in lower case stoopid
+*color 000000
+*say 0 blah
+*color green
+input option What else does THC stand for?
+if option=tetrahydrocannabinol
+goto oneright
+endif
+*color red
+*say 0 WRONG!
+goto end
+@oneright
+*say 10 One right - Can you answer the rest though?
+color blue
+*say 10 In the blue corner! The Masters of Destruction
+color red 
+input option Who would be in the red corner?
+if option=legion of doom
+goto tworight
+endif
+*color red
+*say 0 WRONG!
+goto end
+@tworight
+color green
+*say 10 One more to go - Then you can have control of your box again
+input option What fruit would I find in white lightning jolt cola?
+if option=grape
+goto threeright
+endif
+*color red
+*say 50 So Close
+*say 50 but yet so far
+*say 0 WRONG!
+goto end
+@threeright
+clear
+*color red
+*say 0 Welcome Super User 3.
+*color 000000
+*say 0 blah
+*color white
+*say 0 Congratulations Agent, use the level up code of bluepig96
+@end
+*color %GETCOLOR%
+*bgcolor %GETBGCOLOR%
+free pass
+free user
+
+
+

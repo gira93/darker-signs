@@ -1,0 +1,28 @@
+//graphical initialization
+getcolor
+getbgcolor
+var front
+var back
+!front = 06220700
+!back=222222
+bgcolor %back%
+
+//variable init
+
+//Standard login screen
+@startup
+clear
+color %front%
+say Berkeley University of California
+skipline
+color white
+say The public webpage is currently being updated. Students and staff can 
+say still access the S/U Interface at port 81.
+getkey
+
+@end
+bgcolor black
+color white
+clear
+
+
