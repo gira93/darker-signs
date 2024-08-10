@@ -1,17 +1,22 @@
 import os
 from getpass import getuser
+from .utils import progress_bar
 from .mail import Mail
+from .dns import Dns
 
 AVAILABLE_COMMANDS = ["ls", "cd", "cat", "scan", "connect", "mail", "help", "exit"]
 
 
 class Cli:
     def __init__(self, root_path):
-        self.root_path = root_path
-        self.real_path = root_path
+        rootfs = f"{root_path}/rootfs"
+        self.system_path = root_path
+        self.root_path = rootfs
+        self.real_path = rootfs
         self.current_path = ""
         os.chdir(self.real_path)
         self.mail = Mail(f"{self.root_path}/system/mail.json")
+        self.dns = Dns(f"{self.system_path}/darker_signs/dns.json")
 
     def run(self):
         while True:
@@ -73,10 +78,39 @@ class Cli:
         return True
 
     def __scan(self, params):
-        pass
+        try:
+            server_name = params[0]
+            if server_name == "":
+                raise NameError
+        except (IndexError, NameError):
+            print("No server name or IP address specified")
+            return False
+
+        server = self.dns.find(server_name)
+        if server:
+            print(f"Scanning {server['name']}...")
+            # progress_bar(100, 0.05)
+            print(f"Ports open for {server['name']}:")
+            for port in server["port_mapping"].keys():
+                print(f"{port} -> {server['port_mapping'][port]}")
+            return True
+        else:
+            return False
 
     def __connect(self, params):
-        pass
+        try:
+            server_name = params[0]
+            port = params[1]
+            if server_name == "" or port == "":
+                raise NameError
+        except (IndexError, NameError):
+            print("HELP: connect [server ip or name] [port]")
+            return False
+        server = self.dns.find(server_name)
+        if server and port in server["port_mapping"].keys():
+            print(f"Connecting to {server['name']}:{port}")
+        else:
+            return False
 
     def __mail(self, _):
         self.mail.run()

@@ -5,7 +5,7 @@ from darker_signs.cli import Cli
 
 def main():
     root_path = os.path.dirname(os.path.abspath(__file__))
-    cli = Cli(f"{root_path}/rootfs")
+    cli = Cli(f"{root_path}")
     os.system("cls||clear")
     cli.run()
 

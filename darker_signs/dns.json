@@ -1,0 +1,15 @@
+{
+  "test-server.com": {
+    "alias": "1.1.1.1"
+  },
+  "1.1.1.1": {
+    "name": "test-server.com",
+    "module_name": "test_server",
+    "class_name": "TestServer",
+    "port_mapping": {
+      "80": "http",
+      "22": "ssh",
+      "21": "ftp"
+    }
+  }
+}
