@@ -1,4 +1,5 @@
 import os
+import readline
 from getpass import getuser
 from .utils import progress_bar
 from .mail import Mail
@@ -89,7 +90,7 @@ class Cli:
         server = self.dns.find(server_name)
         if server:
             print(f"Scanning {server['name']}...")
-            # progress_bar(100, 0.05)
+            progress_bar(100, 0.05)
             print(f"Ports open for {server['name']}:")
             for port in server["port_mapping"].keys():
                 print(f"{port} -> {server['port_mapping'][port]}")
@@ -100,7 +101,10 @@ class Cli:
     def __connect(self, params):
         try:
             server_name = params[0]
-            port = params[1]
+            if len(params) == 1:
+                port = "80"
+            else:
+                port = params[1]
             if server_name == "" or port == "":
                 raise NameError
         except (IndexError, NameError):
@@ -109,6 +113,13 @@ class Cli:
         server = self.dns.find(server_name)
         if server and port in server["port_mapping"].keys():
             print(f"Connecting to {server['name']}:{port}")
+            self.dns.connect(
+                server,
+                server["port_mapping"][port],
+                root_path=self.root_path,
+                mail=self.mail,
+            )
+            return True
         else:
             return False
 
