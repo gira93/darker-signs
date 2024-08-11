@@ -4,5 +4,5 @@
 * ongoing: make global functions for servers if possible
 * ~~Write some tests~~ (boring)
 * Refactor (?)
-* Import script for dns.json
+* ~~Import script for dns.json~~
 * ~~Make 80 the default port when connecting (if not present)~~
