@@ -2,12 +2,12 @@ import json
 
 
 class Mail:
-    def __init__(self, mailbox):
+    def __init__(self, mailbox: str) -> None:
         self.mailbox_path = mailbox
         with open(mailbox, "r") as f:
-            self.mailbox = json.load(f)
+            self.mailbox: list[dict] = json.load(f)
 
-    def run(self):
+    def run(self) -> None:
         while True:
             self.__print_mailbox()
             message_id = input("Type message number or 0 to exit: ")
@@ -16,7 +16,7 @@ class Mail:
                 break
             self.__print_message(message_id)
 
-    def add_message(self, *, from_user, subject, message):
+    def add_message(self, *, from_user: str, subject: str, message: str) -> None:
         self.mailbox.append(
             {
                 "from": from_user,
@@ -27,16 +27,16 @@ class Mail:
         )
         self.__save()
 
-    def __save(self):
+    def __save(self) -> None:
         with open(self.mailbox_path, "w") as f:
             json.dump(self.mailbox, f, indent="\t")
 
-    def __print_mailbox(self):
+    def __print_mailbox(self) -> None:
         for idx, mail in enumerate(self.mailbox):
             status = " " if mail["read"] else "N"
             print(f"{idx + 1} {status}> {mail['from']}:{mail['subject']}")
 
-    def __print_message(self, message_id):
+    def __print_message(self, message_id: str) -> bool:
         try:
             idx = int(message_id)
             message = self.mailbox[idx - 1]

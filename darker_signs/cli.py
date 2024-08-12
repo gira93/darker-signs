@@ -5,21 +5,30 @@ from .utils import progress_bar
 from .mail import Mail
 from .dns import Dns
 
-AVAILABLE_COMMANDS = ["ls", "cd", "cat", "scan", "connect", "mail", "help", "exit"]
+AVAILABLE_COMMANDS: list[str] = [
+    "ls",
+    "cd",
+    "cat",
+    "scan",
+    "connect",
+    "mail",
+    "help",
+    "exit",
+]
 
 
 class Cli:
-    def __init__(self, root_path):
+    def __init__(self, root_path: str) -> None:
         rootfs = f"{root_path}/rootfs"
         self.system_path = root_path
         self.root_path = rootfs
         self.real_path = rootfs
         self.current_path = ""
         os.chdir(self.real_path)
-        self.mail = Mail(f"{self.root_path}/system/mail.json")
-        self.dns = Dns(f"{self.system_path}/darker_signs/dns.json")
+        self.mail: Mail = Mail(f"{self.root_path}/system/mail.json")
+        self.dns: Dns = Dns(f"{self.system_path}/darker_signs/dns.json")
 
-    def run(self):
+    def run(self) -> None:
         while True:
             typed_command = input(f"{getuser()}@ds.net [{self.current_path}]: ")
             command = typed_command.split(" ")[0]
@@ -35,13 +44,13 @@ class Cli:
             else:
                 print('Command not found, type "help" to view available commands')
 
-    def __ls(self, _):
+    def __ls(self, _) -> bool:
         _, dirs, files = next(os.walk(self.real_path))
         print(" ".join(map(lambda dir: f"[{dir}]", dirs)))
         print(" ".join(files))
         return True
 
-    def __cd(self, params):
+    def __cd(self, params: list[str]) -> bool:
         try:
             folder = params[0]
             if folder == "":
@@ -63,7 +72,7 @@ class Cli:
             self.current_path = folder
         return True
 
-    def __cat(self, params):
+    def __cat(self, params: list[str]) -> bool:
         try:
             file = params[0]
             if file == "":
@@ -78,7 +87,7 @@ class Cli:
             print(f.read())
         return True
 
-    def __scan(self, params):
+    def __scan(self, params: list[str]) -> bool:
         try:
             server_name = params[0]
             if server_name == "":
@@ -98,7 +107,7 @@ class Cli:
         else:
             return False
 
-    def __connect(self, params):
+    def __connect(self, params: list[str]) -> bool:
         try:
             server_name = params[0]
             if len(params) == 1:
@@ -113,6 +122,7 @@ class Cli:
         server = self.dns.find(server_name)
         if server and port in server["port_mapping"].keys():
             print(f"Connecting to {server['name']}:{port}")
+            print("")
             self.dns.connect(
                 server,
                 server["port_mapping"][port],
@@ -123,12 +133,13 @@ class Cli:
         else:
             return False
 
-    def __mail(self, _):
+    def __mail(self, _) -> None:
         self.mail.run()
 
-    def __help(self, _):
+    def __help(self, _) -> None:
         print("Available commands:")
         print(" ".join(AVAILABLE_COMMANDS))
 
-    def __exit(self, _):
+    def __exit(self, _) -> None:
+        print("Bye Bye!")
         exit(0)

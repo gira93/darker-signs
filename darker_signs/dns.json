@@ -1,1104 +1,1104 @@
 {
-	"proxy.securedigital.com": {
-		"alias": "17.191.200.201"
-	},
-	"17.191.200.201": {
-		"name": "proxy.securedigital.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"109": "wingate_proxy"
-		}
-	},
-	"webcache02.securedigital.com": {
-		"alias": "64.114.9.241"
-	},
-	"64.114.9.241": {
-		"name": "webcache02.securedigital.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"25": "sendmail_22",
-			"80": "secure_http",
-			"505": "cache_manager"
-		}
-	},
-	"securedigital.com": {
-		"alias": "64.114.9.220"
-	},
-	"64.114.9.220": {
-		"name": "securedigital.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"25": "sendmail_22",
-			"80": "secure_http"
-		}
-	},
-	"biolabs.com": {
-		"alias": "124.226.170.146"
-	},
-	"124.226.170.146": {
-		"name": "biolabs.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "http_biolabs",
-			"89": "xnull"
-		}
-	},
-	"biolabs.org": {
-		"alias": "124.226.171.146"
-	},
-	"124.226.171.146": {
-		"name": "biolabs.org",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"biolabs.net": {
-		"alias": "124.226.171.147"
-	},
-	"124.226.171.147": {
-		"name": "biolabs.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "biolabsnethttp",
-			"89": "xnullb",
-			"712": "biomail"
-		}
-	},
-	"internal-191.ndrgrnd.pipelink.gov": {
-		"alias": "12.202.203.19"
-	},
-	"12.202.203.19": {
-		"name": "internal-191.ndrgrnd.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"ext12.pipelink.gov": {
-		"alias": "66.1.22.2"
-	},
-	"66.1.22.2": {
-		"name": "ext12.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"179": "pipelink-networking"
-		}
-	},
-	"research.biolabs.net": {
-		"alias": "124.226.173.1"
-	},
-	"124.226.173.1": {
-		"name": "research.biolabs.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "biolabsresearchhttp"
-		}
-	},
-	"micron.com": {
-		"alias": "207.46.230.218"
-	},
-	"207.46.230.218": {
-		"name": "micron.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"newpute.com": {
-		"alias": "12.54.124.65"
-	},
-	"12.54.124.65": {
-		"name": "newpute.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"96": "npbbs"
-		}
-	},
-	"something.org": {
-		"alias": "135.107.230.109"
-	},
-	"135.107.230.109": {
-		"name": "something.org",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"intservices.org": {
-		"alias": "182.16.155.161"
-	},
-	"182.16.155.161": {
-		"name": "intservices.org",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "internal_http",
-			"109": "internal_proxy"
-		}
-	},
-	"protovision.com": {
-		"alias": "100.55.86.162"
-	},
-	"100.55.86.162": {
-		"name": "protovision.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"microfiles.net": {
-		"alias": "150.113.121.8"
-	},
-	"150.113.121.8": {
-		"name": "microfiles.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"scan.com": {
-		"alias": "34.2.2.129"
-	},
-	"34.2.2.129": {
-		"name": "scan.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "q"
-		}
-	},
-	"depressed.com": {
-		"alias": "12.78.38.92"
-	},
-	"12.78.38.92": {
-		"name": "depressed.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "depressed_http"
-		}
-	},
-	"find.com": {
-		"alias": "12.12.198.201"
-	},
-	"12.12.198.201": {
-		"name": "find.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "http_find"
-		}
-	},
-	"superkool.com": {
-		"alias": "121.105.106.96"
-	},
-	"121.105.106.96": {
-		"name": "superkool.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"intserv01.pipelink.gov": {
-		"alias": "66.1.24.4"
-	},
-	"66.1.24.4": {
-		"name": "intserv01.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"210": "sharedaccesspl"
-		}
-	},
-	"intserv02.pipelink.gov": {
-		"alias": "66.1.24.5"
-	},
-	"66.1.24.5": {
-		"name": "intserv02.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"210": "sharedaccesspl"
-		}
-	},
-	"internal-9.ndrgrnd.pipelink.gov": {
-		"alias": "66.7.82.99"
-	},
-	"66.7.82.99": {
-		"name": "internal-9.ndrgrnd.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "int9http",
-			"81": "int9secure",
-			"82": "int9priv"
-		}
-	},
-	"base09.pipelink.gov": {
-		"alias": "66.199.200.203"
-	},
-	"66.199.200.203": {
-		"name": "base09.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"78": "remote_res-29",
-			"80": "http_09pipelink"
-		}
-	},
-	"pipelink.gov": {
-		"alias": "66.1.24.1"
-	},
-	"66.1.24.1": {
-		"name": "pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"oldgames.com": {
-		"alias": "137.92.160.210"
-	},
-	"137.92.160.210": {
-		"name": "oldgames.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"21": "oldg_ftp",
-			"22": "oldg_admin",
-			"80": "oldg_http"
-		}
-	},
-	"jobs.securedigital.com": {
-		"alias": "64.114.10.143"
-	},
-	"64.114.10.143": {
-		"name": "jobs.securedigital.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "jobs_sd_http"
-		}
-	},
-	"bbs.security.com": {
-		"alias": "178.119.2.242"
-	},
-	"178.119.2.242": {
-		"name": "bbs.security.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "bbs_sec_http"
-		}
-	},
-	"internetprovider.com": {
-		"alias": "31.240.54.104"
-	},
-	"31.240.54.104": {
-		"name": "internetprovider.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"22": "netprov_admin",
-			"2541": "user_netprov_p2p",
-			"80": "netprov_http"
-		}
-	},
-	"backdoors.com": {
-		"alias": "141.90.244.35"
-	},
-	"141.90.244.35": {
-		"name": "backdoors.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "backdoors_http"
-		}
-	},
-	"ipgames.com": {
-		"alias": "43.20.44.224"
-	},
-	"43.20.44.224": {
-		"name": "ipgames.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "ipgames_http"
-		}
-	},
-	"intserv03.pipelink.gov": {
-		"alias": "66.1.24.203"
-	},
-	"66.1.24.203": {
-		"name": "intserv03.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"210": "sharedaccesspl"
-		}
-	},
-	"intserv04.pipelink.gov": {
-		"alias": "66.1.24.204"
-	},
-	"66.1.24.204": {
-		"name": "intserv04.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"210": "sharedaccesspl"
-		}
-	},
-	"intserv05.pipelink.gov": {
-		"alias": "66.1.24.205"
-	},
-	"66.1.24.205": {
-		"name": "intserv05.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"210": "sharedaccesspl"
-		}
-	},
-	"intserv06.pipelink.gov": {
-		"alias": "66.1.24.206"
-	},
-	"66.1.24.206": {
-		"name": "intserv06.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"210": "sharedaccesspl"
-		}
-	},
-	"intserv07.pipelink.gov": {
-		"alias": "66.1.24.207"
-	},
-	"66.1.24.207": {
-		"name": "intserv07.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"210": "sharedaccesspl"
-		}
-	},
-	"intserv08.pipelink.gov": {
-		"alias": "66.1.24.208"
-	},
-	"66.1.24.208": {
-		"name": "intserv08.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"210": "sharedaccesspl"
-		}
-	},
-	"intserv09.pipelink.gov": {
-		"alias": "66.1.24.209"
-	},
-	"66.1.24.209": {
-		"name": "intserv09.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"210": "sharedaccespl"
-		}
-	},
-	"intserv10.pipelink.gov": {
-		"alias": "66.1.24.210"
-	},
-	"66.1.24.210": {
-		"name": "intserv10.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"210": "sharedaccesspl"
-		}
-	},
-	"intserv11.pipelink.gov": {
-		"alias": "66.1.24.211"
-	},
-	"66.1.24.211": {
-		"name": "intserv11.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"210": "sharedaccesspl"
-		}
-	},
-	"intserv12.pipelink.gov": {
-		"alias": "66.1.24.212"
-	},
-	"66.1.24.212": {
-		"name": "intserv12.pipelink.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"210": "sharedaccesspl"
-		}
-	},
-	"regd1.regdomainz.net": {
-		"alias": "90.92.106.1"
-	},
-	"90.92.106.1": {
-		"name": "regd1.regdomainz.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"89": "xnullrd"
-		}
-	},
-	"regd119.regdomainz.net": {
-		"alias": "90.92.109.119"
-	},
-	"90.92.109.119": {
-		"name": "regd119.regdomainz.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"89": "xnullrd"
-		}
-	},
-	"regd74.regdomainz.net": {
-		"alias": "90.92.122.74"
-	},
-	"90.92.122.74": {
-		"name": "regd74.regdomainz.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"89": "xnullrd"
-		}
-	},
-	"regd82.regdomainz.net": {
-		"alias": "90.92.167.82"
-	},
-	"90.92.167.82": {
-		"name": "regd82.regdomainz.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"89": "xnullrd"
-		}
-	},
-	"regd203.regdomainz.net": {
-		"alias": "90.92.167.203"
-	},
-	"90.92.167.203": {
-		"name": "regd203.regdomainz.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"89": "xnullrd"
-		}
-	},
-	"regd204.regdomainz.net": {
-		"alias": "90.92.168.204"
-	},
-	"90.92.168.204": {
-		"name": "regd204.regdomainz.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"89": "xnullrg",
-			"809": "fuzzymail82"
-		}
-	},
-	"regd242.regdomainz.net": {
-		"alias": "90.92.181.242"
-	},
-	"90.92.181.242": {
-		"name": "regd242.regdomainz.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"89": "xnullrd"
-		}
-	},
-	"regd12.regdomainz.net": {
-		"alias": "90.92.184.12"
-	},
-	"90.92.184.12": {
-		"name": "regd12.regdomainz.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"89": "xnullrd"
-		}
-	},
-	"regadmin.net": {
-		"alias": "90.92.184.3"
-	},
-	"90.92.184.3": {
-		"name": "regadmin.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "http_regadmin"
-		}
-	},
-	"targetmailer.com": {
-		"alias": "178.119.2.200"
-	},
-	"178.119.2.200": {
-		"name": "targetmailer.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"25": "sendmail_22"
-		}
-	},
-	"regdomainz.com": {
-		"alias": "90.92.127.65"
-	},
-	"90.92.127.65": {
-		"name": "regdomainz.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"regdomainz.net": {
-		"alias": "90.92.127.66"
-	},
-	"90.92.127.66": {
-		"name": "regdomainz.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "http_regdomainz"
-		}
-	},
-	"depressed.net": {
-		"alias": "82.1.1.233"
-	},
-	"82.1.1.233": {
-		"name": "depressed.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "depressed_http"
-		}
-	},
-	"internalservices.org": {
-		"alias": "182.16.155.162"
-	},
-	"182.16.155.162": {
-		"name": "internalservices.org",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "internal_http",
-			"109": "internal_proxy"
-		}
-	},
-	"internic.net": {
-		"alias": "229.63.170.8"
-	},
-	"229.63.170.8": {
-		"name": "internic.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "http_internic"
-		}
-	},
-	"totalzero.com": {
-		"alias": "121.133.61.245"
-	},
-	"121.133.61.245": {
-		"name": "totalzero.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"webcache01.securedigital.com": {
-		"alias": "88.10.185.45"
-	},
-	"88.10.185.45": {
-		"name": "webcache01.securedigital.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"darksigns.com": {
-		"alias": "64.63.125.72"
-	},
-	"64.63.125.72": {
-		"name": "darksigns.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"zrio.org": {
-		"alias": "23.23.1.91"
-	},
-	"23.23.1.91": {
-		"name": "zrio.org",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"25": "zrio_filetransfer",
-			"45": "xcapro"
-		}
-	},
-	"decrypt.com": {
-		"alias": "133.123.1.91"
-	},
-	"133.123.1.91": {
-		"name": "decrypt.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "decrypt_http"
-		}
-	},
-	"security.com": {
-		"alias": "178.119.2.202"
-	},
-	"178.119.2.202": {
-		"name": "security.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"25": "securecommail",
-			"80": "securecomhttp"
-		}
-	},
-	"micmast.com": {
-		"alias": "179.134.202.252"
-	},
-	"179.134.202.252": {
-		"name": "micmast.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"25": "webmail",
-			"80": "website"
-		}
-	},
-	"specialstorage.com": {
-		"alias": "196.194.132.66"
-	},
-	"196.194.132.66": {
-		"name": "specialstorage.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "specialstorage"
-		}
-	},
-	"specialserver.com": {
-		"alias": "229.61.245.12"
-	},
-	"229.61.245.12": {
-		"name": "specialserver.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "80"
-		}
-	},
-	"csmcqijje.com": {
-		"alias": "75.184.245.62"
-	},
-	"75.184.245.62": {
-		"name": "csmcqijje.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"21": "special"
-		}
-	},
-	"db.postoffice.mil": {
-		"alias": "110.65.132.183"
-	},
-	"110.65.132.183": {
-		"name": "db.postoffice.mil",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"845": "fcdb"
-		}
-	},
-	"FCDB.com": {
-		"alias": "13.111.55.155"
-	},
-	"13.111.55.155": {
-		"name": "FCDB.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "fcdb80"
-		}
-	},
-	"postoffice.mil": {
-		"alias": "158.137.81.181"
-	},
-	"158.137.81.181": {
-		"name": "postoffice.mil",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "post80"
-		}
-	},
-	"prx.postoffice.mil": {
-		"alias": "244.223.167.14"
-	},
-	"244.223.167.14": {
-		"name": "prx.postoffice.mil",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"91": "prx91"
-		}
-	},
-	"dns.yippieisp.net": {
-		"alias": "103.45.32.3"
-	},
-	"103.45.32.3": {
-		"name": "dns.yippieisp.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"53": "dns53"
-		}
-	},
-	"xftp.com": {
-		"alias": "11.213.188.78"
-	},
-	"11.213.188.78": {
-		"name": "xftp.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "xftp80"
-		}
-	},
-	"go.philly.mil": {
-		"alias": "115.113.51.237"
-	},
-	"115.113.51.237": {
-		"name": "go.philly.mil",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"25": "xftp25"
-		}
-	},
-	"cheaphosting.com": {
-		"alias": "130.239.47.117"
-	},
-	"130.239.47.117": {
-		"name": "cheaphosting.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "cheap80"
-		}
-	},
-	"libi.users.aci.edu": {
-		"alias": "159.114.182.232"
-	},
-	"159.114.182.232": {
-		"name": "libi.users.aci.edu",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"h4x0r.com": {
-		"alias": "188.174.32.138"
-	},
-	"188.174.32.138": {
-		"name": "h4x0r.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"micm.yellow.com": {
-		"alias": "71.100.81.138"
-	},
-	"71.100.81.138": {
-		"name": "micm.yellow.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"postbot.base43.philly.mil": {
-		"alias": "92.164.16.23"
-	},
-	"92.164.16.23": {
-		"name": "postbot.base43.philly.mil",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {}
-	},
-	"codered.com": {
-		"alias": "12.251.108.215"
-	},
-	"12.251.108.215": {
-		"name": "codered.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "code80"
-		}
-	},
-	"telnet.happyhackers.net": {
-		"alias": "120.118.56.243"
-	},
-	"120.118.56.243": {
-		"name": "telnet.happyhackers.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"23": "happy23"
-		}
-	},
-	"crackertools.com": {
-		"alias": "15.217.118.162"
-	},
-	"15.217.118.162": {
-		"name": "crackertools.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "cracker80"
-		}
-	},
-	"crashme.com": {
-		"alias": "203.195.219.146"
-	},
-	"203.195.219.146": {
-		"name": "crashme.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "crash80"
-		}
-	},
-	"ftp.blindballet.org": {
-		"alias": "45.93.67.211"
-	},
-	"45.93.67.211": {
-		"name": "ftp.blindballet.org",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"21": "blind21"
-		}
-	},
-	"ftp.stlukes.christ.org": {
-		"alias": "49.78.59.116"
-	},
-	"49.78.59.116": {
-		"name": "ftp.stlukes.christ.org",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"21": "christ21"
-		}
-	},
-	"fbi.gov": {
-		"alias": "52.150.94.194"
-	},
-	"52.150.94.194": {
-		"name": "fbi.gov",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"25": "fbi25",
-			"80": "fbi80"
-		}
-	},
-	"media.net": {
-		"alias": "62.146.78.98"
-	},
-	"62.146.78.98": {
-		"name": "media.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"23": "media23"
-		}
-	},
-	"ftp.willowfootball.org": {
-		"alias": "63.6.246.217"
-	},
-	"63.6.246.217": {
-		"name": "ftp.willowfootball.org",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"21": "willow21"
-		}
-	},
-	"telnet.globalsport.com": {
-		"alias": "66.138.242.249"
-	},
-	"66.138.242.249": {
-		"name": "telnet.globalsport.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"23": "global23"
-		}
-	},
-	"telnet.pokemonworld.com": {
-		"alias": "68.159.4.98"
-	},
-	"68.159.4.98": {
-		"name": "telnet.pokemonworld.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"23": "poke23"
-		}
-	},
-	"doser.com": {
-		"alias": "89.68.12.112"
-	},
-	"89.68.12.112": {
-		"name": "doser.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "dos80"
-		}
-	},
-	"hackme.com": {
-		"alias": "93.202.10.80"
-	},
-	"93.202.10.80": {
-		"name": "hackme.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "hack80"
-		}
-	},
-	"darksoft.ru": {
-		"alias": "193.232.27.246"
-	},
-	"193.232.27.246": {
-		"name": "darksoft.ru",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "darksoft_http"
-		}
-	},
-	"corpfw1.org": {
-		"alias": "46.23.37.2"
-	},
-	"46.23.37.2": {
-		"name": "corpfw1.org",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"15": "fw1proxy",
-			"75": "fw1debug",
-			"125": "fw1slock"
-		}
-	},
-	"palmer.filehosting.net": {
-		"alias": "123.53.4.9"
-	},
-	"123.53.4.9": {
-		"name": "palmer.filehosting.net",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"23": "pfh-login",
-			"80": "pfh-http",
-			"120": "pfh-remadm",
-			"625": "pfh-fileshare"
-		}
-	},
-	"thc-hq.com": {
-		"alias": "24.53.123.5"
-	},
-	"24.53.123.5": {
-		"name": "thc-hq.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"100": "thc-hq",
-			"200": "thc-hq2",
-			"300": "thc-hq3"
-		}
-	},
-	"server.com": {
-		"alias": "149.180.124.224"
-	},
-	"149.180.124.224": {
-		"name": "server.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "doublefile",
-			"1": "g7_login",
-			"99": "prime_finder"
-		}
-	},
-	"www.berkeley.edu": {
-		"alias": "71.69.7.193"
-	},
-	"71.69.7.193": {
-		"name": "www.berkeley.edu",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "berk_public",
-			"81": "berk_sui"
-		}
-	},
-	"newton.physics.berkeley.edu": {
-		"alias": "210.189.133.233"
-	},
-	"210.189.133.233": {
-		"name": "newton.physics.berkeley.edu",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"100": "newton_admin",
-			"80": "newton_public"
-		}
-	},
-	"jdavids.physics.berkeley.edu": {
-		"alias": "146.102.169.219"
-	},
-	"146.102.169.219": {
-		"name": "jdavids.physics.berkeley.edu",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "jd_public"
-		}
-	},
-	"lower.ebworth.org": {
-		"alias": "124.64.231.23"
-	},
-	"124.64.231.23": {
-		"name": "lower.ebworth.org",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"80": "lew-view",
-			"210": "lew-admin"
-		}
-	},
-	"tck.com": {
-		"alias": "11.243.187.34"
-	},
-	"11.243.187.34": {
-		"name": "tck.com",
-		"module_name": "TODO",
-		"class_name": "TODO",
-		"port_mapping": {
-			"21": "tck-ftp",
-			"80": "tck-http",
-			"225": "tck-tck"
-		}
-	}
+  "proxy.securedigital.com": {
+    "alias": "17.191.200.201"
+  },
+  "17.191.200.201": {
+    "name": "proxy.securedigital.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "109": "wingate_proxy"
+    }
+  },
+  "webcache02.securedigital.com": {
+    "alias": "64.114.9.241"
+  },
+  "64.114.9.241": {
+    "name": "webcache02.securedigital.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "25": "sendmail_22",
+      "80": "secure_http",
+      "505": "cache_manager"
+    }
+  },
+  "securedigital.com": {
+    "alias": "64.114.9.220"
+  },
+  "64.114.9.220": {
+    "name": "securedigital.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "25": "sendmail_22",
+      "80": "secure_http"
+    }
+  },
+  "biolabs.com": {
+    "alias": "124.226.170.146"
+  },
+  "124.226.170.146": {
+    "name": "biolabs.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "http_biolabs",
+      "89": "xnull"
+    }
+  },
+  "biolabs.org": {
+    "alias": "124.226.171.146"
+  },
+  "124.226.171.146": {
+    "name": "biolabs.org",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "biolabs.net": {
+    "alias": "124.226.171.147"
+  },
+  "124.226.171.147": {
+    "name": "biolabs.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "biolabsnethttp",
+      "89": "xnullb",
+      "712": "biomail"
+    }
+  },
+  "internal-191.ndrgrnd.pipelink.gov": {
+    "alias": "12.202.203.19"
+  },
+  "12.202.203.19": {
+    "name": "internal-191.ndrgrnd.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "ext12.pipelink.gov": {
+    "alias": "66.1.22.2"
+  },
+  "66.1.22.2": {
+    "name": "ext12.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "179": "pipelink-networking"
+    }
+  },
+  "research.biolabs.net": {
+    "alias": "124.226.173.1"
+  },
+  "124.226.173.1": {
+    "name": "research.biolabs.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "biolabsresearchhttp"
+    }
+  },
+  "micron.com": {
+    "alias": "207.46.230.218"
+  },
+  "207.46.230.218": {
+    "name": "micron.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "newpute.com": {
+    "alias": "12.54.124.65"
+  },
+  "12.54.124.65": {
+    "name": "newpute.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "96": "npbbs"
+    }
+  },
+  "something.org": {
+    "alias": "135.107.230.109"
+  },
+  "135.107.230.109": {
+    "name": "something.org",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "intservices.org": {
+    "alias": "182.16.155.161"
+  },
+  "182.16.155.161": {
+    "name": "intservices.org",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "internal_http",
+      "109": "internal_proxy"
+    }
+  },
+  "protovision.com": {
+    "alias": "100.55.86.162"
+  },
+  "100.55.86.162": {
+    "name": "protovision.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "microfiles.net": {
+    "alias": "150.113.121.8"
+  },
+  "150.113.121.8": {
+    "name": "microfiles.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "scan.com": {
+    "alias": "34.2.2.129"
+  },
+  "34.2.2.129": {
+    "name": "scan.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "q"
+    }
+  },
+  "depressed.com": {
+    "alias": "12.78.38.92"
+  },
+  "12.78.38.92": {
+    "name": "depressed.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "depressed_http"
+    }
+  },
+  "find.com": {
+    "alias": "12.12.198.201"
+  },
+  "12.12.198.201": {
+    "name": "find.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "http_find"
+    }
+  },
+  "superkool.com": {
+    "alias": "121.105.106.96"
+  },
+  "121.105.106.96": {
+    "name": "superkool.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "intserv01.pipelink.gov": {
+    "alias": "66.1.24.4"
+  },
+  "66.1.24.4": {
+    "name": "intserv01.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "210": "sharedaccesspl"
+    }
+  },
+  "intserv02.pipelink.gov": {
+    "alias": "66.1.24.5"
+  },
+  "66.1.24.5": {
+    "name": "intserv02.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "210": "sharedaccesspl"
+    }
+  },
+  "internal-9.ndrgrnd.pipelink.gov": {
+    "alias": "66.7.82.99"
+  },
+  "66.7.82.99": {
+    "name": "internal-9.ndrgrnd.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "int9http",
+      "81": "int9secure",
+      "82": "int9priv"
+    }
+  },
+  "base09.pipelink.gov": {
+    "alias": "66.199.200.203"
+  },
+  "66.199.200.203": {
+    "name": "base09.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "78": "remote_res-29",
+      "80": "http_09pipelink"
+    }
+  },
+  "pipelink.gov": {
+    "alias": "66.1.24.1"
+  },
+  "66.1.24.1": {
+    "name": "pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "oldgames.com": {
+    "alias": "137.92.160.210"
+  },
+  "137.92.160.210": {
+    "name": "oldgames.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "21": "oldg_ftp",
+      "22": "oldg_admin",
+      "80": "oldg_http"
+    }
+  },
+  "jobs.securedigital.com": {
+    "alias": "64.114.10.143"
+  },
+  "64.114.10.143": {
+    "name": "jobs.securedigital.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "jobs_sd_http"
+    }
+  },
+  "bbs.security.com": {
+    "alias": "178.119.2.242"
+  },
+  "178.119.2.242": {
+    "name": "bbs.security.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "bbs_sec_http"
+    }
+  },
+  "internetprovider.com": {
+    "alias": "31.240.54.104"
+  },
+  "31.240.54.104": {
+    "name": "internetprovider.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "22": "netprov_admin",
+      "2541": "user_netprov_p2p",
+      "80": "netprov_http"
+    }
+  },
+  "backdoors.com": {
+    "alias": "141.90.244.35"
+  },
+  "141.90.244.35": {
+    "name": "backdoors.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "backdoors_http"
+    }
+  },
+  "ipgames.com": {
+    "alias": "43.20.44.224"
+  },
+  "43.20.44.224": {
+    "name": "ipgames.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "ipgames_http"
+    }
+  },
+  "intserv03.pipelink.gov": {
+    "alias": "66.1.24.203"
+  },
+  "66.1.24.203": {
+    "name": "intserv03.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "210": "sharedaccesspl"
+    }
+  },
+  "intserv04.pipelink.gov": {
+    "alias": "66.1.24.204"
+  },
+  "66.1.24.204": {
+    "name": "intserv04.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "210": "sharedaccesspl"
+    }
+  },
+  "intserv05.pipelink.gov": {
+    "alias": "66.1.24.205"
+  },
+  "66.1.24.205": {
+    "name": "intserv05.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "210": "sharedaccesspl"
+    }
+  },
+  "intserv06.pipelink.gov": {
+    "alias": "66.1.24.206"
+  },
+  "66.1.24.206": {
+    "name": "intserv06.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "210": "sharedaccesspl"
+    }
+  },
+  "intserv07.pipelink.gov": {
+    "alias": "66.1.24.207"
+  },
+  "66.1.24.207": {
+    "name": "intserv07.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "210": "sharedaccesspl"
+    }
+  },
+  "intserv08.pipelink.gov": {
+    "alias": "66.1.24.208"
+  },
+  "66.1.24.208": {
+    "name": "intserv08.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "210": "sharedaccesspl"
+    }
+  },
+  "intserv09.pipelink.gov": {
+    "alias": "66.1.24.209"
+  },
+  "66.1.24.209": {
+    "name": "intserv09.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "210": "sharedaccespl"
+    }
+  },
+  "intserv10.pipelink.gov": {
+    "alias": "66.1.24.210"
+  },
+  "66.1.24.210": {
+    "name": "intserv10.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "210": "sharedaccesspl"
+    }
+  },
+  "intserv11.pipelink.gov": {
+    "alias": "66.1.24.211"
+  },
+  "66.1.24.211": {
+    "name": "intserv11.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "210": "sharedaccesspl"
+    }
+  },
+  "intserv12.pipelink.gov": {
+    "alias": "66.1.24.212"
+  },
+  "66.1.24.212": {
+    "name": "intserv12.pipelink.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "210": "sharedaccesspl"
+    }
+  },
+  "regd1.regdomainz.net": {
+    "alias": "90.92.106.1"
+  },
+  "90.92.106.1": {
+    "name": "regd1.regdomainz.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "89": "xnullrd"
+    }
+  },
+  "regd119.regdomainz.net": {
+    "alias": "90.92.109.119"
+  },
+  "90.92.109.119": {
+    "name": "regd119.regdomainz.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "89": "xnullrd"
+    }
+  },
+  "regd74.regdomainz.net": {
+    "alias": "90.92.122.74"
+  },
+  "90.92.122.74": {
+    "name": "regd74.regdomainz.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "89": "xnullrd"
+    }
+  },
+  "regd82.regdomainz.net": {
+    "alias": "90.92.167.82"
+  },
+  "90.92.167.82": {
+    "name": "regd82.regdomainz.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "89": "xnullrd"
+    }
+  },
+  "regd203.regdomainz.net": {
+    "alias": "90.92.167.203"
+  },
+  "90.92.167.203": {
+    "name": "regd203.regdomainz.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "89": "xnullrd"
+    }
+  },
+  "regd204.regdomainz.net": {
+    "alias": "90.92.168.204"
+  },
+  "90.92.168.204": {
+    "name": "regd204.regdomainz.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "89": "xnullrg",
+      "809": "fuzzymail82"
+    }
+  },
+  "regd242.regdomainz.net": {
+    "alias": "90.92.181.242"
+  },
+  "90.92.181.242": {
+    "name": "regd242.regdomainz.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "89": "xnullrd"
+    }
+  },
+  "regd12.regdomainz.net": {
+    "alias": "90.92.184.12"
+  },
+  "90.92.184.12": {
+    "name": "regd12.regdomainz.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "89": "xnullrd"
+    }
+  },
+  "regadmin.net": {
+    "alias": "90.92.184.3"
+  },
+  "90.92.184.3": {
+    "name": "regadmin.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "http_regadmin"
+    }
+  },
+  "targetmailer.com": {
+    "alias": "178.119.2.200"
+  },
+  "178.119.2.200": {
+    "name": "targetmailer.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "25": "sendmail_22"
+    }
+  },
+  "regdomainz.com": {
+    "alias": "90.92.127.65"
+  },
+  "90.92.127.65": {
+    "name": "regdomainz.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "regdomainz.net": {
+    "alias": "90.92.127.66"
+  },
+  "90.92.127.66": {
+    "name": "regdomainz.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "http_regdomainz"
+    }
+  },
+  "depressed.net": {
+    "alias": "82.1.1.233"
+  },
+  "82.1.1.233": {
+    "name": "depressed.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "depressed_http"
+    }
+  },
+  "internalservices.org": {
+    "alias": "182.16.155.162"
+  },
+  "182.16.155.162": {
+    "name": "internalservices.org",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "internal_http",
+      "109": "internal_proxy"
+    }
+  },
+  "internic.net": {
+    "alias": "229.63.170.8"
+  },
+  "229.63.170.8": {
+    "name": "internic.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "http_internic"
+    }
+  },
+  "totalzero.com": {
+    "alias": "121.133.61.245"
+  },
+  "121.133.61.245": {
+    "name": "totalzero.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "webcache01.securedigital.com": {
+    "alias": "88.10.185.45"
+  },
+  "88.10.185.45": {
+    "name": "webcache01.securedigital.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "darksigns.com": {
+    "alias": "64.63.125.72"
+  },
+  "64.63.125.72": {
+    "name": "darksigns.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "zrio.org": {
+    "alias": "23.23.1.91"
+  },
+  "23.23.1.91": {
+    "name": "zrio.org",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "25": "zrio_filetransfer",
+      "45": "xcapro"
+    }
+  },
+  "decrypt.com": {
+    "alias": "133.123.1.91"
+  },
+  "133.123.1.91": {
+    "name": "decrypt.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "decrypt_http"
+    }
+  },
+  "security.com": {
+    "alias": "178.119.2.202"
+  },
+  "178.119.2.202": {
+    "name": "security.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "25": "securecommail",
+      "80": "securecomhttp"
+    }
+  },
+  "micmast.com": {
+    "alias": "179.134.202.252"
+  },
+  "179.134.202.252": {
+    "name": "micmast.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "25": "webmail",
+      "80": "website"
+    }
+  },
+  "specialstorage.com": {
+    "alias": "196.194.132.66"
+  },
+  "196.194.132.66": {
+    "name": "specialstorage.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "specialstorage"
+    }
+  },
+  "specialserver.com": {
+    "alias": "229.61.245.12"
+  },
+  "229.61.245.12": {
+    "name": "specialserver.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "80"
+    }
+  },
+  "csmcqijje.com": {
+    "alias": "75.184.245.62"
+  },
+  "75.184.245.62": {
+    "name": "csmcqijje.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "21": "special"
+    }
+  },
+  "db.postoffice.mil": {
+    "alias": "110.65.132.183"
+  },
+  "110.65.132.183": {
+    "name": "db.postoffice.mil",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "845": "fcdb"
+    }
+  },
+  "FCDB.com": {
+    "alias": "13.111.55.155"
+  },
+  "13.111.55.155": {
+    "name": "FCDB.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "fcdb80"
+    }
+  },
+  "postoffice.mil": {
+    "alias": "158.137.81.181"
+  },
+  "158.137.81.181": {
+    "name": "postoffice.mil",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "post80"
+    }
+  },
+  "prx.postoffice.mil": {
+    "alias": "244.223.167.14"
+  },
+  "244.223.167.14": {
+    "name": "prx.postoffice.mil",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "91": "prx91"
+    }
+  },
+  "dns.yippieisp.net": {
+    "alias": "103.45.32.3"
+  },
+  "103.45.32.3": {
+    "name": "dns.yippieisp.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "53": "dns53"
+    }
+  },
+  "xftp.com": {
+    "alias": "11.213.188.78"
+  },
+  "11.213.188.78": {
+    "name": "xftp.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "xftp80"
+    }
+  },
+  "go.philly.mil": {
+    "alias": "115.113.51.237"
+  },
+  "115.113.51.237": {
+    "name": "go.philly.mil",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "25": "xftp25"
+    }
+  },
+  "cheaphosting.com": {
+    "alias": "130.239.47.117"
+  },
+  "130.239.47.117": {
+    "name": "cheaphosting.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "cheap80"
+    }
+  },
+  "libi.users.aci.edu": {
+    "alias": "159.114.182.232"
+  },
+  "159.114.182.232": {
+    "name": "libi.users.aci.edu",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "h4x0r.com": {
+    "alias": "188.174.32.138"
+  },
+  "188.174.32.138": {
+    "name": "h4x0r.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "micm.yellow.com": {
+    "alias": "71.100.81.138"
+  },
+  "71.100.81.138": {
+    "name": "micm.yellow.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "postbot.base43.philly.mil": {
+    "alias": "92.164.16.23"
+  },
+  "92.164.16.23": {
+    "name": "postbot.base43.philly.mil",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {}
+  },
+  "codered.com": {
+    "alias": "12.251.108.215"
+  },
+  "12.251.108.215": {
+    "name": "codered.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "code80"
+    }
+  },
+  "telnet.happyhackers.net": {
+    "alias": "120.118.56.243"
+  },
+  "120.118.56.243": {
+    "name": "telnet.happyhackers.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "23": "happy23"
+    }
+  },
+  "crackertools.com": {
+    "alias": "15.217.118.162"
+  },
+  "15.217.118.162": {
+    "name": "crackertools.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "cracker80"
+    }
+  },
+  "crashme.com": {
+    "alias": "203.195.219.146"
+  },
+  "203.195.219.146": {
+    "name": "crashme.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "crash80"
+    }
+  },
+  "ftp.blindballet.org": {
+    "alias": "45.93.67.211"
+  },
+  "45.93.67.211": {
+    "name": "ftp.blindballet.org",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "21": "blind21"
+    }
+  },
+  "ftp.stlukes.christ.org": {
+    "alias": "49.78.59.116"
+  },
+  "49.78.59.116": {
+    "name": "ftp.stlukes.christ.org",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "21": "christ21"
+    }
+  },
+  "fbi.gov": {
+    "alias": "52.150.94.194"
+  },
+  "52.150.94.194": {
+    "name": "fbi.gov",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "25": "fbi25",
+      "80": "fbi80"
+    }
+  },
+  "media.net": {
+    "alias": "62.146.78.98"
+  },
+  "62.146.78.98": {
+    "name": "media.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "23": "media23"
+    }
+  },
+  "ftp.willowfootball.org": {
+    "alias": "63.6.246.217"
+  },
+  "63.6.246.217": {
+    "name": "ftp.willowfootball.org",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "21": "willow21"
+    }
+  },
+  "telnet.globalsport.com": {
+    "alias": "66.138.242.249"
+  },
+  "66.138.242.249": {
+    "name": "telnet.globalsport.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "23": "global23"
+    }
+  },
+  "telnet.pokemonworld.com": {
+    "alias": "68.159.4.98"
+  },
+  "68.159.4.98": {
+    "name": "telnet.pokemonworld.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "23": "poke23"
+    }
+  },
+  "doser.com": {
+    "alias": "89.68.12.112"
+  },
+  "89.68.12.112": {
+    "name": "doser.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "dos80"
+    }
+  },
+  "hackme.com": {
+    "alias": "93.202.10.80"
+  },
+  "93.202.10.80": {
+    "name": "hackme.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "hack80"
+    }
+  },
+  "darksoft.ru": {
+    "alias": "193.232.27.246"
+  },
+  "193.232.27.246": {
+    "name": "darksoft.ru",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "darksoft_http"
+    }
+  },
+  "corpfw1.org": {
+    "alias": "46.23.37.2"
+  },
+  "46.23.37.2": {
+    "name": "corpfw1.org",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "15": "fw1proxy",
+      "75": "fw1debug",
+      "125": "fw1slock"
+    }
+  },
+  "palmer.filehosting.net": {
+    "alias": "123.53.4.9"
+  },
+  "123.53.4.9": {
+    "name": "palmer.filehosting.net",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "23": "pfh-login",
+      "80": "pfh-http",
+      "120": "pfh-remadm",
+      "625": "pfh-fileshare"
+    }
+  },
+  "thc-hq.com": {
+    "alias": "24.53.123.5"
+  },
+  "24.53.123.5": {
+    "name": "thc-hq.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "100": "thc-hq",
+      "200": "thc-hq2",
+      "300": "thc-hq3"
+    }
+  },
+  "server.com": {
+    "alias": "149.180.124.224"
+  },
+  "149.180.124.224": {
+    "name": "server.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "doublefile",
+      "1": "g7_login",
+      "99": "prime_finder"
+    }
+  },
+  "www.berkeley.edu": {
+    "alias": "71.69.7.193"
+  },
+  "71.69.7.193": {
+    "name": "www.berkeley.edu",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "berk_public",
+      "81": "berk_sui"
+    }
+  },
+  "newton.physics.berkeley.edu": {
+    "alias": "210.189.133.233"
+  },
+  "210.189.133.233": {
+    "name": "newton.physics.berkeley.edu",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "100": "newton_admin",
+      "80": "newton_public"
+    }
+  },
+  "jdavids.physics.berkeley.edu": {
+    "alias": "146.102.169.219"
+  },
+  "146.102.169.219": {
+    "name": "jdavids.physics.berkeley.edu",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "jd_public"
+    }
+  },
+  "lower.ebworth.org": {
+    "alias": "124.64.231.23"
+  },
+  "124.64.231.23": {
+    "name": "lower.ebworth.org",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "80": "lew-view",
+      "210": "lew-admin"
+    }
+  },
+  "tck.com": {
+    "alias": "11.243.187.34"
+  },
+  "11.243.187.34": {
+    "name": "tck.com",
+    "module_name": "TODO",
+    "class_name": "TODO",
+    "port_mapping": {
+      "21": "tck-ftp",
+      "80": "tck-http",
+      "225": "tck-tck"
+    }
+  }
 }

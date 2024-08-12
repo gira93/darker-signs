@@ -1,5 +1,6 @@
 # TODO
 
+* ~~annotate type where possible~~
 * ~~Server connection test~~
 * ongoing: make global functions for servers if possible
 * ~~Write some tests~~ (boring)
