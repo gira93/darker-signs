@@ -1,4 +1,5 @@
 import json
+from termcolor import cprint
 
 
 class Mail:
@@ -9,11 +10,14 @@ class Mail:
 
     def run(self) -> None:
         while True:
+            print("")
             self.__print_mailbox()
+            print("")
             message_id = input("Type message number or 0 to exit: ")
             if message_id == "0":
                 self.__save()
                 break
+            print("")
             self.__print_message(message_id)
 
     def add_message(self, *, from_user: str, subject: str, message: str) -> None:
@@ -34,19 +38,19 @@ class Mail:
     def __print_mailbox(self) -> None:
         for idx, mail in enumerate(self.mailbox):
             status = " " if mail["read"] else "N"
-            print(f"{idx + 1} {status}> {mail['from']}:{mail['subject']}")
+            cprint(f"{idx + 1} {status}> {mail['from']}:{mail['subject']}", "blue")
 
     def __print_message(self, message_id: str) -> bool:
         try:
             idx = int(message_id)
             message = self.mailbox[idx - 1]
-            print(f"From: {message['from']}")
-            print(f"Subject: {message['subject']}")
+            cprint(f"From: {message['from']}", "light_blue")
+            cprint(f"Subject: {message['subject']}", "light_blue")
             print("")
-            print(message["message"])
+            cprint(message["message"], "light_blue")
             input("Press enter to return to menu")
             self.mailbox[idx - 1]["read"] = True
             return True
         except (IndexError, ValueError):
-            print("Message not found")
+            cprint("Message not found", "red")
             return False

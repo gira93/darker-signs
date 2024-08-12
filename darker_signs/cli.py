@@ -1,6 +1,7 @@
 import os
 import readline
 from getpass import getuser
+from termcolor import cprint
 from .utils import progress_bar
 from .mail import Mail
 from .dns import Dns
@@ -9,6 +10,7 @@ AVAILABLE_COMMANDS: list[str] = [
     "ls",
     "cd",
     "cat",
+    "clear",
     "scan",
     "connect",
     "mail",
@@ -38,11 +40,13 @@ class Cli:
                 if method:
                     method(params)
                 else:
-                    print("Command implementation not found")
+                    cprint("Command implementation not found", "red")
             elif command == "":
                 continue
             else:
-                print('Command not found, type "help" to view available commands')
+                cprint(
+                    'Command not found, type "help" to view available commands', "red"
+                )
 
     def __ls(self, _) -> bool:
         _, dirs, files = next(os.walk(self.real_path))
@@ -58,7 +62,7 @@ class Cli:
             if not os.path.isdir(f"{self.real_path}/{folder}"):
                 raise NameError
         except (IndexError, NameError) as _:
-            print("No folder specified")
+            cprint("No folder specified", "red")
             return False
 
         if folder == ".." and self.current_path == "":
@@ -80,12 +84,15 @@ class Cli:
             if not os.path.isfile(f"{self.real_path}/{file}"):
                 raise NameError
         except (IndexError, NameError):
-            print("No file specified")
+            cprint("No file specified", "red")
             return False
 
         with open(f"{self.real_path}/{file}", "r") as f:
             print(f.read())
         return True
+
+    def __clear(self, _) -> None:
+        os.system("cls||clear")
 
     def __scan(self, params: list[str]) -> bool:
         try:
@@ -93,7 +100,7 @@ class Cli:
             if server_name == "":
                 raise NameError
         except (IndexError, NameError):
-            print("No server name or IP address specified")
+            cprint("No server name or IP address specified", "red")
             return False
 
         server = self.dns.find(server_name)
@@ -101,8 +108,10 @@ class Cli:
             print(f"Scanning {server['name']}...")
             progress_bar(100, 0.05)
             print(f"Ports open for {server['name']}:")
+            print("")
             for port in server["port_mapping"].keys():
-                print(f"{port} -> {server['port_mapping'][port]}")
+                cprint(f"{port} -> {server['port_mapping'][port]}", "light_blue")
+            print("")
             return True
         else:
             return False
@@ -117,7 +126,7 @@ class Cli:
             if server_name == "" or port == "":
                 raise NameError
         except (IndexError, NameError):
-            print("HELP: connect [server ip or name] [port]")
+            cprint("HELP: connect [server ip or name] [port]", "red")
             return False
         server = self.dns.find(server_name)
         if server and port in server["port_mapping"].keys():

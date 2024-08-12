@@ -1,18 +1,18 @@
 from unittest.mock import patch, mock_open, call
-from darker_signs.utils import progress_bar, upload_file, download_file
+from darker_signs.utils import progress_bar, show_menu, upload_file, download_file
 
 
 @patch("darker_signs.utils.sleep", return_value=None)
-@patch("darker_signs.utils.print")
+@patch("darker_signs.utils.cprint")
 def test_progress_bar(mock_print, mock_sleep):
     progress_bar(max=5, step=0.01)
     expected_calls = [
-        call("\r0% |", end=""),
-        call("\r1% /", end=""),
-        call("\r2% -", end=""),
-        call("\r3% \\", end=""),
-        call("\r4% |", end=""),
-        call("\r5% done"),
+        call("\r0% |", "light_green", end=""),
+        call("\r1% /", "light_green", end=""),
+        call("\r2% -", "light_green", end=""),
+        call("\r3% \\", "light_green", end=""),
+        call("\r4% |", "light_green", end=""),
+        call("\r5% done", "green"),
     ]
     mock_print.assert_has_calls(expected_calls)
     assert mock_print.call_count == 6
@@ -44,3 +44,16 @@ def test_download_file(mock_open, mock_progress_bar):
     mock_open().write.assert_called_once_with("Test content")
     mock_progress_bar.assert_called_once_with(max=100, step=0.02)
     assert result is True
+
+
+@patch("builtins.input", return_value="1")
+@patch("darker_signs.utils.cprint")
+def test_show_menu(mock_cprint, _):
+    options = ["Red pill", "Blue pill"]
+    test_selection = show_menu(
+        options, abort_message="Chicken", selection_message="Red or Blue?"
+    )
+    mock_cprint.assert_called_once_with(
+        "1) Red pill\n2) Blue pill\n\n0) Chicken", "blue"
+    )
+    assert test_selection == "1"

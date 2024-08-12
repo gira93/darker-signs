@@ -1,5 +1,6 @@
 import os
 from time import sleep
+from termcolor import cprint
 
 
 def progress_bar(max: int = 100, step: float = 0.05) -> None:
@@ -7,10 +8,10 @@ def progress_bar(max: int = 100, step: float = 0.05) -> None:
     bars = ["|", "/", "-", "\\"]
     while progress != max:
         bar = progress % len(bars)
-        print(f"\r{progress}% {bars[bar]}", end="")
+        cprint(f"\r{progress}% {bars[bar]}", "light_green", end="")
         progress += 1
         sleep(step)
-    print(f"\r{max}% done")
+    cprint(f"\r{max}% done", "green")
     return
 
 
@@ -41,7 +42,7 @@ def show_menu(
     formatted_options += f"\n0) {abort_message}"
     valid_inputs = [str(x) for x in range(0, len(options) + 1)]
     while True:
-        print(formatted_options)
+        cprint(formatted_options, "blue")
         selection = input(f"{selection_message}: ")
         if selection in valid_inputs:
             return selection
