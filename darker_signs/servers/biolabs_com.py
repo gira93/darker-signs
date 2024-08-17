@@ -1,12 +1,15 @@
 from termcolor import cprint
+
+from ..dns import Dns
 from ..mail import Mail
 from ..utils import show_menu, download_file
 
 
 class BiolabsCom:
-    def __init__(self, root_path: str, mail: Mail) -> None:
+    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
         self.root_path = root_path
         self.mail = mail
+        self.dns = dns
 
     def http_biolabs(self):
         cprint("Connected on Port 80 to BIOLABS\nPublic Information Interface", "green")

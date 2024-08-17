@@ -18,7 +18,6 @@ class Dns:
 
             return server
         except KeyError:
-            print("Server unavailable")
             return None
 
     def connect(
@@ -36,7 +35,7 @@ class Dns:
         module_name = f".servers.{server['module_name']}"
         module = importlib.import_module(module_name, "darker_signs")
         cls = getattr(module, server["class_name"])
-        srv = cls(root_path, mail)
+        srv = cls(root_path, mail, self)
         method = getattr(srv, port, None)
         if method:
             method()

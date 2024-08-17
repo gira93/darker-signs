@@ -164,8 +164,8 @@
   },
   "34.2.2.129": {
     "name": "scan.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "scan_com",
+    "class_name": "ScanCom",
     "port_mapping": {
       "80": "q"
     }

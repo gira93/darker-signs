@@ -116,6 +116,7 @@ class Cli:
             print()
             return True
         else:
+            cprint("Server not found", "red")
             return False
 
     def __connect(self, params: list[str]) -> bool:
@@ -142,6 +143,7 @@ class Cli:
             )
             return True
         else:
+            cprint("Server or port not available", "red")
             return False
 
     def __mail(self, _) -> None:
