@@ -1,0 +1,8 @@
+[
+  {
+    "from": "zrio.org",
+    "subject": "Welcome, agent",
+    "message": "This is an automated message\n Your first assignment is to recover a file from a server.\n We need an important document called 8m.enc, it is stored somewhere at biolabs.org",
+    "read": false
+  }
+]

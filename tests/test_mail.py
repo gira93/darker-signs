@@ -67,7 +67,7 @@ def test_print_message_valid(mock_print, mock_input, mail_obj):
     expected_calls = [
         call("From: zrio"),
         call("Subject: unittest"),
-        call(""),
+        call(),
         call("let's test"),
     ]
     mock_print.assert_has_calls(expected_calls)

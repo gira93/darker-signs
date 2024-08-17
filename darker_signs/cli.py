@@ -50,7 +50,7 @@ class Cli:
 
     def __ls(self, _) -> bool:
         _, dirs, files = next(os.walk(self.real_path))
-        print(" ".join(map(lambda dir: f"[{dir}]", dirs)))
+        cprint(" ".join(map(lambda dir: f"[{dir}]", dirs)), "light_blue")
         print(" ".join(files))
         return True
 
@@ -88,7 +88,9 @@ class Cli:
             return False
 
         with open(f"{self.real_path}/{file}", "r") as f:
-            print(f.read())
+            print()
+            cprint(f.read(), "light_blue")
+            print()
         return True
 
     def __clear(self, _) -> None:
@@ -108,10 +110,10 @@ class Cli:
             print(f"Scanning {server['name']}...")
             progress_bar(100, 0.05)
             print(f"Ports open for {server['name']}:")
-            print("")
+            print()
             for port in server["port_mapping"].keys():
                 cprint(f"{port} -> {server['port_mapping'][port]}", "light_blue")
-            print("")
+            print()
             return True
         else:
             return False
@@ -131,7 +133,7 @@ class Cli:
         server = self.dns.find(server_name)
         if server and port in server["port_mapping"].keys():
             print(f"Connecting to {server['name']}:{port}")
-            print("")
+            print()
             self.dns.connect(
                 server,
                 server["port_mapping"][port],

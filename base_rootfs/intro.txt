@@ -1,0 +1,15 @@
+This is very old code, the fact you were able to run it is an achievement.
+
+This is a limited chroot environment that should be able to connect to ZRIO servers
+if they are still up.
+
+Check your email with the "mail" command,
+all ZRIO stuff should be automated (meaning there's no real person behind it)
+UNLESS stated otherwise.
+
+Maybe you can succeed where all the others failed.
+
+Who am I? Someone that was able to dump the internal ZRIO code before they went down.
+
+Take a look at the readme.txt file I left in your root folder,
+just type "cat readme.txt", there's a small guide on how to use this environment.

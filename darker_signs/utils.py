@@ -35,7 +35,7 @@ def show_menu(
     abort_message: str = "Exit",
     selection_message: str = "Make a selection",
 ) -> str:
-    print("")
+    print()
     formatted_options = ""
     for idx, option in enumerate(options):
         formatted_options += f"{idx + 1}) {option}\n"

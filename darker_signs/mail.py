@@ -10,14 +10,14 @@ class Mail:
 
     def run(self) -> None:
         while True:
-            print("")
+            print()
             self.__print_mailbox()
-            print("")
+            print()
             message_id = input("Type message number or 0 to exit: ")
             if message_id == "0":
                 self.__save()
                 break
-            print("")
+            print()
             self.__print_message(message_id)
 
     def add_message(self, *, from_user: str, subject: str, message: str) -> None:
@@ -46,7 +46,7 @@ class Mail:
             message = self.mailbox[idx - 1]
             cprint(f"From: {message['from']}", "light_blue")
             cprint(f"Subject: {message['subject']}", "light_blue")
-            print("")
+            print()
             cprint(message["message"], "light_blue")
             input("Press enter to return to menu")
             self.mailbox[idx - 1]["read"] = True
