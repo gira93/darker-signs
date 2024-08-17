@@ -40,8 +40,8 @@
   },
   "124.226.170.146": {
     "name": "biolabs.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "biolabs_com",
+    "class_name": "BiolabsCom",
     "port_mapping": {
       "80": "http_biolabs",
       "89": "xnull"

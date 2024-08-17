@@ -112,7 +112,7 @@ class Cli:
             print(f"Ports open for {server['name']}:")
             print()
             for port in server["port_mapping"].keys():
-                cprint(f"{port} -> {server['port_mapping'][port]}", "light_blue")
+                cprint(f"{port} -> [{server['port_mapping'][port]}]", "light_blue")
             print()
             return True
         else:
