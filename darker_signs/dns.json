@@ -646,8 +646,8 @@
   },
   "133.123.1.91": {
     "name": "decrypt.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "decrypt_com",
+    "class_name": "DecryptCom",
     "port_mapping": {
       "80": "decrypt_http"
     }
