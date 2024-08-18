@@ -634,8 +634,8 @@
   },
   "23.23.1.91": {
     "name": "zrio.org",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "zrio_org",
+    "class_name": "ZrioOrg",
     "port_mapping": {
       "25": "zrio_filetransfer",
       "45": "xcapro"
