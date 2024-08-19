@@ -657,8 +657,8 @@
   },
   "178.119.2.202": {
     "name": "security.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "security_com",
+    "class_name": "SecurityCom",
     "port_mapping": {
       "25": "securecommail",
       "80": "securecomhttp"
