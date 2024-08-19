@@ -57,6 +57,7 @@ class BiolabsNet:
                 selection = show_menu(options)
                 match selection:
                     case "1":
+                        print()
                         cprint("get extra income conditions apply .aff", "blue")
                         print("This is your chance to open a free online business.")
                         print("Just answer a few over the phone questions and you")
@@ -69,10 +70,11 @@ class BiolabsNet:
                             break
                         if mail_selection == "1":
                             input("Type a company name to forward to: ")
-                            break
+                            continue
                         else:
                             continue
                     case "2":
+                        print()
                         cprint("Re: Dolphin Project Update", "blue")
                         print(
                             "Hi guys... oh my... you have to see this. It's incredible!"
@@ -106,15 +108,17 @@ class BiolabsNet:
                             if company != "zrio":
                                 cprint("Unknown company", "red")
                                 return
-                            zrio_message = "They research on Dolphins then,\nthey are also near a breakthrough in their research!\nsomething is doesn't seems right though;\nthe encrypted part, why put that on a normal email?\nI've decrypted it and found an IP: 66.1.22.2\nit seems unreachable from my location (maybe firewall blocked)\nkeep searching."
+                            zrio_message = "They research on Dolphins then,\nthey are also near a breakthrough in their research!\nsomething doesn't seems right though;\nthe encrypted part, why put that on a normal email?\nI've decrypted it and found an IP near that location: 66.1.22.2\nit seems unreachable from where I am (maybe firewall blocked)\nkeep searching."
                             self.mail.add_message(
                                 from_user="zrio",
                                 subject="Re: Email",
                                 message=zrio_message,
                             )
+                            break
                         else:
                             continue
                     case "3":
+                        print()
                         cprint(
                             "AD: Are YOU Paying More than you should on Insurance?",
                             "blue",
@@ -128,7 +132,7 @@ class BiolabsNet:
                             break
                         if mail_selection == "1":
                             input("Type a company name to forward to: ")
-                            break
+                            continue
                         else:
                             continue
                     case _:

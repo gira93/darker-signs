@@ -6,23 +6,23 @@ from darker_signs.utils import show_menu
 VULNS = [
     {
         "title": "FuzzyMail Exploit",
-        "desc": "Some FuzzyMail servers have the default admin pass unchanged.\nThe default username is admin and the default pass is fuzzy",
+        "desc": 'Some FuzzyMail servers have the default admin pass unchanged.\nThe default username is "admin" and the default pass is "fuzzy"',
     },
     {
         "title": "XNull Exploit",
-        "desc": "By sending a malformed command, malicious users are able to copy files from the\nremote server. For example using\n 'run filecopy.exe [FILENAME]'",
+        "desc": 'By sending a malformed command, malicious users are able to copy files from the\nremote server. For example using\n "run filecopy.exe [FILENAME]"',
     },
     {
         "title": "JazzyWeb",
-        "desc": "It is possible to redirect a browser by entering\n'header::location::<server>'\n(where <server> is the destination) as a menu option",
+        "desc": 'It is possible to redirect a browser by entering\n"header::location::<server>"\n(where <server> is the destination) as a menu option',
     },
     {
         "title": "XFTP",
-        "desc": "There's a buffer overflow in some versions of Xftp.\nIf the buffer size of username or password is longer than 36 the application will crash to a command line",
+        "desc": "There's a buffer overflow in some versions of Xftp.\nIf the buffer size of username or password is longer than 36\nthe application will crash to a command line",
     },
     {
         "title": "Gunner Telnet",
-        "desc": "A user can run modules without permissions using the 'runmodule' command\n example:\n'runmodule uploadandrun()'\nWill allow the user to upload a file and run it automatically",
+        "desc": 'A user can run modules without permissions using the "runmodule" command\n example:\n"runmodule uploadandrun()"\nWill allow the user to upload a file and run it automatically',
     },
 ]
 
@@ -35,7 +35,7 @@ class SecurityCom:
 
     def securecommail(self):
         cprint(
-            "Warning - This is a private mail server.\nYou will be automatically disconnected if you are not part of our networkn",
+            "Warning - This is a private mail server.\nYou will be automatically disconnected if you are not part of our network",
             "red",
         )
         input("Press a key")
@@ -57,7 +57,7 @@ class SecurityCom:
                     continue
                 case "2":
                     cprint(
-                        "Search is currently disabled.\nAll exploits were moved to the 'recent' list",
+                        'Search is currently disabled.\nAll exploits were moved to the "recent" list',
                         "red",
                     )
                     input("Press a key")
