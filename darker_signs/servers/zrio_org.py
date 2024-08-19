@@ -26,15 +26,15 @@ class ZrioOrg:
             if upload_file(f"{self.root_path}/{file}"):
                 match file:
                     case "8m.enc":
-                        message = "Thanks for the file, it's good to have you on our side.\nUnfortunately, there's still a bit of a problem.\nYou see, the file you got for us is highly encrypted.\nAre you able to decrypt it?\n\nPerhaps you could try using the tools at decrypt.com...\nWhen asked who to send it to, type in ZRIO.\n\nHope to hear from you again."
+                        message = "This is an automated message\nThanks for the file, it's good to have you on our side.\nUnfortunately, the file you got for us is encrypted.\nAre you able to decrypt it?\n\nYou could try using the tools at decrypt.com...\nWhen asked who to send it to, type in ZRIO.\n\nHope to hear from you again."
                         self.mail.add_message(
-                            from_user="zrio.org", subject="8m.enc", message=message
+                            from_user="zrio", subject="8m.enc", message=message
                         )
                         break
                     case "cryptsetup.exe":
                         message = "Excellent work in getting the decryption software for us.\nWe have decrypted the hard drive.\nThere is one file we thought you should know about and have hosted it at ZRIO.org port 45.\nUsername zrio\nPassword geno38"
                         self.mail.add_message(
-                            from_user="zrio.org",
+                            from_user="zrio",
                             subject="cryptsetup.exe",
                             message=message,
                         )

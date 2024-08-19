@@ -27,7 +27,8 @@ class DecryptCom:
                 match file:
                     case "8m.enc":
                         security_message = "Hello Subscribers!\nThere has been a new bug found in a rare version of the FuzzyMail Server.\nCheck our website for more information\n\nRegards,\nDavid Ashburn\nSECURITY.com"
-                        zrio_message = "You did it! We recieved the decryption of the file successfully.\nThank you for your continued efforts.\n...we hope you don't mind doing a bit more work for us.\n\nnow, there is another file we need. 8m.enc was only half of it.\nWe need another file, it is called 9m.enc,\nfrom biolabs.com, we need it decrypted as well.\n\nGood Luck."
+                        zrio_message = "You did it! We recieved the decryption of the file successfully.\nThank you for your continued efforts.\n\nWe need another file called 9m.enc from biolabs.com, we need it decrypted as well.\n\nGood Luck."
+                        jimmy_message = "Who are you?\nYou should't be able to access this network.\nZRIO was working on this a long time ago, before I arrived, but it seems some servers are still up.\n\nThe initial investigations didn't go as planned\nI'll take over the automated mailbox from now on, continue your assignment"
                         self.mail.add_message(
                             from_user="security.com",
                             subject="MailingListNews",
@@ -36,14 +37,19 @@ class DecryptCom:
                         self.mail.add_message(
                             from_user="zrio", subject="decryption", message=zrio_message
                         )
+                        self.mail.add_message(
+                            from_user="jimmy@zrio",
+                            subject="Who are you?",
+                            message=jimmy_message,
+                        )
                         return
                     case "9m.enc":
-                        zrio_message = "I see that have developed a good working relationship.\nThis is the way it should always be.\nSee what else you can find around biolabs...\nPerhaps try biolabs.org, or similar servers.\nThere must be something..."
+                        zrio_message = "Ok, so the file is good, I pieced with the other one\nand it's another encrypted string; I'll work on that, in the meantime\nsee what else you can find around biolabs...\nPerhaps try biolabs.org, or similar servers.\nThere must be something..."
                         self.mail.add_message(
                             from_user="zrio", subject="Good...", message=zrio_message
                         )
                     case "10m.enc":
-                        zrio_message = f"We got the 10m.enc file. It is useless to us.\nCheck for other servers.\n\n\nThere may be something important in this IP range:66.7.1.1 to 66.7.115.255\n\nDig deep, {getuser()}, we are counting on you!"
+                        zrio_message = f"This doesn't seem to contain anything valuable.\nI was able to decrypt the combined files from before!\n\nThey contain an IP range:66.7.1.1 to 66.7.115.255\n\nTry a scan with scan.com.\nDig deep, {getuser()}, we are getting close!"
                         self.mail.add_message(
                             from_user="zrio", subject="10m.enc", message=zrio_message
                         )

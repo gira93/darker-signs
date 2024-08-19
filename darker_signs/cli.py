@@ -32,6 +32,9 @@ class Cli:
 
     def run(self) -> None:
         while True:
+            if self.mail.new_email():
+                cprint("New email received", "green")
+
             typed_command = input(f"{getuser()}@ds.net [{self.current_path}]: ")
             command = typed_command.split(" ")[0]
             params = typed_command.split(" ")[1:]

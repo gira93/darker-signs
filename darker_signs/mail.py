@@ -31,6 +31,9 @@ class Mail:
         )
         self.__save()
 
+    def new_email(self) -> bool:
+        return any(not m["read"] for m in self.mailbox)
+
     def __save(self) -> None:
         with open(self.mailbox_path, "w") as f:
             json.dump(self.mailbox, f, indent="\t")

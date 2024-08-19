@@ -4,8 +4,7 @@ This is a limited chroot environment that should be able to connect to ZRIO serv
 if they are still up.
 
 Check your email with the "mail" command,
-all ZRIO stuff should be automated (meaning there's no real person behind it)
-UNLESS stated otherwise.
+some of ZRIO stuff should be automated (meaning there's no real person behind it).
 
 Maybe you can succeed where all the others failed.
 

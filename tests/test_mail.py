@@ -79,3 +79,8 @@ def test_print_message_invalid(mock_print, mock_input, mail_obj):
     result = mail_obj._Mail__print_message("3")
     assert result is False
     mock_print.assert_called_once_with("Message not found")
+
+
+def test_new_email(mail_obj):
+    result = mail_obj.new_email()
+    assert result is True
