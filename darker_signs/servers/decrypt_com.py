@@ -44,7 +44,7 @@ class DecryptCom:
                         )
                         return
                     case "9m.enc":
-                        zrio_message = "Ok, so the file is good, I pieced with the other one\nand it's another encrypted string; I'll work on that, in the meantime\nsee what else you can find around biolabs...\nPerhaps try biolabs.org, or similar servers.\nThere must be something..."
+                        zrio_message = "File is good, I pieced it together with the other one\nand it's another encrypted string; I'll work on that, in the meantime\nsee what else you can find around biolabs...\nPerhaps try biolabs.org, or similar servers.\nThere must be something..."
                         self.mail.add_message(
                             from_user="zrio", subject="Good...", message=zrio_message
                         )

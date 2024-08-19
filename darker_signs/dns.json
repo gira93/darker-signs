@@ -61,8 +61,8 @@
   },
   "124.226.171.147": {
     "name": "biolabs.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "biolabs_net",
+    "class_name": "BiolabsNet",
     "port_mapping": {
       "80": "biolabsnethttp",
       "89": "xnullb",
@@ -94,8 +94,8 @@
   },
   "124.226.173.1": {
     "name": "research.biolabs.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "research_biolabs_net",
+    "class_name": "ResearchBiolabsNet",
     "port_mapping": {
       "80": "biolabsresearchhttp"
     }
