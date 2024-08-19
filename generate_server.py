@@ -39,7 +39,7 @@ class_template = [
 ]
 
 for port in server["port_mapping"].keys():
-    class_template.append(f"  def {server["port_mapping"][port]}(self):")
+    class_template.append(f"  def {server['port_mapping'][port]}(self):")
     class_template.append("    pass")
     class_template.append("")
 

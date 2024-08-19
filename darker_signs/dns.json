@@ -52,8 +52,8 @@
   },
   "124.226.171.146": {
     "name": "biolabs.org",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "biolabs.net": {
@@ -74,8 +74,8 @@
   },
   "12.202.203.19": {
     "name": "internal-191.ndrgrnd.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "ext12.pipelink.gov": {
@@ -105,8 +105,8 @@
   },
   "207.46.230.218": {
     "name": "micron.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "newpute.com": {
@@ -125,8 +125,8 @@
   },
   "135.107.230.109": {
     "name": "something.org",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "intservices.org": {
@@ -146,8 +146,8 @@
   },
   "100.55.86.162": {
     "name": "protovision.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "microfiles.net": {
@@ -155,8 +155,8 @@
   },
   "150.113.121.8": {
     "name": "microfiles.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "scan.com": {
@@ -197,8 +197,8 @@
   },
   "121.105.106.96": {
     "name": "superkool.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "intserv01.pipelink.gov": {
@@ -253,8 +253,8 @@
   },
   "66.1.24.1": {
     "name": "pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "oldgames.com": {
@@ -553,8 +553,8 @@
   },
   "90.92.127.65": {
     "name": "regdomainz.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "regdomainz.net": {
@@ -607,8 +607,8 @@
   },
   "121.133.61.245": {
     "name": "totalzero.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "webcache01.securedigital.com": {
@@ -616,8 +616,8 @@
   },
   "88.10.185.45": {
     "name": "webcache01.securedigital.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "darksigns.com": {
@@ -625,8 +625,8 @@
   },
   "64.63.125.72": {
     "name": "darksigns.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "zrio.org": {
@@ -802,8 +802,8 @@
   },
   "159.114.182.232": {
     "name": "libi.users.aci.edu",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "h4x0r.com": {
@@ -811,8 +811,8 @@
   },
   "188.174.32.138": {
     "name": "h4x0r.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "micm.yellow.com": {
@@ -820,8 +820,8 @@
   },
   "71.100.81.138": {
     "name": "micm.yellow.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "postbot.base43.philly.mil": {
@@ -829,8 +829,8 @@
   },
   "92.164.16.23": {
     "name": "postbot.base43.philly.mil",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {}
   },
   "codered.com": {

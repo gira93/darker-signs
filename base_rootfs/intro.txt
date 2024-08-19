@@ -8,7 +8,8 @@ some of ZRIO stuff should be automated (meaning there's no real person behind it
 
 Maybe you can succeed where all the others failed.
 
-Who am I? Someone that was able to dump the internal ZRIO code before they went down.
+Who am I? Someone that was able to dump the internal ZRIO code
+before the entire project was shut down without warning nor reason.
 
 Take a look at the readme.txt file I left in your root folder,
 just type "cat readme.txt", there's a small guide on how to use this environment.
