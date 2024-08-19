@@ -83,10 +83,10 @@
   },
   "66.1.22.2": {
     "name": "ext12.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "ext12_pipelink_gov",
+    "class_name": "Ext12PipelinkGov",
     "port_mapping": {
-      "179": "pipelink-networking"
+      "179": "pipelink_networking"
     }
   },
   "research.biolabs.net": {
@@ -206,8 +206,8 @@
   },
   "66.1.24.4": {
     "name": "intserv01.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_pipelink",
+    "class_name": "BasePipelink",
     "port_mapping": {
       "210": "sharedaccesspl"
     }
@@ -217,8 +217,8 @@
   },
   "66.1.24.5": {
     "name": "intserv02.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_pipelink",
+    "class_name": "BasePipelink",
     "port_mapping": {
       "210": "sharedaccesspl"
     }
@@ -332,8 +332,8 @@
   },
   "66.1.24.203": {
     "name": "intserv03.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_pipelink",
+    "class_name": "BasePipelink",
     "port_mapping": {
       "210": "sharedaccesspl"
     }
@@ -343,8 +343,8 @@
   },
   "66.1.24.204": {
     "name": "intserv04.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_pipelink",
+    "class_name": "BasePipelink",
     "port_mapping": {
       "210": "sharedaccesspl"
     }
@@ -354,8 +354,8 @@
   },
   "66.1.24.205": {
     "name": "intserv05.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_pipelink",
+    "class_name": "BasePipelink",
     "port_mapping": {
       "210": "sharedaccesspl"
     }
@@ -365,8 +365,8 @@
   },
   "66.1.24.206": {
     "name": "intserv06.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_pipelink",
+    "class_name": "BasePipelink",
     "port_mapping": {
       "210": "sharedaccesspl"
     }
@@ -376,8 +376,8 @@
   },
   "66.1.24.207": {
     "name": "intserv07.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_pipelink",
+    "class_name": "BasePipelink",
     "port_mapping": {
       "210": "sharedaccesspl"
     }
@@ -387,8 +387,8 @@
   },
   "66.1.24.208": {
     "name": "intserv08.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_pipelink",
+    "class_name": "BasePipelink",
     "port_mapping": {
       "210": "sharedaccesspl"
     }
@@ -398,8 +398,8 @@
   },
   "66.1.24.209": {
     "name": "intserv09.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "intserv09_pipelink_gov",
+    "class_name": "Intserv09PipelinkGov",
     "port_mapping": {
       "210": "sharedaccespl"
     }
@@ -409,8 +409,8 @@
   },
   "66.1.24.210": {
     "name": "intserv10.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_pipelink",
+    "class_name": "BasePipelink",
     "port_mapping": {
       "210": "sharedaccesspl"
     }
@@ -420,8 +420,8 @@
   },
   "66.1.24.211": {
     "name": "intserv11.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_pipelink",
+    "class_name": "BasePipelink",
     "port_mapping": {
       "210": "sharedaccesspl"
     }
@@ -431,8 +431,8 @@
   },
   "66.1.24.212": {
     "name": "intserv12.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_pipelink",
+    "class_name": "BasePipelink",
     "port_mapping": {
       "210": "sharedaccesspl"
     }
