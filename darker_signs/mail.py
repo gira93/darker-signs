@@ -20,16 +20,27 @@ class Mail:
             print()
             self.__print_message(message_id)
 
-    def add_message(self, *, from_user: str, subject: str, message: str) -> None:
-        self.mailbox.append(
-            {
-                "from": from_user,
-                "subject": subject,
-                "message": message,
-                "read": False,
-            }
+    def add_message(self, *, from_user: str, subject: str, message: str) -> bool:
+        is_present = next(
+            (
+                m
+                for m in self.mailbox
+                if m["from"] == from_user and m["subject"] == subject
+            ),
+            None,
         )
-        self.__save()
+        if not is_present:
+            self.mailbox.append(
+                {
+                    "from": from_user,
+                    "subject": subject,
+                    "message": message,
+                    "read": False,
+                }
+            )
+            self.__save()
+            return True
+        return False
 
     def new_email(self) -> bool:
         return any(not m["read"] for m in self.mailbox)

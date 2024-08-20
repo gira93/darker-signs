@@ -186,8 +186,8 @@
   },
   "12.12.198.201": {
     "name": "find.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "find_com",
+    "class_name": "FindCom",
     "port_mapping": {
       "80": "http_find"
     }
@@ -228,8 +228,8 @@
   },
   "66.7.82.99": {
     "name": "internal-9.ndrgrnd.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "internal_pipelink",
+    "class_name": "InternalPipelink",
     "port_mapping": {
       "80": "int9http",
       "81": "int9secure",
@@ -596,8 +596,8 @@
   },
   "229.63.170.8": {
     "name": "internic.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "internic_net",
+    "class_name": "InternicNet",
     "port_mapping": {
       "80": "http_internic"
     }

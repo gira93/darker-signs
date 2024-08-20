@@ -23,10 +23,13 @@ def upload_file(absolute_path: str) -> bool:
         return False
 
 
-def download_file(absolute_path: str, contents: str = "") -> bool:
+def download_file(
+    absolute_path: str, contents: str = "", progress: bool = True
+) -> bool:
     with open(absolute_path, "w") as f:
         f.write(contents)
-    progress_bar(max=100, step=0.02)
+    if progress:
+        progress_bar(max=100, step=0.02)
     return True
 
 
