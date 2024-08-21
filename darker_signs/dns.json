@@ -4,32 +4,26 @@
   },
   "17.191.200.201": {
     "name": "proxy.securedigital.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
-    "port_mapping": {
-      "109": "wingate_proxy"
-    }
+    "module_name": "unavailable",
+    "class_name": "unavailable",
+    "port_mapping": {}
   },
   "webcache02.securedigital.com": {
     "alias": "64.114.9.241"
   },
   "64.114.9.241": {
     "name": "webcache02.securedigital.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
-    "port_mapping": {
-      "25": "sendmail_22",
-      "80": "secure_http",
-      "505": "cache_manager"
-    }
+    "module_name": "unavailable",
+    "class_name": "unavailable",
+    "port_mapping": {}
   },
   "securedigital.com": {
     "alias": "64.114.9.220"
   },
   "64.114.9.220": {
     "name": "securedigital.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "securedigital_com",
+    "class_name": "SecuredigitalCom",
     "port_mapping": {
       "25": "sendmail_22",
       "80": "secure_http"
@@ -114,8 +108,8 @@
   },
   "12.54.124.65": {
     "name": "newpute.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "newpute_com",
+    "class_name": "NewputeCom",
     "port_mapping": {
       "96": "npbbs"
     }
@@ -175,11 +169,9 @@
   },
   "12.78.38.92": {
     "name": "depressed.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
-    "port_mapping": {
-      "80": "depressed_http"
-    }
+    "module_name": "unavailable",
+    "class_name": "unavailable",
+    "port_mapping": {}
   },
   "find.com": {
     "alias": "12.12.198.201"
@@ -275,8 +267,8 @@
   },
   "64.114.10.143": {
     "name": "jobs.securedigital.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "jobs_secure",
+    "class_name": "JobsSecure",
     "port_mapping": {
       "80": "jobs_sd_http"
     }
@@ -573,11 +565,9 @@
   },
   "82.1.1.233": {
     "name": "depressed.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
-    "port_mapping": {
-      "80": "depressed_http"
-    }
+    "module_name": "unavailable",
+    "class_name": "unavailable",
+    "port_mapping": {}
   },
   "internalservices.org": {
     "alias": "182.16.155.162"
@@ -669,8 +659,8 @@
   },
   "179.134.202.252": {
     "name": "micmast.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "micmast_com",
+    "class_name": "MicmastCom",
     "port_mapping": {
       "25": "webmail",
       "80": "website"
@@ -681,8 +671,8 @@
   },
   "196.194.132.66": {
     "name": "specialstorage.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "specialstorage_com",
+    "class_name": "SpecialstorageCom",
     "port_mapping": {
       "80": "specialstorage"
     }
