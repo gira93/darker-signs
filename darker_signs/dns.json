@@ -233,10 +233,10 @@
   },
   "66.199.200.203": {
     "name": "base09.pipelink.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base09_pipelink",
+    "class_name": "Base09Pipelink",
     "port_mapping": {
-      "78": "remote_res-29",
+      "78": "remote_res_29",
       "80": "http_09pipelink"
     }
   },
@@ -434,8 +434,8 @@
   },
   "90.92.106.1": {
     "name": "regd1.regdomainz.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_regdomainz",
+    "class_name": "BaseRegdomainz",
     "port_mapping": {
       "89": "xnullrd"
     }
@@ -445,8 +445,8 @@
   },
   "90.92.109.119": {
     "name": "regd119.regdomainz.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_regdomainz",
+    "class_name": "BaseRegdomainz",
     "port_mapping": {
       "89": "xnullrd"
     }
@@ -456,8 +456,8 @@
   },
   "90.92.122.74": {
     "name": "regd74.regdomainz.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_regdomainz",
+    "class_name": "BaseRegdomainz",
     "port_mapping": {
       "89": "xnullrd"
     }
@@ -467,8 +467,8 @@
   },
   "90.92.167.82": {
     "name": "regd82.regdomainz.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_regdomainz",
+    "class_name": "BaseRegdomainz",
     "port_mapping": {
       "89": "xnullrd"
     }
@@ -478,8 +478,8 @@
   },
   "90.92.167.203": {
     "name": "regd203.regdomainz.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_regdomainz",
+    "class_name": "BaseRegdomainz",
     "port_mapping": {
       "89": "xnullrd"
     }
@@ -489,8 +489,8 @@
   },
   "90.92.168.204": {
     "name": "regd204.regdomainz.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "regd204_regdomainz",
+    "class_name": "Regd204Regdomainz",
     "port_mapping": {
       "89": "xnullrg",
       "809": "fuzzymail82"
@@ -501,8 +501,8 @@
   },
   "90.92.181.242": {
     "name": "regd242.regdomainz.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_regdomainz",
+    "class_name": "BaseRegdomainz",
     "port_mapping": {
       "89": "xnullrd"
     }
@@ -512,8 +512,8 @@
   },
   "90.92.184.12": {
     "name": "regd12.regdomainz.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "base_regdomainz",
+    "class_name": "BaseRegdomainz",
     "port_mapping": {
       "89": "xnullrd"
     }
@@ -523,8 +523,8 @@
   },
   "90.92.184.3": {
     "name": "regadmin.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "regadmin_net",
+    "class_name": "RegadminNet",
     "port_mapping": {
       "80": "http_regadmin"
     }
@@ -554,8 +554,8 @@
   },
   "90.92.127.66": {
     "name": "regdomainz.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "regdomainz_net",
+    "class_name": "RegdomainzNet",
     "port_mapping": {
       "80": "http_regdomainz"
     }
