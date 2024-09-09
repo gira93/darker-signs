@@ -118,8 +118,6 @@ class ZrioOrg:
             "120.106.216.70",
             "51.136.67.87",
             "103.45.33.3",
-            "-----------------------------",
-            "Once you have the installer, upload it to ZRIO.org",
         ]
         download_file(f"{self.root_path}/ips.txt", "\n".join(ips))
         cprint("File downloaded to ips.txt", "green")

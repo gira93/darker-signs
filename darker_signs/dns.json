@@ -704,19 +704,19 @@
   },
   "110.65.132.183": {
     "name": "db.postoffice.mil",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "db_postoffice_mil",
+    "class_name": "DbPostofficeMil",
     "port_mapping": {
       "845": "fcdb"
     }
   },
-  "FCDB.com": {
+  "fcdb.com": {
     "alias": "13.111.55.155"
   },
   "13.111.55.155": {
-    "name": "FCDB.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "name": "fcdb.com",
+    "module_name": "fcdb_com",
+    "class_name": "FcdbCom",
     "port_mapping": {
       "80": "fcdb80"
     }
@@ -726,8 +726,8 @@
   },
   "158.137.81.181": {
     "name": "postoffice.mil",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "postoffice_mil",
+    "class_name": "PostofficeMil",
     "port_mapping": {
       "80": "post80"
     }
@@ -737,8 +737,8 @@
   },
   "244.223.167.14": {
     "name": "prx.postoffice.mil",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "prx_postoffice_mil",
+    "class_name": "PrxPostofficeMil",
     "port_mapping": {
       "91": "prx91"
     }
@@ -748,19 +748,17 @@
   },
   "103.45.32.3": {
     "name": "dns.yippieisp.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
-    "port_mapping": {
-      "53": "dns53"
-    }
+    "module_name": "unavailable",
+    "class_name": "unavailable",
+    "port_mapping": {}
   },
   "xftp.com": {
     "alias": "11.213.188.78"
   },
   "11.213.188.78": {
     "name": "xftp.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "xftp_com",
+    "class_name": "XftpCom",
     "port_mapping": {
       "80": "xftp80"
     }
@@ -770,8 +768,8 @@
   },
   "115.113.51.237": {
     "name": "go.philly.mil",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "go_philly_mil",
+    "class_name": "GoPhillyMil",
     "port_mapping": {
       "25": "xftp25"
     }
@@ -781,11 +779,9 @@
   },
   "130.239.47.117": {
     "name": "cheaphosting.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
-    "port_mapping": {
-      "80": "cheap80"
-    }
+    "module_name": "unavailable",
+    "class_name": "unavailable",
+    "port_mapping": {}
   },
   "libi.users.aci.edu": {
     "alias": "159.114.182.232"
