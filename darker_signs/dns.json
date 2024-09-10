@@ -846,8 +846,8 @@
   },
   "15.217.118.162": {
     "name": "crackertools.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "crackertools_com",
+    "class_name": "CrackertoolsCom",
     "port_mapping": {
       "80": "cracker80"
     }

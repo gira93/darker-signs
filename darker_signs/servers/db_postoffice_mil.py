@@ -11,7 +11,6 @@ class DbPostofficeMil:
         self.dns = dns
 
     def fcdb(self):
-        print()
         cprint("FirstClass Software 1989-2003 fcdb.com", "blue")
         print()
         user = 100

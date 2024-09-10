@@ -32,11 +32,24 @@ class ZrioOrg:
                         )
                         break
                     case "cryptsetup.exe":
-                        message = "Excellent work in getting the decryption software for us.\nWe have decrypted the hard drive.\nThere is one file we thought you should know about and have hosted it at ZRIO.org port 45.\nUsername zrio\nPassword geno38"
+                        jimmy_message = [
+                            "Thanks for the file, I'm running the decryption right now.",
+                            "I have bad news: they know about what we are doing!",
+                            "They deactivated my account on zrio (but I was able to keep my backdoor open)",
+                            "We need to crash this subnet",
+                            "There are 2 websites that have a connection with the outside network:",
+                            "- fbi.gov",
+                            "- zrio.org",
+                            "That's why my backdoor also works from where I am."
+                            "DDoSing both should also crash the respective server in the open web",
+                            "Take a look at crackertools.com, they have a tool for that,",
+                            "I'll do the same, you should try and have at least 9 servers hacked and ready",
+                            "We'll keep in touch",
+                        ]
                         self.mail.add_message(
-                            from_user="zrio",
-                            subject="cryptsetup.exe",
-                            message=message,
+                            from_user="jimmy@personal.com",
+                            subject="Not so good",
+                            message="\n".join(jimmy_message),
                         )
                         break
                     case _:

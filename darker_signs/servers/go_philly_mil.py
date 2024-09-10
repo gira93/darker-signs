@@ -1,6 +1,7 @@
 from termcolor import cprint
 from darker_signs.dns import Dns
 from darker_signs.mail import Mail
+from darker_signs.utils import download_file
 
 
 class GoPhillyMil:
@@ -10,11 +11,11 @@ class GoPhillyMil:
         self.dns = dns
 
     def xftp25(self):
-        print()
         cprint("Welcome to XFTP v1.0", "green")
         cprint("Check out xftp.com for more informations")
         print()
         user = 100
+        server_running = True
         while user == 100:
             command = input("> ")
             match command:
@@ -23,9 +24,11 @@ class GoPhillyMil:
                     pw = input("Pass: ")
                     if len(user) >= 36 or len(pw) >= 36:
                         user = 101
-                        cprint("Seg fault in process xftp.exe", "red")
+                        server_running = False
+                        cprint("Segmentation fault in process xftp.exe", "red")
                         cprint("Process killed", "red")
                         print("Logged in as user xftp")
+                        break
                     else:
                         cprint("Wrong User or Password", "red")
                         continue
@@ -45,10 +48,16 @@ class GoPhillyMil:
                     print("Specify an executable, eg. run <program>")
                     continue
                 case "run xftp.exe":
-                    user = 100
+                    cprint("XFTP server started, please reconnect", "green")
+                    server_running = True
                     continue
                 case "run xftp.exe --debug":
-                    user = 0
+                    if not server_running:
+                        user = 0
+                        break
+                    else:
+                        cprint("XFTP is already running, please close it first", "red")
+                        continue
                 case "ls":
                     print("xftp.exe  init.conf")
                     continue
@@ -59,3 +68,44 @@ class GoPhillyMil:
                 case "exit":
                     cprint("Connection closed", "red")
                     return
+                case _:
+                    continue
+        while user == 0:
+            command = input("#> ")
+            match command:
+                case "run":
+                    print("Specify an executable, eg. run <program>")
+                    continue
+                case "ls":
+                    print("cryptsetup.exe  user.txt  notes.txt")
+                    continue
+                case "get":
+                    print("Specify a filename, eg. get <filename>")
+                    continue
+                case "get cryptsetup.exe":
+                    download_file(f"{self.root_path}/cryptsetup.exe", "CRYPTFNEC")
+                    cprint("cryptsetup.exe donloaded", "green")
+                    continue
+                case "get user.txt":
+                    download_file(
+                        f"{self.root_path}/user.txt",
+                        "guest::/home/guest\nxftp::/home/xftp\nroot::/root",
+                    )
+                    cprint("user.txt downloaded", "green")
+                    continue
+                case "get notes.txt":
+                    download_file(
+                        f"{self.root_path}/notes.txt",
+                        "Remember to update XFTP.\nMove crypting software somewhere else.",
+                    )
+                    cprint("notes.txt downloaded", "green")
+                    continue
+                case "help":
+                    print("Available commands:")
+                    print("run  ls  get  exit  help")
+                    continue
+                case "exit":
+                    cprint("Connection closed", "red")
+                    return
+                case _:
+                    continue

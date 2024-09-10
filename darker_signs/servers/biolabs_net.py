@@ -108,7 +108,7 @@ class BiolabsNet:
                             if company != "zrio":
                                 cprint("Unknown company", "red")
                                 return
-                            zrio_message = "They research on Dolphins then,\nthey are also near a breakthrough in their research!\nsomething doesn't seems right though;\nthe encrypted part, why put that on a normal email?\nI've decrypted it and found an IP near that location: 66.1.22.2\nit seems unreachable from where I am (maybe firewall blocked)\nkeep searching."
+                            zrio_message = "They research on Dolphins then.\nsomething doesn't seems right though;\nthe encrypted part, why put that on a normal email?\nI've decrypted it and found an IP near that location: 66.1.22.2\nit seems unreachable from where I am (maybe firewall blocked)\nkeep searching."
                             self.mail.add_message(
                                 from_user="zrio",
                                 subject="Re: Email",

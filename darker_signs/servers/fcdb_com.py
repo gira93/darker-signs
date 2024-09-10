@@ -11,7 +11,6 @@ class FcdbCom:
         self.dns = dns
 
     def fcdb80(self):
-        print()
         cprint("Welcome to FirstClass DataBase website", "green")
         cprint("FirstClass Software 1989-2003 FCDB.com")
         print()

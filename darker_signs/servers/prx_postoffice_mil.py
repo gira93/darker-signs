@@ -10,7 +10,6 @@ class PrxPostofficeMil:
         self.dns = dns
 
     def prx91(self):
-        print()
         while True:
             command = input("> ")
             if command == "getdb()":

@@ -28,7 +28,7 @@ class DecryptCom:
                     case "8m.enc":
                         security_message = "Hello Subscribers!\nThere has been a new bug found in a rare version of the FuzzyMail Server.\nCheck our website for more information\n\nRegards,\nDavid Ashburn\nSECURITY.com"
                         zrio_message = "You did it! We recieved the decryption of the file successfully.\nThank you for your continued efforts.\n\nWe need another file called 9m.enc from biolabs.com, we need it decrypted as well.\n\nGood Luck."
-                        jimmy_message = "Who are you?\nYou should't be able to access this network.\nZRIO was working on this a long time ago, before I arrived.\nThe project was shut down but it seems some servers are still up.\n\nThe initial investigations didn't go as planned\nI'll take over the automated mailbox from now on, continue your assignment"
+                        jimmy_message = "Who are you?\nYou should't be able to access this network.\n I'm monitoring this network for ZRIO, we work together with hackers to keep the world safe.\nSince you were able to enter here, I think you could help us!\nI'll take over the automated mailbox from now on, continue your assignment as requested"
                         self.mail.add_message(
                             from_user="security.com",
                             subject="MailingListNews",
