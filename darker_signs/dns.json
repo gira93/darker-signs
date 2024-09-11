@@ -824,8 +824,8 @@
   },
   "12.251.108.215": {
     "name": "codered.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "codered_com",
+    "class_name": "CoderedCom",
     "port_mapping": {
       "80": "code80"
     }
@@ -835,8 +835,8 @@
   },
   "120.118.56.243": {
     "name": "telnet.happyhackers.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "telnet_happyhackers_net",
+    "class_name": "TelnetHappyhackersNet",
     "port_mapping": {
       "23": "happy23"
     }
@@ -857,8 +857,8 @@
   },
   "203.195.219.146": {
     "name": "crashme.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "crashme_com",
+    "class_name": "CrashmeCom",
     "port_mapping": {
       "80": "crash80"
     }
@@ -868,8 +868,8 @@
   },
   "45.93.67.211": {
     "name": "ftp.blindballet.org",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "ftp_ballet",
+    "class_name": "FtpBallet",
     "port_mapping": {
       "21": "blind21"
     }
@@ -879,8 +879,8 @@
   },
   "49.78.59.116": {
     "name": "ftp.stlukes.christ.org",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "ftp_christ",
+    "class_name": "FtpChrist",
     "port_mapping": {
       "21": "christ21"
     }
@@ -902,8 +902,8 @@
   },
   "62.146.78.98": {
     "name": "media.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "media_net",
+    "class_name": "MediaNet",
     "port_mapping": {
       "23": "media23"
     }
@@ -913,8 +913,8 @@
   },
   "63.6.246.217": {
     "name": "ftp.willowfootball.org",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "ftp_willowfootball_org",
+    "class_name": "FtpWillowfootballOrg",
     "port_mapping": {
       "21": "willow21"
     }
@@ -924,8 +924,8 @@
   },
   "66.138.242.249": {
     "name": "telnet.globalsport.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "telnet_globalsport_com",
+    "class_name": "TelnetGlobalsportCom",
     "port_mapping": {
       "23": "global23"
     }
@@ -935,8 +935,8 @@
   },
   "68.159.4.98": {
     "name": "telnet.pokemonworld.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "telnet_pokemonworld_com",
+    "class_name": "TelnetPokemonworldCom",
     "port_mapping": {
       "23": "poke23"
     }
@@ -957,8 +957,8 @@
   },
   "93.202.10.80": {
     "name": "hackme.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "hackme_com",
+    "class_name": "HackmeCom",
     "port_mapping": {
       "80": "hack80"
     }

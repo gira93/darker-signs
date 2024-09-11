@@ -26,6 +26,7 @@ module_name = args.module_name
 class_name = args.class_name
 
 class_template = [
+    "from termcolor import cprint",
     "from darker_signs.dns import Dns",
     "from darker_signs.mail import Mail",
     "",
