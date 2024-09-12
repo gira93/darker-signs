@@ -43,9 +43,6 @@ def show_menu(
     for idx, option in enumerate(options):
         formatted_options += f"{idx + 1}) {option}\n"
     formatted_options += f"\n0) {abort_message}"
-    valid_inputs = [str(x) for x in range(0, len(options) + 1)]
-    while True:
-        cprint(formatted_options, "blue")
-        selection = input(f"{selection_message}: ")
-        if selection in valid_inputs:
-            return selection
+    cprint(formatted_options, "blue")
+    selection = input(f"{selection_message}: ")
+    return selection
