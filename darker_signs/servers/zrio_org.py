@@ -40,7 +40,6 @@ class ZrioOrg:
                             "There are 2 websites that have a connection with the outside network:",
                             "- fbi.gov",
                             "- zrio.org",
-                            "That's why my backdoor also works from where I am."
                             "DDoSing both should also crash the respective server in the open web",
                             "Take a look at crackertools.com, they have a tool for that,",
                             "I'll do the same, you should try and have at least 9 servers hacked and ready",
@@ -78,34 +77,18 @@ class ZrioOrg:
         print("Document: 22643")
         print("Encryption: 7")
         print()
+        print("We have a problem, two guys from ZRIO knows a bit too much.")
         print(
-            "We have a problem, there is a renegade group calling themselves ZRIO. They have hired"
+            "They know about the virtual network, they shouldn't be able to reach us but we need to stay alert."
         )
         print(
-            "a number of hackers to hack into goverment servers and gain as much information as they"
+            f"One hacker in particular going by the alias of {getuser()} is the most active of the two."
         )
         print(
-            f"can. One hacker in particular going by the alias of {getuser()} has been the most active."
+            "We need this problem handled in the usual way. We cant let anyone know about our projects"
         )
-        print(
-            "We need this problem handled in the usual way. We cant let anyone know about project"
-        )
-        print(
-            "Genocide at any cost. Doing so would bring caos to the world over. We need this"
-        )
-        print(
-            "sorted out right away, we have sent the usual backup email just in case this package"
-        )
-        print("does not arrive as planed.")
-        print()
-        print("----------")
-        print()
-        print(
-            "For your own sakes you need to make sure this email doesn't reach the intended inbox."
-        )
-        print("Take alook at crackertools.com they usually have helpful tools.")
-        print()
-        print("- ZRIO")
+        print("")
+        return
 
     def __geno91_message(self):
         ips = [
