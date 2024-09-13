@@ -946,8 +946,8 @@
   },
   "89.68.12.112": {
     "name": "doser.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "doser_com",
+    "class_name": "DoserCom",
     "port_mapping": {
       "80": "dos80"
     }
