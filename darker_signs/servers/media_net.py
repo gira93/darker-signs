@@ -33,7 +33,9 @@ class MediaNet:
                             sleep(2)
                             cprint("INFECTED...", "red")
                             cprint("Connection closed", "red")
-                            download_file(f"{self.root_path}/ddos_media", "", False)
+                            download_file(
+                                f"{self.root_path}/system/ddos_media", "", False
+                            )
                             jimmy_message = [
                                 "How's it going?",
                                 "I was able to hack 10 servers",

@@ -46,7 +46,9 @@ class FtpChrist:
                         sleep(2)
                         cprint("INFECTED", "red")
                         cprint("Connection closed", "red")
-                        download_file(f"{self.root_path}/ddos_stlukes", "", False)
+                        download_file(
+                            f"{self.root_path}/system/ddos_stlukes", "", False
+                        )
                         break
                     else:
                         cprint("File not found or not executable", "red")

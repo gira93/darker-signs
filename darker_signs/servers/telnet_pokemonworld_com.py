@@ -33,7 +33,9 @@ class TelnetPokemonworldCom:
                             sleep(2)
                             cprint("INFECTED...", "red")
                             cprint("Connection closed", "red")
-                            download_file(f"{self.root_path}/ddos_pokeworld", "", False)
+                            download_file(
+                                f"{self.root_path}/system/ddos_pokeworld", "", False
+                            )
                             break
                         else:
                             cprint("File not compatible", "red")

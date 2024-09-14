@@ -34,7 +34,7 @@ class TelnetGlobalsportCom:
                             cprint("INFECTED...", "red")
                             cprint("Connection closed", "red")
                             download_file(
-                                f"{self.root_path}/ddos_globalsport", "", False
+                                f"{self.root_path}/system/ddos_globalsport", "", False
                             )
                             break
                         else:

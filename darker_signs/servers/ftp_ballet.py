@@ -46,7 +46,7 @@ class FtpBallet:
                         sleep(2)
                         cprint("INFECTED", "red")
                         cprint("Connection closed", "red")
-                        download_file(f"{self.root_path}/ddos_ballet", "", False)
+                        download_file(f"{self.root_path}/system/ddos_ballet", "", False)
                         break
                     else:
                         cprint("File not found or not executable", "red")

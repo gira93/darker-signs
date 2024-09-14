@@ -79,7 +79,9 @@ class CoderedCom:
                         sleep(2)
                         cprint("INFECTED", "red")
                         cprint("Connection closed", "red")
-                        download_file(f"{self.root_path}/ddos_codered", "", False)
+                        download_file(
+                            f"{self.root_path}/system/ddos_codered", "", False
+                        )
                         break
                     continue
                 case "upload":

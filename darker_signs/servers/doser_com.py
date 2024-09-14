@@ -29,7 +29,7 @@ class DoserCom:
         print()
         cprint("Connecting to servers...", "yellow")
         sleep(2)
-        _, _, files = next(os.walk(self.root_path))
+        _, _, files = next(os.walk(f"{self.root_path}/system"))
         ddos_files = list(filter(lambda f: f.startswith("ddos_"), files))
         if len(ddos_files) == DDOS_SERVERS:
             progress_bar()
@@ -41,9 +41,9 @@ class DoserCom:
                 cprint("DDoSing ...", "green")
                 progress_bar()
                 cprint("Target DDoSed!", "green")
-                download_file(f"{self.root_path}/down_{host}", "", False)
-                zrio_down = os.path.isfile(f"{self.root_path}/down_zrio.org")
-                fbi_down = os.path.isfile(f"{self.root_path}/down_fbi.gov")
+                download_file(f"{self.root_path}/system/down_{host}", "", False)
+                zrio_down = os.path.isfile(f"{self.root_path}/system/down_zrio.org")
+                fbi_down = os.path.isfile(f"{self.root_path}/system/down_fbi.gov")
                 if zrio_down and fbi_down:
                     jimmy_message = [
                         "We did it!, YOU did it!",

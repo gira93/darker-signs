@@ -138,7 +138,7 @@ class HackmeCom:
                         sleep(2)
                         cprint("INFECTED", "red")
                         cprint("Connection closed", "red")
-                        download_file(f"{self.root_path}/ddos_hackme", "", False)
+                        download_file(f"{self.root_path}/system/ddos_hackme", "", False)
                         return
                     continue
                 case "get":
