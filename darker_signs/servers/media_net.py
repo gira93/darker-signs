@@ -41,7 +41,7 @@ class MediaNet:
                                 "I was able to hack 10 servers",
                                 "and added them to our little botnet.",
                                 "If you get at least 9 we're good to go.",
-                                "We need to hurry though, FBI is on our tail;",
+                                "We need to hurry though, FBI is on our trail;",
                                 "There was a message encrypted in the USB drive,",
                                 "you can take a look, I've left it in the zrio virtual fs at zrio.org",
                                 "port 45, user: zrio, pass: geno38",

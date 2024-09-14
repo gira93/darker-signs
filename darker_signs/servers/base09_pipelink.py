@@ -19,9 +19,7 @@ class Base09Pipelink:
             match command:
                 case "help":
                     print("Commands")
-                    commands = ["help", "keycode", "mod", "reset"]
-                    if keycode == "441":
-                        commands.append("connect")
+                    commands = ["help", "keycode", "mod", "reset", "connect"]
                     print(", ".join(commands))
                     continue
                 case "keycode":
@@ -40,6 +38,7 @@ class Base09Pipelink:
                 case "connect":
                     if keycode == "441":
                         break
+                    cprint("Unauthorized", "red")
                     continue
         while keycode == "441":
             print()
@@ -145,13 +144,13 @@ class Base09Pipelink:
                 case "3":
                     print()
                     share = input(
-                        "Enter a name of a registered organizations to share access with..."
+                        "Enter a name of a registered organizations to share access with: "
                     )
                     if share == "zrio":
                         message = [
                             "We have dolphins, the government and now nazis!",
                             "Sounds like a big conspiracy theory to me.",
-                            "In fact, I was conducting some investigations myself buy I need your help with something to prove it;"
+                            "In fact, I was conducting some investigations myself buy I need your help with something to prove it;",
                             "I was able to track a package that's going through the military Post Office.",
                             "You need to track it down and deliver it to me.",
                             "Package number is: 883597",

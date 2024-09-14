@@ -1,6 +1,7 @@
 from termcolor import cprint
 from darker_signs.dns import Dns
 from darker_signs.mail import Mail
+from darker_signs.utils import show_menu
 
 
 class RegadminNet:
@@ -29,14 +30,25 @@ class RegadminNet:
                 "Disabled for Maintenance",
                 "Disabled for Maintenance",
             ]
-            if options == "1":
-                cprint("Account Domains", "blue")
-                print()
-                print("internal-9.ndrgrnd.pipelink.gov : 66.7.82.99")
-                print("base09.pipelink.gov : 66.199.200.203")
-                print()
-                return
-            else:
-                return
+            while True:
+                selection = show_menu(options)
+                match selection:
+                    case "1":
+                        cprint("Account Domains", "blue")
+                        print()
+                        print("internal-9.ndrgrnd.pipelink.gov : 66.7.82.99")
+                        print("base09.pipelink.gov : 66.199.200.203")
+                        print()
+                        input("Press a key")
+                        continue
+                    case "2" | "3":
+                        print()
+                        cprint("Disabled for maintenance", "red")
+                        print()
+                        input("Press a key")
+                        continue
+                    case _:
+                        cprint("Connection closed", "red")
+                        break
         else:
             cprint("Invalid username or password", "red")

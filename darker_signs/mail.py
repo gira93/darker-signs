@@ -14,7 +14,7 @@ class Mail:
             self.__print_mailbox()
             print()
             message_id = input("Type message number or 0 to exit: ")
-            if message_id == "0":
+            if message_id == "0" or message_id == "":
                 self.__save()
                 break
             print()

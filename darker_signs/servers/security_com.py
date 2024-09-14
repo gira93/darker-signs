@@ -48,6 +48,7 @@ class SecurityCom:
                 "View Recent Vulnerability List",
                 "Search Exploit / Vulnerability Archives",
                 "Submit Exploit / Vulnerability",
+                "Useful Tools",
                 "About SECURITY.com",
             ]
             selection = show_menu(options, abort_message="Disconnect")
@@ -75,6 +76,18 @@ class SecurityCom:
                     continue
                 case "4":
                     print()
+                    cprint("Here are some useful online tools:", "green")
+                    print()
+                    tools = [
+                        "- decrypt.com -- Decryption utility",
+                        "- scan.com -- IP Range scanner",
+                    ]
+                    cprint("\n".join(tools), "blue")
+                    print()
+                    input("Press a key")
+                    continue
+                case "5":
+                    print()
                     print(
                         "SECURITY.com provides a public information base for matters relating to"
                     )
@@ -92,6 +105,8 @@ class SecurityCom:
         options = list(map(lambda v: v["title"], VULNS))
         while True:
             selection = show_menu(options)
+            if selection == "":
+                break
             selection = int(selection)
             if selection == 0:
                 break

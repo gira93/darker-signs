@@ -11,7 +11,7 @@ class InternalPipelink:
         self.dns = dns
 
     def int9http(self):
-        message = f"Newsletter Hi {getuser()},\n\nWe have finished upgrading our database and our website\nis now back up and running.\n\nThank you,\nBarry Simons\nFIND.com President"
+        message = f"Hi {getuser()},\n\nWe have finished upgrading our database and our website\nis now back up and running.\n\nThank you,\nBarry Simons\nFIND.com President"
         self.mail.add_message(
             from_user="find.com", subject="Newsletter", message=message
         )

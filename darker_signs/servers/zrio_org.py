@@ -13,7 +13,7 @@ class ZrioOrg:
         self.dns = dns
 
     def zrio_filetransfer(self):
-        if os.path.isfile(f"{self.root_path}/down_zrio.org"):
+        if os.path.isfile(f"{self.root_path}/system/down_zrio.org"):
             cprint("Error: unable to load script", "red")
             cprint("Contact the administrator", "red")
             return
@@ -67,7 +67,7 @@ class ZrioOrg:
                 continue
 
     def xcapro(self):
-        if os.path.isfile(f"{self.root_path}/down_zrio.org"):
+        if os.path.isfile(f"{self.root_path}/system/down_zrio.org"):
             cprint("Error: unable to load script", "red")
             cprint("Contact the administrator", "red")
             return

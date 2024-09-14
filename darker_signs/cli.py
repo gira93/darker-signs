@@ -53,8 +53,8 @@ class Cli:
 
     def __ls(self, _) -> bool:
         _, dirs, files = next(os.walk(self.real_path))
-        cprint(" ".join(map(lambda dir: f"[{dir}]", dirs)), "light_blue")
-        print(" ".join(files))
+        cprint("  ".join(map(lambda dir: f"[{dir}]", dirs)), "light_blue")
+        print("  ".join(files))
         return True
 
     def __cd(self, params: list[str]) -> bool:
@@ -111,7 +111,7 @@ class Cli:
         server = self.dns.find(server_name)
         if server:
             print(f"Scanning {server['name']}...")
-            progress_bar(100, 0.05)
+            progress_bar(100, 0.04)
             print(f"Ports open for {server['name']}:")
             print()
             for port in server["port_mapping"].keys():

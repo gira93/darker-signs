@@ -42,7 +42,7 @@ class ScanCom:
                 if self.dns.find(str(current)):
                     f.write(f"{current}\n")
                 current += 1
-            progress_bar(step=0.4)
+            progress_bar(step=0.3)
         print()
         cprint(f"Scan completed to file {file}", "green")
         print("Disconnected by server")

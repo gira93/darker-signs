@@ -15,7 +15,7 @@ class PrxPostofficeMil:
             if command == "getdb()":
                 print()
                 print("Server: db.postoffice.mil")
-                print("Service: FCDB(FirstClass DataBase")
+                print("Service: FCDB(FirstClass DataBase)")
                 print()
                 cprint("Connection closed", "red")
                 break

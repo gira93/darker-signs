@@ -68,7 +68,7 @@ class BiolabsCom:
                     )
                     print()
                     input("Press a key")
-                case "0":
+                case _:
                     print("Connection closed")
                     break
 

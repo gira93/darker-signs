@@ -69,7 +69,7 @@ class XftpCom:
                         "If an attacker gained access to the xftp executable file they could gain admin rights"
                     )
                     print(
-                        'in XFTP. By running the server in debuug mode with the "--debug" flag, an attacker could run XFTP'
+                        'in XFTP. By running the server in debug mode with the "--debug" flag, an attacker could run XFTP'
                     )
                     print(
                         "with admin rights on connect. The default for debug mode is off."

@@ -127,7 +127,7 @@ class HackmeCom:
                             cprint("Logged in as user level2", "green")
                             user = "level2"
                         else:
-                            cprint("Wrong password", "red")
+                            cprint("Wrong password!", "red")
                     if user == "level2" and param == "xftp.exe":
                         if len(command) >= 3 and command[2] == "--debug":
                             cprint("Running XFTP in debug mode", "green")

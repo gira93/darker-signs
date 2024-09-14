@@ -12,7 +12,7 @@ class FbiGov:
         self.dns = dns
 
     def fbi25(self):
-        dosed = os.path.isfile(f"{self.root_path}/down_fbi.gov")
+        dosed = os.path.isfile(f"{self.root_path}/system/down_fbi.gov")
         if dosed:
             cprint("Connection terminated", "red")
             cprint("Error: remote host unable to load mail", "red")
@@ -29,7 +29,7 @@ class FbiGov:
             cprint("Disconnecting", "red")
 
     def fbi80(self):
-        dosed = os.path.isfile(f"{self.root_path}/down_fbi.gov")
+        dosed = os.path.isfile(f"{self.root_path}/system/down_fbi.gov")
         if dosed:
             cprint("Connection terminated", "red")
             cprint("Error: remote host unable to load web script", "red")

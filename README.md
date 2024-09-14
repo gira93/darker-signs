@@ -12,9 +12,9 @@ so here's a TLDR if you just want to play:
 
 ### Running
 
-After cloning the repo, run `./setup.sh` to setup venv and install dependencies.
-Then you can start the game with `./start.sh`
-(or by running `run.py` with venv activated)
+After cloning the repo, run `./start.sh` to run the game.
+The script will setup venv, install dependencies
+and then run the game.
 
 ### Restarting
 
