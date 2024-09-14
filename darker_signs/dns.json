@@ -128,8 +128,8 @@
   },
   "182.16.155.161": {
     "name": "intservices.org",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "80": "internal_http",
       "109": "internal_proxy"
@@ -254,8 +254,8 @@
   },
   "137.92.160.210": {
     "name": "oldgames.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "21": "oldg_ftp",
       "22": "oldg_admin",
@@ -278,8 +278,8 @@
   },
   "178.119.2.242": {
     "name": "bbs.security.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "80": "bbs_sec_http"
     }
@@ -289,8 +289,8 @@
   },
   "31.240.54.104": {
     "name": "internetprovider.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "22": "netprov_admin",
       "2541": "user_netprov_p2p",
@@ -302,8 +302,8 @@
   },
   "141.90.244.35": {
     "name": "backdoors.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "80": "backdoors_http"
     }
@@ -313,8 +313,8 @@
   },
   "43.20.44.224": {
     "name": "ipgames.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "80": "ipgames_http"
     }
@@ -534,8 +534,8 @@
   },
   "178.119.2.200": {
     "name": "targetmailer.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "25": "sendmail_22"
     }
@@ -574,8 +574,8 @@
   },
   "182.16.155.162": {
     "name": "internalservices.org",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "80": "internal_http",
       "109": "internal_proxy"
@@ -682,10 +682,10 @@
   },
   "229.61.245.12": {
     "name": "specialserver.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "specialserver_com",
+    "class_name": "SpecialserverCom",
     "port_mapping": {
-      "80": "80"
+      "80": "special80"
     }
   },
   "csmcqijje.com": {
@@ -693,8 +693,8 @@
   },
   "75.184.245.62": {
     "name": "csmcqijje.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "21": "special"
     }
@@ -890,8 +890,8 @@
   },
   "52.150.94.194": {
     "name": "fbi.gov",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "fbi_gov",
+    "class_name": "FbiGov",
     "port_mapping": {
       "25": "fbi25",
       "80": "fbi80"
@@ -968,8 +968,8 @@
   },
   "193.232.27.246": {
     "name": "darksoft.ru",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "80": "darksoft_http"
     }
@@ -979,8 +979,8 @@
   },
   "46.23.37.2": {
     "name": "corpfw1.org",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "15": "fw1proxy",
       "75": "fw1debug",
@@ -992,8 +992,8 @@
   },
   "123.53.4.9": {
     "name": "palmer.filehosting.net",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "23": "pfh-login",
       "80": "pfh-http",
@@ -1006,8 +1006,8 @@
   },
   "24.53.123.5": {
     "name": "thc-hq.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "100": "thc-hq",
       "200": "thc-hq2",
@@ -1019,8 +1019,8 @@
   },
   "149.180.124.224": {
     "name": "server.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "80": "doublefile",
       "1": "g7_login",
@@ -1032,8 +1032,8 @@
   },
   "71.69.7.193": {
     "name": "www.berkeley.edu",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "80": "berk_public",
       "81": "berk_sui"
@@ -1044,8 +1044,8 @@
   },
   "210.189.133.233": {
     "name": "newton.physics.berkeley.edu",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "100": "newton_admin",
       "80": "newton_public"
@@ -1056,8 +1056,8 @@
   },
   "146.102.169.219": {
     "name": "jdavids.physics.berkeley.edu",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "80": "jd_public"
     }
@@ -1067,8 +1067,8 @@
   },
   "124.64.231.23": {
     "name": "lower.ebworth.org",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "80": "lew-view",
       "210": "lew-admin"
@@ -1079,8 +1079,8 @@
   },
   "11.243.187.34": {
     "name": "tck.com",
-    "module_name": "TODO",
-    "class_name": "TODO",
+    "module_name": "unavailable",
+    "class_name": "unavailable",
     "port_mapping": {
       "21": "tck-ftp",
       "80": "tck-http",

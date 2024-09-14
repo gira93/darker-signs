@@ -1,3 +1,4 @@
+import os
 from getpass import getuser
 from termcolor import cprint
 from darker_signs.dns import Dns
@@ -12,6 +13,10 @@ class ZrioOrg:
         self.dns = dns
 
     def zrio_filetransfer(self):
+        if os.path.isfile(f"{self.root_path}/down_zrio.org"):
+            cprint("Error: unable to load script", "red")
+            cprint("Contact the administrator", "red")
+            return
         cprint("Connected to ZRIO File Transfer", "green")
         confirm = input("Would you like to upload a file to our server? (y/n): ")
         if confirm != "y":
@@ -62,6 +67,10 @@ class ZrioOrg:
                 continue
 
     def xcapro(self):
+        if os.path.isfile(f"{self.root_path}/down_zrio.org"):
+            cprint("Error: unable to load script", "red")
+            cprint("Contact the administrator", "red")
+            return
         user = input("Username: ")
         pw = input("Password: ")
         if user == "zrio" and pw == "geno38":
@@ -85,7 +94,7 @@ class ZrioOrg:
             f"One hacker in particular going by the alias of {getuser()} is the most active of the two."
         )
         print(
-            "We need this problem handled in the usual way. We cant let anyone know about our projects"
+            "We need this problem handled in the usual way. We can't let anyone know about our projects"
         )
         print("")
         return
