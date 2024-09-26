@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 import json
 from argparse import ArgumentParser
 
@@ -8,7 +9,9 @@ parser.add_argument("module_name")
 parser.add_argument("class_name")
 args = parser.parse_args()
 
-with open("./darker_signs/dns.json", "r") as f:
+cwd = os.getcwd()
+
+with open(f"{cwd}/darker_signs/dns.json", "r") as f:
     dns = json.load(f)
 
 server = dns[args.address]
@@ -44,11 +47,11 @@ for port in server["port_mapping"].keys():
     class_template.append("    pass")
     class_template.append("")
 
-with open(f"./darker_signs/servers/{module_name}.py", "w") as f:
+with open(f"{cwd}/darker_signs/servers/{module_name}.py", "w") as f:
     f.write("\n".join(class_template))
 
 dns[alias]["module_name"] = module_name
 dns[alias]["class_name"] = class_name
 
-with open("./darker_signs/dns.json", "w") as f:
+with open(f"{cwd}/darker_signs/dns.json", "w") as f:
     json.dump(dns, f, indent="\t")

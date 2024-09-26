@@ -133,6 +133,10 @@ class HackmeCom:
                             cprint("Running XFTP in debug mode", "green")
                             cprint("You are admin", "green")
                             user = "admin"
+                        else:
+                            cprint("Restarting xftp\nPlease relogin", "green")
+                            cprint("Disconnecting", "red")
+                            return
                     if user == "admin" and param == "remoteapp" and remoteapp:
                         print("...")
                         sleep(2)

@@ -1,3 +1,4 @@
+import os
 from termcolor import cprint
 from darker_signs.dns import Dns
 from darker_signs.mail import Mail
@@ -17,30 +18,34 @@ class JobsSecure:
         options = ["See job offers"]
         selection = show_menu(options)
         if selection == "1":
-            cprint("No jobs available at this time", "red")
-            print()
-            input("Press a key")
-            cprint("Disconnecting", "red")
-            return
-            # TODO -- Maybe in the future :)
-            # second_level = ["Find a game"]
-            # second_selection = show_menu(second_level)
-            # if second_selection == "1":
-            #     print()
-            #     print("A mail has been sent with all the details")
-            #     jobs_message = "Your job is to find a game.\nThe game is stored at oldgames.com.\nWe don't have any information about the security level.\nThere is a rumor saying someone else wants the game too.\nBut this rumor has not been confirmed, so you should not have any problems.\nGame Doom8 file game868686.bin\nUpload the file to ipgames.com"
-            #     security_message = "Great news:\nSecurity.com launched some days ago his BBS!\nYes you're right, this is a wonderfull thing.\nDon't hesitate to come and see how security holes are found in real time !\nVisit us @ bbs.security.com"
-            #     self.mail.add_message(
-            #         from_user="jobs.securedigital.com",
-            #         subject="Job",
-            #         message=jobs_message,
-            #     )
-            #     self.mail.add_message(
-            #         from_user="security.com", subject="BBS", message=security_message
-            #     )
-            #     cprint("Disconnecting", "red")
-            # else:
-            #     return
+            findgame_completed = os.path.isfile(
+                f"{self.root_path}/system/findgame_completed"
+            )
+            if findgame_completed:
+                print("No jobs available at this time")
+                input("Press a key")
+                cprint("Disconnecting", "red")
+                return
+            second_level = ["Find a game"]
+            second_selection = show_menu(second_level)
+            if second_selection == "1":
+                print()
+                print("A mail has been sent with all the details")
+                jobs_message = [
+                    "Your job is to find a game.",
+                    "The game is stored at oldgames.com.",
+                    "We don't have any information about the security level.",
+                    "Game is DoomBeta, file DooMBeta.bin,",
+                    "Once you have it, upload it to ipgames.com",
+                ]
+                self.mail.add_message(
+                    from_user="jobs.securedigital.com",
+                    subject="Job",
+                    message="\n".join(jobs_message),
+                )
+                cprint("Disconnecting", "red")
+            else:
+                return
         else:
             cprint("Disconnecting", "red")
             return

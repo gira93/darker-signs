@@ -254,12 +254,12 @@
   },
   "137.92.160.210": {
     "name": "oldgames.com",
-    "module_name": "unavailable",
-    "class_name": "unavailable",
+    "module_name": "oldgames_com",
+    "class_name": "OldgamesCom",
     "port_mapping": {
       "21": "oldg_ftp",
-      "22": "oldg_admin",
-      "80": "oldg_http"
+      "80": "oldg_http",
+      "90": "oldg_admin"
     }
   },
   "jobs.securedigital.com": {
@@ -313,8 +313,8 @@
   },
   "43.20.44.224": {
     "name": "ipgames.com",
-    "module_name": "unavailable",
-    "class_name": "unavailable",
+    "module_name": "ipgames_com",
+    "class_name": "IpgamesCom",
     "port_mapping": {
       "80": "ipgames_http"
     }
