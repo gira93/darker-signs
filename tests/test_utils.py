@@ -1,9 +1,9 @@
 from unittest.mock import patch, mock_open, call
-from darker_signs.utils import progress_bar, show_menu, upload_file, download_file
+from system.utils import progress_bar, show_menu, upload_file, download_file
 
 
-@patch("darker_signs.utils.sleep", return_value=None)
-@patch("darker_signs.utils.cprint")
+@patch("system.utils.sleep", return_value=None)
+@patch("system.utils.cprint")
 def test_progress_bar(mock_print, mock_sleep):
     progress_bar(max=5, step=0.01)
     expected_calls = [
@@ -19,7 +19,7 @@ def test_progress_bar(mock_print, mock_sleep):
 
 
 @patch("os.path.isfile", return_value=True)
-@patch("darker_signs.utils.progress_bar")
+@patch("system.utils.progress_bar")
 def test_upload_file_success(mock_progress_bar, mock_isfile):
     result = upload_file("/fake/path/to/file.txt")
     mock_isfile.assert_called_once_with("/fake/path/to/file.txt")
@@ -28,7 +28,7 @@ def test_upload_file_success(mock_progress_bar, mock_isfile):
 
 
 @patch("os.path.isfile", return_value=False)
-@patch("darker_signs.utils.progress_bar")
+@patch("system.utils.progress_bar")
 def test_upload_file_failure(mock_progress_bar, mock_isfile):
     result = upload_file("/fake/path/to/nonexistent.txt")
     mock_isfile.assert_called_once_with("/fake/path/to/nonexistent.txt")
@@ -36,7 +36,7 @@ def test_upload_file_failure(mock_progress_bar, mock_isfile):
     assert result is False
 
 
-@patch("darker_signs.utils.progress_bar")
+@patch("system.utils.progress_bar")
 @patch("builtins.open", new_callable=mock_open)
 def test_download_file(mock_open, mock_progress_bar):
     result = download_file("/fake/path/to/file.txt", contents="Test content")
@@ -47,7 +47,7 @@ def test_download_file(mock_open, mock_progress_bar):
 
 
 @patch("builtins.input", return_value="1")
-@patch("darker_signs.utils.cprint")
+@patch("system.utils.cprint")
 def test_show_menu(mock_cprint, _):
     options = ["Red pill", "Blue pill"]
     test_selection = show_menu(

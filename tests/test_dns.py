@@ -1,7 +1,7 @@
 import pytest
 import json
 from unittest.mock import patch, mock_open
-from darker_signs.dns import Dns
+from system.dns import Dns
 
 dns_data = {
     "test-server.com": {"alias": "1.1.1.1"},
@@ -17,7 +17,7 @@ dns_data = {
 @pytest.fixture
 def dns_obj():
     with patch("builtins.open", mock_open(read_data=json.dumps(dns_data))):
-        return Dns("fake_dns.json")
+        return Dns("fake_dns.json", "test_campaign")
 
 
 def test_dns_init(dns_obj):

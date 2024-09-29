@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch, mock_open, call
 import json
-from darker_signs.mail import Mail
+from system.mail import Mail
 
 mailbox_data = [
     {
