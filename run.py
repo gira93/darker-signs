@@ -7,10 +7,12 @@ from system.cli import Cli
 
 def main():
     campaign_name = "zrio"
-    root_path = os.path.dirname(os.path.abspath(__file__))
-    campaign_path = f"{root_path}/{campaign_name}"
-    first_run = initialize(root_path, campaign_name)
-    cli = Cli(f"{root_path}", campaign_name, "ds.net")
+    local_base_path = os.path.dirname(os.path.abspath(__file__))
+    campaign_path = f"{local_base_path}/{campaign_name}"
+    first_run = initialize(local_base_path, campaign_name)
+    cli = Cli(
+        local_base_path=f"{local_base_path}", campaign_name=campaign_name, host="ds.net"
+    )
     os.system("cls||clear")
     cprint("//////////////////", "light_blue")
     cprint("// Darker Signs //", "light_blue")
@@ -22,14 +24,14 @@ def main():
     cli.run()
 
 
-def initialize(root_path: str, campaign_path: str) -> bool:
-    rootfs = f"{root_path}/rootfs"
+def initialize(local_base_path: str, campaign_path: str) -> bool:
+    rootfs = f"{local_base_path}/rootfs"
     if not os.path.isdir(rootfs):
         base = f"{campaign_path}/base_rootfs"
         if not os.path.isdir(base):
             print("INIT ERROR, please redownload the source code")
             exit(1)
-        os.chdir(root_path)
+        os.chdir(local_base_path)
         os.makedirs("./rootfs/system")
         shutil.copyfile(f"{base}/system/mail.json", f"{rootfs}/system/mail.json")
         shutil.copyfile(f"{base}/readme.txt", f"{rootfs}/readme.txt")

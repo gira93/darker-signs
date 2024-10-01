@@ -1,3 +1,4 @@
+import importlib
 import os
 import readline
 from getpass import getuser
@@ -6,7 +7,7 @@ from .utils import progress_bar
 from .mail import Mail
 from .dns import Dns
 
-AVAILABLE_COMMANDS: list[str] = [
+BASE_COMMANDS: list[str] = [
     "ls",
     "cd",
     "cat",
@@ -23,17 +24,20 @@ AVAILABLE_COMMANDS: list[str] = [
 
 
 class Cli:
-    def __init__(self, root_path: str, campaign_name: str, host: str) -> None:
-        rootfs = f"{root_path}/rootfs"
-        self.system_path = root_path
+    def __init__(self, local_base_path: str, campaign_name: str, host: str) -> None:
+        rootfs = f"{local_base_path}/rootfs"
         self.root_path = rootfs
         self.real_path = rootfs
         self.current_path = ""
         os.chdir(self.real_path)
         self.mail: Mail = Mail(f"{self.root_path}/system/mail.json")
         self.dns: Dns = Dns(
-            f"{self.system_path}/{campaign_name}/dns.json", campaign_name
+            f"{local_base_path}/{campaign_name}/dns.json", campaign_name
         )
+        campaign_module = importlib.import_module(".environment", campaign_name)
+        campaign_class = getattr(campaign_module, "Environment")
+        self.campaign_env = campaign_class(self.root_path)
+        self.available_commands = BASE_COMMANDS + self.campaign_env.available_commands()
         self.host = host
 
     def run(self) -> None:
@@ -44,10 +48,19 @@ class Cli:
             typed_command = input(f"{getuser()}@{self.host} [{self.current_path}]: ")
             command = typed_command.split(" ")[0]
             params = typed_command.split(" ")[1:]
-            if command in AVAILABLE_COMMANDS:
-                method = getattr(self, f"_{self.__class__.__name__}__{command}", None)
-                if method:
-                    method(params)
+            if command in self.available_commands:
+                base_method = getattr(
+                    self, f"_{self.__class__.__name__}__{command}", None
+                )
+                extra_method = getattr(
+                    self.campaign_env,
+                    f"_{self.campaign_env.__class__.__name__}__{command}",
+                    None,
+                )
+                if base_method:
+                    base_method(params)
+                elif extra_method:
+                    extra_method(params)
                 else:
                     cprint("Command implementation not found", "red")
             elif command == "":
@@ -169,7 +182,7 @@ class Cli:
 
     def __help(self, _) -> None:
         print("Available commands:")
-        print(" ".join(AVAILABLE_COMMANDS))
+        print(" ".join(self.available_commands))
 
     def __exit(self, _) -> None:
         print("Bye Bye!")
