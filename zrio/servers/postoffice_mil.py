@@ -1,15 +1,9 @@
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import show_menu
+from .base_server import BaseServer
 
 
-class PostofficeMil:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class PostofficeMil(BaseServer):
     def post80(self):
         cprint("Welcome to the Military PostOffice Website", "green")
         options = ["About us", "Employment", "Check package status", "Email admin"]

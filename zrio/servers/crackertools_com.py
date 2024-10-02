@@ -1,15 +1,9 @@
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import download_file, show_menu
+from .base_server import BaseServer
 
 
-class CrackertoolsCom:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class CrackertoolsCom(BaseServer):
     def cracker80(self):
         cprint("|\\-/|\\-/||\\-/|\\-/||\\-/|\\-/||\\-/|\\-/||\\-/|\\-/|", "green")
         cprint("|\\-/|             CrackerTools.com              |\\-/|", "green")

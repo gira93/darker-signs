@@ -41,34 +41,40 @@ class Cli:
         self.host = host
 
     def run(self) -> None:
-        while True:
-            if self.mail.new_email():
-                cprint("New email received", "green")
+        try:
+            while True:
+                if self.mail.new_email():
+                    cprint("New email received", "green")
 
-            typed_command = input(f"{getuser()}@{self.host} [{self.current_path}]: ")
-            command = typed_command.split(" ")[0]
-            params = typed_command.split(" ")[1:]
-            if command in self.available_commands:
-                base_method = getattr(
-                    self, f"_{self.__class__.__name__}__{command}", None
+                typed_command = input(
+                    f"{getuser()}@{self.host} [{self.current_path}]: "
                 )
-                extra_method = getattr(
-                    self.campaign_env,
-                    f"_{self.campaign_env.__class__.__name__}__{command}",
-                    None,
-                )
-                if base_method:
-                    base_method(params)
-                elif extra_method:
-                    extra_method(params)
+                command = typed_command.split(" ")[0]
+                params = typed_command.split(" ")[1:]
+                if command in self.available_commands:
+                    base_method = getattr(
+                        self, f"_{self.__class__.__name__}__{command}", None
+                    )
+                    extra_method = getattr(
+                        self.campaign_env,
+                        f"_{self.campaign_env.__class__.__name__}__{command}",
+                        None,
+                    )
+                    if base_method:
+                        base_method(params)
+                    elif extra_method:
+                        extra_method(params)
+                    else:
+                        cprint("Command implementation not found", "red")
+                elif command == "":
+                    continue
                 else:
-                    cprint("Command implementation not found", "red")
-            elif command == "":
-                continue
-            else:
-                cprint(
-                    'Command not found, type "help" to view available commands', "red"
-                )
+                    cprint(
+                        'Command not found, type "help" to view available commands',
+                        "red",
+                    )
+        except KeyboardInterrupt:
+            self.__exit([])
 
     def __ls(self, _) -> bool:
         _, dirs, files = next(os.walk(self.real_path))
@@ -185,5 +191,5 @@ class Cli:
         print(" ".join(self.available_commands))
 
     def __exit(self, _) -> None:
-        print("Bye Bye!")
+        cprint("\nBye Bye!", "red")
         exit(0)

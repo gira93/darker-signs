@@ -2,17 +2,11 @@ import os
 from time import sleep
 from random import randint
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import download_file, progress_bar, show_menu
+from .base_server import BaseServer
 
 
-class OldgamesCom:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class OldgamesCom(BaseServer):
     def oldg_ftp(self):
         cprint(
             "XFTP Runtime error\nConfig file is unreadable\nReverting to default", "red"

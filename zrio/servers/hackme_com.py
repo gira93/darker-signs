@@ -1,16 +1,10 @@
 from time import sleep
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import download_file, show_menu, upload_file
+from .base_server import BaseServer
 
 
-class HackmeCom:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class HackmeCom(BaseServer):
     def hack80(self):
         cprint("HackMe.com - That's right, HACKME", "red")
         print()

@@ -1,16 +1,10 @@
 from time import sleep
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import upload_file, download_file
+from .base_server import BaseServer
 
 
-class TelnetPokemonworldCom:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class TelnetPokemonworldCom(BaseServer):
     def poke23(self):
         cprint("Welcome to Poke'monWorld.com telnet server", "green")
         print()

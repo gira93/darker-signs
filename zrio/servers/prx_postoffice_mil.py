@@ -1,14 +1,8 @@
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
+from .base_server import BaseServer
 
 
-class PrxPostofficeMil:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class PrxPostofficeMil(BaseServer):
     def prx91(self):
         while True:
             command = input("> ")

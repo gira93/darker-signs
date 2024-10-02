@@ -1,20 +1,14 @@
 import os
 from time import sleep
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import download_file, progress_bar
+from .base_server import BaseServer
 
 DDOS_SERVERS = 9
 DDOS_HOSTS = ["zrio.org", "fbi.gov"]
 
 
-class DoserCom:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class DoserCom(BaseServer):
     def dos80(self):
         cprint("Welcome to DoSer v3.1", "green")
         print()

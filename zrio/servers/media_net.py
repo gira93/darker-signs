@@ -1,16 +1,10 @@
 from time import sleep
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import download_file, upload_file
+from .base_server import BaseServer
 
 
-class MediaNet:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class MediaNet(BaseServer):
     def media23(self):
         cprint("Welcome to media.net telnet server", "green")
         print()

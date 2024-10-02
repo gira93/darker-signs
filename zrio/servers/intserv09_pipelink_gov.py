@@ -1,15 +1,9 @@
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import download_file, show_menu
+from .base_server import BaseServer
 
 
-class Intserv09PipelinkGov:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class Intserv09PipelinkGov(BaseServer):
     def sharedaccespl(self):
         cprint("This is a private server", "red")
         cprint("Error accessing auth file", "red")

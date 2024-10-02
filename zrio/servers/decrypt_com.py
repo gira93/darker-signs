@@ -1,16 +1,10 @@
 from getpass import getuser
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import show_menu, upload_file
+from .base_server import BaseServer
 
 
-class DecryptCom:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class DecryptCom(BaseServer):
     def decrypt_http(self):
         cprint("Public File Decryption Server", "green")
         selection = show_menu(["Decrypt a File"])

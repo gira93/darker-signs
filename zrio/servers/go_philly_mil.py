@@ -1,15 +1,9 @@
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import download_file
+from .base_server import BaseServer
 
 
-class GoPhillyMil:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class GoPhillyMil(BaseServer):
     def xftp25(self):
         cprint("Welcome to XFTP v1.0", "green")
         cprint("Check out xftp.com for more informations")
@@ -84,7 +78,7 @@ class GoPhillyMil:
                     continue
                 case "get cryptsetup.exe":
                     download_file(f"{self.root_path}/cryptsetup.exe", "CRYPTFNEC")
-                    cprint("cryptsetup.exe donloaded", "green")
+                    cprint("cryptsetup.exe downloaded", "green")
                     continue
                 case "get user.txt":
                     download_file(

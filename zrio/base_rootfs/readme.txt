@@ -12,10 +12,10 @@ You have some basic terminal commands:
 - "exit", just exits the entire environment
 
 Now comes the fun part:
-- "mail", it's a receive-only mailbox, you'll use this a lot.
-- "connect", allows you to connect to remote systems providing an address/IP and a port
+- "mail" (alias: "m"), it's a receive-only mailbox, you'll use this a lot.
+- "connect" (alias: "c"), allows you to connect to remote systems providing an address/IP and a port
   for example: "connect test-server.com 22"
-- "scan", allows you to scan an address/IP for open ports, useful if you then need to connect to it.
+- "scan" (alias: "s"), allows you to scan an address/IP for open ports, useful if you then need to connect to it.
   for example: "scan test-server.com"
 
 Everything else you need to figure out by yourself.

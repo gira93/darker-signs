@@ -1,16 +1,10 @@
 import os
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import show_menu
+from .base_server import BaseServer
 
 
-class JobsSecure:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class JobsSecure(BaseServer):
     def jobs_sd_http(self):
         print()
         print("Welcome to jobs.securedigital.com")

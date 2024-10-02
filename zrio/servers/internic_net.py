@@ -1,14 +1,8 @@
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import show_menu
+from .base_server import BaseServer
 
 
-class InternicNet:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class InternicNet(BaseServer):
     def http_internic(self):
         print("'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'_'")
         print()

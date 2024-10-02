@@ -1,15 +1,9 @@
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import show_menu
+from .base_server import BaseServer
 
 
-class Base09Pipelink:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class Base09Pipelink(BaseServer):
     def remote_res_29(self):
         keycode = "331"
         print()

@@ -1,18 +1,11 @@
 import os
 from ipaddress import AddressValueError, IPv4Address
 from termcolor import cprint
-
 from system.utils import progress_bar
-from system.mail import Mail
-from system.dns import Dns
+from .base_server import BaseServer
 
 
-class ScanCom:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class ScanCom(BaseServer):
     def q(self):
         cprint("//////////////////", "light_red")
         cprint("///// QUAERO /////", "light_red")

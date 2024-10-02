@@ -1,15 +1,9 @@
 from termcolor import cprint
-from system.dns import Dns
-from system.mail import Mail
 from system.utils import show_menu
+from .base_server import BaseServer
 
 
-class FcdbCom:
-    def __init__(self, root_path: str, mail: Mail, dns: Dns) -> None:
-        self.root_path = root_path
-        self.mail = mail
-        self.dns = dns
-
+class FcdbCom(BaseServer):
     def fcdb80(self):
         cprint("Welcome to FirstClass DataBase website", "green")
         cprint("FirstClass Software 1989-2003 FCDB.com")
