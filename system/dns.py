@@ -1,5 +1,6 @@
 import json
 import importlib
+from .player import Player
 from .mail import Mail
 
 
@@ -27,16 +28,12 @@ class Dns:
         port: str,
         root_path: str | None = None,
         mail: Mail | None = None,
+        player: Player | None = None,
     ) -> bool:
-        # TODO -- Remove once every server has been implemented
-        if server["module_name"] == "TODO":
-            print("Not implemented")
-            return False
-
         module_name = f".servers.{server['module_name']}"
         module = importlib.import_module(module_name, self.campaign_name)
         cls = getattr(module, server["class_name"])
-        srv = cls(root_path, mail, self)
+        srv = cls(root_path, mail, self, player)
         method = getattr(srv, port, None)
         if method:
             method()

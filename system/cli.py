@@ -6,6 +6,7 @@ from termcolor import cprint
 from .utils import progress_bar
 from .mail import Mail
 from .dns import Dns
+from .player import Player
 
 BASE_COMMANDS: list[str] = [
     "ls",
@@ -30,14 +31,18 @@ class Cli:
         self.real_path = rootfs
         self.current_path = ""
         os.chdir(self.real_path)
+
         self.mail: Mail = Mail(f"{self.root_path}/system/mail.json")
         self.dns: Dns = Dns(
             f"{local_base_path}/{campaign_name}/dns.json", campaign_name
         )
-        campaign_module = importlib.import_module(".environment", campaign_name)
-        campaign_class = getattr(campaign_module, "Environment")
+        self.player: Player = Player(f"{self.root_path}/system/player.json")
+
+        campaign_module = importlib.import_module(".commands", campaign_name)
+        campaign_class = getattr(campaign_module, "Commands")
         self.campaign_env = campaign_class(self.root_path)
         self.available_commands = BASE_COMMANDS + self.campaign_env.available_commands()
+
         self.host = host
 
     def run(self) -> None:
@@ -171,6 +176,7 @@ class Cli:
                 server["port_mapping"][port],
                 root_path=self.root_path,
                 mail=self.mail,
+                player=self.player,
             )
             return True
         else:
