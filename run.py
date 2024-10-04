@@ -32,7 +32,8 @@ def setup() -> tuple[str, str, str, bool]:
         first_run = False
     else:
         first_run = True
-        campaign_name = "zrio"
+        # campaign_name = "zrio"
+        campaign_name = "mother"
 
     campaign_path = f"{local_base_path}/{campaign_name}"
     if first_run:
