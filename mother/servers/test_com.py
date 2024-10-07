@@ -1,11 +1,23 @@
-from .base_server import BaseServer, Files
+from .base_server import BaseServer, ServerConfig
 
-SERVER_NAME: str = "test.com"
-BANNER: str = "Welcome to the best file server ever!"
-FILES: Files = [("file1", ""), ("file2", ""), ("file3", "")]
+SERVER_CONFIG: ServerConfig = {
+    "name": "Test Server",
+    "banner": "Welcome to the Testing Server!",
+    "contents": [
+        {
+            "title": "Test article",
+            "content": "Just a test article contents\ncan go in 2 lines also!",
+        },
+        {
+            "title": "Test article numero dos",
+            "content": "Just a SECOND test article contents\ncan go in 2 lines also!\nand three!",
+        },
+    ],
+    "writable": False,
+    "crashable": False,
+}
 
 
 class TestCom(BaseServer):
     def http(self):
-        server_config = {"server_name": SERVER_NAME, "files": FILES, "banner": BANNER}
-        self.file_server(**server_config)
+        self.web_server(SERVER_CONFIG)
