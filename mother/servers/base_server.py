@@ -10,16 +10,30 @@ File = TypedDict("File", {"name": str, "content": str})
 Article = TypedDict("Article", {"title": str, "content": str})
 ChatMessage = TypedDict("ChatMessage", {"op": str, "content": str})
 
-ServerConfig = TypedDict(
-    "ServerConfig",
-    {
-        "name": str,
-        "banner": str,
-        "contents": list[Email] | list[File] | list[Article] | list[ChatMessage],
-        "writable": bool,
-        "crashable": bool,
-    },
-)
+
+class ServerConfig(TypedDict):
+    id: str
+    banner: str
+    writable: bool
+    crashable: bool
+    crashed: bool
+    hackable: str | None
+
+
+class WebServerConfig(ServerConfig):
+    contents: list[Article]
+
+
+class FileServerConfig(ServerConfig):
+    contents: list[File]
+
+
+class MailServerConfig(ServerConfig):
+    contents: list[Email]
+
+
+class ChatServerConfig(ServerConfig):
+    contents: list[ChatMessage]
 
 
 class BaseServer:
@@ -29,27 +43,53 @@ class BaseServer:
         self.dns = dns
         self.player = player
 
-    def file_server(self, config: ServerConfig):
-        self.__welcome(config["name"], config["banner"])
-        print(config["contents"])
+    def file_server(self, server_config: ServerConfig):
+        banner = server_config["banner"]
+        self.__welcome(banner)
 
-    def web_server(self, config: ServerConfig):
-        self.__welcome(config["name"], config["banner"])
-        options = show_menu()
+    def web_server(self, server_config: WebServerConfig):
+        id = server_config["id"]
+        server_override = self.player.get_server(id)
+        if server_override and server_override["crashed"]:
+            print()
+            cprint("Server Unavailable", "red")
+            print()
+            return
 
-    def mail_server(self, config: ServerConfig):
-        self.__welcome(config["name"], config["banner"])
-        print(config["contents"])
+        banner = server_config["banner"]
+        articles: list[Article] = server_config["contents"]
+        self.__welcome(banner)
+        options = list(map(lambda article: article["title"], articles))
+        while True:
+            print("Available pages:")
+            user_input = show_menu(options)
+            match user_input:
+                case s if s.isdigit() and 1 <= int(s) <= len(options):
+                    article: Article = articles[int(s) - 1]
+                    print()
+                    cprint(article["title"], "blue")
+                    print()
+                    print(article["content"])
+                    print()
+                    input("Press a key")
+                    continue
+                case _:
+                    print()
+                    cprint("Connection closed", "red")
+                    break
 
-    def chat_server(self, config: ServerConfig):
-        self.__welcome(config["name"], config["banner"])
-        print(config["contents"])
+    def mail_server(self, server_config: ServerConfig):
+        banner = server_config["banner"]
+        self.__welcome(banner)
 
-    def gateway_server(self, config: ServerConfig):
-        self.__welcome(config["name"], config["banner"])
-        print(config["contents"])
+    def chat_server(self, server_config: ServerConfig):
+        banner = server_config["banner"]
+        self.__welcome(banner)
 
-    def __welcome(self, server_name: str, banner: str | None = None):
-        welcome_message = banner if banner else f"Welcome to {server_name}"
-        cprint(welcome_message, "green")
+    def gateway_server(self, server_config: ServerConfig):
+        banner = server_config["banner"]
+        self.__welcome(banner)
+
+    def __welcome(self, banner: str):
+        cprint(banner, "green")
         print()

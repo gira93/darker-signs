@@ -1,7 +1,7 @@
-from .base_server import BaseServer, ServerConfig
+from .base_server import BaseServer, WebServerConfig
 
-SERVER_CONFIG: ServerConfig = {
-    "name": "Test Server",
+SERVER_CONFIG: WebServerConfig = {
+    "id": "test_com",
     "banner": "Welcome to the Testing Server!",
     "contents": [
         {
@@ -15,6 +15,8 @@ SERVER_CONFIG: ServerConfig = {
     ],
     "writable": False,
     "crashable": False,
+    "crashed": False,
+    "hackable": None,
 }
 
 
