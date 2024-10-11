@@ -3,7 +3,7 @@ from termcolor import cprint
 from system.mail import Mail
 from system.dns import Dns
 from system.player import Player
-from system.utils import show_menu
+from system.utils import progress_bar, show_menu
 
 Email = TypedDict("Email", {"from": str, "to": str, "content": str})
 File = TypedDict("File", {"name": str, "content": str})
@@ -15,9 +15,9 @@ class ServerConfig(TypedDict):
     id: str
     banner: str
     writable: bool
-    crashable: bool
     crashed: bool
-    hackable: str | None
+    hack_tool: str | None
+    defense_tool: str | None
 
 
 class WebServerConfig(ServerConfig):
@@ -48,20 +48,19 @@ class BaseServer:
         self.__welcome(banner)
 
     def web_server(self, server_config: WebServerConfig):
-        id = server_config["id"]
-        server_override = self.player.get_server(id)
-        if server_override and server_override["crashed"]:
+        id, config = self.__load_config(server_config)
+        if config["crashed"]:
             print()
             cprint("Server Unavailable", "red")
             print()
             return
 
-        banner = server_config["banner"]
-        articles: list[Article] = server_config["contents"]
-        self.__welcome(banner)
+        self.__initialize_tools(server_config)
+        self.__welcome(config["banner"])
+        articles: list[Article] = config["contents"]
         options = list(map(lambda article: article["title"], articles))
         while True:
-            print("Available pages:")
+            print("Available articles:")
             user_input = show_menu(options)
             match user_input:
                 case s if s.isdigit() and 1 <= int(s) <= len(options):
@@ -73,10 +72,22 @@ class BaseServer:
                     print()
                     input("Press a key")
                     continue
-                case _:
+                case "nukelord" if self.player.has_tool("nukelord"):
+                    print()
+                    cprint("NUKING", "red")
+                    print()
+                    progress_bar()
+                    cprint("SERVER NUKED", "green")
+                    cprint("Disconnecting", "red")
+                    config["crashed"] = True
+                    self.player.add_or_update_server(id, config)
+                    break
+                case "0":
                     print()
                     cprint("Connection closed", "red")
                     break
+                case _:
+                    continue
 
     def mail_server(self, server_config: ServerConfig):
         banner = server_config["banner"]
@@ -89,6 +100,26 @@ class BaseServer:
     def gateway_server(self, server_config: ServerConfig):
         banner = server_config["banner"]
         self.__welcome(banner)
+
+    def __initialize_tools(self, server_config: ServerConfig) -> None:
+        if server_config["hack_tool"] and self.player.has_tool(
+            server_config["hack_tool"]
+        ):
+            cprint(
+                f"{server_config['hack_tool'].capitalize()} armed and ready!", "yellow"
+            )
+            print()
+        if server_config["defense_tool"] and self.player.has_tool(
+            server_config["defense_tool"]
+        ):
+            cprint(f"{server_config['defense_tool'].capitalize()} running!", "green")
+            print()
+
+    def __load_config(self, server_config: ServerConfig) -> tuple[str, dict]:
+        id = server_config["id"]
+        server_override = self.player.get_server(id)
+        config = server_override if server_override else dict(server_config)
+        return (id, config)
 
     def __welcome(self, banner: str):
         cprint(banner, "green")

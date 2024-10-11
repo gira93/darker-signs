@@ -45,6 +45,9 @@ class Player:
         self.player["tools"].add(tool)
         self.__save()
 
+    def has_tool(self, tool: str) -> bool:
+        return tool in self.player["tools"]
+
     def active_missions(self) -> list[str]:
         return list(self.player["active_missions"])
 

@@ -14,9 +14,9 @@ SERVER_CONFIG: WebServerConfig = {
         },
     ],
     "writable": False,
-    "crashable": False,
     "crashed": False,
-    "hackable": None,
+    "hack_tool": "nukelord",
+    "defense_tool": None,
 }
 
 
