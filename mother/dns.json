@@ -7,7 +7,8 @@
     "module_name": "test_com",
     "class_name": "TestCom",
     "port_mapping": {
-      "80": "http"
+      "80": "http",
+      "90": "mailer"
     }
   }
 }
