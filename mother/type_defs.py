@@ -4,7 +4,7 @@ Email = TypedDict("Email", {"from": str, "subject": str, "content": str})
 File = tuple[str, str]  # Filename, file content
 ChatMessage = TypedDict("ChatMessage", {"op": str, "content": str})
 DbEntry = TypedDict("DbEntry", {"title": str, "content": str})
-ShopItem = tuple[str, int]  # Item name, price
+ShopItem = tuple[str, str, int]  # Item name, desc, price
 
 
 class ServerConfig(TypedDict):

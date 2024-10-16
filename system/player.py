@@ -6,7 +6,7 @@ class PlayerStatus(TypedDict):
     campaign: str
     balance: int
     experience: int
-    tools: set[str]
+    tools: list[str]
     active_missions: set[str]
     pinned_servers: list[list[str]]
     changed_servers: dict[str, dict]
@@ -17,6 +17,7 @@ class Player:
         self.player_file = player_file
         with open(self.player_file, "r") as f:
             self.player: PlayerStatus = json.load(f)
+            self.player["active_missions"] = set(self.player["active_missions"])
 
     def balance(self) -> int:
         return self.player["balance"]
@@ -39,10 +40,10 @@ class Player:
         self.__save()
 
     def tools(self) -> list[str]:
-        return list(self.player["tools"])
+        return self.player["tools"]
 
     def add_tool(self, tool: str) -> None:
-        self.player["tools"].add(tool)
+        self.player["tools"].append(tool)
         self.__save()
 
     def has_tool(self, tool: str) -> bool:

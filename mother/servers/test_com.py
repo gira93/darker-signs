@@ -1,5 +1,6 @@
 from .base_server import BaseServer
 from mother.type_defs import (
+    CommerceServerConfig,
     MailServerConfig,
     WebServerConfig,
     FileServerConfig,
@@ -102,6 +103,23 @@ DBSERVER_CONFIG: DbServerConfig = {
     "defense_tool": None,
 }
 
+COMMERCESERVER_CONFIG: CommerceServerConfig = {
+    "id": "test_com_commerce",
+    "name": "Testing Commerce",
+    "banner": "Welcome to the Test ECommerce",
+    "font": "sblood",
+    "authentication": None,
+    "contents": [
+        ("rootbreaker", "Password cracker\nBasic version", 100),
+        ("backmirror", "Defensive tool against server with tracing software", 100),
+        ("rootbreaker4", "Updated version of the famous password cracker", 200),
+    ],
+    "writable": False,
+    "crashed": False,
+    "hack_tool": None,
+    "defense_tool": None,
+}
+
 
 class TestCom(BaseServer):
     def http(self):
@@ -115,3 +133,6 @@ class TestCom(BaseServer):
 
     def db(self):
         self.db_server(DBSERVER_CONFIG)
+
+    def commerce(self):
+        self.commerce_server(COMMERCESERVER_CONFIG)

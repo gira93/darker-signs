@@ -6,6 +6,7 @@ from system.player import Player
 from system.utils import download_file, progress_bar, show_menu, upload_file
 from mother.type_defs import (
     ServerConfig,
+    ShopItem,
     WebServerConfig,
     FileServerConfig,
     MailServerConfig,
@@ -261,7 +262,49 @@ class BaseServer:
         pass
 
     def commerce_server(self, server_config: CommerceServerConfig) -> None:
-        pass
+        _, config = self.__load_config(server_config)
+        self.__welcome(config["banner"], config["name"], config["font"])
+        items: list[ShopItem] = config["contents"]
+        while True:
+            formatted_items = [f"{i[0]} | {i[2]}Cr." for i in items]
+            selection = show_menu(
+                formatted_items, selection_message="Select an item to view details"
+            )
+            match selection:
+                case s if s.isdigit() and 1 <= int(s) <= len(items):
+                    item_index = int(s) - 1
+                    print()
+                    cprint(items[item_index][0].capitalize(), "magenta")
+                    print()
+                    cprint(items[item_index][1], "blue")
+                    print()
+                    cprint(f"Price: {items[item_index][2]}Cr.", "blue")
+                    print()
+                    buy_selection = show_menu(["Buy"], abort_message="Go back")
+                    if buy_selection == "1":
+                        price: int = items[item_index][2]
+                        if self.player.has_tool(items[item_index][0]):
+                            cprint("You already have that item\n", "yellow")
+                            continue
+                        elif self.player.balance() > price:
+                            self.player.subtract_credit(price)
+                            self.player.add_tool(items[item_index][0])
+                            progress_bar(step=0.02)
+                            cprint(
+                                f"Congratulations! you got {items[item_index][0]}!\n",
+                                "green",
+                            )
+                            continue
+                        else:
+                            cprint("You don't have enough credits!", "red")
+                            continue
+                    else:
+                        continue
+                case "0":
+                    cprint("Connection closed\n", "red")
+                    break
+                case _:
+                    continue
 
     def gateway_server(self) -> None:
         print()
