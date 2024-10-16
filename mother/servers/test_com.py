@@ -1,4 +1,10 @@
-from .base_server import BaseServer, MailServerConfig, WebServerConfig
+from .base_server import BaseServer
+from mother.type_defs import (
+    MailServerConfig,
+    WebServerConfig,
+    FileServerConfig,
+    DbServerConfig,
+)
 
 SERVER_CONFIG: WebServerConfig = {
     "id": "test_com",
@@ -55,6 +61,47 @@ MAIL_SERVER_CONFIG: MailServerConfig = {
     "defense_tool": None,
 }
 
+FILE_SERVER_CONFIG: FileServerConfig = {
+    "id": "test_com_filer",
+    "name": "File Grounds",
+    "banner": "Welcome to the File Server!",
+    "font": "slant",
+    "authentication": [("gino", "gini"), ("franco", "franchi")],
+    "contents": {
+        "gino": [
+            ("readme.txt", "This is a readme\nHave you read it?"),
+            ("another.bin", "Another file dotbin"),
+        ],
+        "franco": [("franco.md", "franco dotmd"), ("kernel.sys", "KERNELSYS")],
+    },
+    "writable": True,
+    "crashed": False,
+    "hack_tool": "rootbreaker2",
+    "defense_tool": None,
+}
+
+DBSERVER_CONFIG: DbServerConfig = {
+    "id": "test_com_db",
+    "name": "Testing DB!",
+    "banner": "Welcome to the Testing DB",
+    "font": "doom",
+    "authentication": [("secure", "s3cur3")],
+    "contents": [
+        {
+            "title": "s0ftm4rk",
+            "content": "Money robbed and shit",
+        },
+        {
+            "title": "La mietitura di TelemarkONE",
+            "content": "The big thing",
+        },
+    ],
+    "writable": False,
+    "crashed": False,
+    "hack_tool": "rootbreaker3",
+    "defense_tool": None,
+}
+
 
 class TestCom(BaseServer):
     def http(self):
@@ -62,3 +109,9 @@ class TestCom(BaseServer):
 
     def mailer(self):
         self.mail_server(MAIL_SERVER_CONFIG)
+
+    def ftp(self):
+        self.file_server(FILE_SERVER_CONFIG)
+
+    def db(self):
+        self.db_server(DBSERVER_CONFIG)
