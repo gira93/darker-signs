@@ -1,3 +1,4 @@
+import readline
 from termcolor import cprint
 from pyfiglet import Figlet
 from system.mail import Mail
@@ -26,6 +27,22 @@ class BaseServer:
         self.player = player
 
     def file_server(self, server_config: FileServerConfig) -> None:
+        if server_config["proxy"]:
+            connection_command = readline.get_history_item(
+                readline.get_current_history_length()
+            ).split(" ")
+            if (
+                len(connection_command) >= 3
+                and connection_command[0] == "tunnel"
+                and connection_command[1] == server_config["proxy"]
+            ):
+                print()
+                cprint(f'Connected through {server_config["proxy"]}\n', "green")
+            else:
+                print()
+                cprint("Public connections are disabled!\n", "red")
+                return
+
         base_commands = ["cat", "ls", "download", "help", "exit"]
         write_only_commands = ["rm", "upload"]
 
@@ -291,7 +308,7 @@ class BaseServer:
                             self.player.add_tool(items[item_index][0])
                             progress_bar(step=0.02)
                             cprint(
-                                f"Congratulations! you got {items[item_index][0]}!\n",
+                                f"Congratulations! you got {items[item_index][0].capitalize()}!\n",
                                 "green",
                             )
                             continue

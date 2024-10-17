@@ -14,6 +14,7 @@ class ServerConfig(TypedDict):
     banner: str
     writable: bool
     authentication: list[tuple[str, str]] | None
+    proxy: str | None
     crashed: bool
     hack_tool: str | None
     defense_tool: str | None

@@ -3,4 +3,7 @@ class Commands:
         self.root_path = root_path
 
     def available_commands(self) -> list[str]:
-        return []
+        return ["tunnel"]
+
+    def __tunnel(self, _):
+        print("tunnel")

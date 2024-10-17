@@ -13,6 +13,7 @@ SERVER_CONFIG: WebServerConfig = {
     "banner": "Welcome to the Testing Server!",
     "font": "slant",
     "authentication": None,
+    "proxy": None,
     "contents": [
         {
             "title": "Test article",
@@ -35,6 +36,7 @@ MAIL_SERVER_CONFIG: MailServerConfig = {
     "banner": "Welcome to the Testing Server Mailer!",
     "font": "doom",
     "authentication": [("franco", "franchi"), ("gino", "gini")],
+    "proxy": None,
     "contents": {
         "franco": [
             {
@@ -68,6 +70,7 @@ FILE_SERVER_CONFIG: FileServerConfig = {
     "banner": "Welcome to the File Server!",
     "font": "slant",
     "authentication": [("gino", "gini"), ("franco", "franchi")],
+    "proxy": "hide.bentekcorp.com",
     "contents": {
         "gino": [
             ("readme.txt", "This is a readme\nHave you read it?"),
@@ -87,6 +90,7 @@ DBSERVER_CONFIG: DbServerConfig = {
     "banner": "Welcome to the Testing DB",
     "font": "doom",
     "authentication": [("secure", "s3cur3")],
+    "proxy": None,
     "contents": [
         {
             "title": "s0ftm4rk",
@@ -109,6 +113,7 @@ COMMERCESERVER_CONFIG: CommerceServerConfig = {
     "banner": "Welcome to the Test ECommerce",
     "font": "sblood",
     "authentication": None,
+    "proxy": None,
     "contents": [
         ("rootbreaker", "Password cracker\nBasic version", 100),
         ("backmirror", "Defensive tool against server with tracing software", 100),
