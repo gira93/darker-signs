@@ -6,6 +6,7 @@ from system.dns import Dns
 from system.player import Player
 from system.utils import download_file, progress_bar, show_menu, upload_file
 from mother.type_defs import (
+    ChatMessage,
     ServerConfig,
     ShopItem,
     WebServerConfig,
@@ -276,7 +277,37 @@ class BaseServer:
                 continue
 
     def chat_server(self, server_config: ChatServerConfig) -> None:
-        pass
+        _, config = self.__load_config(server_config)
+        self.__welcome(config["banner"], config["name"], config["font"])
+
+        entries: list[ChatMessage] = config["contents"]
+        while True:
+            search_query = input("Search for a message (type exit to disconnect): ")
+            if search_query == "exit":
+                print()
+                cprint("Disconnecting", "red")
+                break
+            elif search_query == "":
+                continue
+            elif len(search_query) > 5:
+                search_results: list[ChatMessage] = [
+                    e for e in entries if search_query.lower() in e["content"].lower()
+                ]
+                if len(search_results) > 0:
+                    print()
+                    cprint("Found messages:\n", "green")
+                    for result in search_results:
+                        cprint(f"{result['op']}@: {result['content']}", "blue")
+                    print()
+                    input("Press a key")
+                    continue
+                else:
+                    print()
+                    cprint("No results found\n", "red")
+                    continue
+            else:
+                cprint("Search query must be longer than 5 characters\n", "red")
+                continue
 
     def commerce_server(self, server_config: CommerceServerConfig) -> None:
         _, config = self.__load_config(server_config)

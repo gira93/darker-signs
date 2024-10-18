@@ -38,10 +38,14 @@ class Cli:
         )
         self.player: Player = Player(f"{self.root_path}/system/player.json")
 
-        campaign_module = importlib.import_module(".commands", campaign_name)
-        campaign_class = getattr(campaign_module, "Commands")
-        self.campaign_env = campaign_class(self.root_path)
-        self.available_commands = BASE_COMMANDS + self.campaign_env.available_commands()
+        campaign_commands_module = importlib.import_module(".commands", campaign_name)
+        campaign_commands_class = getattr(campaign_commands_module, "Commands")
+        self.campaign_commands_env = campaign_commands_class(
+            self.root_path, self.dns, self.player, self.mail
+        )
+        self.available_commands = (
+            BASE_COMMANDS + self.campaign_commands_env.available_commands()
+        )
 
         self.host = host
 
@@ -61,8 +65,8 @@ class Cli:
                         self, f"_{self.__class__.__name__}__{command}", None
                     )
                     extra_method = getattr(
-                        self.campaign_env,
-                        f"_{self.campaign_env.__class__.__name__}__{command}",
+                        self.campaign_commands_env,
+                        f"_{self.campaign_commands_env.__class__.__name__}__{command}",
                         None,
                     )
                     if base_method:
