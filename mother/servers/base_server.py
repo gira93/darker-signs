@@ -359,6 +359,9 @@ class BaseServer:
         cprint("This is a gateway server\nDirect connections are disabled\n", "red")
         return
 
+    def assignment_server(self) -> None:
+        pass
+
     def __initialize_tools(self, server_config: ServerConfig) -> None:
         if server_config["hack_tool"] and self.player.has_tool(
             server_config["hack_tool"]

@@ -5,6 +5,20 @@ File = tuple[str, str]  # Filename, file content
 ChatMessage = TypedDict("ChatMessage", {"op": str, "content": str})
 DbEntry = TypedDict("DbEntry", {"title": str, "content": str})
 ShopItem = tuple[str, str, int]  # Item name, desc, price
+AssignmentRequirement = TypedDict(
+    "AssignmentRequirement", {"config_key": str, "condition_case": dict[str, str]}
+)
+Assignment = TypedDict(
+    "Assignment",
+    {
+        "title": str,
+        "description": str,
+        "exp_needed": int,
+        "credit_reward": int,
+        "exp_reward": int,
+        "requirements": dict[str, AssignmentRequirement],
+    },
+)
 
 
 class ServerConfig(TypedDict):
@@ -42,3 +56,7 @@ class DbServerConfig(ServerConfig):
 
 class CommerceServerConfig(ServerConfig):
     contents: list[ShopItem]
+
+
+class AssignmentServerConfig(ServerConfig):
+    contents: list[Assignment]

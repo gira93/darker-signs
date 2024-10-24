@@ -13,5 +13,16 @@
       "50": "db",
       "60": "commerce"
     }
+  },
+  "ivoice.net": {
+    "alias": "10.10.10.10"
+  },
+  "10.10.10.10": {
+    "name": "ivoice.net",
+    "module_name": "ivoice_net",
+    "class_name": "IvoiceNet",
+    "port_mapping": {
+      "80": "http"
+    }
   }
 }
