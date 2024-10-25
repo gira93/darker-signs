@@ -1,13 +1,24 @@
 from typing import TypedDict
+from enum import Enum
 
 Email = TypedDict("Email", {"from": str, "subject": str, "content": str})
 File = tuple[str, str]  # Filename, file content
 ChatMessage = TypedDict("ChatMessage", {"op": str, "content": str})
 DbEntry = TypedDict("DbEntry", {"title": str, "content": str})
 ShopItem = tuple[str, str, int]  # Item name, desc, price
-AssignmentRequirement = TypedDict(
-    "AssignmentRequirement", {"config_key": str, "condition_case": dict[str, str]}
-)
+
+
+class RequirementType(Enum):
+    FILE_PRESENT = 1
+    FILE_NOT_PRESENT = 2
+    FILE_DOWNLOADED = 3
+    SERVER_CRASHED = 4
+
+
+AssignmentRequirement = tuple[
+    RequirementType, str
+]  # RequirementType, subject (file name ...)
+
 Assignment = TypedDict(
     "Assignment",
     {
@@ -16,7 +27,7 @@ Assignment = TypedDict(
         "exp_needed": int,
         "credit_reward": int,
         "exp_reward": int,
-        "requirements": dict[str, AssignmentRequirement],
+        "requirements": dict[str, AssignmentRequirement],  # Key: server config id
     },
 )
 

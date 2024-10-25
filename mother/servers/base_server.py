@@ -289,7 +289,7 @@ class BaseServer:
                 break
             elif search_query == "":
                 continue
-            elif len(search_query) > 5:
+            elif len(search_query) > 3:
                 search_results: list[ChatMessage] = [
                     e for e in entries if search_query.lower() in e["content"].lower()
                 ]
@@ -306,7 +306,7 @@ class BaseServer:
                     cprint("No results found\n", "red")
                     continue
             else:
-                cprint("Search query must be longer than 5 characters\n", "red")
+                cprint("Search query must be longer than 3 characters\n", "red")
                 continue
 
     def commerce_server(self, server_config: CommerceServerConfig) -> None:

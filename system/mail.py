@@ -52,7 +52,7 @@ class Mail:
     def __print_mailbox(self) -> None:
         for idx, mail in enumerate(self.mailbox):
             status = " " if mail["read"] else "N"
-            cprint(f"{idx + 1} {status}> {mail['from']}:{mail['subject']}", "blue")
+            cprint(f"{idx + 1} {status}> {mail['from']}: {mail['subject']}", "blue")
 
     def __print_message(self, message_id: str) -> bool:
         try:
