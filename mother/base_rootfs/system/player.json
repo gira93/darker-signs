@@ -3,7 +3,8 @@
   "balance": 0,
   "experience": 0,
   "tools": [],
-  "active_missions": [],
+  "active_mission": null,
+  "completed_missions": [],
   "pinned_servers": [],
   "changed_servers": {}
 }

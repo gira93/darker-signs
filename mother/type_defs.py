@@ -22,8 +22,11 @@ AssignmentRequirement = tuple[
 Assignment = TypedDict(
     "Assignment",
     {
+        "id": str,
         "title": str,
         "description": str,
+        "mail_content": str,
+        "mail_from": str,
         "exp_needed": int,
         "credit_reward": int,
         "exp_reward": int,

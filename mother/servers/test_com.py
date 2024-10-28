@@ -70,11 +70,12 @@ FILE_SERVER_CONFIG: FileServerConfig = {
     "banner": "Welcome to the File Server!",
     "font": "slant",
     "authentication": [("gino", "gini"), ("franco", "franchi")],
-    "proxy": "hide.bentekcorp.com",
+    "proxy": None,
     "contents": {
         "gino": [
             ("readme.txt", "This is a readme\nHave you read it?"),
             ("another.bin", "Another file dotbin"),
+            ("test.txt", ""),
         ],
         "franco": [("franco.md", "franco dotmd"), ("kernel.sys", "KERNELSYS")],
     },

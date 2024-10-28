@@ -6,7 +6,11 @@ from system.dns import Dns
 from system.player import Player
 from system.utils import download_file, progress_bar, show_menu, upload_file
 from mother.type_defs import (
+    Assignment,
+    AssignmentRequirement,
+    AssignmentServerConfig,
     ChatMessage,
+    RequirementType,
     ServerConfig,
     ShopItem,
     WebServerConfig,
@@ -359,8 +363,84 @@ class BaseServer:
         cprint("This is a gateway server\nDirect connections are disabled\n", "red")
         return
 
-    def assignment_server(self) -> None:
-        pass
+    def assignment_server(self, server_config: AssignmentServerConfig) -> None:
+        _, config = self.__load_config(server_config)
+        self.__welcome(config["banner"], config["name"], config["font"])
+
+        active_mission_id = self.player.active_mission()
+        if active_mission_id:
+            print()
+            cprint(
+                "You are currently working on an assignment.\nYou can't work on multiple tasks at the same time.\n",
+                "yellow",
+            )
+            review_mission = input("Do you want to flag it for review? (y/n)[n]: ")
+            if review_mission == "y":
+                cprint(
+                    "Assignment sent for review...\nPlease wait, checking requirements...\n",
+                    "yellow",
+                )
+                progress_bar()
+                print()
+                if self.__review_mission(active_mission_id, config["contents"]):
+                    self.player.set_active_mission(None)
+                    self.player.add_completed_mission(active_mission_id)
+                    cprint(
+                        "Assignment accepted\nReward has been transfered to your account\n",
+                        "green",
+                    )
+                else:
+                    cprint("Assignment not completed", "red")
+            cprint("Connection closed", "red")
+            return
+
+        missions: list[Assignment] = config["contents"]
+        available_missions = []
+        for mission in missions:
+            if mission["id"] == self.player.active_mission():
+                continue
+            elif mission["id"] in self.player.completed_missions():
+                continue
+            elif mission["exp_needed"] >= self.player.experience():
+                available_missions.append(mission)
+            else:
+                continue
+        while True:
+            selection = show_menu(
+                list(map(lambda mission: mission["title"], available_missions))
+            )
+            match selection:
+                case s if s.isdigit() and 1 <= int(s) <= len(available_missions):
+                    mission: Assignment = available_missions[int(s) - 1]
+                    print()
+                    cprint(mission["title"], "blue")
+                    print()
+                    cprint(mission["description"], "blue")
+                    print()
+                    cprint(f'Reward: {mission["credit_reward"]}Cr.\n', "green")
+                    confirm = input("Accept this assignment? (y/n)[n]: ")
+                    if confirm == "y":
+                        self.player.set_active_mission(mission["id"])
+                        self.mail.add_message(
+                            from_user=mission["mail_from"],
+                            subject=mission["title"],
+                            message=mission["mail_content"],
+                        )
+                        print()
+                        cprint(
+                            "Thank you for accepting this assignment.\nDetails have been sent to your email.\n",
+                            "green",
+                        )
+                        cprint("Connection closed\n", "red")
+                        break
+                    else:
+                        continue
+                case "0":
+                    print()
+                    cprint("Connection closed", "red")
+                    break
+                case _:
+                    continue
 
     def __initialize_tools(self, server_config: ServerConfig) -> None:
         if server_config["hack_tool"] and self.player.has_tool(
@@ -435,3 +515,47 @@ class BaseServer:
             print()
             cprint("Invalid username or password", "red")
             return None
+
+    def __review_mission(self, mission_id: str, missions: list[Assignment]) -> bool:
+        mission: list[Assignment] = [m for m in missions if mission_id == m["id"]]
+        if len(mission) == 0:
+            cprint("Current active assignment not found on our system\n", "red")
+            return False
+        requirements: dict[str, AssignmentRequirement] = mission[0]["requirements"]
+        requirements_met: list[bool] = []
+        for server_id in requirements.keys():
+            server = self.player.get_server(server_id)
+            if server:
+                req_type, subject = requirements[server_id]
+                match req_type:
+                    case RequirementType.FILE_PRESENT:
+                        user, file = subject.split("|")
+                        files = [f[0] for f in server["contents"][user]]
+                        if file in files:
+                            requirements_met.append(True)
+                        else:
+                            requirements_met.append(False)
+                    case RequirementType.FILE_NOT_PRESENT:
+                        user, file = subject.split("|")
+                        files = [f[0] for f in server["contents"][user]]
+                        if file in files:
+                            requirements_met.append(False)
+                        else:
+                            requirements_met.append(True)
+                    case RequirementType.FILE_DOWNLOADED:
+                        requirements_met.append(
+                            upload_file(f"{self.root_path}/{subject}")
+                        )
+
+                    case RequirementType.SERVER_CRASHED:
+                        requirements_met.append(server["crashed"])
+            else:
+                requirements_met.append(False)
+        print(requirements_met)
+        return False
+        # if list(set(requirements_met))[0]:
+        #     self.player.add_credit(mission[0]["credit_reward"])
+        #     self.player.add_experience(mission[0]["exp_reward"])
+        #     return True
+        # else:
+        #     return False

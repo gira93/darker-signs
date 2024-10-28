@@ -7,7 +7,8 @@ class PlayerStatus(TypedDict):
     balance: int
     experience: int
     tools: list[str]
-    active_missions: list[str]
+    active_mission: str | None
+    completed_missions: list[str]
     pinned_servers: list[list[str]]
     changed_servers: dict[str, dict]
 
@@ -17,7 +18,6 @@ class Player:
         self.player_file = player_file
         with open(self.player_file, "r") as f:
             self.player: PlayerStatus = json.load(f)
-            self.player["active_missions"] = self.player["active_missions"]
 
     def balance(self) -> int:
         return self.player["balance"]
@@ -49,16 +49,19 @@ class Player:
     def has_tool(self, tool: str) -> bool:
         return tool in self.player["tools"]
 
-    def active_missions(self) -> list[str]:
-        return list(self.player["active_missions"])
+    def active_mission(self) -> str | None:
+        return self.player["active_mission"]
 
-    def add_active_mission(self, id: str) -> None:
-        self.player["active_missions"].append(id)
-        self.player["active_missions"] = list(set(self.player["active_missions"]))
+    def completed_missions(self) -> list[str]:
+        return list(self.player["completed_missions"])
+
+    def set_active_mission(self, id: str | None) -> None:
+        self.player["active_mission"] = id
         self.__save()
 
-    def remove_active_mission(self, id: str) -> None:
-        self.player["active_missions"].remove(id)
+    def add_completed_mission(self, id: str) -> None:
+        self.player["completed_missions"].append(id)
+        self.player["completed_missions"] = list(set(self.player["completed_missions"]))
         self.__save()
 
     def pinned_servers(self) -> list[tuple[str, str]]:

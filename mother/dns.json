@@ -24,5 +24,16 @@
     "port_mapping": {
       "80": "http"
     }
+  },
+  "karma.mother.net": {
+    "alias": "139.87.172.156"
+  },
+  "139.87.172.156": {
+    "name": "karma.mother.net",
+    "module_name": "karma_mother_net",
+    "class_name": "KarmaMotherNet",
+    "port_mapping": {
+      "80": "http"
+    }
   }
 }
