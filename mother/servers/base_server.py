@@ -61,7 +61,10 @@ class BaseServer:
         available_commands = (
             base_commands + write_only_commands if config["writable"] else base_commands
         )
-        self.__initialize_tools(server_config)
+        _, defense_tool = self.__initialize_tools(server_config)
+        if server_config["defense_tool"] and not defense_tool:
+            return
+
         self.__welcome(config["banner"], config["name"], config["font"])
 
         account = self.__authenticate(config)
@@ -153,7 +156,10 @@ class BaseServer:
             print()
             return
 
-        self.__initialize_tools(server_config)
+        _, defense_tool = self.__initialize_tools(server_config)
+        if server_config["defense_tool"] and not defense_tool:
+            return
+
         self.__welcome(config["banner"], config["name"], config["font"])
         articles: list[DbEntry] = config["contents"]
         options = list(map(lambda article: article["title"], articles))
@@ -190,7 +196,10 @@ class BaseServer:
 
     def mail_server(self, server_config: MailServerConfig) -> None:
         id, config = self.__load_config(server_config)
-        self.__initialize_tools(server_config)
+        _, defense_tool = self.__initialize_tools(server_config)
+        if server_config["defense_tool"] and not defense_tool:
+            return
+
         self.__welcome(config["banner"], config["name"], config["font"])
         account = self.__authenticate(config)
 
@@ -241,7 +250,10 @@ class BaseServer:
     def db_server(self, server_config: DbServerConfig) -> None:
         _, config = self.__load_config(server_config)
 
-        self.__initialize_tools(server_config)
+        _, defense_tool = self.__initialize_tools(server_config)
+        if server_config["defense_tool"] and not defense_tool:
+            return
+
         self.__welcome(config["banner"], config["name"], config["font"])
         account = self.__authenticate(config)
 
@@ -442,19 +454,37 @@ class BaseServer:
                 case _:
                     continue
 
-    def __initialize_tools(self, server_config: ServerConfig) -> None:
-        if server_config["hack_tool"] and self.player.has_tool(
-            server_config["hack_tool"]
-        ):
-            cprint(
-                f"{server_config['hack_tool'].capitalize()} armed and ready!", "yellow"
-            )
-            print()
-        if server_config["defense_tool"] and self.player.has_tool(
-            server_config["defense_tool"]
-        ):
-            cprint(f"{server_config['defense_tool'].capitalize()} running!", "green")
-            print()
+    def __initialize_tools(
+        self, server_config: ServerConfig
+    ) -> tuple[bool, bool]:  # tuple[hack tool loaded, defense tool loaded]
+        tools_present: list[bool] = [True, True]
+        if server_config["hack_tool"]:
+            if self.player.has_tool(server_config["hack_tool"]):
+                tools_present[0] = True
+                cprint(
+                    f"{server_config['hack_tool'].capitalize()} armed and ready!",
+                    "yellow",
+                )
+                print()
+            else:
+                tools_present[0] = False
+        else:
+            tools_present[0] = True
+
+        if server_config["defense_tool"]:
+            if self.player.has_tool(server_config["defense_tool"]):
+                tools_present[1] = True
+                cprint(
+                    f"{server_config['defense_tool'].capitalize()} running!", "green"
+                )
+                print()
+            else:
+                cprint("Trace detected!\nYou have been disconnected!", "red")
+                tools_present[1] = False
+        else:
+            tools_present[1] = True
+
+        return (tools_present[0], tools_present[1])
 
     def __load_config(self, server_config: ServerConfig) -> tuple[str, dict]:
         id = server_config["id"]
@@ -471,14 +501,44 @@ class BaseServer:
 
     def __authenticate(self, server_config: dict) -> str | None:
         accounts: dict[str, str] = dict(server_config["authentication"])
+
+        if server_config["hack_tool"] == "physicalkey":
+            cprint("Physical Key required for login\n", "yellow")
+            user = list(accounts.keys())[0]
+            key_name = accounts[user]
+            cprint("Checking for key...\n", "yellow")
+            key_present = upload_file(f"{self.root_path}/{key_name}")
+            if key_present:
+                cprint("Key validation completed\nAccess granted", "green")
+                return user
+            else:
+                cprint("Key validatoin failed\nDisconnecting", "red")
+                return None
+
         cprint("Login required", "yellow")
         print()
         user = input("Username: ")
         pw = input("Password: ")
-        if user in accounts and pw == accounts[user]:
+        if (
+            user in accounts
+            and pw == accounts[user]
+            and server_config["hack_tool"] != "wavehacker"
+        ):
             print()
             cprint("Access granted", "green")
             print()
+            return user
+        elif (
+            user in accounts
+            and pw == accounts[user]
+            and server_config["hack_tool"] == "wavehacker"
+            and self.player.has_tool("wavehacker")
+        ):
+            cprint(f"Wavehacker calling {pw}...\n", "yellow")
+            progress_bar()
+            cprint("Wavehacker playing back recorded audio...\n", "green")
+            progress_bar(100, 0.02)
+            cprint("VRLS System Login Complete\n", "green")
             return user
         elif (
             (
@@ -551,11 +611,9 @@ class BaseServer:
                         requirements_met.append(server["crashed"])
             else:
                 requirements_met.append(False)
-        print(requirements_met)
-        return False
-        # if list(set(requirements_met))[0]:
-        #     self.player.add_credit(mission[0]["credit_reward"])
-        #     self.player.add_experience(mission[0]["exp_reward"])
-        #     return True
-        # else:
-        #     return False
+        if list(set(requirements_met))[0]:
+            self.player.add_credit(mission[0]["credit_reward"])
+            self.player.add_experience(mission[0]["exp_reward"])
+            return True
+        else:
+            return False

@@ -41,11 +41,13 @@ class ServerConfig(TypedDict):
     font: str | None
     banner: str
     writable: bool
-    authentication: list[tuple[str, str]] | None
+    authentication: list[tuple[str, str]] | None  # username, password
     proxy: str | None
     crashed: bool
-    hack_tool: str | None
-    defense_tool: str | None
+    hack_tool: (
+        str | None
+    )  # roobreaker, rootbreaker2, rootbreaker3, wavehacker, physicalkey
+    defense_tool: str | None  # backmirror, backmirror2, backmirror3
 
 
 class WebServerConfig(ServerConfig):
