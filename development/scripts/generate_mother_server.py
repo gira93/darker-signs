@@ -8,9 +8,9 @@ from argparse import ArgumentParser
 
 parser = ArgumentParser()
 parser.add_argument("host")
-parser.add_argument("module_name")
-parser.add_argument("class_name")
-parser.add_argument("config_id")
+# parser.add_argument("module_name")
+# parser.add_argument("class_name")
+# parser.add_argument("config_id")
 args = parser.parse_args()
 
 cwd = os.getcwd()
@@ -18,10 +18,11 @@ cwd = os.getcwd()
 with open(f"{cwd}/mother/dns.json", "r") as f:
     dns = json.load(f)
 
-host = args.host
-module_name = args.module_name
-class_name = args.class_name
-config_id = args.config_id
+host: str = args.host
+host_segments: list[str] = host.split(".")
+module_name = "_".join(host_segments)
+class_name = "".join(segment.capitalize() for segment in host_segments)
+config_id = module_name
 server_ip = None
 
 while server_ip is None:
@@ -30,6 +31,18 @@ while server_ip is None:
 
     if ip.is_global:
         server_ip = str(ip)
+
+print(f"Host: {host}")
+print(f"Module name: {module_name}")
+print(f"Class name: {class_name}")
+print(f"Config ID: {config_id}")
+print(f"IP: {server_ip}")
+print()
+confirm = input("OK to continue?(y/N): ")
+
+if confirm != "y":
+    print("Bye")
+    exit(0)
 
 class_template = [
     "from .base_server import BaseServer",

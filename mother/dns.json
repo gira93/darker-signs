@@ -14,24 +14,101 @@
       "60": "commerce"
     }
   },
-  "ivoice.net": {
-    "alias": "10.10.10.10"
+  "karma.mother.net": {
+    "alias": "66.66.66.01"
   },
-  "10.10.10.10": {
-    "name": "ivoice.net",
-    "module_name": "ivoice_net",
-    "class_name": "IvoiceNet",
+  "66.66.66.01": {
+    "name": "karma.mother.net",
+    "module_name": "karma_mother_net",
+    "class_name": "KarmaMotherNet",
     "port_mapping": {
       "80": "http"
     }
   },
-  "karma.mother.net": {
-    "alias": "139.87.172.156"
+  "sutra.mother.net": {
+    "alias": "66.66.66.02"
   },
-  "139.87.172.156": {
-    "name": "karma.mother.net",
-    "module_name": "karma_mother_net",
-    "class_name": "KarmaMotherNet",
+  "66.66.66.02": {
+    "name": "sutra.mother.net",
+    "module_name": "sutra_mother_net",
+    "class_name": "SutraMotherNet",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "warez.mother.net": {
+    "alias": "66.66.66.03"
+  },
+  "66.66.66.03": {
+    "name": "warez.mother.net",
+    "module_name": "warez_mother_net",
+    "class_name": "WarezMotherNet",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "master.mother.net": {
+    "alias": "66.66.66.66"
+  },
+  "66.66.66.66": {
+    "name": "master.mother.net",
+    "module_name": "master_mother_net",
+    "class_name": "MasterMotherNet",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "hammerzone.mother.net": {
+    "alias": "66.66.10.10"
+  },
+  "66.66.10.10": {
+    "name": "hammerzone.mother.net",
+    "module_name": "hammerzone_mother_net",
+    "class_name": "HammerzoneMotherNet",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "ivoice.com": {
+    "alias": "119.66.173.157"
+  },
+  "119.66.173.157": {
+    "name": "ivoice.com",
+    "module_name": "ivoice_com",
+    "class_name": "IvoiceCom",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "interpol.gov": {
+    "alias": "38.180.176.171"
+  },
+  "38.180.176.171": {
+    "name": "interpol.gov",
+    "module_name": "interpol_gov",
+    "class_name": "InterpolGov",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "freemail.com": {
+    "alias": "224.68.248.91"
+  },
+  "224.68.248.91": {
+    "name": "freemail.com",
+    "module_name": "freemail_com",
+    "class_name": "FreemailCom",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "web.neowa.se": {
+    "alias": "74.89.72.46"
+  },
+  "74.89.72.46": {
+    "name": "web.neowa.se",
+    "module_name": "web_neowa_se",
+    "class_name": "WebNeowaSe",
     "port_mapping": {
       "80": "http"
     }

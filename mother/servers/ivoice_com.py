@@ -2,7 +2,7 @@ from .base_server import BaseServer
 from mother.type_defs import ChatServerConfig
 
 SERVER_CONFIG: ChatServerConfig = {
-    "id": "ivoice_net",
+    "id": "ivoice_com",
     "name": "IVoice Chat Server",
     "font": "standard",
     "proxy": None,
@@ -20,6 +20,6 @@ SERVER_CONFIG: ChatServerConfig = {
 }
 
 
-class IvoiceNet(BaseServer):
+class IvoiceCom(BaseServer):
     def http(self):
         self.chat_server(SERVER_CONFIG)
