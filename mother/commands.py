@@ -12,7 +12,7 @@ class Commands:
         self.mail = mail
 
     def available_commands(self) -> list[str]:
-        return ["tunnel"]
+        return ["tunnel", "stats"]
 
     def __tunnel(self, params: list[str]) -> None:
         try:
@@ -48,3 +48,10 @@ class Commands:
         else:
             cprint("Gateway, Server or port not available", "red")
             return
+
+    def __stats(self, _) -> None:
+        print()
+        cprint(f"Account balance: {self.player.balance()}\n", "green")
+        cprint("Available tools:\n", "green")
+        cprint("  ".join(self.player.tools()), "blue")
+        return
