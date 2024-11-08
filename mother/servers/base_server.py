@@ -136,10 +136,10 @@ class BaseServer:
                     case "exit":
                         config["contents"][account] = list(files.items())
                         self.player.add_or_update_server(id, config)
-                        if "connection.log" in filenames:
-                            print()
-                            cprint("Connection log file traced", "red")
-                            print()
+                        # if "connection.log" in filenames:
+                        #     print()
+                        #     cprint("Connection log file traced", "red")
+                        #     print()
                         cprint("Disconnecting\n", "red")
                         break
             elif com == "":
