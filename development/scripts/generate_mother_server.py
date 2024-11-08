@@ -8,9 +8,6 @@ from argparse import ArgumentParser
 
 parser = ArgumentParser()
 parser.add_argument("host")
-# parser.add_argument("module_name")
-# parser.add_argument("class_name")
-# parser.add_argument("config_id")
 args = parser.parse_args()
 
 cwd = os.getcwd()

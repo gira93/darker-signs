@@ -112,5 +112,214 @@
     "port_mapping": {
       "80": "http"
     }
+  },
+  "temp.ensatcorp.net": {
+    "alias": "182.199.199.196"
+  },
+  "182.199.199.196": {
+    "name": "temp.ensatcorp.net",
+    "module_name": "temp_ensatcorp_net",
+    "class_name": "TempEnsatcorpNet",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "subcorp.puresun.net": {
+    "alias": "165.23.169.62"
+  },
+  "165.23.169.62": {
+    "name": "subcorp.puresun.net",
+    "module_name": "subcorp_puresun_net",
+    "class_name": "SubcorpPuresunNet",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "athem.final.net": {
+    "alias": "222.254.179.42"
+  },
+  "222.254.179.42": {
+    "name": "athem.final.net",
+    "module_name": "athem_final_net",
+    "class_name": "AthemFinalNet",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "australian.final.net": {
+    "alias": "94.8.76.207"
+  },
+  "94.8.76.207": {
+    "name": "australian.final.net",
+    "module_name": "australian_final_net",
+    "class_name": "AustralianFinalNet",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "file.wellmark.com": {
+    "alias": "30.12.15.170"
+  },
+  "30.12.15.170": {
+    "name": "file.wellmark.com",
+    "module_name": "file_wellmark_com",
+    "class_name": "FileWellmarkCom",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "pstagna.personal.it": {
+    "alias": "58.84.48.250"
+  },
+  "58.84.48.250": {
+    "name": "pstagna.personal.it",
+    "module_name": "pstagna_personal_it",
+    "class_name": "PstagnaPersonalIt",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "web4.telemark.com": {
+    "alias": "83.88.204.247"
+  },
+  "83.88.204.247": {
+    "name": "web4.telemark.com",
+    "module_name": "web4_telemark_com",
+    "class_name": "Web4TelemarkCom",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "east3.telemark.com": {
+    "alias": "116.99.130.91"
+  },
+  "116.99.130.91": {
+    "name": "east3.telemark.com",
+    "module_name": "east3_telemark_com",
+    "class_name": "East3TelemarkCom",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "privteam.telemark.com": {
+    "alias": "239.180.137.128"
+  },
+  "239.180.137.128": {
+    "name": "privteam.telemark.com",
+    "module_name": "privteam_telemark_com",
+    "class_name": "PrivteamTelemarkCom",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "hide.ironchang.it": {
+    "alias": "231.44.120.20"
+  },
+  "231.44.120.20": {
+    "name": "hide.ironchang.it",
+    "module_name": "hide_ironchang_it",
+    "class_name": "HideIronchangIt",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "main1.meccate.ch": {
+    "alias": "229.38.211.221"
+  },
+  "229.38.211.221": {
+    "name": "main1.meccate.ch",
+    "module_name": "main1_meccate_ch",
+    "class_name": "Main1MeccateCh",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "archives.gs": {
+    "alias": "123.122.130.244"
+  },
+  "123.122.130.244": {
+    "name": "archives.gs",
+    "module_name": "archives_gs",
+    "class_name": "ArchivesGs",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "bentekmail.com": {
+    "alias": "24.173.1.193"
+  },
+  "24.173.1.193": {
+    "name": "bentekmail.com",
+    "module_name": "bentekmail_com",
+    "class_name": "BentekmailCom",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "hime.bentekcorp.com": {
+    "alias": "136.35.41.70"
+  },
+  "136.35.41.70": {
+    "name": "hime.bentekcorp.com",
+    "module_name": "hime_bentekcorp_com",
+    "class_name": "HimeBentekcorpCom",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "altproject.intrapol.ru": {
+    "alias": "91.9.114.29"
+  },
+  "91.9.114.29": {
+    "name": "altproject.intrapol.ru",
+    "module_name": "altproject_intrapol_ru",
+    "class_name": "AltprojectIntrapolRu",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "personal.softma.rk": {
+    "alias": "181.152.105.29"
+  },
+  "181.152.105.29": {
+    "name": "personal.softma.rk",
+    "module_name": "personal_softma_rk",
+    "class_name": "PersonalSoftmaRk",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "hide.sanandreashubs.com": {
+    "alias": "189.235.130.125"
+  },
+  "189.235.130.125": {
+    "name": "hide.sanandreashubs.com",
+    "module_name": "hide_sanandreashubs_com",
+    "class_name": "HideSanandreashubsCom",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "hideway.bentekcorp.com": {
+    "alias": "159.84.234.46"
+  },
+  "159.84.234.46": {
+    "name": "hideway.bentekcorp.com",
+    "module_name": "hideway_bentekcorp_com",
+    "class_name": "HidewayBentekcorpCom",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "shadow.bellavista": {
+    "alias": "36.0.191.36"
+  },
+  "36.0.191.36": {
+    "name": "shadow.bellavista",
+    "module_name": "shadow_bellavista",
+    "class_name": "ShadowBellavista",
+    "port_mapping": {
+      "80": "http"
+    }
   }
 }
