@@ -433,11 +433,12 @@ class BaseServer:
                     confirm = input("Accept this assignment? (y/n)[n]: ")
                     if confirm == "y":
                         self.player.set_active_mission(mission["id"])
-                        self.mail.add_message(
-                            from_user=mission["mail_from"],
-                            subject=mission["title"],
-                            message=mission["mail_content"],
-                        )
+                        for email in mission["emails"]:
+                            self.mail.add_message(
+                                from_user=email["from"],
+                                subject=mission["title"],
+                                message=email["content"],
+                            )
                         print()
                         cprint(
                             "Thank you for accepting this assignment.\nDetails have been sent to your email.\n",

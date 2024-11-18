@@ -4,8 +4,8 @@ There are some additions:
 - "m", "c" and "s" are shorthands for "mail", "connect" and "scan";
   so you can type "s example.com" instead of "scan example.com"
 
-- "tunnel" is a command that let's you connect to a server passing through a gateway,
-  some servers won't accept public connections, if you receive an error, try searching
+- "tunnel" is a command that let you connect to a server passing through a gateway,
+  some servers won't accept public connections, if you receive an error, try looking around
   for the correct gateway and use it with "tunnel [gateway server] [real server] [port]"
 
 - "stats" is a command used to show your current credit balance and installed tools
@@ -18,12 +18,8 @@ try to buy each version of every tool on Warez, you never know when it might be 
 Using tools.
 When you connect to a server and you have the correct tool, you'll see a message "[Tool] armed and ready!".
 Defensive tool are automatically launched,
-hacking or cracking tools need to be launched manually by typing the name of the tool in the "password" field
+hacking or cracking tools need to be launched manually by typing the name of the tool at the right moment
+(refer to the tool description on the store page).
 
-Examples:
-You try connecting to test.com at port 21, it asks for user and password, you don't have any tool available.
-Later you buy "rootbreaker", if you try reconnecting to test.com you'll see "rootbreaker armed and ready!".
-Now you can type a username (try "admin" or "root" if you don't know a specific one)
-and "rootbreaker" as password.
-It will crack the account for you and also give you the clear text password for later use!
+Have fun!
 

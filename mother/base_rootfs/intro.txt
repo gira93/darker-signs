@@ -5,15 +5,15 @@ after your excellent work with Zrio, we decided to call you in.
 
 This is MotherOS, our creation, it connects to our network and grants you access to the real world.
 
-Mother Network is divided into 3 main servers, we call it The Thriad: Karma, Sutra and Warez;
+Mother Network is divided into 3 main servers, we call it The Triad: Karma, Sutra and Warez;
 
 - karma.mother.net is the assignments server, here you'll find new tasks to do and send already completed ones for review
-- sutra.mother.net is a news servers, it's a bit work in progress but you may find some cool articles in it
+- sutra.mother.net is a news servers, it's work in progress but you may find some cool articles in it
 - warez.mother.net is a software server, nothing is free in the real world, you need credits to buy software here
 
 How do you get credits? By completing tasks for us, of course!
 
-You'll find a readme.txt file in the root of your OS, it explain how everything works here; read it,
+You'll find a readme.txt file in the root of your OS, it explains how everything works here; read it,
 then explore a bit, have a look at Sutra and Warez.
 
 When you're ready, we have an easy job for you just to get you started.
