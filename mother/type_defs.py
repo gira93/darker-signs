@@ -13,6 +13,7 @@ class RequirementType(Enum):
     FILE_NOT_PRESENT = 2
     FILE_DOWNLOADED = 3
     SERVER_CRASHED = 4
+    EMAIL_NOT_PRESENT = 5
 
 
 AssignmentRequirement = tuple[

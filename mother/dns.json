@@ -88,7 +88,8 @@
     "module_name": "interpol_gov",
     "class_name": "InterpolGov",
     "port_mapping": {
-      "80": "http"
+      "80": "record_database",
+      "21": "public_drop"
     }
   },
   "freemail.com": {
@@ -110,7 +111,7 @@
     "module_name": "web_neowa_se",
     "class_name": "WebNeowaSe",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "temp.ensatcorp.net": {
@@ -318,6 +319,28 @@
     "name": "shadow.bellavista",
     "module_name": "shadow_bellavista",
     "class_name": "ShadowBellavista",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "fbi.gov": {
+    "alias": "61.33.177.92"
+  },
+  "61.33.177.92": {
+    "name": "fbi.gov",
+    "module_name": "fbi_gov",
+    "class_name": "FbiGov",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "kyotomail.jp": {
+    "alias": "220.252.107.43"
+  },
+  "220.252.107.43": {
+    "name": "kyotomail.jp",
+    "module_name": "kyotomail_jp",
+    "class_name": "KyotomailJp",
     "port_mapping": {
       "80": "http"
     }

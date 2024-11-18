@@ -1,22 +1,21 @@
 from .base_server import BaseServer
-from mother.type_defs import WebServerConfig
+from mother.type_defs import FileServerConfig
 
-SERVER_CONFIG: WebServerConfig = {
+SERVER_CONFIG: FileServerConfig = {
     "id": "web_neowa_se",
-    "name": "",
-    "banner": "",
-    "font": "standard",
-    "authentication": None,
+    "name": "Neowase",
+    "banner": "This server is only accessible with a web browser",
+    "font": "sblood",
+    "authentication": [("admin", "ab751b4a")],
     "proxy": None,
-    "contents": [],
-    "writable": False,
+    "contents": {"admin": [("kernel.sys", "c2c113ec-0fe7-4247-8ce3-bd6597dd893b")]},
+    "writable": True,
     "crashed": False,
-    "hack_tool": None,
+    "hack_tool": "rootbreaker",
     "defense_tool": None,
 }
 
 
 class WebNeowaSe(BaseServer):
-    def http(self):
-        self.web_server(SERVER_CONFIG)
-
+    def ftp(self):
+        self.file_server(SERVER_CONFIG)

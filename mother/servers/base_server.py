@@ -413,7 +413,7 @@ class BaseServer:
                 continue
             elif mission["id"] in self.player.completed_missions():
                 continue
-            elif mission["exp_needed"] >= self.player.experience():
+            elif self.player.experience() >= mission["exp_needed"]:
                 available_missions.append(mission)
             else:
                 continue
@@ -610,6 +610,15 @@ class BaseServer:
 
                     case RequirementType.SERVER_CRASHED:
                         requirements_met.append(server["crashed"])
+                    case RequirementType.EMAIL_NOT_PRESENT:
+                        user, mail_subject = subject.split("|")
+                        email_subjects = [
+                            m["subject"] for m in server["contents"][user]
+                        ]
+                        if mail_subject in email_subjects:
+                            requirements_met.append(False)
+                        else:
+                            requirements_met.append(True)
             else:
                 requirements_met.append(False)
         if list(set(requirements_met))[0]:

@@ -10,9 +10,15 @@ SERVER_CONFIG: ChatServerConfig = {
     "crashed": False,
     "writable": False,
     "contents": [
-        {"op": "mw_lo", "content": "Messaggio test, ciao sono Ming Wo Lo"},
-        {"op": "softm", "content": "Ming Wo Lo? chi è?"},
-        {"op": "pstagna", "content": "Oh! non lo sapevo, finalNet"},
+        {
+            "op": "mw_lo",
+            "content": "Hello, I'm Ming Woo Lo from Telemark, I need the famous lotto program everyone talks about",
+        },
+        {"op": "b1t_drv", "content": "Ming Woo Lo? weren't you japanese?"},
+        {
+            "op": "mw_lo",
+            "content": "Ming Woo Lo is a japanese name but I'm American! do you have the software? can you send it to mw_lo@kyotomail.jp?",
+        },
     ],
     "hack_tool": None,
     "defense_tool": None,

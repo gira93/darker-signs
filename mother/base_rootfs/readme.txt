@@ -17,9 +17,14 @@ try to buy each version of every tool on Warez, you never know when it might be 
 
 Using tools.
 When you connect to a server and you have the correct tool, you'll see a message "[Tool] armed and ready!".
-Defensive tool are automatically launched,
+Defensive tools are automatically launched,
 hacking or cracking tools need to be launched manually by typing the name of the tool at the right moment
 (refer to the tool description on the store page).
+
+Triad Servers reminder:
+- karma.mother.net
+- sutra.mother.net
+- warez.mother.net
 
 Have fun!
 
