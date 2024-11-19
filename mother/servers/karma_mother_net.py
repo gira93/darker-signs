@@ -17,6 +17,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 {
                     "from": "karma@mother.net",
                     "subject": "",
+                    "attachment": None,
                     "content": "\n".join(
                         [
                             "S0ftma4rk, a junior member of our community has been recently caught stealing money.",
@@ -46,6 +47,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 {
                     "from": "karma@mother.net",
                     "subject": "",
+                    "attachment": None,
                     "content": "\n".join(
                         [
                             "An employee of the japanese division of Telemark called Ming Woo Lo has come into possession",
@@ -76,6 +78,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 {
                     "from": "karma@mother.net",
                     "subject": "",
+                    "attachment": None,
                     "content": "\n".join(
                         [
                             "We have received a horrifying news.",
@@ -94,6 +97,66 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 "web_neowa_se": (
                     RequirementType.SERVER_CRASHED,
                     "",
+                )
+            },
+        },
+        {
+            "id": "mtr004",
+            "title": "Confidential information",
+            "description": "Download file from a corporate server",
+            "emails": [
+                {
+                    "from": "karma@mother.net",
+                    "subject": "",
+                    "attachment": None,
+                    "content": "\n".join(
+                        [
+                            "After the TelemarkONE incident a lot of corporations are exchanging confidential documents.",
+                            'ENSAT is one of those: we traced a file named "unreg728.dat" it seems it\'s been transferred to',
+                            "a temporary server managed by ENSAT itself;",
+                            "We don't have an IP or a server name though.",
+                            "Find the server and download the file, it will be uploaded to us during the review process.",
+                        ]
+                    ),
+                }
+            ],
+            "exp_needed": 30,
+            "credit_reward": 50,
+            "exp_reward": 10,
+            "requirements": {
+                "temp_ensatcorp_net": (
+                    RequirementType.FILE_DOWNLOADED,
+                    "unreg728.dat",
+                )
+            },
+        },
+        {
+            "id": "mtr005",
+            "title": "The trojan horse",
+            "description": "Upload worm to corporate server",
+            "emails": [
+                {
+                    "from": "karma@mother.net",
+                    "subject": "",
+                    "attachment": ("database.bin", "7dbecf59592e4e2c9880255ad2f10453"),
+                    "content": "\n".join(
+                        [
+                            "Puresun is also starting to exchange documents.",
+                            'We need you to upload a special worm to the their server "subcorp.puresun.net"',
+                            "this program will track all data sent to other corporations.",
+                            "We can't find information about it so we think a clean login isn't possible.",
+                            'The worm you need to upload "database.bin" should be already downloaded into your local machine',
+                        ]
+                    ),
+                }
+            ],
+            "exp_needed": 40,
+            "credit_reward": 50,
+            "exp_reward": 10,
+            "requirements": {
+                "subcorp_puresun_net": (
+                    RequirementType.FILE_PRESENT,
+                    "admin|database.bin",
                 )
             },
         },

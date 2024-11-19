@@ -19,6 +19,23 @@ SERVER_CONFIG: ChatServerConfig = {
             "op": "mw_lo",
             "content": "Ming Woo Lo is a japanese name but I'm American! do you have the software? can you send it to mw_lo@kyotomail.jp?",
         },
+        {
+            "op": "vlad_ensat",
+            "content": "Hello, I'm Vlad from ENSAT, I need to drop a file but all the servers are under maintenance",
+        },
+        {
+            "op": "br4m1n0",
+            "content": "Hi, ENSAT should have setup temp.ensatcorp.net, you will receive an email to your @freemail account",
+        },
+        {"op": "1r0nch4ng", "content": "Does anybody know about some Puresun server?"},
+        {
+            "op": "fr33z3r",
+            "content": "I know for sure that Puresun has created a server, it should be subcorp.puresun.net. Don't have any other info",
+        },
+        {
+            "op": "1r0nch4ng",
+            "content": "I was able to connect but my current tools don't work. Puresun must have updated security",
+        },
     ],
     "hack_tool": None,
     "defense_tool": None,

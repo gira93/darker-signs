@@ -1,22 +1,21 @@
 from .base_server import BaseServer
-from mother.type_defs import WebServerConfig
+from mother.type_defs import FileServerConfig
 
-SERVER_CONFIG: WebServerConfig = {
+SERVER_CONFIG: FileServerConfig = {
     "id": "subcorp_puresun_net",
-    "name": "",
-    "banner": "",
+    "name": "Puresun",
+    "banner": "Puresun Subcorp file server, public access is denied",
     "font": "standard",
-    "authentication": None,
+    "authentication": [("admin", "bb8995a8")],
     "proxy": None,
-    "contents": [],
-    "writable": False,
+    "contents": {"admin": [("db_data.bin", "BIN")]},
+    "writable": True,
     "crashed": False,
-    "hack_tool": None,
+    "hack_tool": "rootbreaker2",
     "defense_tool": None,
 }
 
 
 class SubcorpPuresunNet(BaseServer):
-    def http(self):
-        self.web_server(SERVER_CONFIG)
-
+    def ftp(self):
+        self.file_server(SERVER_CONFIG)

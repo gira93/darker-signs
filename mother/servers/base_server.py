@@ -115,7 +115,7 @@ class BaseServer:
                                 progress_bar()
                                 cprint("KERNEL MISSING", "red")
                                 cprint("Connection closed by remote host", "red")
-                                return
+                                break
                         else:
                             cprint("File not found", "red")
                         continue
@@ -134,8 +134,6 @@ class BaseServer:
                         print()
                         continue
                     case "exit":
-                        config["contents"][account] = list(files.items())
-                        self.player.add_or_update_server(id, config)
                         # if "connection.log" in filenames:
                         #     print()
                         #     cprint("Connection log file traced", "red")
@@ -147,6 +145,9 @@ class BaseServer:
             else:
                 cprint("Command not found\n", "red")
                 continue
+
+        config["contents"][account] = list(files.items())
+        self.player.add_or_update_server(id, config)
 
     def web_server(self, server_config: WebServerConfig) -> None:
         id, config = self.__load_config(server_config)
@@ -403,7 +404,7 @@ class BaseServer:
                     )
                 else:
                     cprint("Assignment not completed", "red")
-            cprint("Connection closed", "red")
+                    cprint("Connection closed", "red")
             return
 
         missions: list[Assignment] = config["contents"]
@@ -439,12 +440,16 @@ class BaseServer:
                                 subject=mission["title"],
                                 message=email["content"],
                             )
+                            if email["attachment"]:
+                                name, content = email["attachment"]
+                                download_file(
+                                    f"{self.root_path}/{name}", content, False
+                                )
                         print()
                         cprint(
                             "Thank you for accepting this assignment.\nDetails have been sent to your email.\n",
                             "green",
                         )
-                        cprint("Connection closed\n", "red")
                         break
                     else:
                         continue

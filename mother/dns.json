@@ -122,7 +122,7 @@
     "module_name": "temp_ensatcorp_net",
     "class_name": "TempEnsatcorpNet",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "subcorp.puresun.net": {
@@ -133,7 +133,7 @@
     "module_name": "subcorp_puresun_net",
     "class_name": "SubcorpPuresunNet",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "athem.final.net": {

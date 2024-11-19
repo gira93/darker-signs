@@ -1,4 +1,4 @@
-from typing import TypedDict
+from typing import TypedDict, Optional
 from enum import Enum
 
 Email = TypedDict("Email", {"from": str, "subject": str, "content": str})
@@ -16,6 +16,10 @@ class RequirementType(Enum):
     EMAIL_NOT_PRESENT = 5
 
 
+class EmailWithAttachment(Email):
+    attachment: Optional[tuple[str, str]]
+
+
 AssignmentRequirement = tuple[
     RequirementType, str
 ]  # RequirementType, subject (file name ...)
@@ -26,7 +30,7 @@ Assignment = TypedDict(
         "id": str,
         "title": str,
         "description": str,
-        "emails": list[Email],
+        "emails": list[EmailWithAttachment],
         "exp_needed": int,
         "credit_reward": int,
         "exp_reward": int,
