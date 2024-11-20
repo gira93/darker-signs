@@ -53,8 +53,8 @@ def test_add_message(mock_json_dump, mock_open_func, mail_obj):
 def test_print_mailbox(mock_print, mail_obj):
     mail_obj._Mail__print_mailbox()
     expected_calls = [
-        call("1 N> zrio:unittest"),
-        call("2  > security:another unittest"),
+        call("1 N> zrio: unittest"),
+        call("2  > security: another unittest"),
     ]
     mock_print.assert_has_calls(expected_calls)
 

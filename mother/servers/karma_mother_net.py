@@ -275,6 +275,39 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 )
             },
         },
+        {
+            "id": "mtr010",
+            "title": "The installer",
+            "description": "Upload spyware on a server",
+            "emails": [
+                {
+                    "from": "karma@mother.net",
+                    "subject": "",
+                    "attachment": None,
+                    "content": "\n".join(
+                        [
+                            "These days Telemark seems to be the most active corporation.",
+                            "We know they will be performing a massive software upgrade soon,",
+                            "we need to make the most of the situation, this is where you come in:",
+                            'enter the "east3.telemark.com" server and upload the "setupdb.bin" file (attached),',
+                            "during the update this malicious file will be automatically executed",
+                            "and we will be able to track Telemark's operations.",
+                            "It sounds easy but said server is protected by a physical key login system;",
+                            "to date no one has gone that deep, we trust your skill.",
+                        ]
+                    ),
+                }
+            ],
+            "exp_needed": 100,
+            "credit_reward": 50,
+            "exp_reward": 10,
+            "requirements": {
+                "east3_telemark_com": (
+                    RequirementType.FILE_PRESENT,
+                    "admin|setupdb.bin",
+                )
+            },
+        },
     ],
     "writable": False,
     "crashed": False,
