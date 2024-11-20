@@ -1,22 +1,21 @@
 from .base_server import BaseServer
-from mother.type_defs import WebServerConfig
+from mother.type_defs import FileServerConfig
 
-SERVER_CONFIG: WebServerConfig = {
+SERVER_CONFIG: FileServerConfig = {
     "id": "web4_telemark_com",
-    "name": "",
-    "banner": "",
-    "font": "standard",
-    "authentication": None,
-    "proxy": None,
-    "contents": [],
-    "writable": False,
+    "name": "Telemark",
+    "banner": "Private temporary server",
+    "font": "speed",
+    "authentication": [("admin", "8e7d52be")],
+    "proxy": "hide.sanandreashubs.com",
+    "contents": {"admin": [("kernel.sys", "9b7a749267ae480cb4fc5318d7e4d5d7")]},
+    "writable": True,
     "crashed": False,
-    "hack_tool": None,
-    "defense_tool": None,
+    "hack_tool": "rootbreaker2",
+    "defense_tool": "backmirror2",
 }
 
 
 class Web4TelemarkCom(BaseServer):
-    def http(self):
-        self.web_server(SERVER_CONFIG)
-
+    def ftp(self):
+        self.file_server(SERVER_CONFIG)

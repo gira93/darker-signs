@@ -12,7 +12,7 @@ SERVER_CONFIG: ChatServerConfig = {
     "contents": [
         {
             "op": "mw_lo",
-            "content": "Hello, I'm Ming Woo Lo from Telemark, I need the famous lotto program everyone talks about",
+            "content": "Hello, I'm Ming Woo Lo, I need the famous lotto program everyone talks about",
         },
         {"op": "b1t_drv", "content": "Ming Woo Lo? weren't you japanese?"},
         {
@@ -35,6 +35,38 @@ SERVER_CONFIG: ChatServerConfig = {
         {
             "op": "1r0nch4ng",
             "content": "I was able to connect but my current tools don't work. Puresun must have updated security",
+        },
+        {
+            "op": "b1t_drv",
+            "content": "You heard about SirBrown? He went to work for fucking FinalNET!",
+        },
+        {
+            "op": "greenguy",
+            "content": "SirBrown is just a traitor, voices says he also stolen some Mother documents that's why finalnet hired him!",
+        },
+        {
+            "op": "tinfoiled",
+            "content": "I think something's up, first D1l3mm4, then SirBrown, finalnet and the other company are hiring the best ones!",
+        },
+        {
+            "op": "fr33z3r",
+            "content": "Don't you dare talk shit about D1l3mm4! He basically created Mother! Without him, corporations would've spied on this chat also!",
+        },
+        {
+            "op": "1r0nch4ng",
+            "content": "Did anyone hear about Paolo Stagna? he's been fired from Wellmark!",
+        },
+        {
+            "op": "MeaTPloW",
+            "content": "Hey Papav3ro, can you send me that tool to my @freemail address?",
+        },
+        {
+            "op": "REnO",
+            "content": "I know the admin of web4.telemark.com, he asked me for something some time ago",
+        },
+        {
+            "op": "admin_hamm3r",
+            "content": "Hey REnO, do you still have that old game? can you send it to my @freemail address?",
         },
     ],
     "hack_tool": None,

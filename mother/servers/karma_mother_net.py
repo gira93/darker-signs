@@ -50,7 +50,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                     "attachment": None,
                     "content": "\n".join(
                         [
-                            "An employee of the japanese division of Telemark called Ming Woo Lo has come into possession",
+                            "An employee of a Japanese company called Ming Woo Lo has come into possession",
                             "of some documents containing informations about community users.",
                             "We need this email removed from his personal account.",
                             "This task is perfect for learning the use of IVoice, you can search chat logs for messages",
@@ -145,7 +145,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                             'We need you to upload a special worm to the their server "subcorp.puresun.net"',
                             "this program will track all data sent to other corporations.",
                             "We can't find information about it so we think a clean login isn't possible.",
-                            'The worm you need to upload "database.bin" should be already downloaded into your local machine',
+                            'The worm you need to upload "database.bin" has been automatically downloaded to your local machine',
                         ]
                     ),
                 }
@@ -157,6 +157,121 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 "subcorp_puresun_net": (
                     RequirementType.FILE_PRESENT,
                     "admin|database.bin",
+                )
+            },
+        },
+        {
+            "id": "mtr006",
+            "title": "Teaching a lesson",
+            "description": "Delete a file from a server",
+            "emails": [
+                {
+                    "from": "karma@mother.net",
+                    "subject": "",
+                    "attachment": None,
+                    "content": "\n".join(
+                        [
+                            'We need you to delete the file "final_review.doc" from the server "athem.final.net".',
+                            "The server belongs to SirBrown, an ex member of our community;",
+                            "He left us to go work for FinalNET, and also brought that document containing confindential information.",
+                        ]
+                    ),
+                }
+            ],
+            "exp_needed": 50,
+            "credit_reward": 50,
+            "exp_reward": 10,
+            "requirements": {
+                "athem_final_net": (
+                    RequirementType.FILE_NOT_PRESENT,
+                    "sirbrown|final_review.doc",
+                )
+            },
+        },
+        {
+            "id": "mtr007",
+            "title": "Wrongful dismissal",
+            "description": "Investigate a case",
+            "emails": [
+                {
+                    "from": "karma@mother.net",
+                    "subject": "",
+                    "attachment": None,
+                    "content": "\n".join(
+                        [
+                            "1r0nch4ng, a member of our community, has asked for our help;",
+                            "Paolo Stagna, a friend of his, has been wrongfully dismissed from Wellmark.",
+                            "Investigate and take action if necessary, Stagna is now under arrest",
+                            "so find a way to gey him out of custody if he's innocent!",
+                        ]
+                    ),
+                }  # TODO - Start of second campaign
+            ],
+            "exp_needed": 60,
+            "credit_reward": 50,
+            "exp_reward": 10,
+            "requirements": {
+                "interpol_gov_file": (
+                    RequirementType.FILE_PRESENT,
+                    "guest|hr_report.doc",
+                )
+            },
+        },
+        {
+            "id": "mtr008",
+            "title": "Suspicious partnership",
+            "description": "Steal a file",
+            "emails": [
+                {
+                    "from": "karma@mother.net",
+                    "subject": "",
+                    "attachment": None,
+                    "content": "\n".join(
+                        [
+                            "Thanks to a sypworm uploaded to a Puresun server, we learned of suspicious money movements on behalf of FinalNET.",
+                            "It appears that the U.S. company is secretly funding IT adjustment operations for FinalNET's Australian division.",
+                            'Some community members have previously traced the name of a file ("transfer.log") received on the "australian.final.net" server;',
+                            'It appears to have been transferred by one "Papav3ro."',
+                            "Your task is to steal this file.",
+                        ]
+                    ),
+                }
+            ],
+            "exp_needed": 70,
+            "credit_reward": 50,
+            "exp_reward": 10,
+            "requirements": {
+                "australian_final_net": (
+                    RequirementType.FILE_DOWNLOADED,
+                    "transfer.log",
+                )
+            },
+        },
+        {
+            "id": "mtr009",
+            "title": "Operation Crossfire",
+            "description": "Crash a server",
+            "emails": [
+                {
+                    "from": "karma@mother.net",
+                    "subject": "",
+                    "attachment": None,
+                    "content": "\n".join(
+                        [
+                            "User 1r0nchan4g directly asked for you for this task.",
+                            "He needs you to crash the web4.telemark.com server, once this task is completed,",
+                            "he will take advantage of the down moment to infiltrate the Telemark network.",
+                        ]
+                    ),
+                }  # TODO - Email from 1r0nch4ng
+            ],
+            "exp_needed": 80,
+            "credit_reward": 50,
+            "exp_reward": 10,
+            "requirements": {
+                "web4_telemark_com": (
+                    RequirementType.SERVER_CRASHED,
+                    "",
                 )
             },
         },

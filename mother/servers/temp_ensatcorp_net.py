@@ -10,7 +10,7 @@ SERVER_CONFIG: FileServerConfig = {
     "proxy": None,
     "contents": {
         "vlad_ensat": [
-            ("unreg727.dat", "JB ENC 27a11def-0b41-4428-8b0f-347c53810f54"),
+            ("unreg727.dat", "JDB ENC 27a11def-0b41-4428-8b0f-347c53810f54"),
             (
                 "unreg728.dat",
                 "PROPERTY OF TELEMARKONE\nDO NOT REDISTRIBUTE\n ENC 0e6f950b-71fb-4769-8ddc-a296a3c0dbcc",

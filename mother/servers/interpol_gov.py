@@ -21,7 +21,34 @@ DB_SERVER_CONFIG: DbServerConfig = {
                     "the veridicity of said informations has not yet been validated",
                 ]
             ),
-        }
+        },
+        {
+            "title": "SirBrown",
+            "content": "\n".join(
+                [
+                    "Spyware in corporate server",
+                    "",
+                    "Wes Browning, aka: SirBrown has been reported by Bentek to have installed a spyware",
+                    "into the main FinalNET server;",
+                    "the case has been closed by FinalNET itself who didn't want to proceed",
+                    "Consider this record deleted.",
+                ]
+            ),
+        },
+        {
+            "title": "Paolo Stagna",
+            "content": "\n".join(
+                [
+                    "Virus in corporate server",
+                    "",
+                    "Paolo Stagna was arrested yesterday on suspicion of hacking and installing a virus",
+                    "on a Wellmark server, the company he was working with.",
+                    "We are working on the case, Stagna does not have an hacking background",
+                    "and is not that tech savvy.",
+                    "Maybe he was being used by a third party",
+                ]
+            ),
+        },
     ],
     "writable": False,
     "crashed": False,

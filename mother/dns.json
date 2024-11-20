@@ -143,8 +143,8 @@
     "name": "athem.final.net",
     "module_name": "athem_final_net",
     "class_name": "AthemFinalNet",
-    "port_mapping": {
-      "80": "http"
+    "port_mappinng": {
+      "21": "ftp"
     }
   },
   "australian.final.net": {
@@ -155,7 +155,7 @@
     "module_name": "australian_final_net",
     "class_name": "AustralianFinalNet",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "file.wellmark.com": {
@@ -166,7 +166,7 @@
     "module_name": "file_wellmark_com",
     "class_name": "FileWellmarkCom",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "pstagna.personal.it": {
@@ -268,13 +268,13 @@
       "80": "http"
     }
   },
-  "altproject.intrapol.ru": {
+  "altproject.interpol.ru": {
     "alias": "91.9.114.29"
   },
   "91.9.114.29": {
-    "name": "altproject.intrapol.ru",
-    "module_name": "altproject_intrapol_ru",
-    "class_name": "AltprojectIntrapolRu",
+    "name": "altproject.interpol.ru",
+    "module_name": "altproject_interpol_ru",
+    "class_name": "AltprojectInterpolRu",
     "port_mapping": {
       "80": "http"
     }
@@ -341,6 +341,17 @@
     "name": "kyotomail.jp",
     "module_name": "kyotomail_jp",
     "class_name": "KyotomailJp",
+    "port_mapping": {
+      "80": "http"
+    }
+  },
+  "wellmark.com": {
+    "alias": "83.1.4.103"
+  },
+  "83.1.4.103": {
+    "name": "wellmark.com",
+    "module_name": "wellmark_com",
+    "class_name": "WellmarkCom",
     "port_mapping": {
       "80": "http"
     }
