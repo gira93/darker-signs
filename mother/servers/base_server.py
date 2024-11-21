@@ -437,7 +437,9 @@ class BaseServer:
                         for email in mission["emails"]:
                             self.mail.add_message(
                                 from_user=email["from"],
-                                subject=mission["title"],
+                                subject=mission["title"]
+                                if email["subject"] == ""
+                                else email["subject"],
                                 message=email["content"],
                             )
                             if email["attachment"]:

@@ -1,14 +1,88 @@
 from .base_server import BaseServer
-from mother.type_defs import WebServerConfig
+from mother.type_defs import AssignmentServerConfig, RequirementType
 
-SERVER_CONFIG: WebServerConfig = {
+SERVER_CONFIG: AssignmentServerConfig = {
     "id": "hide_ironchang_it",
     "name": "",
     "banner": "",
     "font": "standard",
     "authentication": None,
     "proxy": None,
-    "contents": [],
+    "contents": [
+        {
+            "id": "iron001",
+            "title": "Suspects",
+            "description": "Investigation",
+            "emails": [
+                {
+                    "from": "1r0nch4ng@hide.ironchang.it",
+                    "subject": "",
+                    "attachment": None,
+                    "content": "\n".join(
+                        [
+                            "On our latest hack (thanks again, btw) I saw something that caught my attention;",
+                            'I was looking through admin emails and saw the name "admin_hamm3r".',
+                            "Searching in IVoice I have found the same information you saw;",
+                            "I was going to check his email account but then you crashed the server and we needed to move, fast",
+                            "Do some investigation on this guy and if you find useful stuff, save it locally",
+                        ]
+                    ),
+                }
+            ],
+            "exp_needed": 90,
+            "credit_reward": 50,
+            "exp_reward": 10,
+            "requirements": {
+                "hammerzone_mother_net": (
+                    RequirementType.FILE_DOWNLOADED,
+                    "bdoor_trace.bin",
+                )
+            },
+        },
+        {
+            "id": "iron002",
+            "title": "More Suspects",
+            "description": "Investigation",
+            "emails": [
+                {
+                    "from": "1r0nch4ng@hide.ironchang.it",
+                    "subject": "",
+                    "attachment": (
+                        "stuff.txt",
+                        "\n".join(
+                            [
+                                "Don't know if you read about D1l3mm4",
+                                "it's like the master hacker around here,",
+                                "some says he was defending the network during the big TelemarkONE attack",
+                                "He vanished, no one knows his identity, but I crosschecked all actions of D1l3mm4",
+                                "and it seems they are tied to Bentek!"
+                                "and who is the major shareholder in Telemark? you guessed it Bentek again,",
+                                "if D1l3mm4 works for Bentek, it means we know who's in charge of Mother!",
+                                "Keep this to yourself for now",
+                            ]
+                        ),
+                    ),
+                    "content": "\n".join(
+                        [
+                            "Oh my god! This is huge news!",
+                            "Basically this backdoor makes every computer in the Mother network part of a botnet!",
+                            'We need to lay low, I have attached a document "stuff.txt", read it, then check in here to complete the task',
+                            "I'll get back to you",
+                        ]
+                    ),
+                }
+            ],
+            "exp_needed": 110,
+            "credit_reward": 50,
+            "exp_reward": 10,
+            "requirements": {
+                "hammerzone_mother_net": (
+                    RequirementType.FILE_DOWNLOADED,
+                    "stuff.txt",
+                )
+            },
+        },
+    ],
     "writable": False,
     "crashed": False,
     "hack_tool": None,
@@ -18,5 +92,4 @@ SERVER_CONFIG: WebServerConfig = {
 
 class HideIronchangIt(BaseServer):
     def http(self):
-        self.web_server(SERVER_CONFIG)
-
+        self.assignment_server(SERVER_CONFIG)

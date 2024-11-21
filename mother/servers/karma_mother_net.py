@@ -277,7 +277,21 @@ SERVER_CONFIG: AssignmentServerConfig = {
                             "he will take advantage of the down moment to infiltrate the Telemark network.",
                         ]
                     ),
-                }  # TODO - Email from 1r0nch4ng
+                },
+                {
+                    "from": "1r0nch4ng@hide.ironchang.it",
+                    "subject": "Thanks",
+                    "attachment": None,
+                    "content": "\n".join(
+                        [
+                            "Hello,",
+                            "Thank you for what you did for Paolo.",
+                            "I asked about you for the assignment you accepted, also, I have setup private assignment server myself!",
+                            "You can find it at hide.ironchang.it, it's public but only you can see the tasks.",
+                            "We can work together on side jobs there",
+                        ]
+                    ),
+                },
             ],
             "exp_needed": 85,
             "credit_reward": 50,
