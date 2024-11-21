@@ -28,7 +28,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
             ],
             "exp_needed": 70,
             "credit_reward": 50,
-            "exp_reward": 10,
+            "exp_reward": 5,
             "requirements": {
                 "personal_softma_rk": (
                     RequirementType.FILE_DOWNLOADED,
@@ -55,9 +55,9 @@ SERVER_CONFIG: AssignmentServerConfig = {
                     ),
                 }
             ],
-            "exp_needed": 100,
+            "exp_needed": 75,
             "credit_reward": 50,
-            "exp_reward": 10,
+            "exp_reward": 5,
             "requirements": {
                 "personal_softma_rk": (
                     RequirementType.FILE_NOT_PRESENT,
@@ -83,7 +83,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                     ),
                 }
             ],
-            "exp_needed": 180,
+            "exp_needed": 170,
             "credit_reward": 50,
             "exp_reward": 10,
             "requirements": {

@@ -251,9 +251,9 @@ SERVER_CONFIG: AssignmentServerConfig = {
                     ),
                 }
             ],
-            "exp_needed": 70,
+            "exp_needed": 80,
             "credit_reward": 50,
-            "exp_reward": 10,
+            "exp_reward": 5,
             "requirements": {
                 "australian_final_net": (
                     RequirementType.FILE_DOWNLOADED,
@@ -279,9 +279,9 @@ SERVER_CONFIG: AssignmentServerConfig = {
                     ),
                 }  # TODO - Email from 1r0nch4ng
             ],
-            "exp_needed": 80,
+            "exp_needed": 85,
             "credit_reward": 50,
-            "exp_reward": 10,
+            "exp_reward": 5,
             "requirements": {
                 "web4_telemark_com": (
                     RequirementType.SERVER_CRASHED,
