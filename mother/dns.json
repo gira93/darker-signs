@@ -55,7 +55,40 @@
     "module_name": "master_mother_net",
     "class_name": "MasterMotherNet",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
+    }
+  },
+  "master.karma.mother.net": {
+    "alias": "66.66.66.61"
+  },
+  "66.66.66.61": {
+    "name": "master.karma.mother.net",
+    "module_name": "master_karma_mother_net",
+    "class_name": "MasterKarmaMotherNet",
+    "port_mapping": {
+      "21": "ftp"
+    }
+  },
+  "master.sutra.mother.net": {
+    "alias": "66.66.66.62"
+  },
+  "66.66.66.62": {
+    "name": "master.sutra.mother.net",
+    "module_name": "master_sutra_mother_net",
+    "class_name": "MasterSutraMotherNet",
+    "port_mapping": {
+      "21": "ftp"
+    }
+  },
+  "master.warez.mother.net": {
+    "alias": "66.66.66.63"
+  },
+  "66.66.66.63": {
+    "name": "master.warez.mother.net",
+    "module_name": "master_warez_mother_net",
+    "class_name": "MasterWarezMotherNet",
+    "port_mapping": {
+      "21": "ftp"
     }
   },
   "hammerzone.mother.net": {
@@ -66,7 +99,7 @@
     "module_name": "hammerzone_mother_net",
     "class_name": "HammerzoneMotherNet",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "ivoice.com": {
@@ -177,7 +210,7 @@
     "module_name": "pstagna_personal_it",
     "class_name": "PstagnaPersonalIt",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "web4.telemark.com": {
@@ -188,7 +221,7 @@
     "module_name": "web4_telemark_com",
     "class_name": "Web4TelemarkCom",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "east3.telemark.com": {
@@ -199,7 +232,7 @@
     "module_name": "east3_telemark_com",
     "class_name": "East3TelemarkCom",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "privteam.telemark.com": {
@@ -210,7 +243,7 @@
     "module_name": "privteam_telemark_com",
     "class_name": "PrivteamTelemarkCom",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "hide.ironchang.it": {
@@ -232,7 +265,7 @@
     "module_name": "main1_meccate_ch",
     "class_name": "Main1MeccateCh",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "archives.gs": {
@@ -243,7 +276,7 @@
     "module_name": "archives_gs",
     "class_name": "ArchivesGs",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "bentekmail.com": {
@@ -254,7 +287,7 @@
     "module_name": "bentekmail_com",
     "class_name": "BentekmailCom",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "hime.bentekcorp.com": {
@@ -265,7 +298,7 @@
     "module_name": "hime_bentekcorp_com",
     "class_name": "HimeBentekcorpCom",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "altproject.interpol.ru": {
@@ -319,17 +352,6 @@
     "name": "shadow.bellavista",
     "module_name": "shadow_bellavista",
     "class_name": "ShadowBellavista",
-    "port_mapping": {
-      "80": "http"
-    }
-  },
-  "fbi.gov": {
-    "alias": "61.33.177.92"
-  },
-  "61.33.177.92": {
-    "name": "fbi.gov",
-    "module_name": "fbi_gov",
-    "class_name": "FbiGov",
     "port_mapping": {
       "80": "http"
     }

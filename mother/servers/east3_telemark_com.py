@@ -1,22 +1,21 @@
 from .base_server import BaseServer
-from mother.type_defs import WebServerConfig
+from mother.type_defs import FileServerConfig
 
-SERVER_CONFIG: WebServerConfig = {
+SERVER_CONFIG: FileServerConfig = {
     "id": "east3_telemark_com",
-    "name": "",
-    "banner": "",
-    "font": "standard",
-    "authentication": None,
+    "name": "East3",
+    "banner": "Eastern Europe Telemark division",
+    "font": "speed",
+    "authentication": [("admin", "JIT1240892.dmp")],
     "proxy": None,
-    "contents": [],
-    "writable": False,
+    "contents": {"admin": []},
+    "writable": True,
     "crashed": False,
-    "hack_tool": None,
-    "defense_tool": None,
+    "hack_tool": "physicalkey",
+    "defense_tool": "backmirror2",
 }
 
 
 class East3TelemarkCom(BaseServer):
-    def http(self):
-        self.web_server(SERVER_CONFIG)
-
+    def ftp(self):
+        self.file_server(SERVER_CONFIG)

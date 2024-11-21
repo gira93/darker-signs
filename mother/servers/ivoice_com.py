@@ -68,6 +68,51 @@ SERVER_CONFIG: ChatServerConfig = {
             "op": "admin_hamm3r",
             "content": "Hey REnO, do you still have that old game? can you send it to my @freemail address?",
         },
+        {
+            "op": "tinfoiled",
+            "content": "I have seen that new physical key login system in the wild on a couple of server",
+        },
+        {
+            "op": "CutEPastA",
+            "content": "How does that work? you need a physical key attached to the system?",
+        },
+        {
+            "op": "tinfoiled",
+            "content": "Yes, you need physical access to the system and that physical key attached to it, else you won't be able to authenticate",
+        },
+        {
+            "op": "Born4This",
+            "content": "Actually, there is some sort of a side entrance: if for whatever reason the user loses the physical key,\nhe/she can still access the system remotely if a full dump of that key is present in the local system!",
+        },
+        {
+            "op": "j01nt3r",
+            "content": "I'm trying to access east3 without success, what's happening?",
+        },
+        {
+            "op": "Ambrozy",
+            "content": "east3 is being upgraded, for internal file sharing you can use privteam",
+        },
+        {"op": "MeaTPloW", "content": "Have you seen the new VRLS system? it's crazy!"},
+        {
+            "op": "1r0nch4ng",
+            "content": "Yep, saw that, VRLS is basically impossible to crack, there's a tool available but it can't be considered cracking",
+        },
+        {
+            "op": "MeaTPloW",
+            "content": "You're right, I payed big bucks without reading the description ...",
+        },
+        {
+            "op": "FaRa0n3",
+            "content": "main1.meccate.ch is the most secure server on the network, it's Swiss, what do you expect?",
+        },
+        {
+            "op": "Born4This",
+            "content": "Mecca is Swiss? that's why main1.meccate.ch uses shadow.bellavista as a proxy!",
+        },
+        {
+            "op": "MAc5",
+            "content": "I know the admin, we worked together as writers at the now defunct archives.gs long ago,\nI was there when he was setting up main1.meccate.ch\nlet me tell you, he's very good",
+        },
     ],
     "hack_tool": None,
     "defense_tool": None,

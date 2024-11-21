@@ -283,7 +283,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 {
                     "from": "karma@mother.net",
                     "subject": "",
-                    "attachment": None,
+                    "attachment": ("setupdb.bin", "faf901d8a56f46a387165fea742cc0ef"),
                     "content": "\n".join(
                         [
                             "These days Telemark seems to be the most active corporation.",
@@ -293,7 +293,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                             "during the update this malicious file will be automatically executed",
                             "and we will be able to track Telemark's operations.",
                             "It sounds easy but said server is protected by a physical key login system;",
-                            "to date no one has gone that deep, we trust your skill.",
+                            "you won't be able to crack it using conventional methods, we trust your skill.",
                         ]
                     ),
                 }
@@ -305,6 +305,36 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 "east3_telemark_com": (
                     RequirementType.FILE_PRESENT,
                     "admin|setupdb.bin",
+                )
+            },
+        },
+        {
+            "id": "mtr011",
+            "title": "Operation Big Brother",
+            "description": "Upload spyware on a server",
+            "emails": [
+                {
+                    "from": "karma@mother.net",
+                    "subject": "",
+                    "attachment": ("system.bin", "ce4c31a189124f498ba8e3bc1dc2bd28"),
+                    "content": "\n".join(
+                        [
+                            "You have to penetrate the Mecca Technologies main1.meccate.ch mainframe and upload the attached system.bin file.",
+                            "Don't be fooled by the simplicity of the request, this server is the most secure in the entire network:",
+                            "it uses a voice recognition system to authenticate access (VRLS),",
+                            "does not accept public connections, and finally has an advanced tracing system.",
+                            "We trust in your talent",
+                        ]
+                    ),
+                }
+            ],
+            "exp_needed": 120,
+            "credit_reward": 50,
+            "exp_reward": 10,
+            "requirements": {
+                "main1_meccate_ch": (
+                    RequirementType.FILE_PRESENT,
+                    "admin|system.bin",
                 )
             },
         },

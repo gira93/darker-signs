@@ -12,6 +12,10 @@ SERVER_CONFIG: MailServerConfig = {
         ("MeaTPloW", "56e18637"),
         ("admin_hamm3r", "0e0c7541"),
         ("lyana", "c7e60456"),
+        ("gi_ri", "b1ba763e"),
+        ("frank_xiii", "3310170e"),
+        ("MAc5", "d1a59100"),
+        ("lucav", "9866a93a"),
     ],
     "proxy": None,
     "contents": {
@@ -53,6 +57,34 @@ SERVER_CONFIG: MailServerConfig = {
                 "from": "admin_hamm3r@telemark.com <hide.sanandreashubs.com>",
                 "subject": "Re: Do you know MotherOS?",
                 "content": 'You crazy? DO NOT USE MOTHER OS!\nI was a beta tester on the project, there\'s a HUGE backdoor in the system!\nI think I left some documents on my old server "hammerzone.mother.net"',
+            }
+        ],
+        "gi_ri": [
+            {
+                "from": "MAc5@freemail.com",
+                "subject": "The new indie games",
+                "content": "I think indie games are really pushing forward theese days, AAA games seems stuck in a loop!",
+            }
+        ],
+        "frank_xiii": [
+            {
+                "from": "gi_ri@freemail.com",
+                "subject": "Wanna join for a beer?",
+                "content": "Just to celebrate all those year working together, let's have a beer!",
+            }
+        ],
+        "MAc5": [
+            {
+                "from": "lucav@freemail.com",
+                "subject": "Leave",
+                "content": "That's true, I'm leaving for Mecca Technologies!\nI'll setup the main server this week, wanna take a look with me?",
+            }
+        ],
+        "lucav": [
+            {
+                "from": "hr@meccate.ch",
+                "subject": "Info confirmation",
+                "content": "Hello Luca,\nPlease confirm the following info are correct:\nDOB: 15-01-1980\nPhone number: 6013879631\nThanks",
             }
         ],
     },
