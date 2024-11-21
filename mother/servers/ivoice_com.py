@@ -113,6 +113,19 @@ SERVER_CONFIG: ChatServerConfig = {
             "op": "MAc5",
             "content": "I know the admin, we worked together as writers at the now defunct archives.gs long ago,\nI was there when he was setting up main1.meccate.ch\nlet me tell you, he's very good",
         },
+        {"op": "j01nt3r", "content": "I have found out that n3v3r_MIND is a girl!"},
+        {
+            "op": "1r0nch4ng",
+            "content": "What's so special about it? n3v3r_MIND is basically the boss of xfreeze",
+        },
+        {
+            "op": "j01nt3r",
+            "content": "n3v3r heard of xfreeze xd",
+        },
+        {
+            "op": "1r0nch4ng",
+            "content": "That's because you weren't here when Zrio NET was up... xfreeze were called THC in Zrio NET\nNow they have a server here, xfreeze.com I think",
+        },
     ],
     "hack_tool": None,
     "defense_tool": None,

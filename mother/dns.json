@@ -377,5 +377,27 @@
     "port_mapping": {
       "80": "http"
     }
+  },
+  "n3v3r_mind.xfreeze.com": {
+    "alias": "21.32.202.170"
+  },
+  "21.32.202.170": {
+    "name": "n3v3r_mind.xfreeze.com",
+    "module_name": "n3v3r_mind_xfreeze_com",
+    "class_name": "N3v3r_mindXfreezeCom",
+    "port_mapping": {
+      "21": "ftp"
+    }
+  },
+  "xfreeze.com": {
+    "alias": "163.224.56.70"
+  },
+  "163.224.56.70": {
+    "name": "xfreeze.com",
+    "module_name": "xfreeze_com",
+    "class_name": "XfreezeCom",
+    "port_mapping": {
+      "80": "http"
+    }
   }
 }

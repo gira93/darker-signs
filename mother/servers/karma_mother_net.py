@@ -205,7 +205,21 @@ SERVER_CONFIG: AssignmentServerConfig = {
                             "so find a way to gey him out of custody if he's innocent!",
                         ]
                     ),
-                }  # TODO - Start of second campaign
+                },
+                {
+                    "from": "tikhomir@interpol.gov",
+                    "subject": "You think we didn't notice?",
+                    "attachment": None,
+                    "content": "\n".join(
+                        [
+                            "Hello,",
+                            "I'm Tikhomir from russian interpol; you did good on your last hack.",
+                            "SirBrown was still under surveilance when we noticed someone sneaking in...",
+                            "I won't bring you in, don't worry, I think you can actually do some tasks for us.",
+                            "check altproject.interpol.ru once in a while for some smaller jobs.",
+                        ]
+                    ),
+                },
             ],
             "exp_needed": 60,
             "credit_reward": 50,
