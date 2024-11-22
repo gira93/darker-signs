@@ -46,7 +46,7 @@ SERVER_CONFIG: ChatServerConfig = {
         },
         {
             "op": "tinfoiled",
-            "content": "I think something's up, first D1l3mm4, then SirBrown, finalnet and the other company are hiring the best ones!",
+            "content": "I think something's up, D1l3mm4 vanished, then SirBrown goes to work for finalnet...",
         },
         {
             "op": "fr33z3r",
