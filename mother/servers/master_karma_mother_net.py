@@ -8,7 +8,7 @@ SERVER_CONFIG: FileServerConfig = {
     "font": "doom",
     "authentication": [("abDUCtion", "5ff569da")],
     "proxy": "karma.mother.net",
-    "contents": {"abDUCtion": [("daily_part1", "5cf2ca3029ca4dafadf1aa467678ee74")]},
+    "contents": {"abDUCtion": [("daily_karma", "5cf2ca3029ca4dafadf1aa467678ee74")]},
     "writable": False,
     "crashed": False,
     "hack_tool": "rootbreaker3",
@@ -19,4 +19,3 @@ SERVER_CONFIG: FileServerConfig = {
 class MasterKarmaMotherNet(BaseServer):
     def ftp(self):
         self.file_server(SERVER_CONFIG)
-

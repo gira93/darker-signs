@@ -328,6 +328,12 @@ class BaseServer:
 
     def commerce_server(self, server_config: CommerceServerConfig) -> None:
         _, config = self.__load_config(server_config)
+        if config["crashed"]:
+            print()
+            cprint("Server Unavailable", "red")
+            print()
+            return
+
         self.__welcome(config["banner"], config["name"], config["font"])
         items: list[ShopItem] = config["contents"]
         while True:
@@ -378,6 +384,12 @@ class BaseServer:
 
     def assignment_server(self, server_config: AssignmentServerConfig) -> None:
         _, config = self.__load_config(server_config)
+        if config["crashed"]:
+            print()
+            cprint("Server Unavailable", "red")
+            print()
+            return
+
         self.__welcome(config["banner"], config["name"], config["font"])
 
         active_mission_id = self.player.active_mission()

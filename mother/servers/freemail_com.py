@@ -16,6 +16,7 @@ SERVER_CONFIG: MailServerConfig = {
         ("frank_xiii", "3310170e"),
         ("MAc5", "d1a59100"),
         ("lucav", "9866a93a"),
+        ("jbvie", "e805e6e0"),
     ],
     "proxy": None,
     "contents": {
@@ -86,6 +87,18 @@ SERVER_CONFIG: MailServerConfig = {
                 "subject": "Info confirmation",
                 "content": "Hello Luca,\nPlease confirm the following info are correct:\nDOB: 15-01-1980\nPhone number: 6013879631\nThanks",
             }
+        ],
+        "jbvie": [
+            {
+                "from": "info@freemail.com",
+                "subject": "Account activation",
+                "content": "Welcome jbvie!\nYour account has been activated\nUser info:\nFirst Name: Jannet\nLast Name: Bellevie\nPhone: 0233260801",
+            },
+            {
+                "from": "j.debout@bentekmail.com <hideway.bentekcorp.com>",
+                "subject": "Disk is full",
+                "content": "Hey honey, mmmm I don't know how to say it...\nMy remote server is full xd\nCan I use yours for if I need it?",
+            },
         ],
     },
     "writable": False,

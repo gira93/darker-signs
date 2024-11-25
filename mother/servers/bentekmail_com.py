@@ -6,7 +6,7 @@ SERVER_CONFIG: FileServerConfig = {
     "name": "Bentek",
     "banner": "Bentek private server",
     "font": "short",
-    "authentication": [("j.debout", "ab13ac4d")],
+    "authentication": [("j.debout", "ab13ac494295044f80379871b36")],
     "proxy": "hideway.bentekcorp.com",
     "contents": {
         "j.debout": [
@@ -21,7 +21,7 @@ SERVER_CONFIG: FileServerConfig = {
                         "",
                         "Every public server is a mirror of his master",
                         "For added security they connect only once a day, exchanging a security key",
-                        "provided by the admin of each server.",
+                        "provided by the admin of each server, this is only valid for the current day.",
                         "master servers are isolated from public networks and can't communicate between each other.",
                     ]
                 ),
@@ -32,14 +32,19 @@ SERVER_CONFIG: FileServerConfig = {
                     [
                         "Mother of Network Control",
                         "This project aims to acquire control of the network by creating a big botnet.",
-                        "The first step is to develop a free OS, make it accessible and secure.",
-                        "Create a community around it, hire hackers.",
-                        "ZRIO needs to be taken out of business, they know what we want to do, actually they had the idea first!",
-                        "A big event needs to occur so that we can force an update containing a backdoor,",
-                        "the community won't ask question if this is for the greater good;"
-                        "We'll use that to control all computers in the network and have them be a part of a big botnet.",
-                        "We then sell data, identities and documents to big corporations",
-                        "A network were we create and control industrial espionage and keep the balance as we like it.",
+                        "The first step is to develop a free OS, make it accessible and secure,",
+                        "then create a community around it, an hacking community, with the intent to",
+                        '"make the web a better place", the userbase will trust the system.',
+                        "ZRIO, our competitor, needs to be taken out of business, they had the same idea",
+                        "albeit way smaller, they didn't succeed in building a real community around the project.",
+                        "When user trust is at max, we need an excuse to install the backdoor;",
+                        "a big event needs to occur so that we can force an update containing said backdoor,",
+                        "we simulate a big down time, and have all users update MotherOS to keep it running.",
+                        "Once the backdoor is installed, all computers in the network will be part of a bigger botnet;",
+                        "This way we can control ALL information that passes through unsuspecting hackers,",
+                        "forging every document at will and keeping Bentek on top",
+                        "",
+                        "Notes: I'll use various nicknames to keep privacy at a maximum",
                     ]
                 ),
             ),

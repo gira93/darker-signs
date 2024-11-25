@@ -328,7 +328,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
             ],
             "exp_needed": 100,
             "credit_reward": 50,
-            "exp_reward": 10,
+            "exp_reward": 20,
             "requirements": {
                 "east3_telemark_com": (
                     RequirementType.FILE_PRESENT,

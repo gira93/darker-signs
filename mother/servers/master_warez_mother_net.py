@@ -8,7 +8,7 @@ SERVER_CONFIG: FileServerConfig = {
     "font": "doom",
     "authentication": [("DhYsRhITmi4", "e7f2d1799b05403ab63d")],
     "proxy": "warez.mother.net",
-    "contents": {"DhYsRhITmi4": [("daily_part3", "d71acd509d224d849bdb828ba8861d37")]},
+    "contents": {"DhYsRhITmi4": [("daily_warez", "d71acd509d224d849bdb828ba8861d37")]},
     "writable": False,
     "crashed": False,
     "hack_tool": "rootbreaker3",
@@ -19,4 +19,3 @@ SERVER_CONFIG: FileServerConfig = {
 class MasterWarezMotherNet(BaseServer):
     def ftp(self):
         self.file_server(SERVER_CONFIG)
-

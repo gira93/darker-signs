@@ -53,6 +53,22 @@ SERVER_CONFIG: ChatServerConfig = {
             "content": "Don't you dare talk shit about D1l3mm4! He basically created Mother! Without him, corporations would've spied on this chat also!",
         },
         {
+            "op": "tinfoiled",
+            "content": "D1l3mm4 might have created Mother, but we don't know of his past, and his future, he vanished!",
+        },
+        {
+            "op": "v4ldemar",
+            "content": "Voices says that D1l4mm4 was monitoring the Mother network during the TelemarkONE big attack!",
+        },
+        {
+            "op": "tinfoiled",
+            "content": "If D1l3mm4 was there, don't you all think there should be something official? like in an investigation record?",
+        },
+        {
+            "op": "v4ldemar",
+            "content": "Maybe D1l3mm4 was using a different nickname at the time, I don't remember seeing his name in the official report",
+        },
+        {
             "op": "1r0nch4ng",
             "content": "Did anyone hear about Paolo Stagna? he's been fired from Wellmark!",
         },

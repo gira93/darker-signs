@@ -8,7 +8,7 @@ SERVER_CONFIG: FileServerConfig = {
     "font": "doom",
     "authentication": [("Betruger", "e45228f5")],
     "proxy": "sutra.mother.net",
-    "contents": {"Betruger": [("daily_part2", "e54d9493")]},
+    "contents": {"Betruger": [("daily_sutra", "e54d9493")]},
     "writable": False,
     "crashed": False,
     "hack_tool": "rootbreaker3",
@@ -19,4 +19,3 @@ SERVER_CONFIG: FileServerConfig = {
 class MasterSutraMotherNet(BaseServer):
     def ftp(self):
         self.file_server(SERVER_CONFIG)
-

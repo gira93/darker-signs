@@ -49,6 +49,22 @@ DB_SERVER_CONFIG: DbServerConfig = {
                 ]
             ),
         },
+        {
+            "title": "TelemarkONE Attack",
+            "content": "\n".join(
+                [
+                    "TelemarkONE attacked the whole Mother network, causing a huge DoS that went on for days.",
+                    'Telemark representatives talked about "self defense", they say a hacking was in progress',
+                    "and they needed to protect themselves.",
+                    "Network logs during that period show only Telemark actions though.",
+                    'We got the managers under custody but one "Jacques Louis De Bout" (the security manager)',
+                    "was released under recomandation of Francoise Bellevie, the Bentek CEO.",
+                    "Further investigations confirm his daughter Jannet Bellevie is dating De Bout.",
+                    "We tried reaching to her without success,",
+                    "Email address for future reference: jbvie@freemail.com",
+                ]
+            ),
+        },
     ],
     "writable": False,
     "crashed": False,
