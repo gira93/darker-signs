@@ -58,7 +58,7 @@ SERVER_CONFIG: ChatServerConfig = {
         },
         {
             "op": "v4ldemar",
-            "content": "Voices says that D1l4mm4 was monitoring the Mother network during the TelemarkONE big attack!",
+            "content": "Voices says that D1l3mm4 was monitoring the Mother network during the TelemarkONE big attack!",
         },
         {
             "op": "tinfoiled",
@@ -141,6 +141,11 @@ SERVER_CONFIG: ChatServerConfig = {
         {
             "op": "1r0nch4ng",
             "content": "That's because you weren't here when Zrio NET was up... xfreeze were called THC in Zrio NET\nNow they have a server here, xfreeze.com I think",
+        },
+        {"op": "v4ldemar", "content": "jbvie don't you have a personal server?"},
+        {
+            "op": "jbvie",
+            "content": "Yes I have, my fiance configured it for me, it doesn't start with jbvie xd\nit's hime.bentekcorp.com, I also have that VRLS thing :)",
         },
     ],
     "hack_tool": None,

@@ -6,13 +6,13 @@ SERVER_CONFIG: FileServerConfig = {
     "name": "Athem",
     "banner": "A FinalNET Division",
     "font": "ntgreek",
-    "authentication": [("sirbrown", "11abee3f")],
+    "authentication": [("SirBrown", "11abee3f"), ("admin", "1b323715")],
     "proxy": None,
     "contents": {
         "admin": [
             ("notes.txt", "- Check the SirBrown guy entry test\n- Talk to JDB about it")
         ],
-        "sirbrown": [
+        "SirBrown": [
             (
                 "entry_test.doc",
                 "SirBrown\nResult: Passed\nScore: 90/100\nWelcome to FinalNET",

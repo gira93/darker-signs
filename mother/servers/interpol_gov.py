@@ -75,7 +75,7 @@ DB_SERVER_CONFIG: DbServerConfig = {
 FILE_SERVER_CONFIG: FileServerConfig = {
     "id": "interpol_gov_file",
     "name": "Public Drop",
-    "banner": "Public Drop Server, login as user guest with pass guest",
+    "banner": "Public anonymous file server\nUpload files to be checked for investigation here\nlogin as user guest with pass guest",
     "font": "small",
     "authentication": [("guest", "guest")],
     "proxy": None,

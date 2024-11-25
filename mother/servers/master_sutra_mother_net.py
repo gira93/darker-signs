@@ -6,7 +6,7 @@ SERVER_CONFIG: FileServerConfig = {
     "name": "SutrA",
     "banner": "Betruger lair",
     "font": "doom",
-    "authentication": [("Betruger", "e45228f5")],
+    "authentication": [("Betruger", "e45228f5422530711bd546e-b82fc41fb02a946a")],
     "proxy": "sutra.mother.net",
     "contents": {"Betruger": [("daily_sutra", "e54d9493")]},
     "writable": False,

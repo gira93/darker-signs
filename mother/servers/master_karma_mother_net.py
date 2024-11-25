@@ -6,7 +6,7 @@ SERVER_CONFIG: FileServerConfig = {
     "name": "KarmA",
     "banner": "abDUCtion domain",
     "font": "doom",
-    "authentication": [("abDUCtion", "5ff569da")],
+    "authentication": [("abDUCtion", "5ff569da30e9189c8605-431f9462958c9315f7da")],
     "proxy": "karma.mother.net",
     "contents": {"abDUCtion": [("daily_karma", "5cf2ca3029ca4dafadf1aa467678ee74")]},
     "writable": False,

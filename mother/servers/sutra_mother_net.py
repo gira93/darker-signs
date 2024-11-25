@@ -36,8 +36,8 @@ SERVER_CONFIG: WebServerConfig = {
                 [
                     "A new version of Rootbreaker has been released!",
                     "Remember that every version is not backward compatible,",
-                    "this is not a marketing strategy to have you buy each version,",
-                    "each version is capable of different cracking algorithms!",
+                    "this is not a marketing strategy,",
+                    "each version is capable of cracking different algorithms!",
                 ]
             ),
         },

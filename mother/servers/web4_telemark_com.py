@@ -12,7 +12,7 @@ SERVER_CONFIG: FileServerConfig = {
     "writable": True,
     "crashed": False,
     "hack_tool": "rootbreaker2",
-    "defense_tool": "backmirror2",
+    "defense_tool": "backmirror",
 }
 
 

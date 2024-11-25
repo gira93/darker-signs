@@ -20,7 +20,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                     "attachment": None,
                     "content": "\n".join(
                         [
-                            "Do you remember s0ftm4rk? You know the file you removed from Intrapol's public drop?",
+                            "Do you remember s0ftm4rk? You know the file you removed from Interpol's public drop?",
                             "I need it back, updated. S0ftm4rk should have it in his personal server at personal.softma.rk",
                         ]
                     ),
@@ -49,7 +49,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                         [
                             "That Paolo Stagna is still under attack, he seems to atract all kind of hackers",
                             'there\'s a malware in his personal server "pstagna.personal.it"',
-                            "Find it and remove it."
+                            "Find it and remove it.",
                             "Usually we don't intervene like that but that malware is bombarding our public drop with files!",
                         ]
                     ),
@@ -59,9 +59,9 @@ SERVER_CONFIG: AssignmentServerConfig = {
             "credit_reward": 50,
             "exp_reward": 5,
             "requirements": {
-                "personal_softma_rk": (
+                "pstagna_personal_it": (
                     RequirementType.FILE_NOT_PRESENT,
-                    "hotmeat.bin",
+                    "pstagna|hotmeat.bin",
                 )
             },
         },

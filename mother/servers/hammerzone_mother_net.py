@@ -9,7 +9,7 @@ SERVER_CONFIG: FileServerConfig = {
     "authentication": [("admin_hamm3r", "34fb5051")],
     "proxy": None,
     "contents": {
-        "admin_hamm3r": [("bdor_trace.bin", "BIN 71e96b1d887443d295f89271d474ebac")]
+        "admin_hamm3r": [("bdoor_trace.bin", "BIN 71e96b1d887443d295f89271d474ebac")]
     },
     "writable": False,
     "crashed": False,

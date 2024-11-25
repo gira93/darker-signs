@@ -71,7 +71,7 @@ SERVER_CONFIG: MailServerConfig = {
             {
                 "from": "gi_ri@freemail.com",
                 "subject": "Wanna join for a beer?",
-                "content": "Just to celebrate all those year working together, let's have a beer!",
+                "content": "Just to celebrate all those years working together, let's have a beer!",
             }
         ],
         "MAc5": [
@@ -97,7 +97,7 @@ SERVER_CONFIG: MailServerConfig = {
             {
                 "from": "j.debout@bentekmail.com <hideway.bentekcorp.com>",
                 "subject": "Disk is full",
-                "content": "Hey honey, mmmm I don't know how to say it...\nMy remote server is full xd\nCan I use yours for if I need it?",
+                "content": "Hey honey, mmmm I don't know how to say it...\nMy remote server is full xd\nCan I use yours for a bit if I need it?",
             },
         ],
     },

@@ -55,7 +55,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                             "I've taken a look at the binary you uploaded... this is huge, there's a big backdoor",
                             "in Mother that makes all computers part of a botnet!",
                             "Who are the people behind Mother and what is the purpose of this?",
-                            "a corporation surely can get huge gains from this (you heard of ZRIO right?)."
+                            "a corporation surely can get huge gains from this (you heard of ZRIO right?).",
                             "Find information about D1l3mm4, he's credited as the creator of Mother,",
                             "no one knows his/her real identity, but if this person really created Mother,",
                             "that same person must know something.",
@@ -72,11 +72,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                     RequirementType.FILE_DOWNLOADED,
                     "mother.doc",
                 ),
-                "bentekmail_com_2": (
-                    RequirementType.FILE_DOWNLOADED,
-                    "triad.doc",
-                ),
-                "hime_bentekcorp.com": (RequirementType.FILE_DOWNLOADED, "triad.arc"),
+                "hime_bentekcorp_com": (RequirementType.FILE_DOWNLOADED, "triad.arc"),
             },
         },
         {
@@ -95,9 +91,9 @@ SERVER_CONFIG: AssignmentServerConfig = {
                             "Bentek! The attack was planned, De Bout is Security Manager and worked for both Telemark and Bentek...",
                             'He is the admin of the entire Mother network and planned the fake Telemark "attack"!',
                             "We need to fight back, I analyzed the documents and the archive you found:",
-                            "Each one of the Triad's mirror contains a key, changed daily; I need you to access each one and get its current key.",
-                            "As you saw, the Triad servers won't allow ftp access, but their master maybe do,",
-                            'I would assume they just prepend "master" to the address, like master.karma...',
+                            "Each one of the Triad's mirror contains a key, changed daily;",
+                            "I need you to access each one and get its current key.",
+                            "As you saw, the Triad servers won't allow ftp access, but their master maybe do...",
                             "Get the key from each server and then check back here, as always, I'll take a look",
                         ]
                     ),
@@ -129,7 +125,10 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 {
                     "from": "1r0nch4ng@hide.ironchang.it",
                     "subject": "",
-                    "attachment": None,
+                    "attachment": (
+                        "JIT66.dmp",
+                        "5cf2ca3029ca4dafadf1aa467678ee74e54d9493d71acd509d224d849bdb828ba8861d37",
+                    ),
                     "content": "\n".join(
                         [
                             "Analyzing the 3 keys you got I found out they are each part of a unique key!",
@@ -193,13 +192,17 @@ class HideIronchangIt(BaseServer):
     def http(self):
         self.assignment_server(SERVER_CONFIG)
 
-        if [
-            "iron001",
-            "iron002",
-            "iron003",
-            "iron004",
-            "iron005",
-        ] in self.player.completed_missions():
+        endgame_check = all(
+            x in self.player.completed_missions()
+            for x in [
+                "iron001",
+                "iron002",
+                "iron003",
+                "iron004",
+                "iron005",
+            ]
+        )
+        if endgame_check:
             for server_id in [
                 "karma_mother_net",
                 "master_karma_mother_net",
@@ -208,11 +211,38 @@ class HideIronchangIt(BaseServer):
                 "warez_mother_net",
                 "master_warez_mother_net",
                 "hammerzone_mother_net",
+                "hide_ironchang_it",
             ]:
                 self.player.add_or_update_server(server_id, {"crashed": True})
-                progress_bar()
-                cprint("Logged out of Mother Network\n", "red")
-                cprint(
-                    "Cannot enstablish connection to master.mother.net, skipping",
-                    "yellow",
-                )
+
+            progress_bar()
+            cprint("Logged out of Mother Network\n", "red")
+            cprint(
+                "Cannot enstablish connection to master.mother.net, skipping",
+                "yellow",
+            )
+            iron_message = "\n".join(
+                [
+                    "Can you believe what we were able to achieve?",
+                    "The entire Mother Network is down and it won't be back up anytime soon;",
+                    "Jacques De Bout is probably being arrested this very moment",
+                    "and so is the entire Bentek management (maybe Telemark too!).",
+                    "I told you we would meet again in the future!",
+                    "What? You didn't recognize me? It's me Jimmy!",
+                    "Actually, my real real name is Massimo (or Max), I don't work for anybody",
+                    "I'm just an hacker like you, once I was called into the Mother Network I knew",
+                    "something was up, but I played along since everyone was so cool.",
+                    "Then you showed up, I knew together we would find answers;",
+                    "Now the network is free, for real this time.",
+                    "Thank you for helping me again!",
+                    "See ya my friend!",
+                    "",
+                    "Massimo",
+                ]
+            )
+            self.mail.add_message(
+                from_user="1r0nch4ng@hide.ironchang.it",
+                subject="And so it ends",
+                message=iron_message,
+            )
+            return

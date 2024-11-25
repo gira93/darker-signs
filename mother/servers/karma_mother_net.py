@@ -20,11 +20,13 @@ SERVER_CONFIG: AssignmentServerConfig = {
                     "attachment": None,
                     "content": "\n".join(
                         [
-                            "S0ftma4rk, a junior member of our community has been recently caught stealing money.",
+                            "S0ftm4rk, a junior member of our community has been recently caught stealing money.",
                             "His file has been sent to interpol.gov public drop server, fortunately they haven't checked it yet;",
                             "your task is simple:",
                             "Get into the public drop server (it shouldn't have any authentication)",
                             "and remove whatever file has something to do with s0ftm4rk",
+                            "",
+                            "Once done, connect back here to start the review process",
                         ]
                     ),
                 }
@@ -56,6 +58,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                             "This task is perfect for learning the use of IVoice, you can search chat logs for messages",
                             "containing strings, names etc.",
                             "Go to ivoice.com to check it out",
+                            'For this assignment you should also buy "rootbreaker" if you haven\'t already.',
                         ]
                     ),
                 }
@@ -184,7 +187,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
             "requirements": {
                 "athem_final_net": (
                     RequirementType.FILE_NOT_PRESENT,
-                    "sirbrown|final_review.doc",
+                    "SirBrown|final_review.doc",
                 )
             },
         },
@@ -199,15 +202,15 @@ SERVER_CONFIG: AssignmentServerConfig = {
                     "attachment": None,
                     "content": "\n".join(
                         [
-                            "1r0nch4ng, a member of our community, has asked for our help;",
-                            "Paolo Stagna, a friend of his, has been wrongfully dismissed from Wellmark.",
+                            "1r0nch4ng, a member of our community, has asked for your help;",
+                            "Paolo Stagna, one of his friends, has been wrongfully dismissed from Wellmark.",
                             "Investigate and take action if necessary, Stagna is now under arrest",
-                            "so find a way to gey him out of custody if he's innocent!",
+                            "so find a way to get him out of custody if he's innocent!",
                         ]
                     ),
                 },
                 {
-                    "from": "tikhomir@interpol.gov",
+                    "from": "tikhomir@interpol.ru",
                     "subject": "You think we didn't notice?",
                     "attachment": None,
                     "content": "\n".join(
@@ -286,7 +289,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                         [
                             "Hello,",
                             "Thank you for what you did for Paolo.",
-                            "I asked about you for the assignment you accepted, also, I have setup private assignment server myself!",
+                            "I asked about you for the assignment you accepted, also, I have setup a private assignment server myself!",
                             "You can find it at hide.ironchang.it, it's public but only you can see the tasks.",
                             "We can work together on side jobs there",
                         ]

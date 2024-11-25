@@ -176,7 +176,7 @@
     "name": "athem.final.net",
     "module_name": "athem_final_net",
     "class_name": "AthemFinalNet",
-    "port_mappinng": {
+    "port_mapping": {
       "21": "ftp"
     }
   },
@@ -320,7 +320,7 @@
     "module_name": "personal_softma_rk",
     "class_name": "PersonalSoftmaRk",
     "port_mapping": {
-      "80": "http"
+      "21": "ftp"
     }
   },
   "hide.sanandreashubs.com": {
