@@ -1,7 +1,10 @@
 {
   "campaign": "zrio",
+  "show_intro": true,
   "balance": 0,
   "experience": 0,
-  "active_missions": [],
-  "pinned_servers": []
+  "tools": [],
+  "active_mission": null,
+  "completed_missions": [],
+  "changed_servers": {}
 }

@@ -4,12 +4,12 @@ from typing import TypedDict
 
 class PlayerStatus(TypedDict):
     campaign: str
+    show_intro: bool
     balance: int
     experience: int
     tools: list[str]
     active_mission: str | None
     completed_missions: list[str]
-    pinned_servers: list[list[str]]
     changed_servers: dict[str, dict]
 
 
@@ -64,17 +64,6 @@ class Player:
         self.player["completed_missions"] = list(set(self.player["completed_missions"]))
         self.__save()
 
-    def pinned_servers(self) -> list[tuple[str, str]]:
-        servers: list[tuple[str, str]] = []
-
-        for server in self.player["pinned_servers"]:
-            servers.append((server[0], server[1]))
-
-        return servers
-
-    def add_pin_server(self, server: str, port: str) -> None:
-        pass
-
     def get_server(self, id: str) -> dict | None:
         try:
             return self.player["changed_servers"][id]
@@ -83,6 +72,20 @@ class Player:
 
     def add_or_update_server(self, id: str, server_config: dict) -> None:
         self.player["changed_servers"][id] = server_config
+        self.__save()
+
+    def update_campaign(self, campaign: str) -> None:
+        self.player["campaign"] = campaign
+        self.__save()
+
+    def reset(self) -> None:
+        self.player["show_intro"] = True
+        self.player["balance"] = 0
+        self.player["experience"] = 0
+        self.player["tools"] = []
+        self.player["active_mission"] = None
+        self.player["completed_missions"] = []
+        self.player["changed_servers"] = {}
         self.__save()
 
     def __save(self) -> None:

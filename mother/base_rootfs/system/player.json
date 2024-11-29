@@ -1,10 +1,10 @@
 {
   "campaign": "mother",
+  "show_intro": true,
   "balance": 50,
   "experience": 0,
   "tools": [],
   "active_mission": null,
   "completed_missions": [],
-  "pinned_servers": [],
   "changed_servers": {}
 }

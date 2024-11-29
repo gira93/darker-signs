@@ -46,3 +46,11 @@ def show_menu(
     cprint(formatted_options, "blue")
     selection = input(f"{selection_message}: ")
     return selection
+
+
+def reset_rootfs(rootfs_path: str) -> None:
+    for item in os.listdir(rootfs_path):
+        item_path = os.path.join(rootfs_path, item)
+        if os.path.isfile(item_path):
+            os.remove(item_path)
+            print(f"Removed file: {item_path}\n")

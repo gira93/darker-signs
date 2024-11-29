@@ -1086,5 +1086,16 @@
       "80": "tck-http",
       "225": "tck-tck"
     }
+  },
+  "upgrade.mother.net": {
+    "alias": "66.66.66.01"
+  },
+  "66.66.66.01": {
+    "name": "upgrade.mother.net",
+    "module_name": "upgrade_mother_net",
+    "class_name": "UpgradeMotherNet",
+    "port_mapping": {
+      "80": "upgrade"
+    }
   }
 }

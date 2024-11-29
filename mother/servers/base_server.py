@@ -134,10 +134,6 @@ class BaseServer:
                         print()
                         continue
                     case "exit":
-                        # if "connection.log" in filenames:
-                        #     print()
-                        #     cprint("Connection log file traced", "red")
-                        #     print()
                         cprint("Disconnecting\n", "red")
                         break
             elif com == "":
@@ -455,7 +451,12 @@ class BaseServer:
                                 message=email["content"],
                             )
                             if email["attachment"]:
-                                name, content = email["attachment"]
+                                name, content = (
+                                    email["attachment"]
+                                    if email["attachment"] is not None
+                                    else "nope",
+                                    "",
+                                )
                                 download_file(
                                     f"{self.root_path}/{name}", content, False
                                 )

@@ -7,7 +7,7 @@ from system.cli import Cli
 
 
 def main():
-    local_base_path, campaign_path, campaign_name, first_run = setup()
+    local_base_path, campaign_path, campaign_name, show_intro = setup()
     cli = Cli(
         local_base_path=f"{local_base_path}", campaign_name=campaign_name, host="ds.net"
     )
@@ -16,7 +16,13 @@ def main():
     cprint("// Darker Signs //", "light_blue")
     cprint("//////////////////", "light_blue")
     print()
-    if first_run:
+    if show_intro:
+        with open(f"{local_base_path}/rootfs/system/player.json", "r") as f:
+            player = json.load(f)
+        with open(f"{local_base_path}/rootfs/system/player.json", "w") as f:
+            player["show_intro"] = False
+            json.dump(player, f, indent="\t")
+
         with open(f"{campaign_path}/base_rootfs/intro.txt", "r") as f:
             print(f.read())
     cli.run()
@@ -25,20 +31,22 @@ def main():
 def setup() -> tuple[str, str, str, bool]:
     local_base_path = os.path.dirname(os.path.abspath(__file__))
     rootfs = f"{local_base_path}/rootfs"
+    first_run = False
     if os.path.isdir(rootfs):
         with open(f"{rootfs}/system/player.json", "r") as f:
             player = json.load(f)
         campaign_name = player["campaign"]
-        first_run = False
+        show_intro = player["show_intro"]
     else:
+        show_intro = True
         first_run = True
-        # campaign_name = "zrio"
-        campaign_name = "mother"
+        campaign_name = "zrio"
+        # campaign_name = "mother"
 
     campaign_path = f"{local_base_path}/{campaign_name}"
     if first_run:
         initialize(local_base_path, campaign_path)
-    return local_base_path, campaign_path, campaign_name, first_run
+    return local_base_path, campaign_path, campaign_name, show_intro
 
 
 def initialize(local_base_path: str, campaign_path: str) -> None:
