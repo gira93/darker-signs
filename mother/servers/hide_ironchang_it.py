@@ -32,7 +32,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 90,
-            "credit_reward": 50,
+            "credit_reward": 0,
             "exp_reward": 10,
             "requirements": {
                 "hammerzone_mother_net": (
@@ -65,7 +65,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 130,
-            "credit_reward": 50,
+            "credit_reward": 0,
             "exp_reward": 10,
             "requirements": {
                 "bentekmail_com": (
@@ -100,7 +100,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 140,
-            "credit_reward": 50,
+            "credit_reward": 0,
             "exp_reward": 30,
             "requirements": {
                 "master_karma_mother_net": (
@@ -142,7 +142,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 180,
-            "credit_reward": 50,
+            "credit_reward": 0,
             "exp_reward": 20,
             "requirements": {
                 "master_mother_net": (
@@ -171,7 +171,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 200,
-            "credit_reward": 50,
+            "credit_reward": 0,
             "exp_reward": 10,
             "requirements": {
                 "interpol_gov_file": (
@@ -221,6 +221,7 @@ class HideIronchangIt(BaseServer):
                 "Cannot enstablish connection to master.mother.net, skipping",
                 "yellow",
             )
+            progress_bar()
             iron_message = "\n".join(
                 [
                     "Can you believe what we were able to achieve?",
@@ -240,9 +241,37 @@ class HideIronchangIt(BaseServer):
                     "Massimo",
                 ]
             )
+            gira_message = "\n".join(
+                [
+                    "Hello,",
+                    "I'm gira93, the developer who wrote this game,",
+                    "thank you for playing! I hope you had fun as much as I did coding it.",
+                    "",
+                    "I want to mention the original creator of the ZRIO campaign, Vectra Media,",
+                    "that's where all the first part was taken and adapted.",
+                    "",
+                    'Some time ago there was an italian hacking game called "Mother - A computer hacking simulation",',
+                    "not to be confused with the RPG game xd.",
+                    "This game was very influential to me, it was fun, very hollywood style but most importantly, it spoke my language;",
+                    'I didn\'t know english that well and playing a game that was similar to "Uplink" but in my language was a blast!',
+                    "",
+                    'I recently found out that its creator Massimo "v4ldemar" Pinzaglia passed away,',
+                    "I wanted to pay respect to him and the original Mother, so I decided to adapt and translate most of the game in English",
+                    "the version you played is very similar, story-wise, to the original Mother,",
+                    "but gameplay had to be adapted A LOT (and let me be honest, the original is better)",
+                    "Hope you enjoyed it and if you know italian, please check out Mother - A computer hacking simulation (on archive.org)",
+                    "",
+                    "gira93",
+                ]
+            )
             self.mail.add_message(
                 from_user="1r0nch4ng@hide.ironchang.it",
                 subject="And so it ends",
                 message=iron_message,
+            )
+            self.mail.add_message(
+                from_user="gira93",
+                subject="Some credits and a Thank you",
+                message=gira_message,
             )
             return

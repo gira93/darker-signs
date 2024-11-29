@@ -62,11 +62,12 @@ class DoserCom(BaseServer):
                         'You really thought that "someone" dumped the zrio chroot like that?',
                         "We did it, we planned all of that, you were supposed to find the code",
                         "get in, know Jimmy and work with him.",
-                        "He didn't suspect a thing but he was also under our control.",
+                        "Helping you was one of his assignments;",
                         "Don't be scared of us, we are actually the good guys.",
-                        "Maybe we'll work together again one time...",
-                        "---",
-                        "Mothernet Team",
+                        "And I think now is the time for you to enter the real world...",
+                        "",
+                        "upgrade.mother.net" "---",
+                        "The Mother Triad",
                     ]
                     self.mail.add_message(
                         from_user="karma@mother.net",

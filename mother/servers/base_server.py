@@ -353,7 +353,7 @@ class BaseServer:
                         if self.player.has_tool(items[item_index][0]):
                             cprint("You already have that item\n", "yellow")
                             continue
-                        elif self.player.balance() > price:
+                        elif self.player.balance() >= price:
                             self.player.subtract_credit(price)
                             self.player.add_tool(items[item_index][0])
                             progress_bar(step=0.02)
@@ -451,12 +451,7 @@ class BaseServer:
                                 message=email["content"],
                             )
                             if email["attachment"]:
-                                name, content = (
-                                    email["attachment"]
-                                    if email["attachment"] is not None
-                                    else "nope",
-                                    "",
-                                )
+                                name, content = email["attachment"]
                                 download_file(
                                     f"{self.root_path}/{name}", content, False
                                 )

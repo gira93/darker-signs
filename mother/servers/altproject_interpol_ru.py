@@ -27,7 +27,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 70,
-            "credit_reward": 50,
+            "credit_reward": 10,
             "exp_reward": 5,
             "requirements": {
                 "personal_softma_rk": (
@@ -56,7 +56,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 75,
-            "credit_reward": 50,
+            "credit_reward": 10,
             "exp_reward": 5,
             "requirements": {
                 "pstagna_personal_it": (

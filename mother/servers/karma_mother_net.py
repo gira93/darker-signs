@@ -32,7 +32,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 0,
-            "credit_reward": 50,
+            "credit_reward": 5,
             "exp_reward": 10,
             "requirements": {
                 "interpol_gov_file": (
@@ -64,7 +64,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 10,
-            "credit_reward": 50,
+            "credit_reward": 5,
             "exp_reward": 10,
             "requirements": {
                 "kyotomail_jp": (
@@ -94,7 +94,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 20,
-            "credit_reward": 50,
+            "credit_reward": 5,
             "exp_reward": 10,
             "requirements": {
                 "web_neowa_se": (
@@ -124,7 +124,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 30,
-            "credit_reward": 50,
+            "credit_reward": 10,
             "exp_reward": 10,
             "requirements": {
                 "temp_ensatcorp_net": (
@@ -154,7 +154,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 40,
-            "credit_reward": 50,
+            "credit_reward": 15,
             "exp_reward": 10,
             "requirements": {
                 "subcorp_puresun_net": (
@@ -182,7 +182,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 50,
-            "credit_reward": 50,
+            "credit_reward": 20,
             "exp_reward": 10,
             "requirements": {
                 "athem_final_net": (
@@ -225,7 +225,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 },
             ],
             "exp_needed": 60,
-            "credit_reward": 50,
+            "credit_reward": 20,
             "exp_reward": 10,
             "requirements": {
                 "interpol_gov_file": (
@@ -255,7 +255,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 80,
-            "credit_reward": 50,
+            "credit_reward": 20,
             "exp_reward": 5,
             "requirements": {
                 "australian_final_net": (
@@ -297,7 +297,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 },
             ],
             "exp_needed": 85,
-            "credit_reward": 50,
+            "credit_reward": 20,
             "exp_reward": 5,
             "requirements": {
                 "web4_telemark_com": (
@@ -330,7 +330,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 100,
-            "credit_reward": 50,
+            "credit_reward": 140,
             "exp_reward": 20,
             "requirements": {
                 "east3_telemark_com": (
@@ -360,7 +360,7 @@ SERVER_CONFIG: AssignmentServerConfig = {
                 }
             ],
             "exp_needed": 120,
-            "credit_reward": 50,
+            "credit_reward": 200,
             "exp_reward": 10,
             "requirements": {
                 "main1_meccate_ch": (
