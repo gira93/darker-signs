@@ -204,8 +204,9 @@ SERVER_CONFIG: AssignmentServerConfig = {
                         [
                             "1r0nch4ng, a member of our community, has asked for your help;",
                             "Paolo Stagna, one of his friends, has been wrongfully dismissed from Wellmark.",
-                            "Investigate and take action if necessary, Stagna is now under arrest",
-                            "so find a way to get him out of custody if he's innocent!",
+                            "Investigate and if you find useful info,",
+                            "upload them directly to the interpol drop."
+                            "Stagna is now under arrest so find a way to get him out of custody if he's innocent!",
                         ]
                     ),
                 },

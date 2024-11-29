@@ -19,8 +19,10 @@ def main():
     if show_intro:
         with open(f"{local_base_path}/rootfs/system/player.json", "r") as f:
             player = json.load(f)
+
+        player["show_intro"] = False
+
         with open(f"{local_base_path}/rootfs/system/player.json", "w") as f:
-            player["show_intro"] = False
             json.dump(player, f, indent="\t")
 
         with open(f"{campaign_path}/base_rootfs/intro.txt", "r") as f:
@@ -45,6 +47,12 @@ def setup() -> tuple[str, str, str, bool]:
     campaign_path = f"{local_base_path}/{campaign_name}"
     if first_run:
         initialize(local_base_path, campaign_path)
+    if show_intro:
+        shutil.copyfile(
+            f"{campaign_path}/base_rootfs/readme.txt",
+            f"{local_base_path}/rootfs/readme.txt",
+        )
+
     return local_base_path, campaign_path, campaign_name, show_intro
 
 
@@ -58,7 +66,6 @@ def initialize(local_base_path: str, campaign_path: str) -> None:
     os.makedirs("./rootfs/system")
     shutil.copyfile(f"{base}/system/mail.json", f"{rootfs}/system/mail.json")
     shutil.copyfile(f"{base}/system/player.json", f"{rootfs}/system/player.json")
-    shutil.copyfile(f"{base}/readme.txt", f"{rootfs}/readme.txt")
 
 
 if __name__ == "__main__":

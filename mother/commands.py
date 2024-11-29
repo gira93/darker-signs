@@ -52,7 +52,6 @@ class Commands:
     def __stats(self, _) -> None:
         print()
         cprint(f"Account balance: {self.player.balance()}\n", "green")
-        cprint(f"DEBUG exp: {self.player.experience()}", "red")
         cprint("Available tools:\n", "green")
         cprint("  ".join(self.player.tools()), "blue")
         return

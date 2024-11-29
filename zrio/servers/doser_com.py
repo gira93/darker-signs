@@ -66,7 +66,8 @@ class DoserCom(BaseServer):
                         "Don't be scared of us, we are actually the good guys.",
                         "And I think now is the time for you to enter the real world...",
                         "",
-                        "upgrade.mother.net" "---",
+                        "upgrade.mother.net",
+                        "---",
                         "The Mother Triad",
                     ]
                     self.mail.add_message(

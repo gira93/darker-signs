@@ -217,7 +217,7 @@ class BaseServer:
                     cprint(f'From: {message["from"]}', "blue")
                     cprint(f'Subject: {message["subject"]}', "blue")
                     print()
-                    print(message["content"])
+                    cprint(message["content"], "blue")
                     print()
                     if config["writable"]:
                         message_option = show_menu(
