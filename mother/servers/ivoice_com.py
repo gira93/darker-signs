@@ -3,7 +3,7 @@ from mother.type_defs import ChatServerConfig
 
 SERVER_CONFIG: ChatServerConfig = {
     "id": "ivoice_com",
-    "name": "IVoice Chat Server",
+    "name": "IVoice",
     "font": "standard",
     "proxy": None,
     "banner": "Welcome to IVoice Community Chat",

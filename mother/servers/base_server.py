@@ -167,9 +167,9 @@ class BaseServer:
                 case s if s.isdigit() and 1 <= int(s) <= len(options):
                     article: DbEntry = articles[int(s) - 1]
                     print()
-                    cprint(article["title"], "blue")
+                    cprint(article["title"], "cyan")
                     print()
-                    print(article["content"])
+                    cprint(article["content"], "blue")
                     print()
                     input("Press a key")
                     continue
@@ -214,8 +214,8 @@ class BaseServer:
                     message_index = int(s) - 1
                     message: Email = messages[message_index]
                     print()
-                    cprint(f'From: {message["from"]}', "blue")
-                    cprint(f'Subject: {message["subject"]}', "blue")
+                    cprint(f'From: {message["from"]}', "cyan")
+                    cprint(f'Subject: {message["subject"]}', "magenta")
                     print()
                     cprint(message["content"], "blue")
                     print()
@@ -310,7 +310,8 @@ class BaseServer:
                     print()
                     cprint("Found messages:\n", "green")
                     for result in search_results:
-                        cprint(f"{result['op']}@: {result['content']}", "blue")
+                        cprint(f"{result['op']}@: ", "cyan", end="")
+                        cprint(result["content"], "blue")
                     print()
                     input("Press a key")
                     continue
@@ -334,6 +335,7 @@ class BaseServer:
         items: list[ShopItem] = config["contents"]
         while True:
             formatted_items = [f"{i[0]} | {i[2]}Cr." for i in items]
+            cprint(f"Current Balance: {self.player.balance()} Cr.", "green")
             selection = show_menu(
                 formatted_items, selection_message="Select an item to view details"
             )
@@ -407,7 +409,7 @@ class BaseServer:
                     self.player.set_active_mission(None)
                     self.player.add_completed_mission(active_mission_id)
                     cprint(
-                        "Assignment accepted\nReward has been transfered to your account\n",
+                        "Assignment accepted",
                         "green",
                     )
                 else:
@@ -510,9 +512,8 @@ class BaseServer:
 
     def __welcome(self, banner: str, name: str, font: str = "standard"):
         f = Figlet(font)
-        cprint(f.renderText(name), "blue")
-        print()
-        cprint(banner, "green")
+        cprint(f.renderText(name), "cyan")
+        cprint(banner, "magenta")
         print()
 
     def __authenticate(self, server_config: dict) -> str | None:
