@@ -2,6 +2,8 @@
 
 ## A complete rewrite of 2006 "Dark Signs" from Vectra Media
 
+### and includes a rewrite of Mother - A Computer Hacking Simulation
+
 ## What's this?
 
 This is what's called a "Hacking Simulation" game (or a text puzzle game if you want).
@@ -12,7 +14,10 @@ so here's a TLDR if you just want to play:
 
 ### Running
 
-After cloning the repo, run `./start.sh` to run the game.
+Install Python 3 if you don't already have it.
+
+Download the latest release (or clone the repo),
+run `./start.sh` (linux) or `start.bat` (windows) to run the game.
 The script will setup venv, install dependencies
 and then run the game.
 
@@ -20,8 +25,9 @@ and then run the game.
 
 The game stores everything inside a `rootfs` directory that will be
 created on first run.
-If you want to restart the game, just delete the `rootfs` directory
-and run `./start.sh`
+If you want to restart the game, you can just delete the `rootfs` directory
+and run `./start.sh` (or `start.bat`) again.
+You can also run `./reset.sh` (or `reset.bat`) which does the same thing
 
 ## What's "Dark Signs"?
 
@@ -33,6 +39,13 @@ It was rebranded a lot of times, at some point it was a multiplayer hacking game
 Darker Signs is based on the latest Single player game of 2006, version 0.96.1.
 This is a complete rewrite in Python (instead of Visual Basic)
 and it runs completely in CLI (no GUI).
+
+## What about Mother?
+"Mother - A Computer Hacking Simulation" was an italian hacking game inspired by "Uplink".
+I loved that game and while I was searching for Dark Signs, I came across "Mother" again,
+sadly the original developer Massimo Pinzaglia passed away.
+Since I had this "engine" at hand I decide to also translate and include the Mother campaign into here!
+Most game mechanics have been adapted and they kinda work
 
 ## Why?
 
