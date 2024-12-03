@@ -313,7 +313,6 @@ class BaseServer:
                         cprint(f"{result['op']}@: ", "cyan", end="")
                         cprint(result["content"], "blue")
                     print()
-                    input("Press a key")
                     continue
                 else:
                     print()
@@ -559,17 +558,17 @@ class BaseServer:
             return user
         elif (
             (
-                pw == "rootbreaker"
+                pw == "rb"
                 and self.player.has_tool("rootbreaker")
                 and server_config["hack_tool"] == "rootbreaker"
             )
             or (
-                pw == "rootbreaker2"
+                pw == "rb2"
                 and self.player.has_tool("rootbreaker2")
                 and server_config["hack_tool"] == "rootbreaker2"
             )
             or (
-                pw == "rootbreaker3"
+                pw == "rb3"
                 and self.player.has_tool("rootbreaker3")
                 and server_config["hack_tool"] == "rootbreaker3"
             )
